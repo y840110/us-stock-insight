@@ -1,0 +1,2332 @@
+{
+  "_comment": "S&P 500股票池 - 更新到569只（2026-05-15）",
+  "_updated": "2026-05-12",
+  "stocks": [
+    {
+      "code": "A",
+      "name": "Agilent Technologies"
+    },
+    {
+      "code": "AAOI",
+      "name": "Acacia Communications"
+    },
+    {
+      "code": "AAPL",
+      "name": "Apple Inc."
+    },
+    {
+      "code": "ABBV",
+      "name": "AbbVie"
+    },
+    {
+      "code": "ABNB",
+      "name": "Airbnb"
+    },
+    {
+      "code": "ABT",
+      "name": "Abbott Laboratories"
+    },
+    {
+      "code": "ACGL",
+      "name": "Arch Capital Group"
+    },
+    {
+      "code": "ACN",
+      "name": "Accenture"
+    },
+    {
+      "code": "ADBE",
+      "name": "Adobe Inc."
+    },
+    {
+      "code": "ADI",
+      "name": "Analog Devices"
+    },
+    {
+      "code": "ADM",
+      "name": "Archer Daniels Midland"
+    },
+    {
+      "code": "ADP",
+      "name": "Automatic Data Processing"
+    },
+    {
+      "code": "ADSK",
+      "name": "Autodesk"
+    },
+    {
+      "code": "AEE",
+      "name": "Ameren"
+    },
+    {
+      "code": "AEP",
+      "name": "American Electric Power"
+    },
+    {
+      "code": "AES",
+      "name": "AES Corporation"
+    },
+    {
+      "code": "AFL",
+      "name": "Aflac"
+    },
+    {
+      "code": "AIG",
+      "name": "American International Group"
+    },
+    {
+      "code": "AIZ",
+      "name": "Assurant"
+    },
+    {
+      "code": "AJG",
+      "name": "Arthur J. Gallagher & Co."
+    },
+    {
+      "code": "AKAM",
+      "name": "Akamai Technologies"
+    },
+    {
+      "code": "ALB",
+      "name": "Albemarle Corporation"
+    },
+    {
+      "code": "ALGN",
+      "name": "Align Technology"
+    },
+    {
+      "code": "ALL",
+      "name": "Allstate Corp"
+    },
+    {
+      "code": "ALLE",
+      "name": "Allegion"
+    },
+    {
+      "code": "ALNY",
+      "name": "Alnylam Pharmaceuticals"
+    },
+    {
+      "code": "AMAT",
+      "name": "Applied Materials"
+    },
+    {
+      "code": "AMCR",
+      "name": "Amcor"
+    },
+    {
+      "code": "AMD",
+      "name": "Advanced Micro Devices"
+    },
+    {
+      "code": "AME",
+      "name": "Ametek"
+    },
+    {
+      "code": "AMGN",
+      "name": "Amgen"
+    },
+    {
+      "code": "AMKR",
+      "name": "Amkor Technology"
+    },
+    {
+      "code": "AMP",
+      "name": "Ameriprise Financial"
+    },
+    {
+      "code": "AMT",
+      "name": "American Tower"
+    },
+    {
+      "code": "AMZN",
+      "name": "Amazon.com"
+    },
+    {
+      "code": "ANET",
+      "name": "Arista Networks"
+    },
+    {
+      "code": "AON",
+      "name": "Aon plc"
+    },
+    {
+      "code": "AOS",
+      "name": "A. O. Smith"
+    },
+    {
+      "code": "APA",
+      "name": "APA Corporation"
+    },
+    {
+      "code": "APD",
+      "name": "Air Products & Chemicals"
+    },
+    {
+      "code": "APH",
+      "name": "Amphenol Corp"
+    },
+    {
+      "code": "APO",
+      "name": "Apollo Global Management"
+    },
+    {
+      "code": "APP",
+      "name": "AppLovin"
+    },
+    {
+      "code": "APTV",
+      "name": "Aptiv"
+    },
+    {
+      "code": "ARE",
+      "name": "Alexandria Real Estate Equities"
+    },
+    {
+      "code": "ARES",
+      "name": "Ares Management"
+    },
+    {
+      "code": "ARM",
+      "name": "Arm Holdings"
+    },
+    {
+      "code": "ASML",
+      "name": "ASML Holding"
+    },
+    {
+      "code": "ASX",
+      "name": "ASE Technology"
+    },
+    {
+      "code": "ATO",
+      "name": "Atmos Energy"
+    },
+    {
+      "code": "AVB",
+      "name": "AvalonBay Communities"
+    },
+    {
+      "code": "AVGO",
+      "name": "Broadcom Inc."
+    },
+    {
+      "code": "AVY",
+      "name": "Avery Dennison"
+    },
+    {
+      "code": "AWK",
+      "name": "American Water Works"
+    },
+    {
+      "code": "AXON",
+      "name": "Axon Enterprise"
+    },
+    {
+      "code": "AXP",
+      "name": "American Express"
+    },
+    {
+      "code": "AZO",
+      "name": "AutoZone"
+    },
+    {
+      "code": "BA",
+      "name": "Boeing Co."
+    },
+    {
+      "code": "BAC",
+      "name": "Bank of America"
+    },
+    {
+      "code": "BALL",
+      "name": "Ball Corporation"
+    },
+    {
+      "code": "BAX",
+      "name": "Baxter International"
+    },
+    {
+      "code": "BBY",
+      "name": "Best Buy"
+    },
+    {
+      "code": "BDX",
+      "name": "Becton Dickinson"
+    },
+    {
+      "code": "BEN",
+      "name": "Franklin Resources"
+    },
+    {
+      "code": "BG",
+      "name": "Bunge Global"
+    },
+    {
+      "code": "BHP",
+      "name": "BHP Group"
+    },
+    {
+      "code": "BIIB",
+      "name": "Biogen"
+    },
+    {
+      "code": "BK",
+      "name": "BNY Mellon"
+    },
+    {
+      "code": "BKNG",
+      "name": "Booking Holdings"
+    },
+    {
+      "code": "BKR",
+      "name": "Baker Hughes"
+    },
+    {
+      "code": "BLDR",
+      "name": "Builders FirstSource"
+    },
+    {
+      "code": "BLK",
+      "name": "BlackRock"
+    },
+    {
+      "code": "BMY",
+      "name": "Bristol Myers Squibb"
+    },
+    {
+      "code": "BR",
+      "name": "Broadridge Financial Solutions"
+    },
+    {
+      "code": "BRO",
+      "name": "Brown & Brown"
+    },
+    {
+      "code": "BSX",
+      "name": "Boston Scientific"
+    },
+    {
+      "code": "BX",
+      "name": "Blackstone Inc."
+    },
+    {
+      "code": "BXP",
+      "name": "BXP, Inc."
+    },
+    {
+      "code": "C",
+      "name": "Citigroup"
+    },
+    {
+      "code": "CAG",
+      "name": "Conagra Brands"
+    },
+    {
+      "code": "CAH",
+      "name": "Cardinal Health"
+    },
+    {
+      "code": "CARR",
+      "name": "Carrier Global"
+    },
+    {
+      "code": "CASY",
+      "name": "Casey's"
+    },
+    {
+      "code": "CAT",
+      "name": "Caterpillar"
+    },
+    {
+      "code": "CB",
+      "name": "Chubb Limited"
+    },
+    {
+      "code": "CBOE",
+      "name": "Cboe Global Markets"
+    },
+    {
+      "code": "CBRE",
+      "name": "CBRE Group"
+    },
+    {
+      "code": "CCEP",
+      "name": "Coca-Cola Europacific Partners"
+    },
+    {
+      "code": "CCI",
+      "name": "Crown Castle"
+    },
+    {
+      "code": "CCJ",
+      "name": "Cameco Corp"
+    },
+    {
+      "code": "CCL",
+      "name": "Carnival Corporation"
+    },
+    {
+      "code": "CDNS",
+      "name": "Cadence Design Systems"
+    },
+    {
+      "code": "CDW",
+      "name": "CDW Corporation"
+    },
+    {
+      "code": "CEG",
+      "name": "Constellation Energy"
+    },
+    {
+      "code": "CF",
+      "name": "CF Industries"
+    },
+    {
+      "code": "CFG",
+      "name": "Citizens Financial Group"
+    },
+    {
+      "code": "CHD",
+      "name": "Church & Dwight"
+    },
+    {
+      "code": "CHRW",
+      "name": "C.H. Robinson"
+    },
+    {
+      "code": "CHTR",
+      "name": "Charter Communications"
+    },
+    {
+      "code": "CI",
+      "name": "Cigna"
+    },
+    {
+      "code": "CIEN",
+      "name": "Ciena Corp"
+    },
+    {
+      "code": "CINF",
+      "name": "Cincinnati Financial"
+    },
+    {
+      "code": "CL",
+      "name": "Colgate-Palmolive"
+    },
+    {
+      "code": "CLX",
+      "name": "Clorox"
+    },
+    {
+      "code": "CMCSA",
+      "name": "Comcast"
+    },
+    {
+      "code": "CME",
+      "name": "CME Group"
+    },
+    {
+      "code": "CMG",
+      "name": "Chipotle Mexican Grill"
+    },
+    {
+      "code": "CMI",
+      "name": "Cummins"
+    },
+    {
+      "code": "CMS",
+      "name": "CMS Energy"
+    },
+    {
+      "code": "CNC",
+      "name": "Centene Corporation"
+    },
+    {
+      "code": "CNP",
+      "name": "CenterPoint Energy"
+    },
+    {
+      "code": "COF",
+      "name": "Capital One"
+    },
+    {
+      "code": "COHR",
+      "name": "Coherent Corp"
+    },
+    {
+      "code": "COHU",
+      "name": "Cohu Inc."
+    },
+    {
+      "code": "COIN",
+      "name": "Coinbase Global"
+    },
+    {
+      "code": "COO",
+      "name": "Cooper Companies (The)"
+    },
+    {
+      "code": "COP",
+      "name": "ConocoPhillips"
+    },
+    {
+      "code": "COR",
+      "name": "Cencora"
+    },
+    {
+      "code": "COST",
+      "name": "Costco Wholesale"
+    },
+    {
+      "code": "CPAY",
+      "name": "Corpay"
+    },
+    {
+      "code": "CPB",
+      "name": "Campbell's Company (The)"
+    },
+    {
+      "code": "CPRT",
+      "name": "Copart"
+    },
+    {
+      "code": "CPT",
+      "name": "Camden Property Trust"
+    },
+    {
+      "code": "CRDO",
+      "name": "Cardano"
+    },
+    {
+      "code": "CRH",
+      "name": "CRH plc"
+    },
+    {
+      "code": "CRL",
+      "name": "Charles River Laboratories"
+    },
+    {
+      "code": "CRM",
+      "name": "Salesforce"
+    },
+    {
+      "code": "CRWD",
+      "name": "CrowdStrike"
+    },
+    {
+      "code": "CRWV",
+      "name": "Carrow"
+    },
+    {
+      "code": "CSCO",
+      "name": "Cisco Systems"
+    },
+    {
+      "code": "CSGP",
+      "name": "CoStar Group"
+    },
+    {
+      "code": "CSX",
+      "name": "CSX Corporation"
+    },
+    {
+      "code": "CTAS",
+      "name": "Cintas"
+    },
+    {
+      "code": "CTSH",
+      "name": "Cognizant"
+    },
+    {
+      "code": "CTVA",
+      "name": "Corteva"
+    },
+    {
+      "code": "CVNA",
+      "name": "Carvana"
+    },
+    {
+      "code": "CVS",
+      "name": "CVS Health"
+    },
+    {
+      "code": "CVX",
+      "name": "Chevron Corp"
+    },
+    {
+      "code": "D",
+      "name": "Dominion Energy"
+    },
+    {
+      "code": "DAL",
+      "name": "Delta Air Lines"
+    },
+    {
+      "code": "DASH",
+      "name": "DoorDash"
+    },
+    {
+      "code": "DD",
+      "name": "DuPont de Nemours"
+    },
+    {
+      "code": "DDOG",
+      "name": "Datadog"
+    },
+    {
+      "code": "DE",
+      "name": "Deere & Company"
+    },
+    {
+      "code": "DECK",
+      "name": "Deckers Brands"
+    },
+    {
+      "code": "DELL",
+      "name": "Dell Technologies"
+    },
+    {
+      "code": "DG",
+      "name": "Dollar General"
+    },
+    {
+      "code": "DGX",
+      "name": "Quest Diagnostics"
+    },
+    {
+      "code": "DHI",
+      "name": "D. R. Horton"
+    },
+    {
+      "code": "DHR",
+      "name": "Danaher Corporation"
+    },
+    {
+      "code": "DIS",
+      "name": "Walt Disney Company (The)"
+    },
+    {
+      "code": "DLR",
+      "name": "Digital Realty Trust"
+    },
+    {
+      "code": "DLTR",
+      "name": "Dollar Tree"
+    },
+    {
+      "code": "DOC",
+      "name": "Healthpeak Properties"
+    },
+    {
+      "code": "DOV",
+      "name": "Dover Corporation"
+    },
+    {
+      "code": "DOW",
+      "name": "Dow Inc."
+    },
+    {
+      "code": "DPZ",
+      "name": "Domino's"
+    },
+    {
+      "code": "DRAM",
+      "name": "DRAM Sector (via SOXX/SMH proxy)"
+    },
+    {
+      "code": "DRI",
+      "name": "Darden Restaurants"
+    },
+    {
+      "code": "DTE",
+      "name": "DTE Energy"
+    },
+    {
+      "code": "DUK",
+      "name": "Duke Energy"
+    },
+    {
+      "code": "DVA",
+      "name": "DaVita"
+    },
+    {
+      "code": "DVN",
+      "name": "Devon Energy"
+    },
+    {
+      "code": "DXCM",
+      "name": "Dexcom"
+    },
+    {
+      "code": "EA",
+      "name": "Electronic Arts"
+    },
+    {
+      "code": "EBAY",
+      "name": "eBay Inc."
+    },
+    {
+      "code": "ECL",
+      "name": "Ecolab"
+    },
+    {
+      "code": "ED",
+      "name": "Consolidated Edison"
+    },
+    {
+      "code": "EFX",
+      "name": "Equifax"
+    },
+    {
+      "code": "EG",
+      "name": "Everest Group"
+    },
+    {
+      "code": "EIX",
+      "name": "Edison International"
+    },
+    {
+      "code": "EL",
+      "name": "Estée Lauder Companies (The)"
+    },
+    {
+      "code": "ELV",
+      "name": "Elevance Health"
+    },
+    {
+      "code": "EME",
+      "name": "Emcor"
+    },
+    {
+      "code": "EMR",
+      "name": "Emerson Electric"
+    },
+    {
+      "code": "ENPH",
+      "name": "Enphase Energy"
+    },
+    {
+      "code": "ENTG",
+      "name": "Entegris"
+    },
+    {
+      "code": "EOG",
+      "name": "EOG Resources"
+    },
+    {
+      "code": "EPAM",
+      "name": "EPAM Systems"
+    },
+    {
+      "code": "EQIX",
+      "name": "Equinix"
+    },
+    {
+      "code": "EQR",
+      "name": "Equity Residential"
+    },
+    {
+      "code": "EQT",
+      "name": "EQT Corporation"
+    },
+    {
+      "code": "ERIE",
+      "name": "Erie Indemnity"
+    },
+    {
+      "code": "ES",
+      "name": "Eversource Energy"
+    },
+    {
+      "code": "ESS",
+      "name": "Essex Property Trust"
+    },
+    {
+      "code": "ET",
+      "name": "Energy Transfer"
+    },
+    {
+      "code": "ETN",
+      "name": "Eaton Corp"
+    },
+    {
+      "code": "ETR",
+      "name": "Entergy"
+    },
+    {
+      "code": "EVRG",
+      "name": "Evergy"
+    },
+    {
+      "code": "EW",
+      "name": "Edwards Lifesciences"
+    },
+    {
+      "code": "EXC",
+      "name": "Exelon"
+    },
+    {
+      "code": "EXE",
+      "name": "Expand Energy"
+    },
+    {
+      "code": "EXPD",
+      "name": "Expeditors International"
+    },
+    {
+      "code": "EXPE",
+      "name": "Expedia Group"
+    },
+    {
+      "code": "EXR",
+      "name": "Extra Space Storage"
+    },
+    {
+      "code": "F",
+      "name": "Ford Motor Company"
+    },
+    {
+      "code": "FANG",
+      "name": "Diamondback Energy"
+    },
+    {
+      "code": "FAST",
+      "name": "Fastenal"
+    },
+    {
+      "code": "FBTC",
+      "name": "Fidelity Bitcoin ETF"
+    },
+    {
+      "code": "FCX",
+      "name": "Freeport-McMoRan"
+    },
+    {
+      "code": "FDS",
+      "name": "FactSet"
+    },
+    {
+      "code": "FDX",
+      "name": "FedEx Corp"
+    },
+    {
+      "code": "FE",
+      "name": "FirstEnergy"
+    },
+    {
+      "code": "FER",
+      "name": "Ferrovial SE"
+    },
+    {
+      "code": "FFIV",
+      "name": "F5, Inc."
+    },
+    {
+      "code": "FICO",
+      "name": "Fair Isaac"
+    },
+    {
+      "code": "FIS",
+      "name": "Fidelity National Information Services"
+    },
+    {
+      "code": "FISV",
+      "name": "Fiserv"
+    },
+    {
+      "code": "FITB",
+      "name": "Fifth Third Bancorp"
+    },
+    {
+      "code": "FIX",
+      "name": "Comfort Systems USA"
+    },
+    {
+      "code": "FLEX",
+      "name": "Flex Ltd."
+    },
+    {
+      "code": "FN",
+      "name": "Fabrinet"
+    },
+    {
+      "code": "FOX",
+      "name": "Fox Corporation (Class B)"
+    },
+    {
+      "code": "FOXA",
+      "name": "Fox Corporation (Class A)"
+    },
+    {
+      "code": "FRT",
+      "name": "Federal Realty Investment Trust"
+    },
+    {
+      "code": "FSLR",
+      "name": "First Solar"
+    },
+    {
+      "code": "FTNT",
+      "name": "Fortinet"
+    },
+    {
+      "code": "FTV",
+      "name": "Fortive"
+    },
+    {
+      "code": "GD",
+      "name": "General Dynamics"
+    },
+    {
+      "code": "GDDY",
+      "name": "GoDaddy"
+    },
+    {
+      "code": "GE",
+      "name": "GE Aerospace"
+    },
+    {
+      "code": "GEHC",
+      "name": "GE HealthCare"
+    },
+    {
+      "code": "GEN",
+      "name": "Gen Digital"
+    },
+    {
+      "code": "GEV",
+      "name": "GE Vernova"
+    },
+    {
+      "code": "GFS",
+      "name": "GlobalFoundries"
+    },
+    {
+      "code": "GILD",
+      "name": "Gilead Sciences"
+    },
+    {
+      "code": "GIS",
+      "name": "General Mills"
+    },
+    {
+      "code": "GL",
+      "name": "Globe Life"
+    },
+    {
+      "code": "GLD",
+      "name": "SPDR Gold Shares ETF"
+    },
+    {
+      "code": "GLW",
+      "name": "Corning Inc."
+    },
+    {
+      "code": "GM",
+      "name": "General Motors"
+    },
+    {
+      "code": "GNRC",
+      "name": "Generac"
+    },
+    {
+      "code": "GOOG",
+      "name": "Alphabet Inc. (Class C)"
+    },
+    {
+      "code": "GOOGL",
+      "name": "Alphabet (Google)"
+    },
+    {
+      "code": "GPC",
+      "name": "Genuine Parts Company"
+    },
+    {
+      "code": "GPN",
+      "name": "Global Payments"
+    },
+    {
+      "code": "GRMN",
+      "name": "Garmin"
+    },
+    {
+      "code": "GS",
+      "name": "Goldman Sachs"
+    },
+    {
+      "code": "GWW",
+      "name": "W. W. Grainger"
+    },
+    {
+      "code": "HAL",
+      "name": "Halliburton"
+    },
+    {
+      "code": "HAS",
+      "name": "Hasbro"
+    },
+    {
+      "code": "HBAN",
+      "name": "Huntington Bancshares"
+    },
+    {
+      "code": "HCA",
+      "name": "HCA Healthcare"
+    },
+    {
+      "code": "HD",
+      "name": "Home Depot"
+    },
+    {
+      "code": "HIG",
+      "name": "Hartford (The)"
+    },
+    {
+      "code": "HII",
+      "name": "Huntington Ingalls Industries"
+    },
+    {
+      "code": "HLT",
+      "name": "Hilton Worldwide"
+    },
+    {
+      "code": "HON",
+      "name": "Honeywell International"
+    },
+    {
+      "code": "HOOD",
+      "name": "Robinhood Markets"
+    },
+    {
+      "code": "HPE",
+      "name": "Hewlett Packard Enterprise"
+    },
+    {
+      "code": "HPQ",
+      "name": "HP Inc."
+    },
+    {
+      "code": "HRL",
+      "name": "Hormel Foods"
+    },
+    {
+      "code": "HSIC",
+      "name": "Henry Schein"
+    },
+    {
+      "code": "HST",
+      "name": "Host Hotels & Resorts"
+    },
+    {
+      "code": "HSY",
+      "name": "Hershey Company (The)"
+    },
+    {
+      "code": "HUBB",
+      "name": "Hubbell Incorporated"
+    },
+    {
+      "code": "HUM",
+      "name": "Humana"
+    },
+    {
+      "code": "HUT",
+      "name": "Hut 8 Mining"
+    },
+    {
+      "code": "HWM",
+      "name": "Howmet Aerospace"
+    },
+    {
+      "code": "IBIT",
+      "name": "iShares Bitcoin Trust ETF"
+    },
+    {
+      "code": "IBKR",
+      "name": "Interactive Brokers"
+    },
+    {
+      "code": "IBM",
+      "name": "IBM"
+    },
+    {
+      "code": "ICE",
+      "name": "Intercontinental Exchange"
+    },
+    {
+      "code": "IDXX",
+      "name": "Idexx Laboratories"
+    },
+    {
+      "code": "IEX",
+      "name": "IDEX Corporation"
+    },
+    {
+      "code": "IFF",
+      "name": "International Flavors & Fragrances"
+    },
+    {
+      "code": "ILMN",
+      "name": "Illumina Inc."
+    },
+    {
+      "code": "INCY",
+      "name": "Incyte"
+    },
+    {
+      "code": "INSM",
+      "name": "Insmed Incorporated"
+    },
+    {
+      "code": "INTC",
+      "name": "Intel Corp"
+    },
+    {
+      "code": "INTU",
+      "name": "Intuit"
+    },
+    {
+      "code": "INVH",
+      "name": "Invitation Homes"
+    },
+    {
+      "code": "IONQ",
+      "name": "IonQ Inc."
+    },
+    {
+      "code": "IP",
+      "name": "International Paper"
+    },
+    {
+      "code": "IQV",
+      "name": "IQVIA"
+    },
+    {
+      "code": "IR",
+      "name": "Ingersoll Rand"
+    },
+    {
+      "code": "IRM",
+      "name": "Iron Mountain"
+    },
+    {
+      "code": "ISRG",
+      "name": "Intuitive Surgical"
+    },
+    {
+      "code": "IT",
+      "name": "Gartner"
+    },
+    {
+      "code": "ITA",
+      "name": "iShares US Aerospace & Defense ETF"
+    },
+    {
+      "code": "ITW",
+      "name": "Illinois Tool Works"
+    },
+    {
+      "code": "IVZ",
+      "name": "Invesco"
+    },
+    {
+      "code": "J",
+      "name": "Jacobs Solutions"
+    },
+    {
+      "code": "JBHT",
+      "name": "J.B. Hunt"
+    },
+    {
+      "code": "JBL",
+      "name": "Jabil Inc."
+    },
+    {
+      "code": "JCI",
+      "name": "Johnson Controls"
+    },
+    {
+      "code": "JKHY",
+      "name": "Jack Henry & Associates"
+    },
+    {
+      "code": "JNJ",
+      "name": "Johnson & Johnson"
+    },
+    {
+      "code": "JPM",
+      "name": "JPMorgan Chase"
+    },
+    {
+      "code": "KDP",
+      "name": "Keurig Dr Pepper"
+    },
+    {
+      "code": "KEY",
+      "name": "KeyCorp"
+    },
+    {
+      "code": "KEYS",
+      "name": "Keysight Technologies"
+    },
+    {
+      "code": "KHC",
+      "name": "Kraft Heinz"
+    },
+    {
+      "code": "KIM",
+      "name": "Kimco Realty"
+    },
+    {
+      "code": "KKR",
+      "name": "KKR & Co."
+    },
+    {
+      "code": "KLAC",
+      "name": "KLA Corp"
+    },
+    {
+      "code": "KLIC",
+      "name": "Kulicke & Soffa"
+    },
+    {
+      "code": "KMB",
+      "name": "Kimberly-Clark"
+    },
+    {
+      "code": "KMI",
+      "name": "Kinder Morgan"
+    },
+    {
+      "code": "KO",
+      "name": "Coca-Cola Company (The)"
+    },
+    {
+      "code": "KR",
+      "name": "Kroger"
+    },
+    {
+      "code": "KVUE",
+      "name": "Kenvue"
+    },
+    {
+      "code": "L",
+      "name": "Loews Corporation"
+    },
+    {
+      "code": "LDOS",
+      "name": "Leidos"
+    },
+    {
+      "code": "LEN",
+      "name": "Lennar"
+    },
+    {
+      "code": "LH",
+      "name": "Labcorp"
+    },
+    {
+      "code": "LHX",
+      "name": "L3Harris Technologies"
+    },
+    {
+      "code": "LII",
+      "name": "Lennox International"
+    },
+    {
+      "code": "LIN",
+      "name": "Linde plc"
+    },
+    {
+      "code": "LITE",
+      "name": "Lumentum Holdings"
+    },
+    {
+      "code": "LLY",
+      "name": "Lilly (Eli)"
+    },
+    {
+      "code": "LMT",
+      "name": "Lockheed Martin"
+    },
+    {
+      "code": "LNG",
+      "name": "Cheniere Energy"
+    },
+    {
+      "code": "LNT",
+      "name": "Alliant Energy"
+    },
+    {
+      "code": "LOW",
+      "name": "Lowe's Companies"
+    },
+    {
+      "code": "LRCX",
+      "name": "Lam Research"
+    },
+    {
+      "code": "LULU",
+      "name": "Lululemon Athletica"
+    },
+    {
+      "code": "LUV",
+      "name": "Southwest Airlines"
+    },
+    {
+      "code": "LVS",
+      "name": "Las Vegas Sands"
+    },
+    {
+      "code": "LYB",
+      "name": "LyondellBasell"
+    },
+    {
+      "code": "LYV",
+      "name": "Live Nation Entertainment"
+    },
+    {
+      "code": "MA",
+      "name": "Mastercard"
+    },
+    {
+      "code": "MAA",
+      "name": "Mid-America Apartment Communities"
+    },
+    {
+      "code": "MAR",
+      "name": "Marriott International"
+    },
+    {
+      "code": "MARA",
+      "name": "Marathon Digital Holdings"
+    },
+    {
+      "code": "MAS",
+      "name": "Masco"
+    },
+    {
+      "code": "MBLY",
+      "name": "Mobileye Global"
+    },
+    {
+      "code": "MCD",
+      "name": "McDonald's Corp"
+    },
+    {
+      "code": "MCHP",
+      "name": "Microchip Technology"
+    },
+    {
+      "code": "MCK",
+      "name": "McKesson Corporation"
+    },
+    {
+      "code": "MCO",
+      "name": "Moody's Corporation"
+    },
+    {
+      "code": "MDB",
+      "name": "MongoDB"
+    },
+    {
+      "code": "MDLZ",
+      "name": "Mondelez International"
+    },
+    {
+      "code": "MDT",
+      "name": "Medtronic"
+    },
+    {
+      "code": "MELI",
+      "name": "MercadoLibre Inc."
+    },
+    {
+      "code": "MET",
+      "name": "MetLife"
+    },
+    {
+      "code": "META",
+      "name": "Meta Platforms"
+    },
+    {
+      "code": "MGM",
+      "name": "MGM Resorts"
+    },
+    {
+      "code": "MKC",
+      "name": "McCormick & Company"
+    },
+    {
+      "code": "MLM",
+      "name": "Martin Marietta Materials"
+    },
+    {
+      "code": "MMM",
+      "name": "3M"
+    },
+    {
+      "code": "MNST",
+      "name": "Monster Beverage"
+    },
+    {
+      "code": "MO",
+      "name": "Altria"
+    },
+    {
+      "code": "MOD",
+      "name": "Modine Manufacturing"
+    },
+    {
+      "code": "MOS",
+      "name": "Mosaic Company (The)"
+    },
+    {
+      "code": "MP",
+      "name": "MP Materials"
+    },
+    {
+      "code": "MPC",
+      "name": "Marathon Petroleum"
+    },
+    {
+      "code": "MPWR",
+      "name": "Monolithic Power Systems"
+    },
+    {
+      "code": "MRK",
+      "name": "Merck & Co."
+    },
+    {
+      "code": "MRNA",
+      "name": "Moderna"
+    },
+    {
+      "code": "MRSH",
+      "name": "Marsh McLennan"
+    },
+    {
+      "code": "MRVL",
+      "name": "Marvell Technology"
+    },
+    {
+      "code": "MS",
+      "name": "Morgan Stanley"
+    },
+    {
+      "code": "MSCI",
+      "name": "MSCI Inc."
+    },
+    {
+      "code": "MSFT",
+      "name": "Microsoft Corp"
+    },
+    {
+      "code": "MSI",
+      "name": "Motorola Solutions"
+    },
+    {
+      "code": "MSTR",
+      "name": "MicroStrategy"
+    },
+    {
+      "code": "MTB",
+      "name": "M&T Bank"
+    },
+    {
+      "code": "MTD",
+      "name": "Mettler Toledo"
+    },
+    {
+      "code": "MU",
+      "name": "Micron Technology"
+    },
+    {
+      "code": "NBIS",
+      "name": "Nebius Group"
+    },
+    {
+      "code": "NCLH",
+      "name": "Norwegian Cruise Line Holdings"
+    },
+    {
+      "code": "NDAQ",
+      "name": "Nasdaq, Inc."
+    },
+    {
+      "code": "NDSN",
+      "name": "Nordson Corporation"
+    },
+    {
+      "code": "NEE",
+      "name": "NextEra Energy"
+    },
+    {
+      "code": "NEM",
+      "name": "Newmont"
+    },
+    {
+      "code": "NET",
+      "name": "Cloudflare"
+    },
+    {
+      "code": "NFLX",
+      "name": "Netflix"
+    },
+    {
+      "code": "NI",
+      "name": "NiSource"
+    },
+    {
+      "code": "NKE",
+      "name": "Nike Inc."
+    },
+    {
+      "code": "NOC",
+      "name": "Northrop Grumman"
+    },
+    {
+      "code": "NOW",
+      "name": "ServiceNow"
+    },
+    {
+      "code": "NRG",
+      "name": "NRG Energy"
+    },
+    {
+      "code": "NSC",
+      "name": "Norfolk Southern"
+    },
+    {
+      "code": "NTAP",
+      "name": "NetApp"
+    },
+    {
+      "code": "NTRS",
+      "name": "Northern Trust"
+    },
+    {
+      "code": "NUE",
+      "name": "Nucor"
+    },
+    {
+      "code": "NVDA",
+      "name": "NVIDIA Corp"
+    },
+    {
+      "code": "NVR",
+      "name": "NVR, Inc."
+    },
+    {
+      "code": "NVT",
+      "name": "nVent Electric"
+    },
+    {
+      "code": "NWS",
+      "name": "News Corp (Class B)"
+    },
+    {
+      "code": "NWSA",
+      "name": "News Corp (Class A)"
+    },
+    {
+      "code": "NXPI",
+      "name": "NXP Semiconductors"
+    },
+    {
+      "code": "O",
+      "name": "Realty Income"
+    },
+    {
+      "code": "ODFL",
+      "name": "Old Dominion"
+    },
+    {
+      "code": "OKE",
+      "name": "Oneok"
+    },
+    {
+      "code": "OKLO",
+      "name": "Oklo Inc."
+    },
+    {
+      "code": "OLED",
+      "name": "Universal Display Corp"
+    },
+    {
+      "code": "OMC",
+      "name": "Omnicom Group"
+    },
+    {
+      "code": "ON",
+      "name": "ON Semiconductor"
+    },
+    {
+      "code": "ONTO",
+      "name": "Onto Innovation"
+    },
+    {
+      "code": "ORCL",
+      "name": "Oracle Corp"
+    },
+    {
+      "code": "ORLY",
+      "name": "O’Reilly Automotive"
+    },
+    {
+      "code": "OTIS",
+      "name": "Otis Worldwide"
+    },
+    {
+      "code": "OXY",
+      "name": "Occidental Petroleum"
+    },
+    {
+      "code": "PANW",
+      "name": "Palo Alto Networks"
+    },
+    {
+      "code": "PAYX",
+      "name": "Paychex"
+    },
+    {
+      "code": "PCAR",
+      "name": "Paccar"
+    },
+    {
+      "code": "PCG",
+      "name": "PG&E Corporation"
+    },
+    {
+      "code": "PDD",
+      "name": "PDD Holdings Inc."
+    },
+    {
+      "code": "PEG",
+      "name": "Public Service Enterprise Group"
+    },
+    {
+      "code": "PEP",
+      "name": "PepsiCo"
+    },
+    {
+      "code": "PFE",
+      "name": "Pfizer"
+    },
+    {
+      "code": "PFG",
+      "name": "Principal Financial Group"
+    },
+    {
+      "code": "PG",
+      "name": "Procter & Gamble"
+    },
+    {
+      "code": "PGR",
+      "name": "Progressive Corp"
+    },
+    {
+      "code": "PH",
+      "name": "Parker Hannifin"
+    },
+    {
+      "code": "PHM",
+      "name": "PulteGroup"
+    },
+    {
+      "code": "PKG",
+      "name": "Packaging Corporation of America"
+    },
+    {
+      "code": "PLD",
+      "name": "Prologis"
+    },
+    {
+      "code": "PLTR",
+      "name": "Palantir Technologies"
+    },
+    {
+      "code": "PM",
+      "name": "Philip Morris International"
+    },
+    {
+      "code": "PNC",
+      "name": "PNC Financial Services"
+    },
+    {
+      "code": "PNR",
+      "name": "Pentair"
+    },
+    {
+      "code": "PNW",
+      "name": "Pinnacle West Capital"
+    },
+    {
+      "code": "PODD",
+      "name": "Insulet Corporation"
+    },
+    {
+      "code": "POOL",
+      "name": "Pool Corporation"
+    },
+    {
+      "code": "POWL",
+      "name": "Powell Industries"
+    },
+    {
+      "code": "PPG",
+      "name": "PPG Industries"
+    },
+    {
+      "code": "PPL",
+      "name": "PPL Corporation"
+    },
+    {
+      "code": "PRU",
+      "name": "Prudential Financial"
+    },
+    {
+      "code": "PSA",
+      "name": "Public Storage"
+    },
+    {
+      "code": "PSKY",
+      "name": "Paramount Skydance Corporation"
+    },
+    {
+      "code": "PSX",
+      "name": "Phillips 66"
+    },
+    {
+      "code": "PTC",
+      "name": "PTC Inc."
+    },
+    {
+      "code": "PWR",
+      "name": "Quanta Services"
+    },
+    {
+      "code": "PYPL",
+      "name": "PayPal Holdings"
+    },
+    {
+      "code": "Q",
+      "name": "Qnity Electronics"
+    },
+    {
+      "code": "QCOM",
+      "name": "Qualcomm"
+    },
+    {
+      "code": "QQQ",
+      "name": "Invesco QQQ Trust (Nasdaq-100)"
+    },
+    {
+      "code": "RCL",
+      "name": "Royal Caribbean Group"
+    },
+    {
+      "code": "REG",
+      "name": "Regency Centers"
+    },
+    {
+      "code": "REGN",
+      "name": "Regeneron Pharmaceuticals"
+    },
+    {
+      "code": "RF",
+      "name": "Regions Financial Corporation"
+    },
+    {
+      "code": "RIO",
+      "name": "Rio Tinto"
+    },
+    {
+      "code": "RIOT",
+      "name": "Riot Platforms"
+    },
+    {
+      "code": "RJF",
+      "name": "Raymond James Financial"
+    },
+    {
+      "code": "RL",
+      "name": "Ralph Lauren Corporation"
+    },
+    {
+      "code": "RMD",
+      "name": "ResMed"
+    },
+    {
+      "code": "ROBO",
+      "name": "ROBO Global ETF"
+    },
+    {
+      "code": "ROK",
+      "name": "Rockwell Automation"
+    },
+    {
+      "code": "ROL",
+      "name": "Rollins, Inc."
+    },
+    {
+      "code": "ROP",
+      "name": "Roper Technologies"
+    },
+    {
+      "code": "ROST",
+      "name": "Ross Stores"
+    },
+    {
+      "code": "RSG",
+      "name": "Republic Services"
+    },
+    {
+      "code": "RTX",
+      "name": "RTX Corp (Raytheon)"
+    },
+    {
+      "code": "RUN",
+      "name": "Sunrun Inc."
+    },
+    {
+      "code": "RVTY",
+      "name": "Revvity"
+    },
+    {
+      "code": "RXRX",
+      "name": "Recursion Pharmaceuticals"
+    },
+    {
+      "code": "SATS",
+      "name": "EchoStar"
+    },
+    {
+      "code": "SBAC",
+      "name": "SBA Communications"
+    },
+    {
+      "code": "SBUX",
+      "name": "Starbucks Corp"
+    },
+    {
+      "code": "SCCO",
+      "name": "Southern Copper Corp"
+    },
+    {
+      "code": "SCHW",
+      "name": "Charles Schwab Corporation"
+    },
+    {
+      "code": "SEDG",
+      "name": "SolarEdge Technologies"
+    },
+    {
+      "code": "SHOP",
+      "name": "Shopify Inc."
+    },
+    {
+      "code": "SHW",
+      "name": "Sherwin-Williams"
+    },
+    {
+      "code": "SIEGY",
+      "name": "Siemens AG"
+    },
+    {
+      "code": "SJM",
+      "name": "J.M. Smucker Company (The)"
+    },
+    {
+      "code": "SLB",
+      "name": "SLB (Schlumberger)"
+    },
+    {
+      "code": "SMCI",
+      "name": "Super Micro Computer"
+    },
+    {
+      "code": "SMH",
+      "name": "VanEck Semiconductor ETF"
+    },
+    {
+      "code": "SMR",
+      "name": "NuScale Power"
+    },
+    {
+      "code": "SNA",
+      "name": "Snap-on"
+    },
+    {
+      "code": "SNDK",
+      "name": "SanDisk (Western Digital)"
+    },
+    {
+      "code": "SNOW",
+      "name": "Snowflake Inc."
+    },
+    {
+      "code": "SNPS",
+      "name": "Synopsys Inc."
+    },
+    {
+      "code": "SO",
+      "name": "Southern Company"
+    },
+    {
+      "code": "SOLV",
+      "name": "Solventum"
+    },
+    {
+      "code": "SOXL",
+      "name": "Direxion Daily Semiconductor Bull 3X ETF"
+    },
+    {
+      "code": "SOXX",
+      "name": "iShares Semiconductor ETF"
+    },
+    {
+      "code": "SPG",
+      "name": "Simon Property Group"
+    },
+    {
+      "code": "SPGI",
+      "name": "S&P Global"
+    },
+    {
+      "code": "SPY",
+      "name": "SPDR S&P 500 ETF Trust"
+    },
+    {
+      "code": "SRE",
+      "name": "Sempra"
+    },
+    {
+      "code": "STE",
+      "name": "Steris"
+    },
+    {
+      "code": "STLD",
+      "name": "Steel Dynamics"
+    },
+    {
+      "code": "STT",
+      "name": "State Street Corporation"
+    },
+    {
+      "code": "STX",
+      "name": "Seagate Technology"
+    },
+    {
+      "code": "STZ",
+      "name": "Constellation Brands"
+    },
+    {
+      "code": "SW",
+      "name": "Smurfit Westrock"
+    },
+    {
+      "code": "SWK",
+      "name": "Stanley Black & Decker"
+    },
+    {
+      "code": "SWKS",
+      "name": "Skyworks Solutions"
+    },
+    {
+      "code": "SYF",
+      "name": "Synchrony Financial"
+    },
+    {
+      "code": "SYK",
+      "name": "Stryker Corporation"
+    },
+    {
+      "code": "SYM",
+      "name": "Symbotic Inc."
+    },
+    {
+      "code": "SYY",
+      "name": "Sysco"
+    },
+    {
+      "code": "T",
+      "name": "AT&T"
+    },
+    {
+      "code": "TAP",
+      "name": "Molson Coors Beverage Company"
+    },
+    {
+      "code": "TDG",
+      "name": "TransDigm Group"
+    },
+    {
+      "code": "TDY",
+      "name": "Teledyne Technologies"
+    },
+    {
+      "code": "TECH",
+      "name": "Bio-Techne"
+    },
+    {
+      "code": "TECK",
+      "name": "Teck Resources"
+    },
+    {
+      "code": "TEL",
+      "name": "TE Connectivity"
+    },
+    {
+      "code": "TEM",
+      "name": "Tempus AI"
+    },
+    {
+      "code": "TER",
+      "name": "Teradyne"
+    },
+    {
+      "code": "TFC",
+      "name": "Truist Financial"
+    },
+    {
+      "code": "TGT",
+      "name": "Target Corp"
+    },
+    {
+      "code": "TJX",
+      "name": "TJX Companies"
+    },
+    {
+      "code": "TKO",
+      "name": "TKO Group Holdings"
+    },
+    {
+      "code": "TMO",
+      "name": "Thermo Fisher Scientific"
+    },
+    {
+      "code": "TMUS",
+      "name": "T-Mobile US"
+    },
+    {
+      "code": "TPL",
+      "name": "Texas Pacific Land Corporation"
+    },
+    {
+      "code": "TPR",
+      "name": "Tapestry, Inc."
+    },
+    {
+      "code": "TRGP",
+      "name": "Targa Resources"
+    },
+    {
+      "code": "TRI",
+      "name": "Thomson Reuters"
+    },
+    {
+      "code": "TRMB",
+      "name": "Trimble Inc."
+    },
+    {
+      "code": "TROW",
+      "name": "T. Rowe Price Group"
+    },
+    {
+      "code": "TRV",
+      "name": "Travelers Companies"
+    },
+    {
+      "code": "TSCO",
+      "name": "Tractor Supply"
+    },
+    {
+      "code": "TSLA",
+      "name": "Tesla Inc."
+    },
+    {
+      "code": "TSN",
+      "name": "Tyson Foods"
+    },
+    {
+      "code": "TT",
+      "name": "Trane Technologies"
+    },
+    {
+      "code": "TTD",
+      "name": "Trade Desk (The)"
+    },
+    {
+      "code": "TTWO",
+      "name": "Take-Two Interactive"
+    },
+    {
+      "code": "TXN",
+      "name": "Texas Instruments"
+    },
+    {
+      "code": "TXT",
+      "name": "Textron"
+    },
+    {
+      "code": "TYL",
+      "name": "Tyler Technologies"
+    },
+    {
+      "code": "UAL",
+      "name": "United Airlines Holdings"
+    },
+    {
+      "code": "UBER",
+      "name": "Uber Technologies"
+    },
+    {
+      "code": "UDR",
+      "name": "UDR, Inc."
+    },
+    {
+      "code": "UHS",
+      "name": "Universal Health Services"
+    },
+    {
+      "code": "ULTA",
+      "name": "Ulta Beauty"
+    },
+    {
+      "code": "UNH",
+      "name": "UnitedHealth Group"
+    },
+    {
+      "code": "UNP",
+      "name": "Union Pacific Corporation"
+    },
+    {
+      "code": "UPS",
+      "name": "United Parcel Service"
+    },
+    {
+      "code": "URI",
+      "name": "United Rentals"
+    },
+    {
+      "code": "USB",
+      "name": "U.S. Bancorp"
+    },
+    {
+      "code": "V",
+      "name": "Visa Inc."
+    },
+    {
+      "code": "VEEV",
+      "name": "Veeva Systems"
+    },
+    {
+      "code": "VICI",
+      "name": "Vici Properties"
+    },
+    {
+      "code": "VLO",
+      "name": "Valero Energy"
+    },
+    {
+      "code": "VLTO",
+      "name": "Veralto"
+    },
+    {
+      "code": "VMC",
+      "name": "Vulcan Materials Company"
+    },
+    {
+      "code": "VRSK",
+      "name": "Verisk Analytics"
+    },
+    {
+      "code": "VRSN",
+      "name": "Verisign"
+    },
+    {
+      "code": "VRT",
+      "name": "Vertiv Holdings"
+    },
+    {
+      "code": "VRTX",
+      "name": "Vertex Pharmaceuticals"
+    },
+    {
+      "code": "VST",
+      "name": "Vistra Corp"
+    },
+    {
+      "code": "VTR",
+      "name": "Ventas"
+    },
+    {
+      "code": "VTRS",
+      "name": "Viatris"
+    },
+    {
+      "code": "VZ",
+      "name": "Verizon"
+    },
+    {
+      "code": "WAB",
+      "name": "Wabtec"
+    },
+    {
+      "code": "WAT",
+      "name": "Waters Corporation"
+    },
+    {
+      "code": "WBD",
+      "name": "Warner Bros. Discovery"
+    },
+    {
+      "code": "WDAY",
+      "name": "Workday, Inc."
+    },
+    {
+      "code": "WDC",
+      "name": "Western Digital"
+    },
+    {
+      "code": "WEC",
+      "name": "WEC Energy Group"
+    },
+    {
+      "code": "WELL",
+      "name": "Welltower"
+    },
+    {
+      "code": "WFC",
+      "name": "Wells Fargo"
+    },
+    {
+      "code": "WM",
+      "name": "Waste Management"
+    },
+    {
+      "code": "WMB",
+      "name": "Williams Companies"
+    },
+    {
+      "code": "WMT",
+      "name": "Walmart Inc."
+    },
+    {
+      "code": "WOLF",
+      "name": "Wolfspeed Inc."
+    },
+    {
+      "code": "WRB",
+      "name": "W. R. Berkley Corporation"
+    },
+    {
+      "code": "WSM",
+      "name": "Williams-Sonoma, Inc."
+    },
+    {
+      "code": "WST",
+      "name": "West Pharmaceutical Services"
+    },
+    {
+      "code": "WTW",
+      "name": "Willis Towers Watson"
+    },
+    {
+      "code": "WY",
+      "name": "Weyerhaeuser"
+    },
+    {
+      "code": "WYNN",
+      "name": "Wynn Resorts"
+    },
+    {
+      "code": "XEL",
+      "name": "Xcel Energy"
+    },
+    {
+      "code": "XLC",
+      "name": "Communication Services Select Sector SPDR ETF"
+    },
+    {
+      "code": "XLE",
+      "name": "Energy Select Sector SPDR ETF"
+    },
+    {
+      "code": "XLF",
+      "name": "Financials Select Sector SPDR ETF"
+    },
+    {
+      "code": "XLK",
+      "name": "Technology Select Sector SPDR ETF"
+    },
+    {
+      "code": "XLV",
+      "name": "Health Care Select Sector SPDR ETF"
+    },
+    {
+      "code": "XLY",
+      "name": "Consumer Discretionary Select Sector SPDR ETF"
+    },
+    {
+      "code": "XOM",
+      "name": "ExxonMobil"
+    },
+    {
+      "code": "XYL",
+      "name": "Xylem Inc."
+    },
+    {
+      "code": "XYZ",
+      "name": "Block, Inc."
+    },
+    {
+      "code": "YUM",
+      "name": "Yum! Brands"
+    },
+    {
+      "code": "ZBH",
+      "name": "Zimmer Biomet"
+    },
+    {
+      "code": "ZBRA",
+      "name": "Zebra Technologies"
+    },
+    {
+      "code": "ZS",
+      "name": "Zscaler Inc."
+    },
+    {
+      "code": "ZTS",
+      "name": "Zoetis"
+    },
+    {
+      "code": "IGV",
+      "name": "iShares Expanded Tech-Software Sector ETF"
+    },
+    {
+      "code": "NASA",
+      "name": "Space Exploration & Technology ETF"
+    }
+  ],
+  "_special_symbols": {
+    "DXY": {
+      "yahoo_code": "DX-Y.NYB",
+      "name": "US Dollar Index",
+      "note": "美元指数，在Yahoo Finance上代码为DX-Y.NYB"
+    },
+    "^VIX": {
+      "yahoo_code": "^VIX",
+      "name": "CBOE Volatility Index",
+      "note": "VIX恐慌指数"
+    }
+  },
+  "_unavailable": {
+    "TNX": {
+      "name": "10-Year Treasury Yield",
+      "reason": "指数类无标准OHLCV历史数据"
+    }
+  }
+}

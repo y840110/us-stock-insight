@@ -1,0 +1,993 @@
+{
+  "method": "gaussian_sigma5",
+  "min_gap": 5,
+  "min_dur": 5,
+  "min_chg": 2.0,
+  "segments": [
+    {
+      "start_date": "2020-01-02",
+      "end_date": "2020-01-22",
+      "type": "bull",
+      "chg_pct": 2.5795,
+      "duration": 13,
+      "start_idx": 0,
+      "end_idx": 13,
+      "start_price": 323.71,
+      "end_price": 332.06
+    },
+    {
+      "start_date": "2020-01-22",
+      "end_date": "2020-02-11",
+      "type": "bull",
+      "chg_pct": 1.1414,
+      "duration": 14,
+      "start_idx": 13,
+      "end_idx": 27,
+      "start_price": 332.06,
+      "end_price": 335.85
+    },
+    {
+      "start_date": "2020-02-11",
+      "end_date": "2020-03-23",
+      "type": "bear",
+      "chg_pct": -33.3125,
+      "duration": 28,
+      "start_idx": 27,
+      "end_idx": 55,
+      "start_price": 335.85,
+      "end_price": 223.97
+    },
+    {
+      "start_date": "2020-03-23",
+      "end_date": "2020-06-10",
+      "type": "bull",
+      "chg_pct": 43.0125,
+      "duration": 55,
+      "start_idx": 55,
+      "end_idx": 110,
+      "start_price": 223.97,
+      "end_price": 320.305
+    },
+    {
+      "start_date": "2020-06-10",
+      "end_date": "2020-06-23",
+      "type": "bear",
+      "chg_pct": -2.2635,
+      "duration": 9,
+      "start_idx": 110,
+      "end_idx": 119,
+      "start_price": 320.305,
+      "end_price": 313.055
+    },
+    {
+      "start_date": "2020-06-23",
+      "end_date": "2020-08-31",
+      "type": "bull",
+      "chg_pct": 11.8589,
+      "duration": 48,
+      "start_idx": 119,
+      "end_idx": 167,
+      "start_price": 313.055,
+      "end_price": 350.18
+    },
+    {
+      "start_date": "2020-08-31",
+      "end_date": "2020-09-23",
+      "type": "bear",
+      "chg_pct": -6.7194,
+      "duration": 16,
+      "start_idx": 167,
+      "end_idx": 183,
+      "start_price": 350.18,
+      "end_price": 326.65
+    },
+    {
+      "start_date": "2020-09-23",
+      "end_date": "2020-10-14",
+      "type": "bull",
+      "chg_pct": 7.006,
+      "duration": 15,
+      "start_idx": 183,
+      "end_idx": 198,
+      "start_price": 326.65,
+      "end_price": 349.535
+    },
+    {
+      "start_date": "2020-10-14",
+      "end_date": "2020-10-27",
+      "type": "bear",
+      "chg_pct": -2.9983,
+      "duration": 9,
+      "start_idx": 198,
+      "end_idx": 207,
+      "start_price": 349.535,
+      "end_price": 339.055
+    },
+    {
+      "start_date": "2020-10-27",
+      "end_date": "2021-02-16",
+      "type": "bull",
+      "chg_pct": 15.8662,
+      "duration": 75,
+      "start_idx": 207,
+      "end_idx": 282,
+      "start_price": 339.055,
+      "end_price": 392.85
+    },
+    {
+      "start_date": "2021-02-16",
+      "end_date": "2021-03-01",
+      "type": "bear",
+      "chg_pct": -1.8086,
+      "duration": 9,
+      "start_idx": 282,
+      "end_idx": 291,
+      "start_price": 392.85,
+      "end_price": 385.745
+    },
+    {
+      "start_date": "2021-03-01",
+      "end_date": "2021-04-30",
+      "type": "bull",
+      "chg_pct": 8.2166,
+      "duration": 43,
+      "start_idx": 291,
+      "end_idx": 334,
+      "start_price": 385.745,
+      "end_price": 417.44
+    },
+    {
+      "start_date": "2021-04-30",
+      "end_date": "2021-05-13",
+      "type": "bear",
+      "chg_pct": -1.8578,
+      "duration": 9,
+      "start_idx": 334,
+      "end_idx": 343,
+      "start_price": 417.44,
+      "end_price": 409.685
+    },
+    {
+      "start_date": "2021-05-13",
+      "end_date": "2021-09-01",
+      "type": "bull",
+      "chg_pct": 10.4092,
+      "duration": 77,
+      "start_idx": 343,
+      "end_idx": 420,
+      "start_price": 409.685,
+      "end_price": 452.33
+    },
+    {
+      "start_date": "2021-09-01",
+      "end_date": "2021-10-01",
+      "type": "bear",
+      "chg_pct": -4.5763,
+      "duration": 21,
+      "start_idx": 420,
+      "end_idx": 441,
+      "start_price": 452.33,
+      "end_price": 431.63
+    },
+    {
+      "start_date": "2021-10-01",
+      "end_date": "2021-11-15",
+      "type": "bull",
+      "chg_pct": 8.315,
+      "duration": 31,
+      "start_idx": 441,
+      "end_idx": 472,
+      "start_price": 431.63,
+      "end_price": 467.52
+    },
+    {
+      "start_date": "2021-11-15",
+      "end_date": "2021-12-02",
+      "type": "bear",
+      "chg_pct": -2.7443,
+      "duration": 12,
+      "start_idx": 472,
+      "end_idx": 484,
+      "start_price": 467.52,
+      "end_price": 454.69
+    },
+    {
+      "start_date": "2021-12-02",
+      "end_date": "2021-12-30",
+      "type": "bull",
+      "chg_pct": 4.9803,
+      "duration": 19,
+      "start_idx": 484,
+      "end_idx": 503,
+      "start_price": 454.69,
+      "end_price": 477.335
+    },
+    {
+      "start_date": "2021-12-30",
+      "end_date": "2022-01-27",
+      "type": "bear",
+      "chg_pct": -8.7601,
+      "duration": 19,
+      "start_idx": 503,
+      "end_idx": 522,
+      "start_price": 477.335,
+      "end_price": 435.52
+    },
+    {
+      "start_date": "2022-01-27",
+      "end_date": "2022-02-04",
+      "type": "bull",
+      "chg_pct": 2.9356,
+      "duration": 6,
+      "start_idx": 522,
+      "end_idx": 528,
+      "start_price": 435.52,
+      "end_price": 448.305
+    },
+    {
+      "start_date": "2022-02-04",
+      "end_date": "2022-03-07",
+      "type": "bear",
+      "chg_pct": -5.0133,
+      "duration": 20,
+      "start_idx": 528,
+      "end_idx": 548,
+      "start_price": 448.305,
+      "end_price": 425.83
+    },
+    {
+      "start_date": "2022-03-07",
+      "end_date": "2022-03-31",
+      "type": "bull",
+      "chg_pct": 6.8408,
+      "duration": 18,
+      "start_idx": 548,
+      "end_idx": 566,
+      "start_price": 425.83,
+      "end_price": 454.96
+    },
+    {
+      "start_date": "2022-03-31",
+      "end_date": "2022-05-18",
+      "type": "bear",
+      "chg_pct": -12.7011,
+      "duration": 33,
+      "start_idx": 566,
+      "end_idx": 599,
+      "start_price": 454.96,
+      "end_price": 397.175
+    },
+    {
+      "start_date": "2022-05-18",
+      "end_date": "2022-05-31",
+      "type": "bull",
+      "chg_pct": 4.0461,
+      "duration": 8,
+      "start_idx": 599,
+      "end_idx": 607,
+      "start_price": 397.175,
+      "end_price": 413.245
+    },
+    {
+      "start_date": "2022-05-31",
+      "end_date": "2022-06-23",
+      "type": "bear",
+      "chg_pct": -9.0467,
+      "duration": 16,
+      "start_idx": 607,
+      "end_idx": 623,
+      "start_price": 413.245,
+      "end_price": 375.86
+    },
+    {
+      "start_date": "2022-06-23",
+      "end_date": "2022-08-15",
+      "type": "bull",
+      "chg_pct": 13.6221,
+      "duration": 36,
+      "start_idx": 623,
+      "end_idx": 659,
+      "start_price": 375.86,
+      "end_price": 427.06
+    },
+    {
+      "start_date": "2022-08-15",
+      "end_date": "2022-10-10",
+      "type": "bear",
+      "chg_pct": -15.4826,
+      "duration": 39,
+      "start_idx": 659,
+      "end_idx": 698,
+      "start_price": 427.06,
+      "end_price": 360.94
+    },
+    {
+      "start_date": "2022-10-10",
+      "end_date": "2022-11-30",
+      "type": "bull",
+      "chg_pct": 10.9824,
+      "duration": 36,
+      "start_idx": 698,
+      "end_idx": 734,
+      "start_price": 360.94,
+      "end_price": 400.58
+    },
+    {
+      "start_date": "2022-11-30",
+      "end_date": "2022-12-28",
+      "type": "bear",
+      "chg_pct": -5.1613,
+      "duration": 19,
+      "start_idx": 734,
+      "end_idx": 753,
+      "start_price": 400.58,
+      "end_price": 379.905
+    },
+    {
+      "start_date": "2022-12-28",
+      "end_date": "2023-02-08",
+      "type": "bull",
+      "chg_pct": 8.5087,
+      "duration": 28,
+      "start_idx": 753,
+      "end_idx": 781,
+      "start_price": 379.905,
+      "end_price": 412.23
+    },
+    {
+      "start_date": "2023-02-08",
+      "end_date": "2023-03-15",
+      "type": "bear",
+      "chg_pct": -6.2174,
+      "duration": 24,
+      "start_idx": 781,
+      "end_idx": 805,
+      "start_price": 412.23,
+      "end_price": 386.6
+    },
+    {
+      "start_date": "2023-03-15",
+      "end_date": "2023-04-21",
+      "type": "bull",
+      "chg_pct": 6.4214,
+      "duration": 26,
+      "start_idx": 805,
+      "end_idx": 831,
+      "start_price": 386.6,
+      "end_price": 411.425
+    },
+    {
+      "start_date": "2023-04-21",
+      "end_date": "2023-04-28",
+      "type": "bull",
+      "chg_pct": 0.5493,
+      "duration": 5,
+      "start_idx": 831,
+      "end_idx": 836,
+      "start_price": 411.425,
+      "end_price": 413.685
+    },
+    {
+      "start_date": "2023-04-28",
+      "end_date": "2023-07-26",
+      "type": "bull",
+      "chg_pct": 10.0318,
+      "duration": 60,
+      "start_idx": 836,
+      "end_idx": 896,
+      "start_price": 413.685,
+      "end_price": 455.185
+    },
+    {
+      "start_date": "2023-07-26",
+      "end_date": "2023-08-21",
+      "type": "bear",
+      "chg_pct": -3.838,
+      "duration": 18,
+      "start_idx": 896,
+      "end_idx": 914,
+      "start_price": 455.185,
+      "end_price": 437.715
+    },
+    {
+      "start_date": "2023-08-21",
+      "end_date": "2023-09-05",
+      "type": "bull",
+      "chg_pct": 2.8329,
+      "duration": 10,
+      "start_idx": 914,
+      "end_idx": 924,
+      "start_price": 437.715,
+      "end_price": 450.115
+    },
+    {
+      "start_date": "2023-09-05",
+      "end_date": "2023-10-03",
+      "type": "bear",
+      "chg_pct": -5.8518,
+      "duration": 20,
+      "start_idx": 924,
+      "end_idx": 944,
+      "start_price": 450.115,
+      "end_price": 423.775
+    },
+    {
+      "start_date": "2023-10-03",
+      "end_date": "2023-10-11",
+      "type": "bull",
+      "chg_pct": 2.6205,
+      "duration": 6,
+      "start_idx": 944,
+      "end_idx": 950,
+      "start_price": 423.775,
+      "end_price": 434.88
+    },
+    {
+      "start_date": "2023-10-11",
+      "end_date": "2023-10-25",
+      "type": "bear",
+      "chg_pct": -3.5435,
+      "duration": 10,
+      "start_idx": 950,
+      "end_idx": 960,
+      "start_price": 434.88,
+      "end_price": 419.47
+    },
+    {
+      "start_date": "2023-10-25",
+      "end_date": "2024-03-27",
+      "type": "bull",
+      "chg_pct": 24.2878,
+      "duration": 105,
+      "start_idx": 960,
+      "end_idx": 1065,
+      "start_price": 419.47,
+      "end_price": 521.35
+    },
+    {
+      "start_date": "2024-03-27",
+      "end_date": "2024-04-22",
+      "type": "bear",
+      "chg_pct": -4.3052,
+      "duration": 17,
+      "start_idx": 1065,
+      "end_idx": 1082,
+      "start_price": 521.35,
+      "end_price": 498.905
+    },
+    {
+      "start_date": "2024-04-22",
+      "end_date": "2024-07-12",
+      "type": "bull",
+      "chg_pct": 12.328,
+      "duration": 56,
+      "start_idx": 1082,
+      "end_idx": 1138,
+      "start_price": 498.905,
+      "end_price": 560.41
+    },
+    {
+      "start_date": "2024-07-12",
+      "end_date": "2024-08-06",
+      "type": "bear",
+      "chg_pct": -6.5309,
+      "duration": 17,
+      "start_idx": 1138,
+      "end_idx": 1155,
+      "start_price": 560.41,
+      "end_price": 523.81
+    },
+    {
+      "start_date": "2024-08-06",
+      "end_date": "2024-08-27",
+      "type": "bull",
+      "chg_pct": 6.9453,
+      "duration": 15,
+      "start_idx": 1155,
+      "end_idx": 1170,
+      "start_price": 523.81,
+      "end_price": 560.19
+    },
+    {
+      "start_date": "2024-08-27",
+      "end_date": "2024-09-05",
+      "type": "bear",
+      "chg_pct": -1.7387,
+      "duration": 6,
+      "start_idx": 1170,
+      "end_idx": 1176,
+      "start_price": 560.19,
+      "end_price": 550.45
+    },
+    {
+      "start_date": "2024-09-05",
+      "end_date": "2024-10-22",
+      "type": "bull",
+      "chg_pct": 5.8116,
+      "duration": 33,
+      "start_idx": 1176,
+      "end_idx": 1209,
+      "start_price": 550.45,
+      "end_price": 582.44
+    },
+    {
+      "start_date": "2024-10-22",
+      "end_date": "2024-12-06",
+      "type": "bull",
+      "chg_pct": 4.3962,
+      "duration": 32,
+      "start_idx": 1209,
+      "end_idx": 1241,
+      "start_price": 582.44,
+      "end_price": 608.045
+    },
+    {
+      "start_date": "2024-12-06",
+      "end_date": "2025-01-06",
+      "type": "bear",
+      "chg_pct": -1.874,
+      "duration": 19,
+      "start_idx": 1241,
+      "end_idx": 1260,
+      "start_price": 608.045,
+      "end_price": 596.65
+    },
+    {
+      "start_date": "2025-01-06",
+      "end_date": "2025-02-11",
+      "type": "bull",
+      "chg_pct": 1.2562,
+      "duration": 24,
+      "start_idx": 1260,
+      "end_idx": 1284,
+      "start_price": 596.65,
+      "end_price": 604.145
+    },
+    {
+      "start_date": "2025-02-11",
+      "end_date": "2025-04-11",
+      "type": "bear",
+      "chg_pct": -12.5624,
+      "duration": 42,
+      "start_idx": 1284,
+      "end_idx": 1326,
+      "start_price": 604.145,
+      "end_price": 528.25
+    },
+    {
+      "start_date": "2025-04-11",
+      "end_date": "2025-10-31",
+      "type": "bull",
+      "chg_pct": 29.1358,
+      "duration": 140,
+      "start_idx": 1326,
+      "end_idx": 1466,
+      "start_price": 528.25,
+      "end_price": 682.16
+    },
+    {
+      "start_date": "2025-10-31",
+      "end_date": "2025-11-18",
+      "type": "bear",
+      "chg_pct": -3.1767,
+      "duration": 12,
+      "start_idx": 1466,
+      "end_idx": 1478,
+      "start_price": 682.16,
+      "end_price": 660.49
+    },
+    {
+      "start_date": "2025-11-18",
+      "end_date": "2026-01-27",
+      "type": "bull",
+      "chg_pct": 5.2325,
+      "duration": 46,
+      "start_idx": 1478,
+      "end_idx": 1524,
+      "start_price": 660.49,
+      "end_price": 695.05
+    },
+    {
+      "start_date": "2026-01-27",
+      "end_date": "2026-03-26",
+      "type": "bear",
+      "chg_pct": -6.5053,
+      "duration": 41,
+      "start_idx": 1524,
+      "end_idx": 1565,
+      "start_price": 695.05,
+      "end_price": 649.835
+    },
+    {
+      "start_date": "2026-03-26",
+      "end_date": "2026-05-13",
+      "type": "bull",
+      "chg_pct": 13.8274,
+      "duration": 33,
+      "start_idx": 1565,
+      "end_idx": 1598,
+      "start_price": 649.835,
+      "end_price": 739.69
+    }
+  ],
+  "extrema": [
+    {
+      "idx": 13,
+      "date": "2020-01-22",
+      "price": 328.46151210356,
+      "type": "peak",
+      "curv": 0.05563063211471331
+    },
+    {
+      "idx": 27,
+      "date": "2020-02-11",
+      "price": 332.3137237081228,
+      "type": "peak",
+      "curv": 0.2666673105152739
+    },
+    {
+      "idx": 55,
+      "date": "2020-03-23",
+      "price": 248.84567683156752,
+      "type": "valley",
+      "curv": 0.6141851225696726
+    },
+    {
+      "idx": 110,
+      "date": "2020-06-10",
+      "price": 311.310406426368,
+      "type": "peak",
+      "curv": 0.18104111139039958
+    },
+    {
+      "idx": 119,
+      "date": "2020-06-23",
+      "price": 309.04627147887834,
+      "type": "valley",
+      "curv": 0.11263015745565497
+    },
+    {
+      "idx": 167,
+      "date": "2020-08-31",
+      "price": 344.791754529642,
+      "type": "peak",
+      "curv": 0.2450958770322842
+    },
+    {
+      "idx": 183,
+      "date": "2020-09-23",
+      "price": 332.2452787646936,
+      "type": "valley",
+      "curv": 0.2462634151898726
+    },
+    {
+      "idx": 198,
+      "date": "2020-10-14",
+      "price": 344.38537275717727,
+      "type": "peak",
+      "curv": 0.24153555843589913
+    },
+    {
+      "idx": 207,
+      "date": "2020-10-27",
+      "price": 340.05094034404397,
+      "type": "valley",
+      "curv": 0.2621654473620225
+    },
+    {
+      "idx": 282,
+      "date": "2021-02-16",
+      "price": 388.44981667564355,
+      "type": "peak",
+      "curv": 0.16198913635574286
+    },
+    {
+      "idx": 291,
+      "date": "2021-03-01",
+      "price": 386.2099769064529,
+      "type": "valley",
+      "curv": 0.13127208601851237
+    },
+    {
+      "idx": 334,
+      "date": "2021-04-30",
+      "price": 416.45495920598125,
+      "type": "peak",
+      "curv": 0.07519793520263818
+    },
+    {
+      "idx": 343,
+      "date": "2021-05-13",
+      "price": 414.84450490326685,
+      "type": "valley",
+      "curv": 0.09534134789825544
+    },
+    {
+      "idx": 420,
+      "date": "2021-09-01",
+      "price": 449.4299348982605,
+      "type": "peak",
+      "curv": 0.16050832918026003
+    },
+    {
+      "idx": 441,
+      "date": "2021-10-01",
+      "price": 436.2821239452959,
+      "type": "valley",
+      "curv": 0.16323757462092203
+    },
+    {
+      "idx": 472,
+      "date": "2021-11-15",
+      "price": 466.5762772552609,
+      "type": "peak",
+      "curv": 0.12097693909113616
+    },
+    {
+      "idx": 484,
+      "date": "2021-12-02",
+      "price": 462.52343791575026,
+      "type": "valley",
+      "curv": 0.14672014683765155
+    },
+    {
+      "idx": 503,
+      "date": "2021-12-30",
+      "price": 471.3520685046791,
+      "type": "peak",
+      "curv": 0.25117391635819786
+    },
+    {
+      "idx": 522,
+      "date": "2022-01-27",
+      "price": 445.078572011128,
+      "type": "valley",
+      "curv": 0.33186154807599166
+    },
+    {
+      "idx": 528,
+      "date": "2022-02-04",
+      "price": 446.34444600317835,
+      "type": "peak",
+      "curv": 0.18572304645448412
+    },
+    {
+      "idx": 548,
+      "date": "2022-03-07",
+      "price": 429.3303080487543,
+      "type": "valley",
+      "curv": 0.19042996238685816
+    },
+    {
+      "idx": 566,
+      "date": "2022-03-31",
+      "price": 450.2741786276225,
+      "type": "peak",
+      "curv": 0.31047307099616717
+    },
+    {
+      "idx": 599,
+      "date": "2022-05-18",
+      "price": 399.23070420172706,
+      "type": "valley",
+      "curv": 0.29909104860233526
+    },
+    {
+      "idx": 607,
+      "date": "2022-05-31",
+      "price": 403.7406602863462,
+      "type": "peak",
+      "curv": 0.3333888575551214
+    },
+    {
+      "idx": 623,
+      "date": "2022-06-23",
+      "price": 379.95918623854425,
+      "type": "valley",
+      "curv": 0.26291227785904425
+    },
+    {
+      "idx": 659,
+      "date": "2022-08-15",
+      "price": 419.40795762728413,
+      "type": "peak",
+      "curv": 0.33626228606726727
+    },
+    {
+      "idx": 698,
+      "date": "2022-10-10",
+      "price": 366.0865100201391,
+      "type": "valley",
+      "curv": 0.1562493496495989
+    },
+    {
+      "idx": 734,
+      "date": "2022-11-30",
+      "price": 398.8299643093506,
+      "type": "peak",
+      "curv": 0.14475583159671146
+    },
+    {
+      "idx": 753,
+      "date": "2022-12-28",
+      "price": 383.5996123745622,
+      "type": "valley",
+      "curv": 0.24178509322334207
+    },
+    {
+      "idx": 781,
+      "date": "2023-02-08",
+      "price": 408.95419016872165,
+      "type": "peak",
+      "curv": 0.20571114211595898
+    },
+    {
+      "idx": 805,
+      "date": "2023-03-15",
+      "price": 393.5762160556334,
+      "type": "valley",
+      "curv": 0.1839820474099838
+    },
+    {
+      "idx": 831,
+      "date": "2023-04-21",
+      "price": 411.221076192486,
+      "type": "peak",
+      "curv": 0.03204023743413131
+    },
+    {
+      "idx": 836,
+      "date": "2023-04-28",
+      "price": 411.09814925417476,
+      "type": "valley",
+      "curv": 0.019085130134300243
+    },
+    {
+      "idx": 896,
+      "date": "2023-07-26",
+      "price": 453.1575575229969,
+      "type": "peak",
+      "curv": 0.16169678765766093
+    },
+    {
+      "idx": 914,
+      "date": "2023-08-21",
+      "price": 442.33649358864153,
+      "type": "valley",
+      "curv": 0.18411779147641028
+    },
+    {
+      "idx": 924,
+      "date": "2023-09-05",
+      "price": 446.21106774571257,
+      "type": "peak",
+      "curv": 0.15402594151520077
+    },
+    {
+      "idx": 944,
+      "date": "2023-10-03",
+      "price": 428.7180200379442,
+      "type": "valley",
+      "curv": 0.19247924536473704
+    },
+    {
+      "idx": 950,
+      "date": "2023-10-11",
+      "price": 429.7522726424272,
+      "type": "peak",
+      "curv": 0.15006238799708171
+    },
+    {
+      "idx": 960,
+      "date": "2023-10-25",
+      "price": 423.87522254771034,
+      "type": "valley",
+      "curv": 0.3017194775755172
+    },
+    {
+      "idx": 1065,
+      "date": "2024-03-27",
+      "price": 519.0778424068582,
+      "type": "peak",
+      "curv": 0.15676796359682044
+    },
+    {
+      "idx": 1082,
+      "date": "2024-04-22",
+      "price": 505.36363723133593,
+      "type": "valley",
+      "curv": 0.24924079920373288
+    },
+    {
+      "idx": 1138,
+      "date": "2024-07-12",
+      "price": 555.4009496733369,
+      "type": "peak",
+      "curv": 0.2702963380062329
+    },
+    {
+      "idx": 1155,
+      "date": "2024-08-06",
+      "price": 536.8379623265398,
+      "type": "valley",
+      "curv": 0.45274659897725655
+    },
+    {
+      "idx": 1170,
+      "date": "2024-08-27",
+      "price": 556.1880242627632,
+      "type": "peak",
+      "curv": 0.25056330469107024
+    },
+    {
+      "idx": 1176,
+      "date": "2024-09-05",
+      "price": 554.6491951692949,
+      "type": "valley",
+      "curv": 0.20570672431432513
+    },
+    {
+      "idx": 1209,
+      "date": "2024-10-22",
+      "price": 580.3347631774175,
+      "type": "peak",
+      "curv": 0.07441475382785256
+    },
+    {
+      "idx": 1241,
+      "date": "2024-12-06",
+      "price": 603.3942112198067,
+      "type": "peak",
+      "curv": 0.22347136141965507
+    },
+    {
+      "idx": 1260,
+      "date": "2025-01-06",
+      "price": 590.3346738575854,
+      "type": "valley",
+      "curv": 0.18314752263049172
+    },
+    {
+      "idx": 1284,
+      "date": "2025-02-11",
+      "price": 604.0204688082183,
+      "type": "peak",
+      "curv": 0.12670372236206617
+    },
+    {
+      "idx": 1326,
+      "date": "2025-04-11",
+      "price": 529.9058102703182,
+      "type": "valley",
+      "curv": 0.5376043561382744
+    },
+    {
+      "idx": 1466,
+      "date": "2025-10-31",
+      "price": 678.1825228221094,
+      "type": "peak",
+      "curv": 0.23741786665590325
+    },
+    {
+      "idx": 1478,
+      "date": "2025-11-18",
+      "price": 670.9042159735026,
+      "type": "valley",
+      "curv": 0.26577837767516144
+    },
+    {
+      "idx": 1524,
+      "date": "2026-01-27",
+      "price": 690.1718344705871,
+      "type": "peak",
+      "curv": 0.042601066471632976
+    },
+    {
+      "idx": 1565,
+      "date": "2026-03-26",
+      "price": 654.975328868266,
+      "type": "valley",
+      "curv": 0.5199866130353428
+    }
+  ]
+}

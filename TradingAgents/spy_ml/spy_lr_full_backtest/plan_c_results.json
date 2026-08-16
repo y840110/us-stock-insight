@@ -1,0 +1,42 @@
+{
+  "SPY_买入持有": {
+    "name": "SPY_买入持有",
+    "final_equity": 2284944.75,
+    "total_return_pct": 128.49,
+    "ann_return_pct": 13.87,
+    "max_drawdown_pct": -34.1,
+    "n_stops": 1
+  },
+  "SSO_买入持有": {
+    "name": "SSO_买入持有",
+    "final_equity": 3987024.52,
+    "total_return_pct": 298.7,
+    "ann_return_pct": 24.29,
+    "max_drawdown_pct": -59.27,
+    "n_stops": 1
+  },
+  "UPRO_买入持有": {
+    "name": "UPRO_买入持有",
+    "final_equity": 5271255.8,
+    "total_return_pct": 427.13,
+    "ann_return_pct": 29.87,
+    "max_drawdown_pct": -76.59,
+    "n_stops": 1
+  },
+  "策略C1_SSO": {
+    "name": "策略C1_SSO",
+    "final_equity": 0.0,
+    "total_return_pct": -100.0,
+    "ann_return_pct": -99.82,
+    "max_drawdown_pct": -100.0,
+    "n_stops": 50
+  },
+  "策略C2_UPRO": {
+    "name": "策略C2_UPRO",
+    "final_equity": 0.0,
+    "total_return_pct": -100.0,
+    "ann_return_pct": -98.66,
+    "max_drawdown_pct": -100.0,
+    "n_stops": 68
+  }
+}

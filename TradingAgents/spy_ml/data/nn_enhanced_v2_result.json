@@ -1,0 +1,167 @@
+{
+  "version": "v2",
+  "features": [
+    "ret_1d",
+    "ret_5d",
+    "ret_20d",
+    "volatility_5d",
+    "volatility_20d",
+    "atr_pct",
+    "rsi_14",
+    "macd",
+    "macd_hist",
+    "ma5_dev",
+    "ma20_dev",
+    "ma50_dev",
+    "bb_position",
+    "momentum",
+    "vol_ratio",
+    "vol_trend",
+    "price_in_range",
+    "vix_close",
+    "vix_ema20_dev",
+    "vix_ret",
+    "vix_intraday_pos",
+    "above_20ema_est",
+    "avwap_dev",
+    "new_high_proxy",
+    "new_low_proxy",
+    "up_ratio_20d",
+    "rsi_ma5",
+    "vol_ma5",
+    "macd_ma5",
+    "rsi_ma20",
+    "vol_ma20",
+    "macd_ma20",
+    "rsi_delta",
+    "mom_change"
+  ],
+  "n_features": 34,
+  "architecture": "Input(34)→128→64→32→Output(2, separate)",
+  "train_period": "2020-01-02→2024-06-13",
+  "val_period": "2024-06-14→2025-02-04",
+  "test_period": "2025-02-05→2026-05-15",
+  "label_b_shift_window": 10,
+  "models": {
+    "regime": {
+      "type": "MLP binary (bull/range vs bear)",
+      "val_accuracy": 0.725,
+      "test_accuracy": 0.7227,
+      "test_auc": 0.5685,
+      "n_iter": 94
+    },
+    "shift": {
+      "type": "MLP binary (balanced sample weights)",
+      "val_accuracy": 0.2625,
+      "test_accuracy": 0.6729,
+      "test_auc": 0.5591,
+      "n_iter": 90,
+      "positive_rate_train": 0.6089,
+      "weights": "balanced (n_neg/n_pos)"
+    }
+  },
+  "backtest": {
+    "initial": 1000000.0,
+    "final_equity": 1092882.36,
+    "total_return": 9.29,
+    "cagr": 7.22,
+    "max_drawdown": 18.54,
+    "num_trades": 13,
+    "win_rate": 61.54,
+    "buy_hold_return": 22.33,
+    "outperformance": -13.05
+  },
+  "trades": [
+    {
+      "date": "2025-03-14",
+      "exit": 562.81,
+      "pnl": -71760.79,
+      "reason": "shift_exit",
+      "holding": 26
+    },
+    {
+      "date": "2025-04-01",
+      "exit": 560.97,
+      "pnl": -23372.93,
+      "reason": "shift_exit",
+      "holding": 38
+    },
+    {
+      "date": "2025-04-11",
+      "exit": 533.94,
+      "pnl": 16145.39,
+      "reason": "shift_exit",
+      "holding": 46
+    },
+    {
+      "date": "2025-04-24",
+      "exit": 546.69,
+      "pnl": 19386.28,
+      "reason": "shift_exit",
+      "holding": 54
+    },
+    {
+      "date": "2025-07-25",
+      "exit": 637.1,
+      "pnl": 116711.82,
+      "reason": "shift_exit",
+      "holding": 117
+    },
+    {
+      "date": "2025-08-08",
+      "exit": 637.18,
+      "pnl": 10065.8,
+      "reason": "shift_exit",
+      "holding": 127
+    },
+    {
+      "date": "2025-08-22",
+      "exit": 645.31,
+      "pnl": 3334.41,
+      "reason": "shift_exit",
+      "holding": 137
+    },
+    {
+      "date": "2025-10-17",
+      "exit": 664.39,
+      "pnl": 40327.83,
+      "reason": "shift_exit",
+      "holding": 176
+    },
+    {
+      "date": "2025-11-07",
+      "exit": 670.97,
+      "pnl": -23133.0,
+      "reason": "shift_exit",
+      "holding": 191
+    },
+    {
+      "date": "2025-11-25",
+      "exit": 675.02,
+      "pnl": 15277.9,
+      "reason": "shift_exit",
+      "holding": 203
+    },
+    {
+      "date": "2025-12-19",
+      "exit": 680.59,
+      "pnl": -6124.19,
+      "reason": "shift_exit",
+      "holding": 220
+    },
+    {
+      "date": "2026-03-31",
+      "exit": 650.34,
+      "pnl": -58546.17,
+      "reason": "shift_exit",
+      "holding": 288
+    },
+    {
+      "date": "2026-04-27",
+      "exit": 715.17,
+      "pnl": 54570.0,
+      "reason": "shift_exit",
+      "holding": 306
+    }
+  ]
+}

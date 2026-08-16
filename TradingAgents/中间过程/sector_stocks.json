@@ -1,0 +1,1236 @@
+{
+  "generated": "2026-05-08 16:46",
+  "total_stocks": 124,
+  "sectors": {
+    "上游资源/材料": {
+      "铜/电力金属": [
+        {
+          "ticker": "FCX",
+          "note": "★潜力低估",
+          "desc": "AI数据中心、电网升级核心受益，铜需求长期增长",
+          "daily_count": 251,
+          "weekly_count": 1610,
+          "latest_date": "May 07, 2026",
+          "latest_price": "60.61"
+        },
+        {
+          "ticker": "SCCO",
+          "note": "龙头",
+          "desc": "全球铜矿龙头，高分红",
+          "daily_count": 251,
+          "weekly_count": 1585,
+          "latest_date": "May 07, 2026",
+          "latest_price": "179.54"
+        },
+        {
+          "ticker": "TECK",
+          "note": "★潜力低估",
+          "desc": "铜+资源周期，AI电力基础设施受益",
+          "daily_count": 251,
+          "weekly_count": 1244,
+          "latest_date": "May 07, 2026",
+          "latest_price": "60.76"
+        },
+        {
+          "ticker": "RIO",
+          "note": "稳健龙头",
+          "desc": "全球矿业龙头，铜/铝受益AI建设",
+          "daily_count": 251,
+          "weekly_count": 1873,
+          "latest_date": "May 07, 2026",
+          "latest_price": "103.11"
+        },
+        {
+          "ticker": "BHP",
+          "note": "稳健龙头",
+          "desc": "AI电力扩张长期受益",
+          "daily_count": 251,
+          "weekly_count": 2409,
+          "latest_date": "May 07, 2026",
+          "latest_price": "82.55"
+        }
+      ],
+      "半导体材料": [
+        {
+          "ticker": "ENTG",
+          "note": "★潜力低估",
+          "desc": "先进制程材料核心供应商",
+          "daily_count": 251,
+          "weekly_count": 1349,
+          "latest_date": "May 07, 2026",
+          "latest_price": "147.66"
+        },
+        {
+          "ticker": "DD",
+          "note": "稳健",
+          "desc": "AI封装化学材料",
+          "daily_count": 251,
+          "weekly_count": 2816,
+          "latest_date": "May 07, 2026",
+          "latest_price": "48.36"
+        },
+        {
+          "ticker": "APD",
+          "note": "稳健",
+          "desc": "半导体气体核心供应商",
+          "daily_count": 251,
+          "weekly_count": 2409,
+          "latest_date": "May 07, 2026",
+          "latest_price": "294.99"
+        },
+        {
+          "ticker": "COHR",
+          "note": "★重点",
+          "desc": "光通信+激光材料龙头",
+          "daily_count": 251,
+          "weekly_count": 2016,
+          "latest_date": "May 07, 2026",
+          "latest_price": "319.19"
+        },
+        {
+          "ticker": "GLW",
+          "note": "★低估",
+          "desc": "光纤/玻璃材料受益硅光",
+          "daily_count": 251,
+          "weekly_count": 2316,
+          "latest_date": "May 07, 2026",
+          "latest_price": "182.40"
+        },
+        {
+          "ticker": "OLED",
+          "note": "★潜力低估",
+          "desc": "半导体沉积材料",
+          "daily_count": 251,
+          "weekly_count": 1571,
+          "latest_date": "May 07, 2026",
+          "latest_price": "92.74"
+        }
+      ],
+      "稀土/磁材": [
+        {
+          "ticker": "MP",
+          "note": "★潜力低估",
+          "desc": "AI机器人/电机稀土磁材",
+          "daily_count": 251,
+          "weekly_count": 308,
+          "latest_date": "May 07, 2026",
+          "latest_price": "69.13"
+        }
+      ]
+    },
+    "先进封装": {
+      "晶圆代工": [
+        {
+          "ticker": "TSM",
+          "note": "★超级核心",
+          "desc": "AI先进制程绝对核心，CoWoS产能决定AI供给",
+          "daily_count": 251,
+          "weekly_count": 1493,
+          "latest_date": "May 07, 2026",
+          "latest_price": "414.15"
+        }
+      ],
+      "封装/封测": [
+        {
+          "ticker": "AMKR",
+          "note": "★重点低估",
+          "desc": "AI先进封装核心受益",
+          "daily_count": 251,
+          "weekly_count": 1464,
+          "latest_date": "May 07, 2026",
+          "latest_price": "72.27"
+        },
+        {
+          "ticker": "ASX",
+          "note": "龙头",
+          "desc": "全球封测龙头",
+          "daily_count": 251,
+          "weekly_count": 1337,
+          "latest_date": "May 07, 2026",
+          "latest_price": "33.34"
+        },
+        {
+          "ticker": "ONTO",
+          "note": "★重点低估",
+          "desc": "AI封装检测核心",
+          "daily_count": 251,
+          "weekly_count": 342,
+          "latest_date": "May 07, 2026",
+          "latest_price": "274.17"
+        },
+        {
+          "ticker": "KLIC",
+          "note": "★潜力低估",
+          "desc": "HBM封装设备",
+          "daily_count": 251,
+          "weekly_count": 2778,
+          "latest_date": "May 07, 2026",
+          "latest_price": "98.15"
+        },
+        {
+          "ticker": "AMAT",
+          "note": "龙头",
+          "desc": "CoWoS设备需求受益",
+          "daily_count": 251,
+          "weekly_count": 2409,
+          "latest_date": "May 07, 2026",
+          "latest_price": "410.64"
+        }
+      ]
+    },
+    "半导体设备": {
+      "光刻/前道设备": [
+        {
+          "ticker": "ASML",
+          "note": "核心龙头",
+          "desc": "EUV不可替代",
+          "daily_count": 251,
+          "weekly_count": 1627,
+          "latest_date": "May 07, 2026",
+          "latest_price": "1516.60"
+        },
+        {
+          "ticker": "AMAT",
+          "note": "★长期核心",
+          "desc": "AI资本开支受益",
+          "daily_count": 251,
+          "weekly_count": 2409,
+          "latest_date": "May 07, 2026",
+          "latest_price": "410.64"
+        },
+        {
+          "ticker": "LRCX",
+          "note": "★低估",
+          "desc": "存储/先进制程设备",
+          "daily_count": 251,
+          "weekly_count": 2194,
+          "latest_date": "May 07, 2026",
+          "latest_price": "286.52"
+        },
+        {
+          "ticker": "KLAC",
+          "note": "龙头",
+          "desc": "检测设备垄断",
+          "daily_count": 251,
+          "weekly_count": 2380,
+          "latest_date": "May 07, 2026",
+          "latest_price": "1763.25"
+        },
+        {
+          "ticker": "TOELY",
+          "note": "龙头",
+          "desc": "日本设备龙头",
+          "daily_count": 251,
+          "weekly_count": 854,
+          "latest_date": "May 07, 2026",
+          "latest_price": "162.64"
+        }
+      ],
+      "晶圆制造设备": [
+        {
+          "ticker": "ACLS",
+          "note": "★潜力低估",
+          "desc": "离子注入设备",
+          "daily_count": 251,
+          "weekly_count": 1349,
+          "latest_date": "May 07, 2026",
+          "latest_price": "158.66"
+        }
+      ]
+    },
+    "芯片测试": {
+      "检测/测试": [
+        {
+          "ticker": "TER",
+          "note": "★重点低估",
+          "desc": "AI芯片测试爆发",
+          "daily_count": 251,
+          "weekly_count": 2778,
+          "latest_date": "May 07, 2026",
+          "latest_price": "354.11"
+        },
+        {
+          "ticker": "COHU",
+          "note": "★低估",
+          "desc": "AI ASIC测试",
+          "daily_count": 251,
+          "weekly_count": 2409,
+          "latest_date": "May 07, 2026",
+          "latest_price": "47.48"
+        },
+        {
+          "ticker": "ONTO",
+          "note": "★重点",
+          "desc": "先进检测设备",
+          "daily_count": 251,
+          "weekly_count": 342,
+          "latest_date": "May 07, 2026",
+          "latest_price": "274.17"
+        },
+        {
+          "ticker": "ATEYY",
+          "note": "龙头",
+          "desc": "全球测试设备龙头",
+          "daily_count": 251,
+          "weekly_count": 1287,
+          "latest_date": "May 07, 2026",
+          "latest_price": "186.09"
+        }
+      ]
+    },
+    "AI芯片": {
+      "GPU/AI加速器": [
+        {
+          "ticker": "NVDA",
+          "note": "核心龙头",
+          "desc": "AI算力核心",
+          "daily_count": 251,
+          "weekly_count": 1426,
+          "latest_date": "May 07, 2026",
+          "latest_price": "211.50"
+        },
+        {
+          "ticker": "AMD",
+          "note": "核心竞争者",
+          "desc": "MI系列加速卡",
+          "daily_count": 251,
+          "weekly_count": 2409,
+          "latest_date": "May 07, 2026",
+          "latest_price": "408.46"
+        },
+        {
+          "ticker": "AVGO",
+          "note": "★重点",
+          "desc": "ASIC+网络双核心",
+          "daily_count": 251,
+          "weekly_count": 876,
+          "latest_date": "May 07, 2026",
+          "latest_price": "412.56"
+        },
+        {
+          "ticker": "MRVL",
+          "note": "★重点",
+          "desc": "AI ASIC+互连",
+          "daily_count": 251,
+          "weekly_count": 1351,
+          "latest_date": "May 07, 2026",
+          "latest_price": "160.01"
+        },
+        {
+          "ticker": "INTC",
+          "note": "★高风险低估",
+          "desc": "若代工转型成功弹性巨大",
+          "daily_count": 251,
+          "weekly_count": 2409,
+          "latest_date": "May 07, 2026",
+          "latest_price": "109.62"
+        }
+      ],
+      "CPU": [
+        {
+          "ticker": "QCOM",
+          "note": "★潜力低估",
+          "desc": "AI PC/边缘AI",
+          "daily_count": 251,
+          "weekly_count": 1797,
+          "latest_date": "May 07, 2026",
+          "latest_price": "202.55"
+        },
+        {
+          "ticker": "ARM",
+          "note": "★长期核心",
+          "desc": "AI终端架构",
+          "daily_count": 251,
+          "weekly_count": 140,
+          "latest_date": "May 07, 2026",
+          "latest_price": "213.31"
+        }
+      ],
+      "边缘AI SoC": [
+        {
+          "ticker": "NXPI",
+          "note": "★低估",
+          "desc": "AI汽车/工业",
+          "daily_count": 251,
+          "weekly_count": 824,
+          "latest_date": "May 07, 2026",
+          "latest_price": "290.22"
+        },
+        {
+          "ticker": "TXN",
+          "note": "★低估",
+          "desc": "工业边缘AI",
+          "daily_count": 251,
+          "weekly_count": 2816,
+          "latest_date": "May 07, 2026",
+          "latest_price": "285.24"
+        }
+      ]
+    },
+    "AI ASIC": {
+      "定制芯片": [
+        {
+          "ticker": "AVGO",
+          "note": "★超级核心",
+          "desc": "Google TPU/AI ASIC受益",
+          "daily_count": 251,
+          "weekly_count": 876,
+          "latest_date": "May 07, 2026",
+          "latest_price": "412.56"
+        },
+        {
+          "ticker": "MRVL",
+          "note": "★重点",
+          "desc": "定制AI芯片核心",
+          "daily_count": 251,
+          "weekly_count": 1351,
+          "latest_date": "May 07, 2026",
+          "latest_price": "160.01"
+        },
+        {
+          "ticker": "ALAB",
+          "note": "★重点低估",
+          "desc": "AI互连新龙头",
+          "daily_count": 251,
+          "weekly_count": 113,
+          "latest_date": "May 07, 2026",
+          "latest_price": "195.65"
+        },
+        {
+          "ticker": "CRDO",
+          "note": "★重点低估",
+          "desc": "高速互连黑马",
+          "daily_count": 251,
+          "weekly_count": 225,
+          "latest_date": "May 07, 2026",
+          "latest_price": "188.29"
+        },
+        {
+          "ticker": "ALCPY",
+          "note": "★高成长",
+          "desc": "ASIC设计服务",
+          "daily_count": 0,
+          "weekly_count": 0,
+          "latest_date": null,
+          "latest_price": null
+        }
+      ]
+    },
+    "EDA/IP": {
+      "EDA软件": [
+        {
+          "ticker": "SNPS",
+          "note": "核心垄断",
+          "desc": "AI芯片复杂度提升受益",
+          "daily_count": 251,
+          "weekly_count": 1786,
+          "latest_date": "May 07, 2026",
+          "latest_price": "505.19"
+        },
+        {
+          "ticker": "CDNS",
+          "note": "核心垄断",
+          "desc": "AI芯片设计刚需",
+          "daily_count": 251,
+          "weekly_count": 2032,
+          "latest_date": "May 07, 2026",
+          "latest_price": "356.90"
+        },
+        {
+          "ticker": "SIEGY",
+          "note": "稳健",
+          "desc": "Siemens EDA",
+          "daily_count": 251,
+          "weekly_count": 1539,
+          "latest_date": "May 07, 2026",
+          "latest_price": "153.99"
+        }
+      ],
+      "IP授权": [
+        {
+          "ticker": "ARM",
+          "note": "★长期核心",
+          "desc": "AI边缘计算核心架构",
+          "daily_count": 251,
+          "weekly_count": 140,
+          "latest_date": "May 07, 2026",
+          "latest_price": "213.31"
+        }
+      ]
+    },
+    "存储": {
+      "HBM/AI存储": [
+        {
+          "ticker": "MU",
+          "note": "核心龙头",
+          "desc": "HBM供需紧张",
+          "daily_count": 251,
+          "weekly_count": 2190,
+          "latest_date": "May 07, 2026",
+          "latest_price": "646.63"
+        },
+        {
+          "ticker": "SNDK",
+          "note": "★重点低估",
+          "desc": "闪迪独立后有望受益AI企业级存储",
+          "daily_count": 251,
+          "weekly_count": 66,
+          "latest_date": "May 07, 2026",
+          "latest_price": "1339.96"
+        },
+        {
+          "ticker": "WDC",
+          "note": "★低估",
+          "desc": "AI容量存储",
+          "daily_count": 251,
+          "weekly_count": 2481,
+          "latest_date": "May 07, 2026",
+          "latest_price": "463.91"
+        },
+        {
+          "ticker": "STX",
+          "note": "★低估",
+          "desc": "企业级存储受益",
+          "daily_count": 251,
+          "weekly_count": 1223,
+          "latest_date": "May 07, 2026",
+          "latest_price": "766.44"
+        },
+        {
+          "ticker": "SSNLF",
+          "note": "龙头",
+          "desc": "HBM核心供应",
+          "daily_count": 251,
+          "weekly_count": 1243,
+          "latest_date": "May 07, 2026",
+          "latest_price": "65.21"
+        },
+        {
+          "ticker": "HXSCF",
+          "note": "龙头",
+          "desc": "HBM绝对龙头",
+          "daily_count": 0,
+          "weekly_count": 0,
+          "latest_date": null,
+          "latest_price": null
+        }
+      ]
+    },
+    "AI网络": {
+      "交换/网络": [
+        {
+          "ticker": "ANET",
+          "note": "核心龙头",
+          "desc": "AI交换机核心",
+          "daily_count": 251,
+          "weekly_count": 624,
+          "latest_date": "May 07, 2026",
+          "latest_price": "141.75"
+        },
+        {
+          "ticker": "AVGO",
+          "note": "核心",
+          "desc": "AI交换芯片",
+          "daily_count": 251,
+          "weekly_count": 876,
+          "latest_date": "May 07, 2026",
+          "latest_price": "412.56"
+        },
+        {
+          "ticker": "CSCO",
+          "note": "★低估",
+          "desc": "AI网络升级受益",
+          "daily_count": 251,
+          "weekly_count": 1892,
+          "latest_date": "May 07, 2026",
+          "latest_price": "92.16"
+        },
+        {
+          "ticker": "JNPR",
+          "note": "★低估",
+          "desc": "AI网络扩容",
+          "daily_count": 0,
+          "weekly_count": 0,
+          "latest_date": null,
+          "latest_price": null
+        },
+        {
+          "ticker": "MRVL",
+          "note": "核心",
+          "desc": "高速网络芯片",
+          "daily_count": 251,
+          "weekly_count": 1351,
+          "latest_date": "May 07, 2026",
+          "latest_price": "160.01"
+        }
+      ]
+    },
+    "光模块/硅光": {
+      "光模块/CPO": [
+        {
+          "ticker": "COHR",
+          "note": "★超级重点",
+          "desc": "AI硅光/CPO核心",
+          "daily_count": 251,
+          "weekly_count": 2016,
+          "latest_date": "May 07, 2026",
+          "latest_price": "319.19"
+        },
+        {
+          "ticker": "LITE",
+          "note": "★重点低估",
+          "desc": "光模块龙头",
+          "daily_count": 251,
+          "weekly_count": 565,
+          "latest_date": "May 07, 2026",
+          "latest_price": "892.58"
+        },
+        {
+          "ticker": "FN",
+          "note": "★低估",
+          "desc": "光模块代工受益",
+          "daily_count": 251,
+          "weekly_count": 830,
+          "latest_date": "May 07, 2026",
+          "latest_price": "626.12"
+        },
+        {
+          "ticker": "AAOI",
+          "note": "★高弹性",
+          "desc": "AI光模块高波动",
+          "daily_count": 251,
+          "weekly_count": 660,
+          "latest_date": "May 07, 2026",
+          "latest_price": "157.55"
+        },
+        {
+          "ticker": "GFS",
+          "note": "★重点低估",
+          "desc": "硅光制造核心",
+          "daily_count": 251,
+          "weekly_count": 238,
+          "latest_date": "May 07, 2026",
+          "latest_price": "70.93"
+        },
+        {
+          "ticker": "CRDO",
+          "note": "★重点",
+          "desc": "AI高速互连",
+          "daily_count": 251,
+          "weekly_count": 225,
+          "latest_date": "May 07, 2026",
+          "latest_price": "188.29"
+        },
+        {
+          "ticker": "CIEN",
+          "note": "★低估",
+          "desc": "AI长距离光网络",
+          "daily_count": 251,
+          "weekly_count": 1528,
+          "latest_date": "May 07, 2026",
+          "latest_price": "538.76"
+        }
+      ]
+    },
+    "PCB/连接": {
+      "高速PCB/连接器": [
+        {
+          "ticker": "APH",
+          "note": "★重点",
+          "desc": "AI高速连接龙头",
+          "daily_count": 251,
+          "weekly_count": 1802,
+          "latest_date": "May 07, 2026",
+          "latest_price": "136.62"
+        },
+        {
+          "ticker": "TEL",
+          "note": "★低估",
+          "desc": "AI服务器连接器",
+          "daily_count": 251,
+          "weekly_count": 988,
+          "latest_date": "May 07, 2026",
+          "latest_price": "210.06"
+        },
+        {
+          "ticker": "TTM",
+          "note": "★重点低估",
+          "desc": "AI PCB受益",
+          "daily_count": 0,
+          "weekly_count": 0,
+          "latest_date": null,
+          "latest_price": null
+        },
+        {
+          "ticker": "JBL",
+          "note": "★低估",
+          "desc": "AI服务器制造",
+          "daily_count": 251,
+          "weekly_count": 1724,
+          "latest_date": "May 07, 2026",
+          "latest_price": "349.60"
+        },
+        {
+          "ticker": "FLEX",
+          "note": "★低估",
+          "desc": "AI硬件制造",
+          "daily_count": 251,
+          "weekly_count": 1679,
+          "latest_date": "May 07, 2026",
+          "latest_price": "133.01"
+        }
+      ]
+    },
+    "数据中心": {
+      "超大规模IDC": [
+        {
+          "ticker": "CRWV",
+          "note": "★超级重点高成长",
+          "desc": "AI原生云/算力租赁平台，高弹性",
+          "daily_count": 251,
+          "weekly_count": 60,
+          "latest_date": "May 07, 2026",
+          "latest_price": "128.84"
+        }
+      ],
+      "GPU云服务": [
+        {
+          "ticker": "NBIS",
+          "note": "★重点高成长",
+          "desc": "AI GPU云服务新势力",
+          "daily_count": 251,
+          "weekly_count": 82,
+          "latest_date": "May 07, 2026",
+          "latest_price": "184.77"
+        }
+      ],
+      "IDC/REITs": [
+        {
+          "ticker": "EQIX",
+          "note": "核心龙头",
+          "desc": "AI机房核心资产",
+          "daily_count": 251,
+          "weekly_count": 1345,
+          "latest_date": "May 07, 2026",
+          "latest_price": "1066.76"
+        },
+        {
+          "ticker": "DLR",
+          "note": "★重点低估",
+          "desc": "AI数据中心扩张",
+          "daily_count": 251,
+          "weekly_count": 1125,
+          "latest_date": "May 07, 2026",
+          "latest_price": "194.78"
+        },
+        {
+          "ticker": "IRM",
+          "note": "★低估",
+          "desc": "AI存储基础设施",
+          "daily_count": 251,
+          "weekly_count": 1581,
+          "latest_date": "May 07, 2026",
+          "latest_price": "126.81"
+        },
+        {
+          "ticker": "VRT",
+          "note": "★超级重点",
+          "desc": "AI电源+散热",
+          "daily_count": 251,
+          "weekly_count": 407,
+          "latest_date": "May 07, 2026",
+          "latest_price": "340.01"
+        }
+      ],
+      "AI服务器": [
+        {
+          "ticker": "SMCI",
+          "note": "高波动核心",
+          "desc": "AI服务器高增长",
+          "daily_count": 251,
+          "weekly_count": 999,
+          "latest_date": "May 07, 2026",
+          "latest_price": "33.62"
+        },
+        {
+          "ticker": "DELL",
+          "note": "★低估",
+          "desc": "AI服务器企业客户强",
+          "daily_count": 251,
+          "weekly_count": 509,
+          "latest_date": "May 07, 2026",
+          "latest_price": "230.27"
+        },
+        {
+          "ticker": "HPE",
+          "note": "★低估",
+          "desc": "企业AI私有云",
+          "daily_count": 251,
+          "weekly_count": 552,
+          "latest_date": "May 07, 2026",
+          "latest_price": "29.70"
+        }
+      ]
+    },
+    "液冷/散热": {
+      "液冷": [
+        {
+          "ticker": "VRT",
+          "note": "★超级重点",
+          "desc": "AI液冷核心",
+          "daily_count": 251,
+          "weekly_count": 407,
+          "latest_date": "May 07, 2026",
+          "latest_price": "340.01"
+        },
+        {
+          "ticker": "MOD",
+          "note": "★重点低估",
+          "desc": "液冷黑马",
+          "daily_count": 251,
+          "weekly_count": 2278,
+          "latest_date": "May 07, 2026",
+          "latest_price": "269.65"
+        },
+        {
+          "ticker": "CARR",
+          "note": "★低估",
+          "desc": "HVAC+数据中心",
+          "daily_count": 251,
+          "weekly_count": 322,
+          "latest_date": "May 07, 2026",
+          "latest_price": "67.22"
+        },
+        {
+          "ticker": "TT",
+          "note": "龙头",
+          "desc": "商业制冷龙头",
+          "daily_count": 251,
+          "weekly_count": 2409,
+          "latest_date": "May 07, 2026",
+          "latest_price": "469.81"
+        },
+        {
+          "ticker": "NVT",
+          "note": "★低估",
+          "desc": "数据中心散热",
+          "daily_count": 251,
+          "weekly_count": 421,
+          "latest_date": "May 07, 2026",
+          "latest_price": "166.73"
+        }
+      ]
+    },
+    "电力/能源": {
+      "核电": [
+        {
+          "ticker": "CEG",
+          "note": "★超级重点",
+          "desc": "AI核电核心受益",
+          "daily_count": 251,
+          "weekly_count": 226,
+          "latest_date": "May 07, 2026",
+          "latest_price": "311.28"
+        },
+        {
+          "ticker": "VST",
+          "note": "★重点",
+          "desc": "电力需求受益",
+          "daily_count": 251,
+          "weekly_count": 502,
+          "latest_date": "May 07, 2026",
+          "latest_price": "153.95"
+        },
+        {
+          "ticker": "OKLO",
+          "note": "★高风险高弹性",
+          "desc": "小型核反应堆概念",
+          "daily_count": 251,
+          "weekly_count": 254,
+          "latest_date": "May 07, 2026",
+          "latest_price": "71.83"
+        },
+        {
+          "ticker": "SMR",
+          "note": "★高风险",
+          "desc": "SMR概念",
+          "daily_count": 251,
+          "weekly_count": 220,
+          "latest_date": "May 07, 2026",
+          "latest_price": "12.58"
+        },
+        {
+          "ticker": "CCJ",
+          "note": "★重点",
+          "desc": "铀矿龙头",
+          "daily_count": 251,
+          "weekly_count": 1575,
+          "latest_date": "May 07, 2026",
+          "latest_price": "118.71"
+        }
+      ],
+      "天然气/LNG": [
+        {
+          "ticker": "LNG",
+          "note": "★潜力低估",
+          "desc": "AI电力缺口推动天然气",
+          "daily_count": 251,
+          "weekly_count": 1676,
+          "latest_date": "May 07, 2026",
+          "latest_price": "246.78"
+        },
+        {
+          "ticker": "ET",
+          "note": "★低估",
+          "desc": "美国天然气运输",
+          "daily_count": 251,
+          "weekly_count": 1059,
+          "latest_date": "May 07, 2026",
+          "latest_price": "19.92"
+        }
+      ],
+      "电网/配电": [
+        {
+          "ticker": "ETN",
+          "note": "★超级重点",
+          "desc": "AI电网升级核心",
+          "daily_count": 251,
+          "weekly_count": 2816,
+          "latest_date": "May 07, 2026",
+          "latest_price": "399.15"
+        },
+        {
+          "ticker": "GEV",
+          "note": "★重点",
+          "desc": "GE电力设备",
+          "daily_count": 251,
+          "weekly_count": 112,
+          "latest_date": "May 07, 2026",
+          "latest_price": "1045.63"
+        },
+        {
+          "ticker": "PWR",
+          "note": "★重点",
+          "desc": "美国电网建设",
+          "daily_count": 251,
+          "weekly_count": 1475,
+          "latest_date": "May 07, 2026",
+          "latest_price": "750.73"
+        },
+        {
+          "ticker": "POWL",
+          "note": "★低估",
+          "desc": "高压配电",
+          "daily_count": 251,
+          "weekly_count": 2409,
+          "latest_date": "May 07, 2026",
+          "latest_price": "305.93"
+        },
+        {
+          "ticker": "EMR",
+          "note": "稳健",
+          "desc": "工业自动化",
+          "daily_count": 251,
+          "weekly_count": 2816,
+          "latest_date": "May 07, 2026",
+          "latest_price": "141.09"
+        }
+      ]
+    },
+    "AI软件": {
+      "Agent/企业AI": [
+        {
+          "ticker": "MSFT",
+          "note": "核心龙头",
+          "desc": "Copilot生态",
+          "daily_count": 251,
+          "weekly_count": 2097,
+          "latest_date": "May 07, 2026",
+          "latest_price": "420.77"
+        },
+        {
+          "ticker": "CRM",
+          "note": "★重点低估",
+          "desc": "Agentforce布局",
+          "daily_count": 251,
+          "weekly_count": 1143,
+          "latest_date": "May 07, 2026",
+          "latest_price": "186.34"
+        },
+        {
+          "ticker": "NOW",
+          "note": "核心",
+          "desc": "企业AI自动化",
+          "daily_count": 251,
+          "weekly_count": 725,
+          "latest_date": "May 07, 2026",
+          "latest_price": "93.59"
+        },
+        {
+          "ticker": "PLTR",
+          "note": "高成长",
+          "desc": "AI政府/企业平台",
+          "daily_count": 251,
+          "weekly_count": 294,
+          "latest_date": "May 07, 2026",
+          "latest_price": "137.05"
+        },
+        {
+          "ticker": "SNOW",
+          "note": "★低估",
+          "desc": "AI数据平台",
+          "daily_count": 251,
+          "weekly_count": 296,
+          "latest_date": "May 07, 2026",
+          "latest_price": "153.72"
+        }
+      ],
+      "AI开发平台": [
+        {
+          "ticker": "DDOG",
+          "note": "★重点",
+          "desc": "AI observability",
+          "daily_count": 251,
+          "weekly_count": 348,
+          "latest_date": "May 07, 2026",
+          "latest_price": "188.73"
+        },
+        {
+          "ticker": "MDB",
+          "note": "★低估",
+          "desc": "AI数据库",
+          "daily_count": 251,
+          "weekly_count": 448,
+          "latest_date": "May 07, 2026",
+          "latest_price": "293.42"
+        }
+      ],
+      "AI安全": [
+        {
+          "ticker": "PANW",
+          "note": "★重点",
+          "desc": "AI安全受益",
+          "daily_count": 251,
+          "weekly_count": 722,
+          "latest_date": "May 07, 2026",
+          "latest_price": "196.53"
+        },
+        {
+          "ticker": "CRWD",
+          "note": "★重点",
+          "desc": "AI时代网络安全",
+          "daily_count": 251,
+          "weekly_count": 362,
+          "latest_date": "May 07, 2026",
+          "latest_price": "505.72"
+        }
+      ]
+    },
+    "AI医疗": {
+      "AI制药/医疗": [
+        {
+          "ticker": "TEM",
+          "note": "★高成长",
+          "desc": "AI医疗数据平台",
+          "daily_count": 251,
+          "weekly_count": 101,
+          "latest_date": "May 07, 2026",
+          "latest_price": "49.47"
+        },
+        {
+          "ticker": "RXRX",
+          "note": "★高风险高弹性",
+          "desc": "AI制药",
+          "daily_count": 251,
+          "weekly_count": 266,
+          "latest_date": "May 07, 2026",
+          "latest_price": "3.27"
+        },
+        {
+          "ticker": "ILMN",
+          "note": "★低估",
+          "desc": "基因AI分析",
+          "daily_count": 251,
+          "weekly_count": 1347,
+          "latest_date": "May 07, 2026",
+          "latest_price": "138.71"
+        }
+      ]
+    },
+    "自动驾驶": {
+      "Robotaxi/自动驾驶": [
+        {
+          "ticker": "TSLA",
+          "note": "★核心",
+          "desc": "FSD+机器人",
+          "daily_count": 251,
+          "weekly_count": 829,
+          "latest_date": "May 07, 2026",
+          "latest_price": "411.79"
+        },
+        {
+          "ticker": "MBLY",
+          "note": "★低估",
+          "desc": "自动驾驶芯片",
+          "daily_count": 251,
+          "weekly_count": 186,
+          "latest_date": "May 07, 2026",
+          "latest_price": "8.87"
+        },
+        {
+          "ticker": "UBER",
+          "note": "★潜在受益",
+          "desc": "Robotaxi生态",
+          "daily_count": 251,
+          "weekly_count": 367,
+          "latest_date": "May 07, 2026",
+          "latest_price": "76.73"
+        }
+      ]
+    },
+    "机器人/边缘AI": {
+      "工业自动化": [
+        {
+          "ticker": "ROK",
+          "note": "★低估",
+          "desc": "AI工厂自动化",
+          "daily_count": 251,
+          "weekly_count": 2316,
+          "latest_date": "May 07, 2026",
+          "latest_price": "448.55"
+        },
+        {
+          "ticker": "ABB",
+          "note": "龙头",
+          "desc": "工业机器人",
+          "daily_count": 0,
+          "weekly_count": 0,
+          "latest_date": null,
+          "latest_price": null
+        },
+        {
+          "ticker": "SYM",
+          "note": "★高成长",
+          "desc": "AI物流机器人",
+          "daily_count": 251,
+          "weekly_count": 271,
+          "latest_date": "May 07, 2026",
+          "latest_price": "56.43"
+        },
+        {
+          "ticker": "TER",
+          "note": "★重点",
+          "desc": "自动化测试+机器人",
+          "daily_count": 251,
+          "weekly_count": 2778,
+          "latest_date": "May 07, 2026",
+          "latest_price": "354.11"
+        }
+      ],
+      "边缘AI": [
+        {
+          "ticker": "NVDA",
+          "note": "核心",
+          "desc": "机器人AI平台",
+          "daily_count": 251,
+          "weekly_count": 1426,
+          "latest_date": "May 07, 2026",
+          "latest_price": "211.50"
+        }
+      ]
+    },
+    "AI终端": {
+      "AI PC/终端": [
+        {
+          "ticker": "AAPL",
+          "note": "★潜力重估",
+          "desc": "AI终端生态",
+          "daily_count": 251,
+          "weekly_count": 2371,
+          "latest_date": "May 07, 2026",
+          "latest_price": "287.44"
+        },
+        {
+          "ticker": "QCOM",
+          "note": "★重点",
+          "desc": "AI PC芯片",
+          "daily_count": 251,
+          "weekly_count": 1797,
+          "latest_date": "May 07, 2026",
+          "latest_price": "202.55"
+        },
+        {
+          "ticker": "DELL",
+          "note": "★潜力低估",
+          "desc": "AI PC企业换机",
+          "daily_count": 251,
+          "weekly_count": 509,
+          "latest_date": "May 07, 2026",
+          "latest_price": "230.27"
+        }
+      ],
+      "AI手机": [
+        {
+          "ticker": "GOOGL",
+          "note": "核心",
+          "desc": "Gemini终端AI",
+          "daily_count": 251,
+          "weekly_count": 1135,
+          "latest_date": "May 07, 2026",
+          "latest_price": "397.99"
+        }
+      ]
+    },
+    "云计算": {
+      "超大云厂商": [
+        {
+          "ticker": "AMZN",
+          "note": "核心",
+          "desc": "AWS AI基础设施",
+          "daily_count": 251,
+          "weekly_count": 1514,
+          "latest_date": "May 07, 2026",
+          "latest_price": "271.17"
+        },
+        {
+          "ticker": "MSFT",
+          "note": "核心",
+          "desc": "Azure AI",
+          "daily_count": 251,
+          "weekly_count": 2097,
+          "latest_date": "May 07, 2026",
+          "latest_price": "420.77"
+        },
+        {
+          "ticker": "GOOGL",
+          "note": "核心",
+          "desc": "Gemini+TPU",
+          "daily_count": 251,
+          "weekly_count": 1135,
+          "latest_date": "May 07, 2026",
+          "latest_price": "397.99"
+        }
+      ],
+      "AI云新势力": [
+        {
+          "ticker": "ORCL",
+          "note": "★重点低估",
+          "desc": "AI云估值重构",
+          "daily_count": 251,
+          "weekly_count": 2097,
+          "latest_date": "May 07, 2026",
+          "latest_price": "194.59"
+        },
+        {
+          "ticker": "CRWV",
+          "note": "★超级高成长",
+          "desc": "AI原生算力云",
+          "daily_count": 251,
+          "weekly_count": 60,
+          "latest_date": "May 07, 2026",
+          "latest_price": "128.84"
+        }
+      ]
+    }
+  }
+}

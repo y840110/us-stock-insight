@@ -1,0 +1,516 @@
+{
+  "sectors": [
+    {
+      "ticker": "SOXX",
+      "name": "半导体",
+      "category": "半导体/存储",
+      "final_score": 79.8,
+      "tier": "L1",
+      "signal": "BUY",
+      "mom20": 28.6,
+      "mom60": 45.49,
+      "spy_mom20": 6.3,
+      "factors": {
+        "rs": {
+          "score": 80.0,
+          "raw": "RS=4.54",
+          "detail": "+28.6% vs SPY+6e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "7/7成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 100.0,
+          "raw": "量比1.99x",
+          "detail": "量比1.99x MA20 | ↑资金流入 +34.2%"
+        },
+        "volatility": {
+          "score": 70.0,
+          "raw": "ATR1.65",
+          "detail": "ATR20/ATR60=1.65 | RSI(14)=71"
+        },
+        "leadership": {
+          "score": 55.0,
+          "raw": "+16.1%",
+          "detail": "龙头均+16.1% vs 板块+3e+01% | Δ-12.5%"
+        },
+        "rotation": {
+          "score": 90.0,
+          "raw": "RS rank",
+          "detail": "RS排名分位数"
+        }
+      },
+      "rank": 1
+    },
+    {
+      "ticker": "SMH",
+      "name": "半导体ETF",
+      "category": "半导体",
+      "final_score": 79.6,
+      "tier": "L1",
+      "signal": "BUY",
+      "mom20": 24.17,
+      "mom60": 37.66,
+      "spy_mom20": 6.3,
+      "factors": {
+        "rs": {
+          "score": 80.0,
+          "raw": "RS=3.84",
+          "detail": "+24.2% vs SPY+6e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "7/7成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 100.0,
+          "raw": "量比11.63x",
+          "detail": "量比11.63x MA20 | ↑资金流入 +28.6%"
+        },
+        "volatility": {
+          "score": 68.4,
+          "raw": "ATR1.45",
+          "detail": "ATR20/ATR60=1.45 | RSI(14)=75"
+        },
+        "leadership": {
+          "score": 55.0,
+          "raw": "+16.1%",
+          "detail": "龙头均+16.1% vs 板块+2e+01% | Δ-8.0%"
+        },
+        "rotation": {
+          "score": 90.0,
+          "raw": "RS rank",
+          "detail": "RS排名分位数"
+        }
+      },
+      "rank": 2
+    },
+    {
+      "ticker": "IBIT",
+      "name": "加密货币",
+      "category": "加密",
+      "final_score": 78.5,
+      "tier": "L1",
+      "signal": "BUY",
+      "mom20": 8.71,
+      "mom60": 17.53,
+      "spy_mom20": 6.3,
+      "factors": {
+        "rs": {
+          "score": 65.6,
+          "raw": "RS=1.38",
+          "detail": "+8.7% vs SPY+6e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "5/5成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 100.0,
+          "raw": "量比9.35x",
+          "detail": "量比9.35x MA20 | ↑资金流入 +11.6%"
+        },
+        "volatility": {
+          "score": 31.9,
+          "raw": "ATR0.64",
+          "detail": "ATR20/ATR60=0.64 | RSI(14)=56"
+        },
+        "leadership": {
+          "score": 100.0,
+          "raw": "+30.6%",
+          "detail": "龙头均+30.6% vs 板块+9e+00% | Δ+21.9%"
+        },
+        "rotation": {
+          "score": 90.0,
+          "raw": "RS rank",
+          "detail": "RS排名分位数"
+        }
+      },
+      "rank": 3
+    },
+    {
+      "ticker": "QQQ",
+      "name": "科技纳指",
+      "category": "科技",
+      "final_score": 75.2,
+      "tier": "L1",
+      "signal": "BUY",
+      "mom20": 12.51,
+      "mom60": 17.5,
+      "spy_mom20": 6.3,
+      "factors": {
+        "rs": {
+          "score": 77.0,
+          "raw": "RS=1.99",
+          "detail": "+12.5% vs SPY+6e+00%"
+        },
+        "breadth": {
+          "score": 83.3,
+          "raw": "83%",
+          "detail": "5/6成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 100.0,
+          "raw": "量比20.00x",
+          "detail": "量比20.00x MA20 | ↑资金流入 +13.7%"
+        },
+        "volatility": {
+          "score": 56.6,
+          "raw": "ATR1.05",
+          "detail": "ATR20/ATR60=1.05 | RSI(14)=79"
+        },
+        "leadership": {
+          "score": 60.0,
+          "raw": "+10.5%",
+          "detail": "龙头均+10.5% vs 板块+1e+01% | Δ-2.0%"
+        },
+        "rotation": {
+          "score": 90.0,
+          "raw": "RS rank",
+          "detail": "RS排名分位数"
+        }
+      },
+      "rank": 4
+    },
+    {
+      "ticker": "FBTC",
+      "name": "比特币ETF",
+      "category": "加密",
+      "final_score": 61.9,
+      "tier": "L2",
+      "signal": "HOLD",
+      "mom20": 8.73,
+      "mom60": 17.48,
+      "spy_mom20": 6.3,
+      "factors": {
+        "rs": {
+          "score": 65.7,
+          "raw": "RS=1.39",
+          "detail": "+8.7% vs SPY+6e+00%"
+        },
+        "breadth": {
+          "score": 50.0,
+          "raw": "0%",
+          "detail": "单一资产ETF，无法计算"
+        },
+        "money_flow": {
+          "score": 100.0,
+          "raw": "量比9.08x",
+          "detail": "量比9.08x MA20 | ↑资金流入 +11.6%"
+        },
+        "volatility": {
+          "score": 31.7,
+          "raw": "ATR0.63",
+          "detail": "ATR20/ATR60=0.63 | RSI(14)=57"
+        },
+        "leadership": {
+          "score": 50.0,
+          "raw": "+0.0%",
+          "detail": "单一资产ETF"
+        },
+        "rotation": {
+          "score": 90.0,
+          "raw": "RS rank",
+          "detail": "RS排名分位数"
+        }
+      },
+      "rank": 5
+    },
+    {
+      "ticker": "ITA",
+      "name": "军工",
+      "category": "军工",
+      "final_score": 45.5,
+      "tier": "L3",
+      "signal": "REDUCE",
+      "mom20": -4.26,
+      "mom60": -4.04,
+      "spy_mom20": 6.3,
+      "factors": {
+        "rs": {
+          "score": 20.4,
+          "raw": "RS=-0.68",
+          "detail": "-4.3% vs SPY+6e+00%"
+        },
+        "breadth": {
+          "score": 50.0,
+          "raw": "50%",
+          "detail": "3/6成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 43.9,
+          "raw": "量比0.66x",
+          "detail": "量比0.66x MA20 | ↓资金流出 -1.7%"
+        },
+        "volatility": {
+          "score": 47.2,
+          "raw": "ATR0.94",
+          "detail": "ATR20/ATR60=0.94 | RSI(14)=60"
+        },
+        "leadership": {
+          "score": 90.0,
+          "raw": "+21.7%",
+          "detail": "龙头均+21.7% vs 板块-4e+00% | Δ+25.9%"
+        },
+        "rotation": {
+          "score": 90.0,
+          "raw": "RS rank",
+          "detail": "RS排名分位数"
+        }
+      },
+      "rank": 6
+    },
+    {
+      "ticker": "XLV",
+      "name": "医药",
+      "category": "医药",
+      "final_score": 44.3,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom20": -2.0,
+      "mom60": -7.5,
+      "spy_mom20": 6.3,
+      "factors": {
+        "rs": {
+          "score": 21.1,
+          "raw": "RS=-0.32",
+          "detail": "-2.0% vs SPY+6e+00%"
+        },
+        "breadth": {
+          "score": 50.0,
+          "raw": "0%",
+          "detail": "无成分股数据"
+        },
+        "money_flow": {
+          "score": 65.8,
+          "raw": "量比1.33x",
+          "detail": "量比1.33x MA20 | ↓资金流出 -2.3%"
+        },
+        "volatility": {
+          "score": 48.9,
+          "raw": "ATR0.98",
+          "detail": "ATR20/ATR60=0.98 | RSI(14)=48"
+        },
+        "leadership": {
+          "score": 50.0,
+          "raw": "+0.0%",
+          "detail": "无成分股数据"
+        },
+        "rotation": {
+          "score": 90.0,
+          "raw": "RS rank",
+          "detail": "RS排名分位数"
+        }
+      },
+      "rank": 7
+    },
+    {
+      "ticker": "XLE",
+      "name": "能源",
+      "category": "能源",
+      "final_score": 42.7,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom20": 2.9,
+      "mom60": 5.92,
+      "spy_mom20": 6.3,
+      "factors": {
+        "rs": {
+          "score": 29.9,
+          "raw": "RS=0.46",
+          "detail": "+2.9% vs SPY+6e+00%"
+        },
+        "breadth": {
+          "score": 42.9,
+          "raw": "43%",
+          "detail": "3/7成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 57.2,
+          "raw": "量比0.91x",
+          "detail": "量比0.91x MA20 | ↑资金流入 +0.1%"
+        },
+        "volatility": {
+          "score": 59.6,
+          "raw": "ATR1.15",
+          "detail": "ATR20/ATR60=1.15 | RSI(14)=55"
+        },
+        "leadership": {
+          "score": 35.0,
+          "raw": "+3.6%",
+          "detail": "龙头均+3.6% vs 板块+3e+00% | Δ+0.7%"
+        },
+        "rotation": {
+          "score": 90.0,
+          "raw": "RS rank",
+          "detail": "RS排名分位数"
+        }
+      },
+      "rank": 8
+    },
+    {
+      "ticker": "GLD",
+      "name": "黄金",
+      "category": "贵金属",
+      "final_score": 40.7,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom20": -2.73,
+      "mom60": -6.42,
+      "spy_mom20": 6.3,
+      "factors": {
+        "rs": {
+          "score": 20.8,
+          "raw": "RS=-0.43",
+          "detail": "-2.7% vs SPY+6e+00%"
+        },
+        "breadth": {
+          "score": 50.0,
+          "raw": "0%",
+          "detail": "单一资产ETF，无法计算"
+        },
+        "money_flow": {
+          "score": 54.7,
+          "raw": "量比1.01x",
+          "detail": "量比1.01x MA20 | ↓资金流出 -2.2%"
+        },
+        "volatility": {
+          "score": 34.6,
+          "raw": "ATR0.69",
+          "detail": "ATR20/ATR60=0.69 | RSI(14)=48"
+        },
+        "leadership": {
+          "score": 50.0,
+          "raw": "+0.0%",
+          "detail": "单一资产ETF"
+        },
+        "rotation": {
+          "score": 90.0,
+          "raw": "RS rank",
+          "detail": "RS排名分位数"
+        }
+      },
+      "rank": 9
+    },
+    {
+      "ticker": "XLY",
+      "name": "可选消费",
+      "category": "消费",
+      "final_score": 40.5,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom20": 1.59,
+      "mom60": 1.82,
+      "spy_mom20": 6.3,
+      "factors": {
+        "rs": {
+          "score": 25.8,
+          "raw": "RS=0.25",
+          "detail": "+1.6% vs SPY+6e+00%"
+        },
+        "breadth": {
+          "score": 42.9,
+          "raw": "43%",
+          "detail": "3/7成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 63.1,
+          "raw": "量比0.86x",
+          "detail": "量比0.86x MA20 | ↑资金流入 +3.2%"
+        },
+        "volatility": {
+          "score": 44.5,
+          "raw": "ATR0.89",
+          "detail": "ATR20/ATR60=0.89 | RSI(14)=47"
+        },
+        "leadership": {
+          "score": 30.0,
+          "raw": "+0.2%",
+          "detail": "龙头均+0.2% vs 板块+2e+00% | Δ-1.4%"
+        },
+        "rotation": {
+          "score": 90.0,
+          "raw": "RS rank",
+          "detail": "RS排名分位数"
+        }
+      },
+      "rank": 10
+    },
+    {
+      "ticker": "XLF",
+      "name": "金融",
+      "category": "金融",
+      "final_score": 38.6,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom20": -0.39,
+      "mom60": -0.14,
+      "spy_mom20": 6.3,
+      "factors": {
+        "rs": {
+          "score": 22.4,
+          "raw": "RS=-0.06",
+          "detail": "-0.4% vs SPY+6e+00%"
+        },
+        "breadth": {
+          "score": 42.9,
+          "raw": "43%",
+          "detail": "3/7成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 75.1,
+          "raw": "量比1.33x",
+          "detail": "量比1.33x MA20 | ↑资金流入 +1.4%"
+        },
+        "volatility": {
+          "score": 41.1,
+          "raw": "ATR0.82",
+          "detail": "ATR20/ATR60=0.82 | RSI(14)=41"
+        },
+        "leadership": {
+          "score": 10.0,
+          "raw": "-0.8%",
+          "detail": "龙头均-0.8% vs 板块-0.4% | Δ-0.4%"
+        },
+        "rotation": {
+          "score": 90.0,
+          "raw": "RS rank",
+          "detail": "RS排名分位数"
+        }
+      },
+      "rank": 11
+    }
+  ],
+  "hot_sectors": [
+    "SOXX",
+    "SMH",
+    "IBIT",
+    "QQQ",
+    "FBTC"
+  ],
+  "cold_sectors": [
+    "ITA",
+    "XLV",
+    "XLE",
+    "GLD",
+    "XLY",
+    "XLF"
+  ],
+  "spy_mom20": 6.3,
+  "spy_mom60": 8.28,
+  "vix": 18.38,
+  "breadth_above20ema": 64.9,
+  "last_date": "2026-05-12",
+  "weights": {
+    "rs": "30%",
+    "breadth": "20%",
+    "money_flow": "20%",
+    "volatility": "10%",
+    "leadership": "15%",
+    "rotation": "5%"
+  }
+}

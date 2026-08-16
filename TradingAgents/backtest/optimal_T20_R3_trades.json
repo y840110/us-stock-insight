@@ -1,0 +1,47 @@
+{
+  "strategy": "Trail20%+Regime≥6+3日冷静期",
+  "stats": {
+    "total_ret": 160.04,
+    "cagr": 16.25,
+    "max_dd": -37.83,
+    "final": 2600418.0,
+    "num_trades": 2,
+    "win_rate": 50.0,
+    "profit_factor": 1.91,
+    "avg_holding": 436.0
+  },
+  "trades": [
+    {
+      "trade_id": 1,
+      "entry_date": "2020-01-02",
+      "exit_date": "2020-03-09",
+      "entry_px": 324.87,
+      "exit_px": 274.23,
+      "return_pct": -15.59,
+      "pnl": -155869.92,
+      "regime_entry": 10.0,
+      "regime_exit": 5.96,
+      "rsi_entry": 23.20356714114216,
+      "danger_entry": 3.0,
+      "holding_days": 67,
+      "exit_reason": "止损(10%)",
+      "peak_price": 338.34
+    },
+    {
+      "trade_id": 2,
+      "entry_date": "2020-03-30",
+      "exit_date": "2022-06-13",
+      "entry_px": 261.65,
+      "exit_px": 375.0,
+      "return_pct": 43.32,
+      "pnl": 298110.5,
+      "regime_entry": 6.06,
+      "regime_exit": 6.81,
+      "rsi_entry": 37.910875799691155,
+      "danger_entry": 3.0,
+      "holding_days": 805,
+      "exit_reason": "追踪止盈(20%)",
+      "peak_price": 477.71
+    }
+  ]
+}

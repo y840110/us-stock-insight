@@ -1,0 +1,290 @@
+{
+  "description": "方方土价格行为学视频课学习计划",
+  "source": "方方土价格行为学_新/合并完成/",
+  "video_base": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/",
+  "subtitle_dir": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/字幕_P0/",
+  "note": "P## = 字幕文件序号（对应字幕_P0/P##.srt）。P## 同时对应合并完成排序后的第P##个文件。已学课程的P##与用户学习顺序编号（01起）不同。",
+  "learned": [
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P08",
+    "P11"
+  ],
+  "plan": [
+    {
+      "p": "P01",
+      "file": "01-00介绍阿尔布鲁克斯和他的视频课.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/01-00介绍阿尔布鲁克斯和他的视频课.mp4",
+      "status": "learned",
+      "subtitle": "P01.srt (mismatched, used video frame analysis + web research)",
+      "learned_note": "Whisper多次尝试均因SIGKILL被系统终止（CPU推理超时），改用视频帧分析+Brooks官网资料补充。视频为课程导论，无具体K线分析方法需实现。",
+      "summary": "p01_介绍Brooks.md"
+    },
+    {
+      "p": "P02",
+      "file": "02-01市场周期的4个阶段，Q&A.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/02-01市场周期的4个阶段，Q&A.mp4",
+      "status": "learned",
+      "subtitle": "P02.srt",
+      "learned_note": "Whisper全字幕1898条，100%覆盖68分钟",
+      "script": "p02_market_cycle_stages.py",
+      "summary": "p02_市场周期四阶段.md"
+    },
+    {
+      "p": "P03",
+      "file": "03-02蜡烛图-每天都在看，却忽视了K线传达的真正信息.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/03-02蜡烛图-每天都在看，却忽视了K线传达的真正信息.mp4",
+      "status": "learned",
+      "subtitle": "P03_whisper/p03_full.srt (356行，Whisper全文转写完成)",
+      "learned_note": "Whisper全文转写356条字幕（15分钟）+ Vision截图分析5帧，核心知识已提取",
+      "script": "p03_candlestick.py",
+      "summary": "p03_蜡烛图.md"
+    },
+    {
+      "p": "P04",
+      "file": "04-03MarketCycle市场周期.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/04-03MarketCycle市场周期.mp4",
+      "status": "learned",
+      "subtitle": "P04.srt (mismatched: only music, used Whisper sampling + video frame analysis)",
+      "learned_note": "P04.srt仅音乐，Whisper 30秒采样确认Market Cycle内容，Vision分析2帧（周期四阶段+多头突破仓位管理），核心知识已提取",
+      "script": "p04_market_cycle.py",
+      "summary": "p04_marketcycle.md"
+    },
+    {
+      "p": "P05",
+      "file": "05-04顺势交易-回调&数k线.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/05-04顺势交易-回调&数k线.mp4",
+      "status": "learned",
+      "subtitle": "P05.srt",
+      "learned_note": "Vision分析+Whisper进行中(27min~21%)，核心知识已提取",
+      "script": "p05_trend_pullback.py",
+      "summary": "p05_顺势交易回调数K线.md"
+    },
+    {
+      "p": "P06",
+      "file": "06-04回调&数K线(2)-逆势交易者离场.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/06-04回调&数K线(2)-逆势交易者离场.mp4",
+      "status": "learned",
+      "subtitle": "P06.srt (mismatched, used Whisper transcription)",
+      "learned_note": "Whisper完整转写20分钟（183条字幕）+ Vision分析5场景，核心知识已提取",
+      "script": "p06_pullback_counter_trend.py",
+      "summary": "p06_回调数K线2逆势交易者离场.md"
+    },
+    {
+      "p": "P07",
+      "file": "07-05信号K线&入场(1).mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/07-05信号K线&入场(1).mp4",
+      "status": "learned",
+      "subtitle": "P07_whisper/p07_audio.srt (Whisper全文转写，3096行字幕)",
+      "learned_note": "Whisper全文转写3096行字幕（23分钟），Vision分析5帧，核心知识已提取：趋势K线vs震荡K线、信号K线定义、入场用Buy/Sell Stop、环境背景>信号本身",
+      "script": "p07_signal_bar_entry.py",
+      "summary": "p07_信号K线入场1.md"
+    },
+    {
+      "p": "P08",
+      "file": "08-06信号K线&入场(2).mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/08-06信号K线&入场(2).mp4",
+      "status": "learned",
+      "subtitle": "P08.srt (mismatched, used video frame analysis)",
+      "learned_note": "Vision API分析视频帧（确认内容：Brooks两K反转/信号K线/止损设置），P08.srt为政治内容，核心知识已从视频帧提取",
+      "script": "p08_signal_bar_entry.py",
+      "summary": "p08_信号K线入场2.md"
+    },
+    {
+      "p": "P09",
+      "file": "09-07信号专题(3)-系统交易v.s.主观交易.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/09-07信号专题(3)-系统交易v.s.主观交易.mp4",
+      "status": "learned",
+      "subtitle": "P09.srt",
+      "learned_note": "视频27分钟切分为6段(各5分钟)，Whisper tiny转写672条字幕，全帧pHash比对生成113个画面组，MiniMax VLM全部113帧Vision分析完成。主题：坏背景+坏信号K处理、系统vs主观交易、82%规则、4种入场方式。使用Direct API调用(/v1/coding_plan/vlm)解决MCP子Agent网络问题。",
+      "script": "p09_system_vs_discretionary.py",
+      "summary": "p09_信号专题3系统vs主观.md"
+    },
+    {
+      "p": "P10",
+      "file": "10-08Wedge—楔形反转(1).mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/10-08Wedge—楔形反转(1).mp4",
+      "status": "learned",
+      "subtitle": null,
+      "note": "需Whisper转写",
+      "learned_note": "视频35分钟切分为7段(各5分钟)，Whisper tiny转写1049条字幕，全帧pHash比对生成65个画面组，MiniMax VLM全部65帧Vision分析完成。主题：Rising/Falling Wedge形态、三推反转规律、好vs坏Wedge、Measured Move目标测算。",
+      "script": "p10_wedge_part1.py",
+      "summary": "p10_Wedge楔形反转.md"
+    },
+    {
+      "p": "P11",
+      "file": "11-09Wedge—楔形反转(2).mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/11-09Wedge—楔形反转(2).mp4",
+      "status": "learned",
+      "subtitle": "P11.srt (mismatched: Chinese market commentary, not Brooks content)",
+      "learned_note": "P11.srt为错乱字幕（P11实际内容：Brooks三推楔形第二部分）。视频37.6分钟，采样8个时间点Whisper tiny转写（seg0-7，每点30秒），结合帧Vision分析（frame_0001课程大纲+frame_0005四类楔形图）。主题：嵌套楔形、双顶/双底+Wedge组合、Wedge失败=123结构、TR内楔形、顺大逆小。",
+      "script": "p11_wedge_part2.py",
+      "summary": "p11_notes.md"
+    },
+    {
+      "p": "P12",
+      "file": "12-10ParabolicWedge—抛物线反转.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/12-10ParabolicWedge—抛物线反转.mp4",
+      "status": "learned",
+      "subtitle": "P12.srt (mismatched: 字幕内容为回调和数K线，用采样转写)",
+      "learned_note": "P12.srt内容为回调和数K线非抛物线楔形。视频18.3分钟，Whisper 7个采样点转写（30秒×7）。核心：Parabolic Wedge=价格加速+量能递增+最大量衰竭，Bad Follow-Through=反转信号，抛物线后深度回调20-45%。",
+      "script": "p12_parabolic_wedge.py",
+      "summary": "p12_notes.md"
+    },
+    {
+      "p": "P13",
+      "file": "13-11止盈目标位(1)-MeasuredMove.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/13-11止盈目标位(1)-MeasuredMove.mp4",
+      "status": "learned",
+      "subtitle": "P13.srt (匹配)",
+      "learned_note": "字幕匹配直接使用。视频17.5分钟+Vision帧分析6帧。核心：Measured Move=结构高度→止盈目标，区间突破/双顶双底/缺口目标，第一趋势幅度日内参考，Brooks语录：自我感觉良好没有用关键是要能赚到钱",
+      "script": "p13_measured_move.py",
+      "summary": "p13_notes.md"
+    },
+    {
+      "p": "P14",
+      "file": "14-12止盈目标位(2)-实际风险&实际盈亏比ActualRisk.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/14-12止盈目标位(2)-实际风险&实际盈亏比ActualRisk.mp4",
+      "status": "learned",
+      "subtitle": "P14_whisper/p14_sample.srt (Whisper转写,已验证正确)",
+      "note": "Actual Risk核心：Initial Stop vs Actual Risk / Money Stop / 1R-2R目标位 / 数学期望",
+      "script": "model/experts/p14_actual_risk.py",
+      "frames_analyzed": 20,
+      "total_groups": 111
+    },
+    {
+      "p": "P15",
+      "file": "15-13中高级课程-缺口(1).mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/15-13中高级课程-缺口(1).mp4",
+      "status": "learned",
+      "subtitle": "P15_whisper/ (Whisper采样转写验证正确，Vision帧分析8/23组)",
+      "script": "model/experts/p15_gaps.py",
+      "note": "Gap核心：三种缺口类型/Breakout/Measuring/Exhaustion / EMA Gap(MAG)极强趋势 / 缺口作为目标位和支撑阻力",
+      "frames_analyzed": 8,
+      "total_groups": 23
+    },
+    {
+      "p": "P16",
+      "file": "16-14两倍盈亏比？九倍！3月19号ES股指期货详细复盘.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/16-14两倍盈亏比？九倍！3月19号ES股指期货详细复盘.mp4",
+      "status": "learned",
+      "subtitle": "P16_whisper/ (Whisper采样验证，Vision帧2/272组)",
+      "script": "model/experts/p16_risk_reward_replay.py",
+      "note": "盈亏比核心：40%胜率+2R=正期望/1%账户风险管理/不是每笔都赚/九倍盈亏比案例",
+      "frames_analyzed": 2,
+      "total_groups": 272
+    },
+    {
+      "p": "P17",
+      "file": "17-15进阶训练-TradingView回放功能12月28号ES复盘.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/17-15进阶训练-TradingView回放功能12月28号ES复盘.mp4",
+      "status": "pending",
+      "subtitle": "P17.srt"
+    },
+    {
+      "p": "P18",
+      "file": "18-16如何通过复盘训练提高自己的实盘能力.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/18-16如何通过复盘训练提高自己的实盘能力.mp4",
+      "status": "pending",
+      "subtitle": "P18.srt"
+    },
+    {
+      "p": "P19",
+      "file": "19-17你们感兴趣的scalp剥头皮交易.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/19-17你们感兴趣的scalp剥头皮交易.mp4",
+      "status": "pending",
+      "subtitle": "P19.srt"
+    },
+    {
+      "p": "P20",
+      "file": "20-18订单类型和应用(1)-最重要的StopOrder.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/20-18订单类型和应用(1)-最重要的StopOrder.mp4",
+      "status": "pending",
+      "subtitle": "P20.srt"
+    },
+    {
+      "p": "P21",
+      "file": "21-19订单类型和应用(2)-限价单和沃尔玛交易法.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/21-19订单类型和应用(2)-限价单和沃尔玛交易法.mp4",
+      "status": "pending",
+      "subtitle": "P21.srt"
+    },
+    {
+      "p": "P22",
+      "file": "22-20早盘交易策略(1)-早盘的重要性&概率统计.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/22-20早盘交易策略(1)-早盘的重要性&概率统计.mp4",
+      "status": "pending",
+      "subtitle": "P22.srt"
+    },
+    {
+      "p": "P23",
+      "file": "23-21早盘交易策略(2)-BreakoutMode突破模式.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/23-21早盘交易策略(2)-BreakoutMode突破模式.mp4",
+      "status": "pending",
+      "subtitle": "P23.srt"
+    },
+    {
+      "p": "P24",
+      "file": "24-22早盘交易策略(3)-高开和低开的常见走势.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/24-22早盘交易策略(3)-高开和低开的常见走势.mp4",
+      "status": "pending",
+      "subtitle": "P24.srt"
+    },
+    {
+      "p": "P25",
+      "file": "25-23早盘交易策略(4)-突破失败后的反转.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/25-23早盘交易策略(4)-突破失败后的反转.mp4",
+      "status": "pending",
+      "subtitle": "P25.srt"
+    },
+    {
+      "p": "P26",
+      "file": "26-24早盘交易策略(5)-90分钟定理.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/26-24早盘交易策略(5)-90分钟定理.mp4",
+      "status": "pending",
+      "subtitle": null,
+      "note": "需Whisper转写"
+    },
+    {
+      "p": "P27",
+      "file": "27-25突破专题(1)-假突破.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/27-25突破专题(1)-假突破.mp4",
+      "status": "pending",
+      "subtitle": null,
+      "note": "需Whisper转写"
+    },
+    {
+      "p": "P28",
+      "file": "28-26突破专题(2)-真突破.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/28-26突破专题(2)-真突破.mp4",
+      "status": "pending",
+      "subtitle": "P28.srt"
+    },
+    {
+      "p": "P29",
+      "file": "29-27第二段陷阱2ndLegTrap.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/29-27第二段陷阱2ndLegTrap.mp4",
+      "status": "pending",
+      "subtitle": null,
+      "note": "需Whisper转写"
+    },
+    {
+      "p": "P30",
+      "file": "30-28突破回测BreakoutTest.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/30-28突破回测BreakoutTest.mp4",
+      "status": "pending",
+      "subtitle": "P30.srt"
+    },
+    {
+      "p": "P31",
+      "file": "31-29SurpriseBars惊喜K线&新手常见错误.mp4",
+      "video_path": "/home/yudengfeng/.openclaw/workspace/美股投资洞察分析/方方土价格行为学_新/合并完成/31-29SurpriseBars惊喜K线&新手常见错误.mp4",
+      "status": "pending",
+      "subtitle": "P31.srt"
+    }
+  ]
+}

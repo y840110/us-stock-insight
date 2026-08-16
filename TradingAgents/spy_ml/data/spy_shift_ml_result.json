@@ -1,0 +1,123 @@
+{
+  "total_return": 0.0944,
+  "max_drawdown": -0.0512,
+  "num_trades": 5,
+  "win_rate": 0.75,
+  "final_equity": 109438.58,
+  "baseline_return": 0.0832,
+  "feature_importance": [
+    {
+      "feature": "atr_pct",
+      "importance": 0.4389
+    },
+    {
+      "feature": "ma50_dev",
+      "importance": 0.1171
+    },
+    {
+      "feature": "volatility_20d",
+      "importance": 0.1125
+    },
+    {
+      "feature": "macd",
+      "importance": 0.0846
+    },
+    {
+      "feature": "macd_hist",
+      "importance": 0.0763
+    },
+    {
+      "feature": "vol_trend",
+      "importance": 0.0434
+    },
+    {
+      "feature": "momentum",
+      "importance": 0.019
+    },
+    {
+      "feature": "ma5_dev",
+      "importance": 0.0141
+    },
+    {
+      "feature": "ma20_dev",
+      "importance": 0.014
+    },
+    {
+      "feature": "bb_position",
+      "importance": 0.0132
+    }
+  ],
+  "shift_dates": [
+    {
+      "date": "2025-10-08",
+      "prob": 0.8247,
+      "close": 673.11
+    },
+    {
+      "date": "2025-12-01",
+      "prob": 0.8411,
+      "close": 680.27
+    },
+    {
+      "date": "2025-12-02",
+      "prob": 0.8305,
+      "close": 681.53
+    },
+    {
+      "date": "2025-12-03",
+      "prob": 0.8075,
+      "close": 683.89
+    },
+    {
+      "date": "2025-12-04",
+      "prob": 0.8212,
+      "close": 684.39
+    },
+    {
+      "date": "2025-12-05",
+      "prob": 0.854,
+      "close": 685.69
+    },
+    {
+      "date": "2025-12-08",
+      "prob": 0.7917,
+      "close": 683.63
+    },
+    {
+      "date": "2025-12-09",
+      "prob": 0.818,
+      "close": 683.04
+    },
+    {
+      "date": "2025-12-29",
+      "prob": 0.9086,
+      "close": 687.85
+    },
+    {
+      "date": "2025-12-30",
+      "prob": 0.9064,
+      "close": 687.01
+    },
+    {
+      "date": "2025-12-31",
+      "prob": 0.9422,
+      "close": 681.92
+    },
+    {
+      "date": "2026-01-02",
+      "prob": 0.9106,
+      "close": 683.17
+    },
+    {
+      "date": "2026-01-28",
+      "prob": 0.8148,
+      "close": 695.42
+    }
+  ],
+  "vs_baseline": {
+    "baseline": "buy_hold",
+    "baseline_return": 0.0832,
+    "ml_return": 0.0944,
+    "outperformance": 0.0112
+  }
+}

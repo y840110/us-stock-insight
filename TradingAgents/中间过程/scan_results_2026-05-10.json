@@ -1,0 +1,201 @@
+{
+  "scan_date": "2026-05-10",
+  "market_state": "Extended Uptrend",
+  "vix_note": "VIX daily data not available in local klines",
+  "spy_rsi": 73.82,
+  "qqq_rsi": 84.17,
+  "spy_above_ma20": true,
+  "spy_above_ma50": true,
+  "spy_above_ma200": true,
+  "total_stocks_scanned": 113,
+  "signals": {
+    "A": [],
+    "B": [],
+    "C": []
+  },
+  "near_miss_A": [
+    {
+      "ticker": "TEL",
+      "price": 210.06,
+      "rsi": 26.14,
+      "vol_ratio": 0.86,
+      "wick_pct": 90.1,
+      "ema_dev": -2.4
+    },
+    {
+      "ticker": "APH",
+      "price": 136.62,
+      "rsi": 29.32,
+      "vol_ratio": 1.09,
+      "wick_pct": 100.0,
+      "ema_dev": -3.89
+    },
+    {
+      "ticker": "FCX",
+      "price": 60.61,
+      "rsi": 32.56,
+      "vol_ratio": 1.13,
+      "wick_pct": 62.1,
+      "ema_dev": -0.58
+    },
+    {
+      "ticker": "RXRX",
+      "price": 3.27,
+      "rsi": 33.76,
+      "vol_ratio": 1.03,
+      "wick_pct": 42.3,
+      "ema_dev": -4.63
+    },
+    {
+      "ticker": "DLR",
+      "price": 194.78,
+      "rsi": 34.3,
+      "vol_ratio": 1.19,
+      "wick_pct": 100.0,
+      "ema_dev": -0.43
+    },
+    {
+      "ticker": "SCCO",
+      "price": 179.54,
+      "rsi": 38.61,
+      "vol_ratio": 1.02,
+      "wick_pct": 80.7,
+      "ema_dev": 0.83
+    },
+    {
+      "ticker": "PLTR",
+      "price": 137.8,
+      "rsi": 41.7,
+      "vol_ratio": 0.88,
+      "wick_pct": 98.4,
+      "ema_dev": -2.2
+    }
+  ],
+  "near_miss_B": [
+    {
+      "ticker": "MOD",
+      "price": 269.65,
+      "rsi": 63.1,
+      "breakout_pct": 2.61,
+      "vol_ratio": 2.78
+    },
+    {
+      "ticker": "MDB",
+      "price": 293.42,
+      "rsi": 65.42,
+      "breakout_pct": 11.42,
+      "vol_ratio": 2.44
+    },
+    {
+      "ticker": "SNOW",
+      "price": 153.72,
+      "rsi": 57.52,
+      "breakout_pct": 0.19,
+      "vol_ratio": 1.62
+    }
+  ],
+  "rs_candidates": [
+    {
+      "ticker": "KLAC",
+      "price": 1763.25,
+      "rsi": 47.55,
+      "ema_dev": 0.78,
+      "mom20": -11.18,
+      "vol_ratio": 2.15
+    },
+    {
+      "ticker": "COHR",
+      "price": 319.19,
+      "rsi": 39.71,
+      "ema_dev": 0.33,
+      "mom20": -11.37,
+      "vol_ratio": 2.03
+    },
+    {
+      "ticker": "EMR",
+      "price": 141.09,
+      "rsi": 43.28,
+      "ema_dev": 0.6,
+      "mom20": -8.26,
+      "vol_ratio": 1.37
+    },
+    {
+      "ticker": "AAOI",
+      "price": 157.55,
+      "rsi": 49.44,
+      "ema_dev": 2.41,
+      "mom20": -9.23,
+      "vol_ratio": 1.35
+    },
+    {
+      "ticker": "DD",
+      "price": 48.36,
+      "rsi": 53.87,
+      "ema_dev": 3.17,
+      "mom20": -1.74,
+      "vol_ratio": 1.29
+    },
+    {
+      "ticker": "TECK",
+      "price": 60.76,
+      "rsi": 53.19,
+      "ema_dev": 4.85,
+      "mom20": -10.08,
+      "vol_ratio": 1.28
+    },
+    {
+      "ticker": "LITE",
+      "price": 903.8,
+      "rsi": 50.77,
+      "ema_dev": 2.24,
+      "mom20": 3.74,
+      "vol_ratio": 1.18
+    },
+    {
+      "ticker": "CRM",
+      "price": 186.34,
+      "rsi": 53.6,
+      "ema_dev": 2.08,
+      "mom20": 4.72,
+      "vol_ratio": 1.07
+    }
+  ],
+  "top_opportunities": [
+    {
+      "rank": 1,
+      "ticker": "APH",
+      "type": "超跌反弹",
+      "rsi": 29.32,
+      "reason": "RSI接近超卖，下影线100%，EMA偏离-3.89%"
+    },
+    {
+      "rank": 2,
+      "ticker": "FCX",
+      "type": "超跌反弹",
+      "rsi": 32.56,
+      "reason": "RSI接近超卖边界，大宗商品支撑，下影线62%"
+    },
+    {
+      "rank": 3,
+      "ticker": "MDB",
+      "type": "量价突破",
+      "rsi": 65.42,
+      "reason": "放量2.44×突破15日高点+11.4%，动能强劲"
+    },
+    {
+      "rank": 4,
+      "ticker": "KLAC",
+      "type": "相对强度",
+      "rsi": 47.55,
+      "reason": "RSI适中，半导体设备龙头，站上EMA，趋势健康"
+    },
+    {
+      "rank": 5,
+      "ticker": "COHR",
+      "type": "相对强度",
+      "rsi": 39.71,
+      "reason": "RSI偏低上方空间大，放量2×突破，下影线71%"
+    }
+  ],
+  "no_signals_explanation": "市场处于Extended Uptrend，SPY RSI 73.82，QQQ RSI 84.17，极度超买环境中超跌反弹条件未满足；强势股票RSI普遍>68，量价突破蓄势阶段股票稀少；策略C需要日内数据。"
+}

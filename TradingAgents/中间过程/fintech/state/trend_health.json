@@ -1,0 +1,132 @@
+{
+  "date": "2026-05-13",
+  "total_score": 88.0,
+  "raw_total": 88,
+  "max_total": 100,
+  "state": "强趋势",
+  "state_icon": "🚀",
+  "consensus": "高度一致看涨",
+  "bullish_factors": 5,
+  "bearish_factors": 0,
+  "factors": {
+    "Breadth": {
+      "score": 20,
+      "max": 30,
+      "pct": 67,
+      "label": "健康参与",
+      "raw_value": 0.6489
+    },
+    "Leadership": {
+      "score": 25,
+      "max": 25,
+      "pct": 100,
+      "label": "全部健康",
+      "raw_value": null
+    },
+    "Volatility": {
+      "score": 18,
+      "max": 20,
+      "pct": 90,
+      "label": "VIX=正常偏低, BB=极度收缩（蓄势）",
+      "raw_value": 18.38
+    },
+    "Liquidity": {
+      "score": 15,
+      "max": 15,
+      "pct": 100,
+      "label": "资金涌入科技",
+      "raw_value": 6.59
+    },
+    "PriceStructure": {
+      "score": 10,
+      "max": 10,
+      "pct": 100,
+      "label": "ADX=强趋势, MA=完美多头排列",
+      "raw_value": 39.9
+    }
+  },
+  "_raw": [
+    {
+      "factor": "Breadth",
+      "weight": 30,
+      "raw_value": 0.6489,
+      "score": 20,
+      "max": 30,
+      "label": "健康参与",
+      "above_sma20": 0.6489,
+      "above_sma50": 0.5529999999999999,
+      "above_sma200": 0.485
+    },
+    {
+      "factor": "Leadership",
+      "weight": 25,
+      "score": 25,
+      "max": 25,
+      "label": "全部健康",
+      "leaders": {
+        "NVDA": {
+          "status": "healthy",
+          "reason": "健康",
+          "last_close": 219.44,
+          "ema20": 203.29,
+          "vol_ratio": 1.1,
+          "last_date": "2026-05-11"
+        },
+        "MSFT": {
+          "status": "healthy",
+          "reason": "健康",
+          "last_close": 412.66,
+          "ema20": 411.8,
+          "vol_ratio": 1.0,
+          "last_date": "2026-05-11"
+        },
+        "AAPL": {
+          "status": "healthy",
+          "reason": "健康",
+          "last_close": 292.68,
+          "ema20": 276.63,
+          "vol_ratio": 0.8,
+          "last_date": "2026-05-11"
+        }
+      }
+    },
+    {
+      "factor": "Volatility",
+      "weight": 20,
+      "score": 18,
+      "max": 20,
+      "vix_score": 8,
+      "vix": 18.38,
+      "vix_label": "正常偏低",
+      "bb_score": 10,
+      "bb_width": 0.0169,
+      "bb_label": "极度收缩（蓄势）",
+      "label": "VIX=正常偏低, BB=极度收缩（蓄势）"
+    },
+    {
+      "factor": "Liquidity",
+      "weight": 15,
+      "score": 15,
+      "max": 15,
+      "ratio_now": 0.9648,
+      "ratio_20d_ago": 0.9052,
+      "ratio_chg": 6.59,
+      "label": "资金涌入科技"
+    },
+    {
+      "factor": "PriceStructure",
+      "weight": 10,
+      "score": 10,
+      "max": 10,
+      "adx": 39.9,
+      "adx_score": 6,
+      "adx_label": "强趋势",
+      "ma_score": 4,
+      "ma_label": "完美多头排列",
+      "ma20": 714.6,
+      "ma50": 696.92,
+      "ma200": 667.72,
+      "label": "ADX=强趋势, MA=完美多头排列"
+    }
+  ]
+}

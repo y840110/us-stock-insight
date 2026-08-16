@@ -1,0 +1,29 @@
+{
+  "vcp_breakout": {
+    "count": 45,
+    "wins": 0,
+    "failed": 0,
+    "total_return": 0.0,
+    "avg_return": 0.0,
+    "win_rate": 0.0,
+    "setup_returns": []
+  },
+  "ma20_pullback": {
+    "count": 84,
+    "wins": 0,
+    "failed": 0,
+    "total_return": 0.0,
+    "avg_return": 0.0,
+    "win_rate": 0.0,
+    "setup_returns": []
+  },
+  "other": {
+    "count": 66,
+    "wins": 0,
+    "failed": 0,
+    "total_return": 0.0,
+    "avg_return": 0.0,
+    "win_rate": 0.0,
+    "setup_returns": []
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "strategy": "Plan A: Risk-Adjusted LR Multi-class + Position Sizing",
+  "train_period": "2020-01-01 to 2024-06-01",
+  "test_period": "2024-06-01 to 2026-05-13",
+  "train_n": 1111,
+  "test_n": 468,
+  "train_accuracy": 0.4032,
+  "test_accuracy": 0.2286,
+  "label_distribution": {
+    "class_1": 403,
+    "class_2": 111,
+    "class_3": 121,
+    "class_4": 111,
+    "class_5": 833
+  },
+  "lr_total_ret": 35.29,
+  "lr_cagr": 17.67,
+  "lr_max_dd": -19.0,
+  "lr_trades": 6,
+  "bh_total_ret_test": 32.61,
+  "bh_total_ret_full": 128.49,
+  "lr_vs_bh": 2.68,
+  "position_by_class": {
+    "class_1": 0.0,
+    "class_2": 0.25,
+    "class_3": 0.5,
+    "class_4": 1.0,
+    "class_5": 1.0
+  },
+  "parameters": {
+    "init_cash": 1000000.0,
+    "future_n": 20,
+    "vol_window": 20,
+    "trail_stop": 0.15,
+    "stop_loss": 0.08,
+    "cool_days": 5
+  },
+  "test_class_distribution": {
+    "class_1": 460,
+    "class_2": 5,
+    "class_3": 0,
+    "class_4": 3,
+    "class_5": 0
+  }
+}

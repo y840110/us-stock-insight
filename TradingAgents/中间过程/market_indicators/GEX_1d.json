@@ -1,0 +1,22 @@
+{
+  "name": "SPX Gamma Exposure (估算)",
+  "source": "Self-calculated",
+  "source_url": "https://github.com/dmart1441/SPX-Gamma-Exposure",
+  "last_updated": "2026-05-25T13:24:48.768209",
+  "note": "需要SPX期权链数据，当前用代理指标代替",
+  "method": "calculate",
+  "data": [
+    {
+      "date": "2026-05-17",
+      "value": 0.0
+    },
+    {
+      "date": "2026-05-22",
+      "value": 0.0
+    },
+    {
+      "date": "2026-05-25",
+      "value": 0.0
+    }
+  ]
+}

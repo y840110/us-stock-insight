@@ -1,0 +1,16 @@
+{
+  "_schema_version": "1.0",
+  "_description": "实盘持仓记录，每笔持仓包含成本信息，供每轮分析使用",
+  "_last_updated": "2026-06-04",
+  "positions": [
+    {
+      "ticker": "SPY",
+      "qty": 10,
+      "cost_basis": 741.50,
+      "entry_date": "2026-05-28",
+      "stop_loss": 725.00,
+      "target": 780.00,
+      "notes": "EMA50回踩入场，93天强制退出"
+    }
+  ]
+}

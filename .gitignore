@@ -1,0 +1,78 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+*.so
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Data outputs
+TradingAgents/fintech/p2/layout/*.html
+TradingAgents/fintech/p1/layout/*.html
+中间过程/
+
+# Confidential/credentials
+**/api_key*.py
+**/credentials*.py
+**/.env
+.env.local
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Build artifacts
+TradingAgents/build/
+TradingAgents/dist/
+*.pyc
+
+# Large media files (training videos - stored separately)
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.zip
+*.tar.gz
+*.rar
+
+# Nested git repos (they have their own .git)
+experiment_8/TradingAgents/
+tabler_template/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Model files (large)
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+*.keras
+TradingAgents/fintech/p4/ml/models/
+
+# Trae specific
+.trae/

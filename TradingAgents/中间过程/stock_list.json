@@ -1,0 +1,835 @@
+[
+  {
+    "big_category": "上游资源/材料",
+    "sub_category": "铜/电力金属",
+    "ticker": "FCX",
+    "note": "★潜力低估",
+    "description": "AI数据中心、电网升级核心受益，铜需求长期增长"
+  },
+  {
+    "big_category": "上游资源/材料",
+    "sub_category": "铜/电力金属",
+    "ticker": "SCCO",
+    "note": "龙头",
+    "description": "全球铜矿龙头，高分红"
+  },
+  {
+    "big_category": "上游资源/材料",
+    "sub_category": "铜/电力金属",
+    "ticker": "TECK",
+    "note": "★潜力低估",
+    "description": "铜+资源周期，AI电力基础设施受益"
+  },
+  {
+    "big_category": "上游资源/材料",
+    "sub_category": "铜/电力金属",
+    "ticker": "RIO",
+    "note": "稳健龙头",
+    "description": "全球矿业龙头，铜/铝受益AI建设"
+  },
+  {
+    "big_category": "上游资源/材料",
+    "sub_category": "铜/电力金属",
+    "ticker": "BHP",
+    "note": "稳健龙头",
+    "description": "AI电力扩张长期受益"
+  },
+  {
+    "big_category": "上游资源/材料",
+    "sub_category": "半导体材料",
+    "ticker": "ENTG",
+    "note": "★潜力低估",
+    "description": "先进制程材料核心供应商"
+  },
+  {
+    "big_category": "上游资源/材料",
+    "sub_category": "半导体材料",
+    "ticker": "DD",
+    "note": "稳健",
+    "description": "AI封装化学材料"
+  },
+  {
+    "big_category": "上游资源/材料",
+    "sub_category": "半导体材料",
+    "ticker": "APD",
+    "note": "稳健",
+    "description": "半导体气体核心供应商"
+  },
+  {
+    "big_category": "上游资源/材料",
+    "sub_category": "半导体材料",
+    "ticker": "COHR",
+    "note": "★重点",
+    "description": "光通信+激光材料龙头"
+  },
+  {
+    "big_category": "上游资源/材料",
+    "sub_category": "半导体材料",
+    "ticker": "GLW",
+    "note": "★低估",
+    "description": "光纤/玻璃材料受益硅光"
+  },
+  {
+    "big_category": "上游资源/材料",
+    "sub_category": "半导体材料",
+    "ticker": "OLED",
+    "note": "★潜力低估",
+    "description": "半导体沉积材料"
+  },
+  {
+    "big_category": "上游资源/材料",
+    "sub_category": "稀土/磁材",
+    "ticker": "MP",
+    "note": "★潜力低估",
+    "description": "AI机器人/电机稀土磁材"
+  },
+  {
+    "big_category": "先进封装",
+    "sub_category": "晶圆代工",
+    "ticker": "TSM",
+    "note": "★超级核心",
+    "description": "AI先进制程绝对核心，CoWoS产能决定AI供给"
+  },
+  {
+    "big_category": "先进封装",
+    "sub_category": "封装/封测",
+    "ticker": "AMKR",
+    "note": "★重点低估",
+    "description": "AI先进封装核心受益"
+  },
+  {
+    "big_category": "先进封装",
+    "sub_category": "封装/封测",
+    "ticker": "ASX",
+    "note": "龙头",
+    "description": "全球封测龙头"
+  },
+  {
+    "big_category": "先进封装",
+    "sub_category": "封装/封测",
+    "ticker": "ONTO",
+    "note": "★重点低估",
+    "description": "AI封装检测核心"
+  },
+  {
+    "big_category": "先进封装",
+    "sub_category": "封装/封测",
+    "ticker": "KLIC",
+    "note": "★潜力低估",
+    "description": "HBM封装设备"
+  },
+  {
+    "big_category": "先进封装",
+    "sub_category": "封装/封测",
+    "ticker": "AMAT",
+    "note": "龙头",
+    "description": "CoWoS设备需求受益"
+  },
+  {
+    "big_category": "半导体设备",
+    "sub_category": "光刻/前道设备",
+    "ticker": "ASML",
+    "note": "核心龙头",
+    "description": "EUV不可替代"
+  },
+  {
+    "big_category": "半导体设备",
+    "sub_category": "光刻/前道设备",
+    "ticker": "AMAT",
+    "note": "★长期核心",
+    "description": "AI资本开支受益"
+  },
+  {
+    "big_category": "半导体设备",
+    "sub_category": "光刻/前道设备",
+    "ticker": "LRCX",
+    "note": "★低估",
+    "description": "存储/先进制程设备"
+  },
+  {
+    "big_category": "半导体设备",
+    "sub_category": "光刻/前道设备",
+    "ticker": "KLAC",
+    "note": "龙头",
+    "description": "检测设备垄断"
+  },
+  {
+    "big_category": "半导体设备",
+    "sub_category": "光刻/前道设备",
+    "ticker": "TOELY",
+    "note": "龙头",
+    "description": "日本设备龙头"
+  },
+  {
+    "big_category": "半导体设备",
+    "sub_category": "晶圆制造设备",
+    "ticker": "ACLS",
+    "note": "★潜力低估",
+    "description": "离子注入设备"
+  },
+  {
+    "big_category": "芯片测试",
+    "sub_category": "检测/测试",
+    "ticker": "TER",
+    "note": "★重点低估",
+    "description": "AI芯片测试爆发"
+  },
+  {
+    "big_category": "芯片测试",
+    "sub_category": "检测/测试",
+    "ticker": "COHU",
+    "note": "★低估",
+    "description": "AI ASIC测试"
+  },
+  {
+    "big_category": "芯片测试",
+    "sub_category": "检测/测试",
+    "ticker": "ONTO",
+    "note": "★重点",
+    "description": "先进检测设备"
+  },
+  {
+    "big_category": "芯片测试",
+    "sub_category": "检测/测试",
+    "ticker": "ATEYY",
+    "note": "龙头",
+    "description": "全球测试设备龙头"
+  },
+  {
+    "big_category": "AI芯片",
+    "sub_category": "GPU/AI加速器",
+    "ticker": "NVDA",
+    "note": "核心龙头",
+    "description": "AI算力核心"
+  },
+  {
+    "big_category": "AI芯片",
+    "sub_category": "GPU/AI加速器",
+    "ticker": "AMD",
+    "note": "核心竞争者",
+    "description": "MI系列加速卡"
+  },
+  {
+    "big_category": "AI芯片",
+    "sub_category": "GPU/AI加速器",
+    "ticker": "AVGO",
+    "note": "★重点",
+    "description": "ASIC+网络双核心"
+  },
+  {
+    "big_category": "AI芯片",
+    "sub_category": "GPU/AI加速器",
+    "ticker": "MRVL",
+    "note": "★重点",
+    "description": "AI ASIC+互连"
+  },
+  {
+    "big_category": "AI芯片",
+    "sub_category": "GPU/AI加速器",
+    "ticker": "INTC",
+    "note": "★高风险低估",
+    "description": "若代工转型成功弹性巨大"
+  },
+  {
+    "big_category": "AI芯片",
+    "sub_category": "CPU",
+    "ticker": "QCOM",
+    "note": "★潜力低估",
+    "description": "AI PC/边缘AI"
+  },
+  {
+    "big_category": "AI芯片",
+    "sub_category": "CPU",
+    "ticker": "ARM",
+    "note": "★长期核心",
+    "description": "AI终端架构"
+  },
+  {
+    "big_category": "AI芯片",
+    "sub_category": "边缘AI SoC",
+    "ticker": "NXPI",
+    "note": "★低估",
+    "description": "AI汽车/工业"
+  },
+  {
+    "big_category": "AI芯片",
+    "sub_category": "边缘AI SoC",
+    "ticker": "TXN",
+    "note": "★低估",
+    "description": "工业边缘AI"
+  },
+  {
+    "big_category": "AI ASIC",
+    "sub_category": "定制芯片",
+    "ticker": "AVGO",
+    "note": "★超级核心",
+    "description": "Google TPU/AI ASIC受益"
+  },
+  {
+    "big_category": "AI ASIC",
+    "sub_category": "定制芯片",
+    "ticker": "MRVL",
+    "note": "★重点",
+    "description": "定制AI芯片核心"
+  },
+  {
+    "big_category": "AI ASIC",
+    "sub_category": "定制芯片",
+    "ticker": "ALAB",
+    "note": "★重点低估",
+    "description": "AI互连新龙头"
+  },
+  {
+    "big_category": "AI ASIC",
+    "sub_category": "定制芯片",
+    "ticker": "CRDO",
+    "note": "★重点低估",
+    "description": "高速互连黑马"
+  },
+  {
+    "big_category": "EDA/IP",
+    "sub_category": "EDA软件",
+    "ticker": "SNPS",
+    "note": "核心垄断",
+    "description": "AI芯片复杂度提升受益"
+  },
+  {
+    "big_category": "EDA/IP",
+    "sub_category": "EDA软件",
+    "ticker": "CDNS",
+    "note": "核心垄断",
+    "description": "AI芯片设计刚需"
+  },
+  {
+    "big_category": "EDA/IP",
+    "sub_category": "IP授权",
+    "ticker": "ARM",
+    "note": "★长期核心",
+    "description": "AI边缘计算核心架构"
+  },
+  {
+    "big_category": "EDA/IP",
+    "sub_category": "EDA软件",
+    "ticker": "SIEGY",
+    "note": "稳健",
+    "description": "Siemens EDA"
+  },
+  {
+    "big_category": "存储",
+    "sub_category": "HBM/AI存储",
+    "ticker": "MU",
+    "note": "核心龙头",
+    "description": "HBM供需紧张"
+  },
+  {
+    "big_category": "存储",
+    "sub_category": "HBM/AI存储",
+    "ticker": "SNDK",
+    "note": "★重点低估",
+    "description": "闪迪独立后有望受益AI企业级存储"
+  },
+  {
+    "big_category": "存储",
+    "sub_category": "HBM/AI存储",
+    "ticker": "WDC",
+    "note": "★低估",
+    "description": "AI容量存储"
+  },
+  {
+    "big_category": "存储",
+    "sub_category": "HBM/AI存储",
+    "ticker": "STX",
+    "note": "★低估",
+    "description": "企业级存储受益"
+  },
+  {
+    "big_category": "存储",
+    "sub_category": "HBM/AI存储",
+    "ticker": "SSNLF",
+    "note": "龙头",
+    "description": "HBM核心供应"
+  },
+  {
+    "big_category": "AI网络",
+    "sub_category": "交换/网络",
+    "ticker": "ANET",
+    "note": "核心龙头",
+    "description": "AI交换机核心"
+  },
+  {
+    "big_category": "AI网络",
+    "sub_category": "交换/网络",
+    "ticker": "AVGO",
+    "note": "核心",
+    "description": "AI交换芯片"
+  },
+  {
+    "big_category": "AI网络",
+    "sub_category": "交换/网络",
+    "ticker": "CSCO",
+    "note": "★低估",
+    "description": "AI网络升级受益"
+  },
+  {
+    "big_category": "AI网络",
+    "sub_category": "交换/网络",
+    "ticker": "MRVL",
+    "note": "核心",
+    "description": "高速网络芯片"
+  },
+  {
+    "big_category": "光模块/硅光",
+    "sub_category": "光模块/CPO",
+    "ticker": "COHR",
+    "note": "★超级重点",
+    "description": "AI硅光/CPO核心"
+  },
+  {
+    "big_category": "光模块/硅光",
+    "sub_category": "光模块/CPO",
+    "ticker": "LITE",
+    "note": "★重点低估",
+    "description": "光模块龙头"
+  },
+  {
+    "big_category": "光模块/硅光",
+    "sub_category": "光模块/CPO",
+    "ticker": "FN",
+    "note": "★低估",
+    "description": "光模块代工受益"
+  },
+  {
+    "big_category": "光模块/硅光",
+    "sub_category": "光模块/CPO",
+    "ticker": "AAOI",
+    "note": "★高弹性",
+    "description": "AI光模块高波动"
+  },
+  {
+    "big_category": "光模块/硅光",
+    "sub_category": "光模块/CPO",
+    "ticker": "GFS",
+    "note": "★重点低估",
+    "description": "硅光制造核心"
+  },
+  {
+    "big_category": "光模块/硅光",
+    "sub_category": "光模块/CPO",
+    "ticker": "CRDO",
+    "note": "★重点",
+    "description": "AI高速互连"
+  },
+  {
+    "big_category": "光模块/硅光",
+    "sub_category": "光模块/CPO",
+    "ticker": "CIEN",
+    "note": "★低估",
+    "description": "AI长距离光网络"
+  },
+  {
+    "big_category": "PCB/连接",
+    "sub_category": "高速PCB/连接器",
+    "ticker": "APH",
+    "note": "★重点",
+    "description": "AI高速连接龙头"
+  },
+  {
+    "big_category": "PCB/连接",
+    "sub_category": "高速PCB/连接器",
+    "ticker": "TEL",
+    "note": "★低估",
+    "description": "AI服务器连接器"
+  },
+  {
+    "big_category": "PCB/连接",
+    "sub_category": "高速PCB/连接器",
+    "ticker": "JBL",
+    "note": "★低估",
+    "description": "AI服务器制造"
+  },
+  {
+    "big_category": "PCB/连接",
+    "sub_category": "高速PCB/连接器",
+    "ticker": "FLEX",
+    "note": "★低估",
+    "description": "AI硬件制造"
+  },
+  {
+    "big_category": "数据中心",
+    "sub_category": "超大规模IDC",
+    "ticker": "CRWV",
+    "note": "★超级重点高成长",
+    "description": "AI原生云/算力租赁平台，高弹性"
+  },
+  {
+    "big_category": "数据中心",
+    "sub_category": "GPU云服务",
+    "ticker": "NBIS",
+    "note": "★重点高成长",
+    "description": "AI GPU云服务新势力"
+  },
+  {
+    "big_category": "数据中心",
+    "sub_category": "IDC/REITs",
+    "ticker": "EQIX",
+    "note": "核心龙头",
+    "description": "AI机房核心资产"
+  },
+  {
+    "big_category": "数据中心",
+    "sub_category": "IDC/REITs",
+    "ticker": "DLR",
+    "note": "★重点低估",
+    "description": "AI数据中心扩张"
+  },
+  {
+    "big_category": "数据中心",
+    "sub_category": "IDC/REITs",
+    "ticker": "IRM",
+    "note": "★低估",
+    "description": "AI存储基础设施"
+  },
+  {
+    "big_category": "数据中心",
+    "sub_category": "IDC/REITs",
+    "ticker": "VRT",
+    "note": "★超级重点",
+    "description": "AI电源+散热"
+  },
+  {
+    "big_category": "数据中心",
+    "sub_category": "AI服务器",
+    "ticker": "SMCI",
+    "note": "高波动核心",
+    "description": "AI服务器高增长"
+  },
+  {
+    "big_category": "数据中心",
+    "sub_category": "AI服务器",
+    "ticker": "DELL",
+    "note": "★低估",
+    "description": "AI服务器企业客户强"
+  },
+  {
+    "big_category": "数据中心",
+    "sub_category": "AI服务器",
+    "ticker": "HPE",
+    "note": "★低估",
+    "description": "企业AI私有云"
+  },
+  {
+    "big_category": "液冷/散热",
+    "sub_category": "液冷",
+    "ticker": "VRT",
+    "note": "★超级重点",
+    "description": "AI液冷核心"
+  },
+  {
+    "big_category": "液冷/散热",
+    "sub_category": "液冷",
+    "ticker": "MOD",
+    "note": "★重点低估",
+    "description": "液冷黑马"
+  },
+  {
+    "big_category": "液冷/散热",
+    "sub_category": "液冷",
+    "ticker": "CARR",
+    "note": "★低估",
+    "description": "HVAC+数据中心"
+  },
+  {
+    "big_category": "液冷/散热",
+    "sub_category": "液冷",
+    "ticker": "TT",
+    "note": "龙头",
+    "description": "商业制冷龙头"
+  },
+  {
+    "big_category": "液冷/散热",
+    "sub_category": "液冷",
+    "ticker": "NVT",
+    "note": "★低估",
+    "description": "数据中心散热"
+  },
+  {
+    "big_category": "电力/能源",
+    "sub_category": "核电",
+    "ticker": "CEG",
+    "note": "★超级重点",
+    "description": "AI核电核心受益"
+  },
+  {
+    "big_category": "电力/能源",
+    "sub_category": "核电",
+    "ticker": "VST",
+    "note": "★重点",
+    "description": "电力需求受益"
+  },
+  {
+    "big_category": "电力/能源",
+    "sub_category": "核电",
+    "ticker": "OKLO",
+    "note": "★高风险高弹性",
+    "description": "小型核反应堆概念"
+  },
+  {
+    "big_category": "电力/能源",
+    "sub_category": "核电",
+    "ticker": "SMR",
+    "note": "★高风险",
+    "description": "SMR概念"
+  },
+  {
+    "big_category": "电力/能源",
+    "sub_category": "核电",
+    "ticker": "CCJ",
+    "note": "★重点",
+    "description": "铀矿龙头"
+  },
+  {
+    "big_category": "电力/能源",
+    "sub_category": "天然气/LNG",
+    "ticker": "LNG",
+    "note": "★潜力低估",
+    "description": "AI电力缺口推动天然气"
+  },
+  {
+    "big_category": "电力/能源",
+    "sub_category": "天然气/LNG",
+    "ticker": "ET",
+    "note": "★低估",
+    "description": "美国天然气运输"
+  },
+  {
+    "big_category": "电力/能源",
+    "sub_category": "电网/配电",
+    "ticker": "ETN",
+    "note": "★超级重点",
+    "description": "AI电网升级核心"
+  },
+  {
+    "big_category": "电力/能源",
+    "sub_category": "电网/配电",
+    "ticker": "GEV",
+    "note": "★重点",
+    "description": "GE电力设备"
+  },
+  {
+    "big_category": "电力/能源",
+    "sub_category": "电网/配电",
+    "ticker": "PWR",
+    "note": "★重点",
+    "description": "美国电网建设"
+  },
+  {
+    "big_category": "电力/能源",
+    "sub_category": "电网/配电",
+    "ticker": "POWL",
+    "note": "★低估",
+    "description": "高压配电"
+  },
+  {
+    "big_category": "电力/能源",
+    "sub_category": "电网/配电",
+    "ticker": "EMR",
+    "note": "稳健",
+    "description": "工业自动化"
+  },
+  {
+    "big_category": "AI软件",
+    "sub_category": "Agent/企业AI",
+    "ticker": "MSFT",
+    "note": "核心龙头",
+    "description": "Copilot生态"
+  },
+  {
+    "big_category": "AI软件",
+    "sub_category": "Agent/企业AI",
+    "ticker": "CRM",
+    "note": "★重点低估",
+    "description": "Agentforce布局"
+  },
+  {
+    "big_category": "AI软件",
+    "sub_category": "Agent/企业AI",
+    "ticker": "NOW",
+    "note": "核心",
+    "description": "企业AI自动化"
+  },
+  {
+    "big_category": "AI软件",
+    "sub_category": "Agent/企业AI",
+    "ticker": "PLTR",
+    "note": "高成长",
+    "description": "AI政府/企业平台"
+  },
+  {
+    "big_category": "AI软件",
+    "sub_category": "Agent/企业AI",
+    "ticker": "SNOW",
+    "note": "★低估",
+    "description": "AI数据平台"
+  },
+  {
+    "big_category": "AI软件",
+    "sub_category": "AI开发平台",
+    "ticker": "DDOG",
+    "note": "★重点",
+    "description": "AI observability"
+  },
+  {
+    "big_category": "AI软件",
+    "sub_category": "AI开发平台",
+    "ticker": "MDB",
+    "note": "★低估",
+    "description": "AI数据库"
+  },
+  {
+    "big_category": "AI软件",
+    "sub_category": "AI安全",
+    "ticker": "PANW",
+    "note": "★重点",
+    "description": "AI安全受益"
+  },
+  {
+    "big_category": "AI软件",
+    "sub_category": "AI安全",
+    "ticker": "CRWD",
+    "note": "★重点",
+    "description": "AI时代网络安全"
+  },
+  {
+    "big_category": "AI医疗",
+    "sub_category": "AI制药/医疗",
+    "ticker": "TEM",
+    "note": "★高成长",
+    "description": "AI医疗数据平台"
+  },
+  {
+    "big_category": "AI医疗",
+    "sub_category": "AI制药/医疗",
+    "ticker": "RXRX",
+    "note": "★高风险高弹性",
+    "description": "AI制药"
+  },
+  {
+    "big_category": "AI医疗",
+    "sub_category": "AI制药/医疗",
+    "ticker": "ILMN",
+    "note": "★低估",
+    "description": "基因AI分析"
+  },
+  {
+    "big_category": "自动驾驶",
+    "sub_category": "Robotaxi/自动驾驶",
+    "ticker": "TSLA",
+    "note": "★核心",
+    "description": "FSD+机器人"
+  },
+  {
+    "big_category": "自动驾驶",
+    "sub_category": "Robotaxi/自动驾驶",
+    "ticker": "MBLY",
+    "note": "★低估",
+    "description": "自动驾驶芯片"
+  },
+  {
+    "big_category": "自动驾驶",
+    "sub_category": "Robotaxi/自动驾驶",
+    "ticker": "UBER",
+    "note": "★潜在受益",
+    "description": "Robotaxi生态"
+  },
+  {
+    "big_category": "机器人/边缘AI",
+    "sub_category": "工业自动化",
+    "ticker": "ROK",
+    "note": "★低估",
+    "description": "AI工厂自动化"
+  },
+  {
+    "big_category": "机器人/边缘AI",
+    "sub_category": "工业自动化",
+    "ticker": "SYM",
+    "note": "★高成长",
+    "description": "AI物流机器人"
+  },
+  {
+    "big_category": "机器人/边缘AI",
+    "sub_category": "工业自动化",
+    "ticker": "TER",
+    "note": "★重点",
+    "description": "自动化测试+机器人"
+  },
+  {
+    "big_category": "机器人/边缘AI",
+    "sub_category": "边缘AI",
+    "ticker": "NVDA",
+    "note": "核心",
+    "description": "机器人AI平台"
+  },
+  {
+    "big_category": "AI终端",
+    "sub_category": "AI PC/终端",
+    "ticker": "AAPL",
+    "note": "★潜力重估",
+    "description": "AI终端生态"
+  },
+  {
+    "big_category": "AI终端",
+    "sub_category": "AI PC/终端",
+    "ticker": "QCOM",
+    "note": "★重点",
+    "description": "AI PC芯片"
+  },
+  {
+    "big_category": "AI终端",
+    "sub_category": "AI PC/终端",
+    "ticker": "DELL",
+    "note": "★潜力低估",
+    "description": "AI PC企业换机"
+  },
+  {
+    "big_category": "AI终端",
+    "sub_category": "AI手机",
+    "ticker": "GOOGL",
+    "note": "核心",
+    "description": "Gemini终端AI"
+  },
+  {
+    "big_category": "云计算",
+    "sub_category": "超大云厂商",
+    "ticker": "AMZN",
+    "note": "核心",
+    "description": "AWS AI基础设施"
+  },
+  {
+    "big_category": "云计算",
+    "sub_category": "超大云厂商",
+    "ticker": "MSFT",
+    "note": "核心",
+    "description": "Azure AI"
+  },
+  {
+    "big_category": "云计算",
+    "sub_category": "超大云厂商",
+    "ticker": "GOOGL",
+    "note": "核心",
+    "description": "Gemini+TPU"
+  },
+  {
+    "big_category": "云计算",
+    "sub_category": "AI云新势力",
+    "ticker": "ORCL",
+    "note": "★重点低估",
+    "description": "AI云估值重构"
+  },
+  {
+    "big_category": "云计算",
+    "sub_category": "AI云新势力",
+    "ticker": "CRWV",
+    "note": "★超级高成长",
+    "description": "AI原生算力云"
+  }
+]

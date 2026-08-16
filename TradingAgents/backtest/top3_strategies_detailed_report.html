@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Top3 策略详细交易报告 2020-2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0d1117;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:13px;line-height:1.5}
+h1{background:linear-gradient(135deg,#1a1a2e,#16213e);padding:20px 32px;border-bottom:3px solid #e94560;font-size:20px}
+h2{font-size:16px;padding:16px 0 8px;color:#58a6ff}
+h3{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#9e9e9e;padding:12px 0 8px;border-bottom:1px solid #30363d;margin-bottom:12px}
+.strategy-section{background:#161b22;border:1px solid #30363d;border-radius:12px;margin:20px 32px;overflow:hidden}
+.strat-header{padding:20px 24px;border-bottom:1px solid #30363d}
+.rule-box{background:#1c2128;border:1px solid #30363d;border-radius:6px;padding:8px 14px;font-size:12px;color:#9ca3af;margin:8px 0}
+.kpi-row{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.kpi{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:10px 14px;text-align:center;min-width:75px;flex:1}
+.kn{font-size:1.5rem;font-weight:700;line-height:1.2}
+.ks{font-size:9px;color:#6b7280;margin-top:4px;text-transform:uppercase}
+.exit-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.chip{padding:4px 12px;border-radius:12px;font-size:11px;font-weight:600}
+.chip.stop{background:rgba(255,23,68,0.15);color:#ff1744}
+.chip.profit{background:rgba(0,200,83,0.15);color:#00c853}
+.chip.regime{background:rgba(88,166,255,0.15);color:#58a6ff}
+.scroll{max-height:520px;overflow-y:auto;padding:0 16px}
+.tbl{width:100%;border-collapse:collapse;font-size:12px;min-width:1100px;table-layout:fixed}
+.tbl th{background:#1c2128;color:#9ca3af;text-align:left;padding:8px 10px;font-size:10px;text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid #30363d;position:sticky;top:0;z-index:1;white-space:nowrap}
+.tbl td{padding:8px 10px;border-bottom:1px solid #21262d;vertical-align:middle;white-space:nowrap}
+.tbl tr:hover td{background:#1c2128}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.center{text-align:center}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;white-space:nowrap}
+.tag.stop{background:rgba(255,23,68,0.2);color:#ff6b6b}
+.tag.profit{background:rgba(0,200,83,0.2);color:#4caf50}
+.tag.regime{background:rgba(88,166,255,0.2);color:#58a6ff}
+.stop{color:#ff6b6b}
+.profit{color:#4caf50}
+.summary-section{margin:20px 32px}
+.footer{padding:16px 32px;border-top:1px solid #30363d;color:#6b7280;font-size:11px}
+</style>
+</head>
+<body>
+<h1>🏆 Top3 策略详细交易报告 &nbsp;|&nbsp; SPY 交易回测 &nbsp;|&nbsp; 初始资金 ¥1,000,000</h1>
+
+<div class="summary-section">
+  <h2>一、绩效总览（2020-01-02 → 2026-05-13，共 1599 交易日）</h2>
+  <table class="tbl">
+    <thead><tr>
+      <th>策略</th><th>交易</th><th>胜率</th><th>平均持仓</th>
+      <th>止损</th><th>止盈</th><th>Regime</th>
+      <th>总收益</th><th>CAGR</th><th>最大回撤</th>
+      <th>终值</th><th>盈亏比</th>
+    </tr></thead>
+    <tbody><tr>
+          <td><strong>S1b · Regime ≥ 5.5 入场 | Regime &lt; 4 出场 | 止损10% | 止盈20%</strong></td>
+          <td class="num">11</td>
+          <td class="num" style="color:#00c853">54.5%</td>
+          <td class="num">188天</td>
+          <td class="num">5</td>
+          <td class="num">6</td>
+          <td class="num">0</td>
+          <td class="num" style="color:#00c853">+101.9%</td>
+          <td class="num" style="color:#00c853">+11.7%</td>
+          <td class="num" style="color:#ff1744">-34.0%</td>
+          <td class="num">$2,019,270</td>
+          <td class="num" style="color:#00c853">2.09</td>
+        </tr><tr>
+          <td><strong>S1 · Regime ≥ 6.0 入场 | Regime &lt; 4 出场 | 止损10% | 止盈20%</strong></td>
+          <td class="num">10</td>
+          <td class="num" style="color:#00c853">60.0%</td>
+          <td class="num">205天</td>
+          <td class="num">4</td>
+          <td class="num">6</td>
+          <td class="num">0</td>
+          <td class="num" style="color:#00c853">+98.0%</td>
+          <td class="num" style="color:#00c853">+11.4%</td>
+          <td class="num" style="color:#ff1744">-24.7%</td>
+          <td class="num">$1,979,932</td>
+          <td class="num" style="color:#00c853">2.78</td>
+        </tr><tr>
+          <td><strong>S4 · Regime ≥ 6 OR Shift≤1 入场 | Regime &lt; 4 出场 | 止损10% | 止盈20%</strong></td>
+          <td class="num">10</td>
+          <td class="num" style="color:#00c853">60.0%</td>
+          <td class="num">205天</td>
+          <td class="num">4</td>
+          <td class="num">6</td>
+          <td class="num">0</td>
+          <td class="num" style="color:#00c853">+95.8%</td>
+          <td class="num" style="color:#00c853">+11.2%</td>
+          <td class="num" style="color:#ff1744">-28.3%</td>
+          <td class="num">$1,957,820</td>
+          <td class="num" style="color:#00c853">2.55</td>
+        </tr></tbody>
+  </table>
+</div>
+
+
+<div class="strategy-section" id="S1b">
+  <div class="strat-header">
+    <h2>📈 S1b · Regime ≥ 5.5 入场 | Regime &lt; 4 出场 | 止损10% | 止盈20%</h2>
+    <div class="rule-box">规则：Regime ≥ 5.5 入场 | Regime &lt; 4.0 / 止损10% / 止盈20% 出场</div>
+    <div class="kpi-row">
+      <div class="kpi"><div class="kn">11</div><div class="ks">交易次数</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">54.5%</div><div class="ks">胜率</div></div>
+      <div class="kpi"><div class="kn">188天</div><div class="ks">平均持仓</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">2.09</div><div class="ks">盈亏比</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">+101.9%</div><div class="ks">总收益</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">+11.7%</div><div class="ks">CAGR</div></div>
+      <div class="kpi"><div class="kn" style="color:#ff1744">-34.0%</div><div class="ks">最大回撤</div></div>
+      <div class="kpi"><div class="kn">$2,019,270</div><div class="ks">终值(100万)</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">$+6,526,034</div><div class="ks">累计盈亏</div></div>
+    </div>
+    <div class="exit-chips">
+      <span class="chip stop">⚠️ 止损 5次</span>
+      <span class="chip profit">🎯 止盈 6次</span>
+      <span class="chip regime">📊 Regime出场 0次</span>
+    </div>
+  </div>
+
+  <h3>年度绩效</h3>
+  <table class="tbl"><thead><tr><th>年</th><th>交易</th><th>盈利</th><th>胜率</th><th>平均收益</th></tr></thead><tbody><tr>
+              <td><strong>2020</strong></td>
+              <td class="num">6</td>
+              <td class="num">2</td>
+              <td class="num">33%</td>
+              <td class="num" style="color:#ff1744">-2.03%</td>
+            </tr><tr>
+              <td><strong>2021</strong></td>
+              <td class="num">1</td>
+              <td class="num">1</td>
+              <td class="num">100%</td>
+              <td class="num" style="color:#00c853">+20.00%</td>
+            </tr><tr>
+              <td><strong>2022</strong></td>
+              <td class="num">1</td>
+              <td class="num">0</td>
+              <td class="num">0%</td>
+              <td class="num" style="color:#ff1744">-11.54%</td>
+            </tr><tr>
+              <td><strong>2023</strong></td>
+              <td class="num">1</td>
+              <td class="num">1</td>
+              <td class="num">100%</td>
+              <td class="num" style="color:#00c853">+20.00%</td>
+            </tr><tr>
+              <td><strong>2024</strong></td>
+              <td class="num">1</td>
+              <td class="num">1</td>
+              <td class="num">100%</td>
+              <td class="num" style="color:#00c853">+20.00%</td>
+            </tr><tr>
+              <td><strong>2025</strong></td>
+              <td class="num">1</td>
+              <td class="num">1</td>
+              <td class="num">100%</td>
+              <td class="num" style="color:#00c853">+20.00%</td>
+            </tr></tbody></table>
+
+  <h3>逐笔交易明细（共 11 笔）</h3>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr>
+      <th>#</th><th>入场日期</th><th>入场价</th><th>入场市值</th>
+      <th>持仓</th><th>出场日期</th><th>出场价</th><th>出场市值</th>
+      <th>止损位</th><th>止盈位</th>
+      <th>出场原因</th><th>收益率</th><th>盈亏(¥)</th>
+      <th>Regime</th><th>Danger</th>
+    </tr></thead>
+    <tbody><tr>
+              <td class="center">1</td>
+              <td>2020-01-02</td>
+              <td class="num">$324.87</td>
+              <td class="num">1,000,000</td>
+              <td class="num">67天</td>
+              <td>2020-03-09</td>
+              <td class="num">$274.23</td>
+              <td class="num">844,535</td>
+              <td class="num stop">$292.38</td>
+              <td class="num profit">$389.84</td>
+              <td class="center"><span class="tag stop">止损</span></td>
+              <td class="num" style="color:#ff1744;font-weight:700">-15.55%</td>
+              <td class="num" style="color:#ff1744">$-155,464.80</td>
+              <td class="center">10.0 → 6.0</td>
+              <td class="center">3</td>
+            </tr><tr>
+              <td class="center">2</td>
+              <td>2020-03-10</td>
+              <td class="num">$288.42</td>
+              <td class="num">888,098</td>
+              <td class="num">2天</td>
+              <td>2020-03-12</td>
+              <td class="num">$248.11</td>
+              <td class="num">764,347</td>
+              <td class="num stop">$259.58</td>
+              <td class="num profit">$346.10</td>
+              <td class="center"><span class="tag stop">止损</span></td>
+              <td class="num" style="color:#ff1744;font-weight:700">-13.93%</td>
+              <td class="num" style="color:#ff1744">$-123,751.70</td>
+              <td class="center">7.0 → 6.0</td>
+              <td class="center">3</td>
+            </tr><tr>
+              <td class="center">3</td>
+              <td>2020-03-13</td>
+              <td class="num">$269.32</td>
+              <td class="num">829,462</td>
+              <td class="num">3天</td>
+              <td>2020-03-16</td>
+              <td class="num">$239.85</td>
+              <td class="num">738,989</td>
+              <td class="num stop">$242.39</td>
+              <td class="num profit">$323.18</td>
+              <td class="center"><span class="tag stop">止损</span></td>
+              <td class="num" style="color:#ff1744;font-weight:700">-10.91%</td>
+              <td class="num" style="color:#ff1744">$-90,472.90</td>
+              <td class="center">5.7 → 5.7</td>
+              <td class="center">3</td>
+            </tr><tr>
+              <td class="center">4</td>
+              <td>2020-03-17</td>
+              <td class="num">$252.80</td>
+              <td class="num">778,875</td>
+              <td class="num">6天</td>
+              <td>2020-03-23</td>
+              <td class="num">$222.95</td>
+              <td class="num">686,937</td>
+              <td class="num stop">$227.52</td>
+              <td class="num profit">$303.36</td>
+              <td class="center"><span class="tag stop">止损</span></td>
+              <td class="num" style="color:#ff1744;font-weight:700">-11.80%</td>
+              <td class="num" style="color:#ff1744">$-91,938.00</td>
+              <td class="center">5.7 → 5.7</td>
+              <td class="center">2</td>
+            </tr><tr>
+              <td class="center">5</td>
+              <td>2020-03-25</td>
+              <td class="num">$246.79</td>
+              <td class="num">748,902</td>
+              <td class="num">56天</td>
+              <td>2020-05-20</td>
+              <td class="num">$296.15</td>
+              <td class="num">871,233</td>
+              <td class="num stop">$222.11</td>
+              <td class="num profit">$296.15</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+122,331.00</td>
+              <td class="center">5.5 → 8.5</td>
+              <td class="center">0</td>
+            </tr><tr>
+              <td class="center">6</td>
+              <td>2020-05-21</td>
+              <td class="num">$294.88</td>
+              <td class="num">865,226</td>
+              <td class="num">104天</td>
+              <td>2020-09-02</td>
+              <td class="num">$353.86</td>
+              <td class="num">1,049,289</td>
+              <td class="num stop">$265.39</td>
+              <td class="num profit">$353.86</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+184,062.60</td>
+              <td class="center">8.5 → 9.3</td>
+              <td class="center">1</td>
+            </tr><tr>
+              <td class="center">7</td>
+              <td>2020-09-03</td>
+              <td class="num">$345.39</td>
+              <td class="num">1,013,221</td>
+              <td class="num">224天</td>
+              <td>2021-04-15</td>
+              <td class="num">$414.47</td>
+              <td class="num">1,175,813</td>
+              <td class="num stop">$310.85</td>
+              <td class="num profit">$414.47</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+162,592.00</td>
+              <td class="center">8.9 → 8.5</td>
+              <td class="center">0</td>
+            </tr><tr>
+              <td class="center">8</td>
+              <td>2021-04-16</td>
+              <td class="num">$417.26</td>
+              <td class="num">1,179,733</td>
+              <td class="num">423天</td>
+              <td>2022-06-13</td>
+              <td class="num">$375.00</td>
+              <td class="num">1,043,640</td>
+              <td class="num stop">$375.53</td>
+              <td class="num profit">$500.71</td>
+              <td class="center"><span class="tag stop">止损</span></td>
+              <td class="num" style="color:#ff1744;font-weight:700">-11.54%</td>
+              <td class="num" style="color:#ff1744">$-136,092.80</td>
+              <td class="center">8.0 → 6.8</td>
+              <td class="center">3</td>
+            </tr><tr>
+              <td class="center">9</td>
+              <td>2022-06-14</td>
+              <td class="num">$373.87</td>
+              <td class="num">1,040,498</td>
+              <td class="num">394天</td>
+              <td>2023-07-13</td>
+              <td class="num">$448.64</td>
+              <td class="num">1,183,207</td>
+              <td class="num stop">$336.48</td>
+              <td class="num profit">$448.64</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+142,708.80</td>
+              <td class="center">6.0 → 10.0</td>
+              <td class="center">0</td>
+            </tr><tr>
+              <td class="center">10</td>
+              <td>2023-07-14</td>
+              <td class="num">$449.28</td>
+              <td class="num">1,182,471</td>
+              <td class="num">334天</td>
+              <td>2024-06-12</td>
+              <td class="num">$539.14</td>
+              <td class="num">1,424,641</td>
+              <td class="num stop">$404.35</td>
+              <td class="num profit">$539.14</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+242,170.40</td>
+              <td class="center">10.0 → 10.0</td>
+              <td class="center">0</td>
+            </tr><tr>
+              <td class="center">11</td>
+              <td>2024-06-13</td>
+              <td class="num">$542.45</td>
+              <td class="num">1,427,508</td>
+              <td class="num">454天</td>
+              <td>2025-09-10</td>
+              <td class="num">$650.94</td>
+              <td class="num">1,823,967</td>
+              <td class="num stop">$488.21</td>
+              <td class="num profit">$650.94</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+396,458.80</td>
+              <td class="center">10.0 → 8.2</td>
+              <td class="center">1</td>
+            </tr></tbody>
+  </table>
+  </div>
+</div>
+<div class="strategy-section" id="S1">
+  <div class="strat-header">
+    <h2>📈 S1 · Regime ≥ 6.0 入场 | Regime &lt; 4 出场 | 止损10% | 止盈20%</h2>
+    <div class="rule-box">规则：Regime ≥ 6.0 入场 | Regime &lt; 4.0 / 止损10% / 止盈20% 出场</div>
+    <div class="kpi-row">
+      <div class="kpi"><div class="kn">10</div><div class="ks">交易次数</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">60.0%</div><div class="ks">胜率</div></div>
+      <div class="kpi"><div class="kn">205天</div><div class="ks">平均持仓</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">2.78</div><div class="ks">盈亏比</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">+98.0%</div><div class="ks">总收益</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">+11.4%</div><div class="ks">CAGR</div></div>
+      <div class="kpi"><div class="kn" style="color:#ff1744">-24.7%</div><div class="ks">最大回撤</div></div>
+      <div class="kpi"><div class="kn">$1,979,932</div><div class="ks">终值(100万)</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">$+8,734,879</div><div class="ks">累计盈亏</div></div>
+    </div>
+    <div class="exit-chips">
+      <span class="chip stop">⚠️ 止损 4次</span>
+      <span class="chip profit">🎯 止盈 6次</span>
+      <span class="chip regime">📊 Regime出场 0次</span>
+    </div>
+  </div>
+
+  <h3>年度绩效</h3>
+  <table class="tbl"><thead><tr><th>年</th><th>交易</th><th>盈利</th><th>胜率</th><th>平均收益</th></tr></thead><tbody><tr>
+              <td><strong>2020</strong></td>
+              <td class="num">3</td>
+              <td class="num">1</td>
+              <td class="num">33%</td>
+              <td class="num" style="color:#ff1744">-0.23%</td>
+            </tr><tr>
+              <td><strong>2021</strong></td>
+              <td class="num">2</td>
+              <td class="num">2</td>
+              <td class="num">100%</td>
+              <td class="num" style="color:#00c853">+20.00%</td>
+            </tr><tr>
+              <td><strong>2022</strong></td>
+              <td class="num">2</td>
+              <td class="num">0</td>
+              <td class="num">0%</td>
+              <td class="num" style="color:#ff1744">-10.97%</td>
+            </tr><tr>
+              <td><strong>2023</strong></td>
+              <td class="num">1</td>
+              <td class="num">1</td>
+              <td class="num">100%</td>
+              <td class="num" style="color:#00c853">+20.00%</td>
+            </tr><tr>
+              <td><strong>2024</strong></td>
+              <td class="num">1</td>
+              <td class="num">1</td>
+              <td class="num">100%</td>
+              <td class="num" style="color:#00c853">+20.00%</td>
+            </tr><tr>
+              <td><strong>2025</strong></td>
+              <td class="num">1</td>
+              <td class="num">1</td>
+              <td class="num">100%</td>
+              <td class="num" style="color:#00c853">+20.00%</td>
+            </tr></tbody></table>
+
+  <h3>逐笔交易明细（共 10 笔）</h3>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr>
+      <th>#</th><th>入场日期</th><th>入场价</th><th>入场市值</th>
+      <th>持仓</th><th>出场日期</th><th>出场价</th><th>出场市值</th>
+      <th>止损位</th><th>止盈位</th>
+      <th>出场原因</th><th>收益率</th><th>盈亏(¥)</th>
+      <th>Regime</th><th>Danger</th>
+    </tr></thead>
+    <tbody><tr>
+              <td class="center">1</td>
+              <td>2020-01-02</td>
+              <td class="num">$324.87</td>
+              <td class="num">1,000,000</td>
+              <td class="num">67天</td>
+              <td>2020-03-09</td>
+              <td class="num">$274.23</td>
+              <td class="num">844,535</td>
+              <td class="num stop">$292.38</td>
+              <td class="num profit">$389.84</td>
+              <td class="center"><span class="tag stop">止损</span></td>
+              <td class="num" style="color:#ff1744;font-weight:700">-15.55%</td>
+              <td class="num" style="color:#ff1744">$-155,464.80</td>
+              <td class="center">10.0 → 6.0</td>
+              <td class="center">3</td>
+            </tr><tr>
+              <td class="center">2</td>
+              <td>2020-03-10</td>
+              <td class="num">$288.42</td>
+              <td class="num">844,535</td>
+              <td class="num">2天</td>
+              <td>2020-03-12</td>
+              <td class="num">$248.11</td>
+              <td class="num">801,131</td>
+              <td class="num stop">$259.58</td>
+              <td class="num profit">$346.10</td>
+              <td class="center"><span class="tag stop">止损</span></td>
+              <td class="num" style="color:#ff1744;font-weight:700">-5.14%</td>
+              <td class="num" style="color:#ff1744">$-43,404.00</td>
+              <td class="center">7.0 → 6.0</td>
+              <td class="center">3</td>
+            </tr><tr>
+              <td class="center">3</td>
+              <td>2020-03-30</td>
+              <td class="num">$261.65</td>
+              <td class="num">801,131</td>
+              <td class="num">67天</td>
+              <td>2020-06-05</td>
+              <td class="num">$313.98</td>
+              <td class="num">1,022,923</td>
+              <td class="num stop">$235.48</td>
+              <td class="num profit">$313.98</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+221,791.80</td>
+              <td class="center">6.1 → 9.5</td>
+              <td class="center">1</td>
+            </tr><tr>
+              <td class="center">4</td>
+              <td>2020-06-08</td>
+              <td class="num">$323.20</td>
+              <td class="num">1,035,275</td>
+              <td class="num">245天</td>
+              <td>2021-02-08</td>
+              <td class="num">$387.84</td>
+              <td class="num">1,229,063</td>
+              <td class="num stop">$290.88</td>
+              <td class="num profit">$387.84</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+193,788.20</td>
+              <td class="center">9.3 → 7.7</td>
+              <td class="center">0</td>
+            </tr><tr>
+              <td class="center">5</td>
+              <td>2021-02-09</td>
+              <td class="num">$390.25</td>
+              <td class="num">1,228,247</td>
+              <td class="num">269天</td>
+              <td>2021-11-05</td>
+              <td class="num">$468.30</td>
+              <td class="num">1,390,793</td>
+              <td class="num stop">$351.23</td>
+              <td class="num profit">$468.30</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+162,546.00</td>
+              <td class="center">7.7 → 8.5</td>
+              <td class="center">0</td>
+            </tr><tr>
+              <td class="center">6</td>
+              <td>2021-11-08</td>
+              <td class="num">$468.93</td>
+              <td class="num">1,391,977</td>
+              <td class="num">107天</td>
+              <td>2022-02-23</td>
+              <td class="num">$421.95</td>
+              <td class="num">1,259,454</td>
+              <td class="num stop">$422.04</td>
+              <td class="num profit">$562.72</td>
+              <td class="center"><span class="tag stop">止损</span></td>
+              <td class="num" style="color:#ff1744;font-weight:700">-9.52%</td>
+              <td class="num" style="color:#ff1744">$-132,522.40</td>
+              <td class="center">8.5 → 6.3</td>
+              <td class="center">2</td>
+            </tr><tr>
+              <td class="center">7</td>
+              <td>2022-02-24</td>
+              <td class="num">$428.30</td>
+              <td class="num">1,278,377</td>
+              <td class="num">109天</td>
+              <td>2022-06-13</td>
+              <td class="num">$375.00</td>
+              <td class="num">1,119,543</td>
+              <td class="num stop">$385.47</td>
+              <td class="num profit">$513.96</td>
+              <td class="center"><span class="tag stop">止损</span></td>
+              <td class="num" style="color:#ff1744;font-weight:700">-12.42%</td>
+              <td class="num" style="color:#ff1744">$-158,834.00</td>
+              <td class="center">7.9 → 6.8</td>
+              <td class="center">3</td>
+            </tr><tr>
+              <td class="center">8</td>
+              <td>2022-06-15</td>
+              <td class="num">$379.20</td>
+              <td class="num">1,114,133</td>
+              <td class="num">399天</td>
+              <td>2023-07-19</td>
+              <td class="num">$455.04</td>
+              <td class="num">1,295,776</td>
+              <td class="num stop">$341.28</td>
+              <td class="num profit">$455.04</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+181,643.20</td>
+              <td class="center">7.1 → 9.5</td>
+              <td class="center">0</td>
+            </tr><tr>
+              <td class="center">9</td>
+              <td>2023-07-20</td>
+              <td class="num">$452.18</td>
+              <td class="num">1,287,199</td>
+              <td class="num">330天</td>
+              <td>2024-06-14</td>
+              <td class="num">$542.62</td>
+              <td class="num">1,577,690</td>
+              <td class="num stop">$406.96</td>
+              <td class="num profit">$542.62</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+290,491.00</td>
+              <td class="center">10.0 → 10.0</td>
+              <td class="center">1</td>
+            </tr><tr>
+              <td class="center">10</td>
+              <td>2024-06-17</td>
+              <td class="num">$547.10</td>
+              <td class="num">1,590,218</td>
+              <td class="num">451天</td>
+              <td>2025-09-11</td>
+              <td class="num">$656.52</td>
+              <td class="num">1,903,671</td>
+              <td class="num stop">$492.39</td>
+              <td class="num profit">$656.52</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+313,452.90</td>
+              <td class="center">10.0 → 8.4</td>
+              <td class="center">1</td>
+            </tr></tbody>
+  </table>
+  </div>
+</div>
+<div class="strategy-section" id="S4">
+  <div class="strat-header">
+    <h2>📈 S4 · Regime ≥ 6 OR Shift≤1 入场 | Regime &lt; 4 出场 | 止损10% | 止盈20%</h2>
+    <div class="rule-box">规则：Regime ≥ 6.0 入场 | Regime &lt; 4.0 / 止损10% / 止盈20% 出场</div>
+    <div class="kpi-row">
+      <div class="kpi"><div class="kn">10</div><div class="ks">交易次数</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">60.0%</div><div class="ks">胜率</div></div>
+      <div class="kpi"><div class="kn">205天</div><div class="ks">平均持仓</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">2.55</div><div class="ks">盈亏比</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">+95.8%</div><div class="ks">总收益</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">+11.2%</div><div class="ks">CAGR</div></div>
+      <div class="kpi"><div class="kn" style="color:#ff1744">-28.3%</div><div class="ks">最大回撤</div></div>
+      <div class="kpi"><div class="kn">$1,957,820</div><div class="ks">终值(100万)</div></div>
+      <div class="kpi"><div class="kn" style="color:#00c853">$+7,643,522</div><div class="ks">累计盈亏</div></div>
+    </div>
+    <div class="exit-chips">
+      <span class="chip stop">⚠️ 止损 4次</span>
+      <span class="chip profit">🎯 止盈 6次</span>
+      <span class="chip regime">📊 Regime出场 0次</span>
+    </div>
+  </div>
+
+  <h3>年度绩效</h3>
+  <table class="tbl"><thead><tr><th>年</th><th>交易</th><th>盈利</th><th>胜率</th><th>平均收益</th></tr></thead><tbody><tr>
+              <td><strong>2020</strong></td>
+              <td class="num">3</td>
+              <td class="num">1</td>
+              <td class="num">33%</td>
+              <td class="num" style="color:#ff1744">-0.23%</td>
+            </tr><tr>
+              <td><strong>2021</strong></td>
+              <td class="num">2</td>
+              <td class="num">2</td>
+              <td class="num">100%</td>
+              <td class="num" style="color:#00c853">+20.00%</td>
+            </tr><tr>
+              <td><strong>2022</strong></td>
+              <td class="num">2</td>
+              <td class="num">0</td>
+              <td class="num">0%</td>
+              <td class="num" style="color:#ff1744">-10.88%</td>
+            </tr><tr>
+              <td><strong>2023</strong></td>
+              <td class="num">1</td>
+              <td class="num">1</td>
+              <td class="num">100%</td>
+              <td class="num" style="color:#00c853">+20.00%</td>
+            </tr><tr>
+              <td><strong>2024</strong></td>
+              <td class="num">1</td>
+              <td class="num">1</td>
+              <td class="num">100%</td>
+              <td class="num" style="color:#00c853">+20.00%</td>
+            </tr><tr>
+              <td><strong>2025</strong></td>
+              <td class="num">1</td>
+              <td class="num">1</td>
+              <td class="num">100%</td>
+              <td class="num" style="color:#00c853">+20.00%</td>
+            </tr></tbody></table>
+
+  <h3>逐笔交易明细（共 10 笔）</h3>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr>
+      <th>#</th><th>入场日期</th><th>入场价</th><th>入场市值</th>
+      <th>持仓</th><th>出场日期</th><th>出场价</th><th>出场市值</th>
+      <th>止损位</th><th>止盈位</th>
+      <th>出场原因</th><th>收益率</th><th>盈亏(¥)</th>
+      <th>Regime</th><th>Danger</th>
+    </tr></thead>
+    <tbody><tr>
+              <td class="center">1</td>
+              <td>2020-01-02</td>
+              <td class="num">$324.87</td>
+              <td class="num">1,000,000</td>
+              <td class="num">67天</td>
+              <td>2020-03-09</td>
+              <td class="num">$274.23</td>
+              <td class="num">844,535</td>
+              <td class="num stop">$292.38</td>
+              <td class="num profit">$389.84</td>
+              <td class="center"><span class="tag stop">止损</span></td>
+              <td class="num" style="color:#ff1744;font-weight:700">-15.55%</td>
+              <td class="num" style="color:#ff1744">$-155,464.80</td>
+              <td class="center">10.0 → 6.0</td>
+              <td class="center">3</td>
+            </tr><tr>
+              <td class="center">2</td>
+              <td>2020-03-10</td>
+              <td class="num">$288.42</td>
+              <td class="num">844,535</td>
+              <td class="num">2天</td>
+              <td>2020-03-12</td>
+              <td class="num">$248.11</td>
+              <td class="num">801,131</td>
+              <td class="num stop">$259.58</td>
+              <td class="num profit">$346.10</td>
+              <td class="center"><span class="tag stop">止损</span></td>
+              <td class="num" style="color:#ff1744;font-weight:700">-5.14%</td>
+              <td class="num" style="color:#ff1744">$-43,404.00</td>
+              <td class="center">7.0 → 6.0</td>
+              <td class="center">3</td>
+            </tr><tr>
+              <td class="center">3</td>
+              <td>2020-03-26</td>
+              <td class="num">$261.20</td>
+              <td class="num">801,131</td>
+              <td class="num">71天</td>
+              <td>2020-06-05</td>
+              <td class="num">$313.44</td>
+              <td class="num">979,040</td>
+              <td class="num stop">$235.08</td>
+              <td class="num profit">$313.44</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+177,908.40</td>
+              <td class="center">5.5 → 9.5</td>
+              <td class="center">1</td>
+            </tr><tr>
+              <td class="center">4</td>
+              <td>2020-06-08</td>
+              <td class="num">$323.20</td>
+              <td class="num">990,851</td>
+              <td class="num">245天</td>
+              <td>2021-02-08</td>
+              <td class="num">$387.84</td>
+              <td class="num">1,196,820</td>
+              <td class="num stop">$290.88</td>
+              <td class="num profit">$387.84</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+205,968.60</td>
+              <td class="center">9.3 → 7.7</td>
+              <td class="center">0</td>
+            </tr><tr>
+              <td class="center">5</td>
+              <td>2021-02-09</td>
+              <td class="num">$390.25</td>
+              <td class="num">1,196,024</td>
+              <td class="num">269天</td>
+              <td>2021-11-05</td>
+              <td class="num">$468.30</td>
+              <td class="num">1,416,199</td>
+              <td class="num stop">$351.23</td>
+              <td class="num profit">$468.30</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+220,174.60</td>
+              <td class="center">7.7 → 8.5</td>
+              <td class="center">0</td>
+            </tr><tr>
+              <td class="center">6</td>
+              <td>2021-11-08</td>
+              <td class="num">$468.93</td>
+              <td class="num">1,417,407</td>
+              <td class="num">107天</td>
+              <td>2022-02-23</td>
+              <td class="num">$421.95</td>
+              <td class="num">1,284,900</td>
+              <td class="num stop">$422.04</td>
+              <td class="num profit">$562.72</td>
+              <td class="center"><span class="tag stop">止损</span></td>
+              <td class="num" style="color:#ff1744;font-weight:700">-9.35%</td>
+              <td class="num" style="color:#ff1744">$-132,507.00</td>
+              <td class="center">8.5 → 6.3</td>
+              <td class="center">2</td>
+            </tr><tr>
+              <td class="center">7</td>
+              <td>2022-02-24</td>
+              <td class="num">$428.30</td>
+              <td class="num">1,304,204</td>
+              <td class="num">109天</td>
+              <td>2022-06-13</td>
+              <td class="num">$375.00</td>
+              <td class="num">1,142,172</td>
+              <td class="num stop">$385.47</td>
+              <td class="num profit">$513.96</td>
+              <td class="center"><span class="tag stop">止损</span></td>
+              <td class="num" style="color:#ff1744;font-weight:700">-12.42%</td>
+              <td class="num" style="color:#ff1744">$-162,032.00</td>
+              <td class="center">7.9 → 6.8</td>
+              <td class="center">3</td>
+            </tr><tr>
+              <td class="center">8</td>
+              <td>2022-06-15</td>
+              <td class="num">$379.20</td>
+              <td class="num">1,136,565</td>
+              <td class="num">399天</td>
+              <td>2023-07-19</td>
+              <td class="num">$455.04</td>
+              <td class="num">1,272,978</td>
+              <td class="num stop">$341.28</td>
+              <td class="num profit">$455.04</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+136,413.50</td>
+              <td class="center">7.1 → 9.5</td>
+              <td class="center">0</td>
+            </tr><tr>
+              <td class="center">9</td>
+              <td>2023-07-20</td>
+              <td class="num">$452.18</td>
+              <td class="num">1,264,552</td>
+              <td class="num">330天</td>
+              <td>2024-06-14</td>
+              <td class="num">$542.62</td>
+              <td class="num">1,517,326</td>
+              <td class="num stop">$406.96</td>
+              <td class="num profit">$542.62</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+252,774.00</td>
+              <td class="center">10.0 → 10.0</td>
+              <td class="center">1</td>
+            </tr><tr>
+              <td class="center">10</td>
+              <td>2024-06-17</td>
+              <td class="num">$547.10</td>
+              <td class="num">1,529,379</td>
+              <td class="num">451天</td>
+              <td>2025-09-11</td>
+              <td class="num">$656.52</td>
+              <td class="num">1,793,900</td>
+              <td class="num stop">$492.39</td>
+              <td class="num profit">$656.52</td>
+              <td class="center"><span class="tag profit">止盈</span></td>
+              <td class="num" style="color:#00c853;font-weight:700">+20.00%</td>
+              <td class="num" style="color:#00c853">$+264,520.90</td>
+              <td class="center">10.0 → 8.4</td>
+              <td class="center">1</td>
+            </tr></tbody>
+  </table>
+  </div>
+</div>
+
+<div class="footer">
+  生成时间：2026-05-14 16:42 &nbsp;|&nbsp; 美股投资洞察分析 &nbsp;|&nbsp; 回测区间：2020-01-02 → 2026-05-13
+</div>
+</body>
+</html>

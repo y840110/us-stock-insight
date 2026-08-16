@@ -1,0 +1,14 @@
+{
+  "solution2": {
+    "name": "Solution 2 (\u00b12-day window, 26 feat, 3-layer NN)",
+    "test_auc": 0.5025,
+    "test_acc": 0.9163,
+    "shift_pos_pct": 16.89
+  },
+  "solution4": {
+    "name": "Solution 4 (Top-7 feat, (32,) NN)",
+    "test_auc": 0.5854,
+    "test_acc": 0.9163,
+    "shift_pos_pct": 16.89
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "initial_capital": 20000.0,
+  "final_cash": 20000.0,
+  "total_pnl_dollar": 0.0,
+  "peak_cash": 20000.0,
+  "max_drawdown_pct": 0,
+  "avg_drawdown_pct": 0,
+  "total": 0,
+  "win_rate": 0,
+  "avg_win": 0.0,
+  "avg_loss": 0.0,
+  "win_loss_ratio": 0,
+  "lot1_count": 0,
+  "dd_triggered": false,
+  "grade_stats": {},
+  "exit_stats": {},
+  "trades": []
+}

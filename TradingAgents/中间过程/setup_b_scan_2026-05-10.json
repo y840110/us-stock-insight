@@ -1,0 +1,977 @@
+{
+  "scan_date": "2026-05-10",
+  "market_state": "Extended Uptrend",
+  "relaxed_criteria": {
+    "breakout_pct": "0~3%",
+    "vol_ratio": ">=1.5x",
+    "rsi": "40~75",
+    "ema50_dev": ">=0%",
+    "atr_ratio": "<=1.0x"
+  },
+  "total_scanned": 171,
+  "signals": [
+    {
+      "ticker": "ROK",
+      "close": 448.55,
+      "rsi": 67.5,
+      "vol_ratio": 7.26,
+      "breakout_pct": 0.79,
+      "ema50_dev": 15.76,
+      "atr_ratio": 0.87,
+      "ma20_dev": 8.94,
+      "ma50_dev": 15.76,
+      "ma200_dev": 18.77,
+      "pass_count": 5,
+      "passed_conditions": [
+        "breakout_pct",
+        "vol_ratio",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "SYM",
+      "close": 56.43,
+      "rsi": 42.2,
+      "vol_ratio": 2.32,
+      "breakout_pct": 0.38,
+      "ema50_dev": 2.66,
+      "atr_ratio": 0.39,
+      "ma20_dev": -4.78,
+      "ma50_dev": 2.66,
+      "ma200_dev": -3.85,
+      "pass_count": 5,
+      "passed_conditions": [
+        "breakout_pct",
+        "vol_ratio",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "MP",
+      "close": 69.13,
+      "rsi": 58.0,
+      "vol_ratio": 1.5,
+      "breakout_pct": 1.28,
+      "ema50_dev": 17.47,
+      "atr_ratio": 0.3,
+      "ma20_dev": 8.52,
+      "ma50_dev": 17.47,
+      "ma200_dev": 9.49,
+      "pass_count": 5,
+      "passed_conditions": [
+        "breakout_pct",
+        "vol_ratio",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "APD",
+      "close": 294.99,
+      "rsi": 47.5,
+      "vol_ratio": 2.77,
+      "breakout_pct": -0.39,
+      "ema50_dev": 1.61,
+      "atr_ratio": 0.6,
+      "ma20_dev": -1.31,
+      "ma50_dev": 1.61,
+      "ma200_dev": 7.4,
+      "pass_count": 4,
+      "passed_conditions": [
+        "vol_ratio",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "ONTO",
+      "close": 274.17,
+      "rsi": 52.4,
+      "vol_ratio": 2.62,
+      "breakout_pct": 0.49,
+      "ema50_dev": 15.15,
+      "atr_ratio": 2.92,
+      "ma20_dev": -3.74,
+      "ma50_dev": 15.15,
+      "ma200_dev": 61.41,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "vol_ratio",
+        "rsi",
+        "ema50_dev"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "MDB",
+      "close": 293.42,
+      "rsi": 69.3,
+      "vol_ratio": 2.52,
+      "breakout_pct": 14.62,
+      "ema50_dev": 12.28,
+      "atr_ratio": 0.93,
+      "ma20_dev": 14.03,
+      "ma50_dev": 12.28,
+      "ma200_dev": -7.73,
+      "pass_count": 4,
+      "passed_conditions": [
+        "vol_ratio",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "KLAC",
+      "close": 1763.25,
+      "rsi": 52.2,
+      "vol_ratio": 2.41,
+      "breakout_pct": 0.2,
+      "ema50_dev": 9.5,
+      "atr_ratio": 1.47,
+      "ma20_dev": -1.38,
+      "ma50_dev": 9.5,
+      "ma200_dev": 38.05,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "vol_ratio",
+        "rsi",
+        "ema50_dev"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "JBL",
+      "close": 349.6,
+      "rsi": 66.9,
+      "vol_ratio": 1.97,
+      "breakout_pct": -1.24,
+      "ema50_dev": 20.59,
+      "atr_ratio": 0.72,
+      "ma20_dev": 5.72,
+      "ma50_dev": 20.59,
+      "ma200_dev": 45.95,
+      "pass_count": 4,
+      "passed_conditions": [
+        "vol_ratio",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "RIOT",
+      "close": 24.08,
+      "rsi": 72.6,
+      "vol_ratio": 1.33,
+      "breakout_pct": 1.49,
+      "ema50_dev": 48.4,
+      "atr_ratio": 0.7,
+      "ma20_dev": 28.0,
+      "ma50_dev": 48.4,
+      "ma200_dev": 50.85,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "DD",
+      "close": 48.36,
+      "rsi": 55.9,
+      "vol_ratio": 1.32,
+      "breakout_pct": 0.14,
+      "ema50_dev": 4.35,
+      "atr_ratio": 0.76,
+      "ma20_dev": 3.42,
+      "ma50_dev": 4.35,
+      "ma200_dev": 21.5,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "TT",
+      "close": 469.81,
+      "rsi": 55.0,
+      "vol_ratio": 1.25,
+      "breakout_pct": 0.7,
+      "ema50_dev": 4.42,
+      "atr_ratio": 0.79,
+      "ma20_dev": -1.72,
+      "ma50_dev": 4.42,
+      "ma200_dev": 10.11,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "RIO",
+      "close": 103.11,
+      "rsi": 56.4,
+      "vol_ratio": 1.16,
+      "breakout_pct": 0.69,
+      "ema50_dev": 8.65,
+      "atr_ratio": 0.9,
+      "ma20_dev": 3.38,
+      "ma50_dev": 8.65,
+      "ma200_dev": 30.56,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "TOELY",
+      "close": 162.64,
+      "rsi": 69.9,
+      "vol_ratio": 1.12,
+      "breakout_pct": 0.0,
+      "ema50_dev": 20.74,
+      "atr_ratio": 0.69,
+      "ma20_dev": 10.86,
+      "ma50_dev": 20.74,
+      "ma200_dev": 47.44,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "AAPL",
+      "close": 293.32,
+      "rsi": 70.5,
+      "vol_ratio": 1.1,
+      "breakout_pct": 2.55,
+      "ema50_dev": 11.61,
+      "atr_ratio": 0.47,
+      "ma20_dev": 7.36,
+      "ma50_dev": 11.61,
+      "ma200_dev": 14.12,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 8, 2026"
+    },
+    {
+      "ticker": "CAT",
+      "close": 897.45,
+      "rsi": 70.9,
+      "vol_ratio": 1.08,
+      "breakout_pct": 2.13,
+      "ema50_dev": 17.43,
+      "atr_ratio": 0.98,
+      "ma20_dev": 7.27,
+      "ma50_dev": 17.43,
+      "ma200_dev": 48.81,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "SIEGY",
+      "close": 153.99,
+      "rsi": 63.6,
+      "vol_ratio": 1.07,
+      "breakout_pct": 0.3,
+      "ema50_dev": 14.41,
+      "atr_ratio": 0.84,
+      "ma20_dev": 6.47,
+      "ma50_dev": 14.41,
+      "ma200_dev": 11.49,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "TROW",
+      "close": 105.33,
+      "rsi": 72.9,
+      "vol_ratio": 1.06,
+      "breakout_pct": 1.91,
+      "ema50_dev": 11.96,
+      "atr_ratio": 0.42,
+      "ma20_dev": 5.0,
+      "ma50_dev": 11.96,
+      "ma200_dev": 4.07,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "CARR",
+      "close": 67.22,
+      "rsi": 69.2,
+      "vol_ratio": 1.04,
+      "breakout_pct": 1.1,
+      "ema50_dev": 11.64,
+      "atr_ratio": 0.63,
+      "ma20_dev": 6.36,
+      "ma50_dev": 11.64,
+      "ma200_dev": 12.15,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "GD",
+      "close": 346.53,
+      "rsi": 58.0,
+      "vol_ratio": 1.04,
+      "breakout_pct": 0.31,
+      "ema50_dev": 0.32,
+      "atr_ratio": 0.62,
+      "ma20_dev": 3.5,
+      "ma50_dev": 0.32,
+      "ma200_dev": 1.98,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "SBUX",
+      "close": 104.93,
+      "rsi": 62.0,
+      "vol_ratio": 1.04,
+      "breakout_pct": 1.12,
+      "ema50_dev": 7.44,
+      "atr_ratio": 0.6,
+      "ma20_dev": 3.66,
+      "ma50_dev": 7.44,
+      "ma200_dev": 16.1,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "BLK",
+      "close": 1084.83,
+      "rsi": 59.8,
+      "vol_ratio": 1.03,
+      "breakout_pct": 1.64,
+      "ema50_dev": 7.65,
+      "atr_ratio": 0.48,
+      "ma20_dev": 3.04,
+      "ma50_dev": 7.65,
+      "ma200_dev": 0.36,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "MS",
+      "close": 193.09,
+      "rsi": 56.9,
+      "vol_ratio": 1.03,
+      "breakout_pct": 1.75,
+      "ema50_dev": 11.03,
+      "atr_ratio": 0.79,
+      "ma20_dev": 2.1,
+      "ma50_dev": 11.03,
+      "ma200_dev": 15.63,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "PSX",
+      "close": 171.56,
+      "rsi": 65.7,
+      "vol_ratio": 1.03,
+      "breakout_pct": 2.17,
+      "ema50_dev": 1.08,
+      "atr_ratio": 0.84,
+      "ma20_dev": 3.14,
+      "ma50_dev": 1.08,
+      "ma200_dev": 18.94,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "GS",
+      "close": 936.48,
+      "rsi": 52.8,
+      "vol_ratio": 1.02,
+      "breakout_pct": 1.5,
+      "ema50_dev": 7.44,
+      "atr_ratio": 0.55,
+      "ma20_dev": 1.64,
+      "ma50_dev": 7.44,
+      "ma200_dev": 11.93,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "WMT",
+      "close": 130.43,
+      "rsi": 58.9,
+      "vol_ratio": 1.02,
+      "breakout_pct": 0.93,
+      "ema50_dev": 3.32,
+      "atr_ratio": 0.92,
+      "ma20_dev": 1.32,
+      "ma50_dev": 3.32,
+      "ma200_dev": 15.17,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "COST",
+      "close": 1008.79,
+      "rsi": 54.0,
+      "vol_ratio": 1.01,
+      "breakout_pct": 0.39,
+      "ema50_dev": 1.0,
+      "atr_ratio": 0.61,
+      "ma20_dev": 0.76,
+      "ma50_dev": 1.0,
+      "ma200_dev": 5.95,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "KKR",
+      "close": 102.52,
+      "rsi": 47.5,
+      "vol_ratio": 1.01,
+      "breakout_pct": 2.59,
+      "ema50_dev": 7.86,
+      "atr_ratio": 0.36,
+      "ma20_dev": 0.3,
+      "ma50_dev": 7.86,
+      "ma200_dev": -14.24,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "MET",
+      "close": 78.08,
+      "rsi": 50.0,
+      "vol_ratio": 1.01,
+      "breakout_pct": 0.8,
+      "ema50_dev": 6.02,
+      "atr_ratio": 0.68,
+      "ma20_dev": 0.03,
+      "ma50_dev": 6.02,
+      "ma200_dev": 0.85,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "VLO",
+      "close": 241.06,
+      "rsi": 63.6,
+      "vol_ratio": 1.01,
+      "breakout_pct": 2.49,
+      "ema50_dev": 1.84,
+      "atr_ratio": 0.97,
+      "ma20_dev": 0.65,
+      "ma50_dev": 1.84,
+      "ma200_dev": 29.93,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "AMP",
+      "close": 465.56,
+      "rsi": 55.7,
+      "vol_ratio": 1.0,
+      "breakout_pct": 1.95,
+      "ema50_dev": 2.23,
+      "atr_ratio": 0.59,
+      "ma20_dev": -0.14,
+      "ma50_dev": 2.23,
+      "ma200_dev": -3.39,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "NEE",
+      "close": 93.1,
+      "rsi": 52.4,
+      "vol_ratio": 1.0,
+      "breakout_pct": 1.13,
+      "ema50_dev": 0.23,
+      "atr_ratio": 0.71,
+      "ma20_dev": -0.79,
+      "ma50_dev": 0.23,
+      "ma200_dev": 11.23,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "ALL",
+      "close": 213.15,
+      "rsi": 45.5,
+      "vol_ratio": 0.99,
+      "breakout_pct": 1.41,
+      "ema50_dev": 0.87,
+      "atr_ratio": 0.75,
+      "ma20_dev": -1.16,
+      "ma50_dev": 0.87,
+      "ma200_dev": 3.52,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "CEG",
+      "close": 311.28,
+      "rsi": 54.8,
+      "vol_ratio": 0.99,
+      "breakout_pct": 1.87,
+      "ema50_dev": 2.95,
+      "atr_ratio": 0.65,
+      "ma20_dev": 3.11,
+      "ma50_dev": 2.95,
+      "ma200_dev": -4.85,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "SLB",
+      "close": 53.27,
+      "rsi": 52.6,
+      "vol_ratio": 0.99,
+      "breakout_pct": 1.68,
+      "ema50_dev": 4.16,
+      "atr_ratio": 0.9,
+      "ma20_dev": -1.7,
+      "ma50_dev": 4.16,
+      "ma200_dev": 27.1,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "TGT",
+      "close": 125.25,
+      "rsi": 44.1,
+      "vol_ratio": 0.99,
+      "breakout_pct": 1.58,
+      "ema50_dev": 2.67,
+      "atr_ratio": 0.67,
+      "ma20_dev": -1.6,
+      "ma50_dev": 2.67,
+      "ma200_dev": 20.34,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "CSCO",
+      "close": 92.16,
+      "rsi": 69.4,
+      "vol_ratio": 0.97,
+      "breakout_pct": 1.19,
+      "ema50_dev": 11.24,
+      "atr_ratio": 1.0,
+      "ma20_dev": 4.5,
+      "ma50_dev": 11.24,
+      "ma200_dev": 21.99,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "JPM",
+      "close": 302.1,
+      "rsi": 41.9,
+      "vol_ratio": 0.97,
+      "breakout_pct": 0.89,
+      "ema50_dev": 0.69,
+      "atr_ratio": 0.5,
+      "ma20_dev": -2.74,
+      "ma50_dev": 0.69,
+      "ma200_dev": -1.04,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 08, 2026"
+    },
+    {
+      "ticker": "ENTG",
+      "close": 147.66,
+      "rsi": 57.5,
+      "vol_ratio": 0.96,
+      "breakout_pct": 0.36,
+      "ema50_dev": 13.81,
+      "atr_ratio": 0.86,
+      "ma20_dev": 1.66,
+      "ma50_dev": 13.81,
+      "ma200_dev": 43.79,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "TSM",
+      "close": 414.15,
+      "rsi": 71.3,
+      "vol_ratio": 0.95,
+      "breakout_pct": 0.12,
+      "ema50_dev": 14.22,
+      "atr_ratio": 0.97,
+      "ma20_dev": 6.87,
+      "ma50_dev": 14.22,
+      "ma200_dev": 34.1,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "SNPS",
+      "close": 505.19,
+      "rsi": 72.2,
+      "vol_ratio": 0.94,
+      "breakout_pct": 2.49,
+      "ema50_dev": 15.57,
+      "atr_ratio": 0.32,
+      "ma20_dev": 7.87,
+      "ma50_dev": 15.57,
+      "ma200_dev": 5.77,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "SPY",
+      "close": 737.62,
+      "rsi": 72.1,
+      "vol_ratio": 0.94,
+      "breakout_pct": 0.89,
+      "ema50_dev": 7.8,
+      "atr_ratio": 0.59,
+      "ma20_dev": 3.44,
+      "ma50_dev": 7.8,
+      "ma200_dev": 9.53,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 8, 2026"
+    },
+    {
+      "ticker": "BHP",
+      "close": 82.55,
+      "rsi": 57.0,
+      "vol_ratio": 0.89,
+      "breakout_pct": 0.96,
+      "ema50_dev": 9.39,
+      "atr_ratio": 0.7,
+      "ma20_dev": 3.94,
+      "ma50_dev": 9.39,
+      "ma200_dev": 30.81,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "UBER",
+      "close": 75.45,
+      "rsi": 53.8,
+      "vol_ratio": 0.87,
+      "breakout_pct": 2.12,
+      "ema50_dev": 1.02,
+      "atr_ratio": 0.41,
+      "ma20_dev": 0.22,
+      "ma50_dev": 1.02,
+      "ma200_dev": -2.2,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 8, 2026"
+    },
+    {
+      "ticker": "NVDA",
+      "close": 215.2,
+      "rsi": 59.4,
+      "vol_ratio": 0.84,
+      "breakout_pct": 1.21,
+      "ema50_dev": 8.16,
+      "atr_ratio": 0.6,
+      "ma20_dev": 4.13,
+      "ma50_dev": 8.16,
+      "ma200_dev": 15.01,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 8, 2026"
+    },
+    {
+      "ticker": "MBLY",
+      "close": 8.87,
+      "rsi": 66.8,
+      "vol_ratio": 0.74,
+      "breakout_pct": 0.77,
+      "ema50_dev": 12.03,
+      "atr_ratio": 0.17,
+      "ma20_dev": 6.19,
+      "ma50_dev": 12.03,
+      "ma200_dev": -21.45,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "CDNS",
+      "close": 356.9,
+      "rsi": 73.2,
+      "vol_ratio": 0.69,
+      "breakout_pct": 2.2,
+      "ema50_dev": 17.93,
+      "atr_ratio": 0.63,
+      "ma20_dev": 10.35,
+      "ma50_dev": 17.93,
+      "ma200_dev": 10.71,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "ET",
+      "close": 19.92,
+      "rsi": 68.7,
+      "vol_ratio": 0.69,
+      "breakout_pct": 0.4,
+      "ema50_dev": 4.25,
+      "atr_ratio": 0.83,
+      "ma20_dev": 2.95,
+      "ma50_dev": 4.25,
+      "ma200_dev": 12.5,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    },
+    {
+      "ticker": "EQIX",
+      "close": 1066.76,
+      "rsi": 48.7,
+      "vol_ratio": 0.02,
+      "breakout_pct": 0.24,
+      "ema50_dev": 4.87,
+      "atr_ratio": 0.37,
+      "ma20_dev": -1.32,
+      "ma50_dev": 4.87,
+      "ma200_dev": 25.15,
+      "pass_count": 4,
+      "passed_conditions": [
+        "breakout_pct",
+        "rsi",
+        "ema50_dev",
+        "atr_ratio"
+      ],
+      "date": "May 07, 2026"
+    }
+  ]
+}

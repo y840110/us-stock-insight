@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "message_types": {
+    "intraday_alert": {
+      "name": "盘中实时推送",
+      "description": "每个整点盘中监控扫描结果推送，所有字段必填",
+      "fields": {
+        "title":        "推送标题",
+        "time":         "发送时的美东时间，格式 HH:MM ET",
+        "spy_timestamp":"SPY 1h K线最新时间，精确到小时，格式 YYYY-MM-DD HH:00 ET",
+        "market_date":  "市场日期 YYYY-MM-DD",
+        "market_regime":"市场状态描述",
+        "data_update":  "{ok, success, failed, skipped, elapsed_s, failed_detail, report}",
+        "summary":      "信号扫描摘要",
+        "positions":    "[{ticker, qty, cost_basis, current_price, stop_loss, target, status}]",
+        "now_signals":  "[{ticker, entry, target, stop, raw}]",
+        "watch_signals":"[{ticker, entry, target, stop, raw}]"
+      },
+      "sections": [
+        {
+          "id": "header",
+          "type": "header",
+          "template": "📡 {title}\n⏰ {time} | SPY数据: {spy_timestamp}"
+        },
+        {
+          "id": "market_regime",
+          "type": "kv_block",
+          "template": "🌡️ 市场状态\n  {market_regime}"
+        },
+        {
+          "id": "data_update",
+          "type": "kv_block",
+          "template": "📥 数据更新\n  成功 {data_update_success} | 失败 {data_update_failed} | 跳过 {data_update_skipped} ({data_update_elapsed_s}s)\n  {data_update_failed_detail}\n  {data_update_report}"
+        },
+        {
+          "id": "summary",
+          "type": "text",
+          "template": "📊 {summary}"
+        },
+        {
+          "id": "divider1",
+          "type": "divider"
+        },
+        {
+          "id": "positions_header",
+          "type": "section_header",
+          "template": "📋 持仓状态（共 {positions_count} 只）"
+        },
+        {
+          "id": "positions_table",
+          "type": "position_table",
+          "columns": ["股票", "持仓", "成本", "现价", "止损", "目标", "状态"]
+        },
+        {
+          "id": "divider2",
+          "type": "divider"
+        },
+        {
+          "id": "now_header",
+          "type": "section_header",
+          "template": "🟢 立即买入（STAGE_4 NOW）共 {now_signals_count} 只"
+        },
+        {
+          "id": "now_list",
+          "type": "signal_list",
+          "items_ref": "now_signals"
+        },
+        {
+          "id": "watch_header",
+          "type": "section_header",
+          "template": "🟡 即将买入（STAGE_3 WATCH）共 {watch_signals_count} 只"
+        },
+        {
+          "id": "watch_list",
+          "type": "signal_list",
+          "items_ref": "watch_signals"
+        },
+        {
+          "id": "footer",
+          "type": "footer",
+          "template": "— 实战系统 · {market_date} · 仅供参考 —"
+        }
+      ]
+    }
+  }
+}

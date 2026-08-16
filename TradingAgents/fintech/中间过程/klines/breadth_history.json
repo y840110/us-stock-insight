@@ -1,0 +1,86 @@
+[
+  {
+    "date": "2026-05-18",
+    "source": "finviz.com",
+    "above_sma50": 0.48100000000000004,
+    "above_sma200": 0.455,
+    "advancing_pct": 0.24,
+    "declining_pct": 0.7170000000000001,
+    "new_high_pct": 0.314,
+    "new_low_pct": 0.6859999999999999,
+    "new_high_cnt": 109,
+    "new_low_cnt": 238
+  },
+  {
+    "date": "2026-05-19",
+    "source": "finviz.com",
+    "above_sma50": 0.49,
+    "above_sma200": 0.462,
+    "advancing_pct": 0.511,
+    "declining_pct": 0.45,
+    "new_high_pct": 0.431,
+    "new_low_pct": 0.569,
+    "new_high_cnt": 168,
+    "new_low_cnt": 222
+  },
+  {
+    "date": "2026-05-20",
+    "source": "finviz.com",
+    "above_sma50": 0.46299999999999997,
+    "above_sma200": 0.445,
+    "advancing_pct": 0.322,
+    "declining_pct": 0.628,
+    "new_high_pct": 0.331,
+    "new_low_pct": 0.669,
+    "new_high_cnt": 129,
+    "new_low_cnt": 261
+  },
+  {
+    "date": "2026-05-22",
+    "source": "finviz.com",
+    "above_sma50": 0.534,
+    "above_sma200": 0.479,
+    "advancing_pct": 0.569,
+    "declining_pct": 0.396,
+    "new_high_pct": 0.535,
+    "new_low_pct": 0.465,
+    "new_high_cnt": 147,
+    "new_low_cnt": 128
+  },
+  {
+    "date": "2026-05-23",
+    "source": "finviz.com",
+    "above_sma50": 0.545,
+    "above_sma200": 0.484,
+    "advancing_pct": 0.521,
+    "declining_pct": 0.43,
+    "new_high_pct": 0.6759999999999999,
+    "new_low_pct": 0.324,
+    "new_high_cnt": 215,
+    "new_low_cnt": 103
+  },
+  {
+    "date": "2026-05-24",
+    "source": "finviz.com",
+    "above_sma50": 0.545,
+    "above_sma200": 0.484,
+    "advancing_pct": 0.521,
+    "declining_pct": 0.43,
+    "new_high_pct": 0.6759999999999999,
+    "new_low_pct": 0.324,
+    "new_high_cnt": 215,
+    "new_low_cnt": 103
+  },
+  {
+    "date": "2026-05-25",
+    "source": "finviz.com",
+    "above_sma50": 0.545,
+    "above_sma200": 0.484,
+    "advancing_pct": 0.521,
+    "declining_pct": 0.43,
+    "new_high_pct": 0.6759999999999999,
+    "new_low_pct": 0.324,
+    "new_high_cnt": 215,
+    "new_low_cnt": 103
+  }
+]

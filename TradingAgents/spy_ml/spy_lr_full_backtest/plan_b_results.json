@@ -1,0 +1,56 @@
+{
+  "backtest_start": "2020-01-02",
+  "backtest_end": "2026-05-13",
+  "initial_capital": 1000000,
+  "benchmark_spy_buy_hold": {
+    "return_pct": 128.49,
+    "cagr_pct": 13.87,
+    "start_price": 324.87,
+    "end_price": 742.31
+  },
+  "strategy_plan_b": {
+    "return_pct": 86.81,
+    "cagr_pct": 10.32,
+    "max_drawdown_pct": -18.15,
+    "sharpe_ratio": 0.881,
+    "final_equity": 1868070.93,
+    "bond_used": "Cash (4% rf)"
+  },
+  "regime_score_distribution": {
+    "0": 0,
+    "1": 133,
+    "2": 0,
+    "3": 103,
+    "4": 4,
+    "5": 281,
+    "6": 66,
+    "7": 2,
+    "8": 819,
+    "9": 0,
+    "10": 191
+  },
+  "regime_performance": {
+    "Super Bull [7,10]": {
+      "days": 1012,
+      "avg_spy_pct": 1.0
+    },
+    "Normal Bull [5.5,7)": {
+      "days": 66,
+      "avg_spy_pct": 0.8
+    },
+    "Neutral [4,5.5)": {
+      "days": 285,
+      "avg_spy_pct": 0.5
+    },
+    "Bearish [3,4)": {
+      "days": 103,
+      "avg_spy_pct": 0.3
+    },
+    "Bear [0,3)": {
+      "days": 133,
+      "avg_spy_pct": 0.0
+    }
+  },
+  "trailing_stop_pct": 0.15,
+  "cool_days": 5
+}

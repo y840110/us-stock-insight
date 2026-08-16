@@ -1,0 +1,62 @@
+{
+  "S0 SPY Buy-Hold": {
+    "name": "S0 SPY Buy-Hold",
+    "final_equity": 2284944.75,
+    "total_return": 128.49,
+    "cagr": 13.91,
+    "max_drawdown": 34.1,
+    "num_trades": 1,
+    "buy_hold_return": 128.49,
+    "outperformance": 0.0
+  },
+  "S1 SSO Buy-Hold": {
+    "name": "S1 SSO Buy-Hold",
+    "final_equity": 3987024.52,
+    "total_return": 298.7,
+    "cagr": 24.35,
+    "max_drawdown": 59.27,
+    "num_trades": 1,
+    "buy_hold_return": 128.49,
+    "outperformance": 170.21
+  },
+  "S2 SSO+MA20": {
+    "name": "S2 SSO+MA20",
+    "final_equity": 2692693.7,
+    "total_return": 169.27,
+    "cagr": 16.9,
+    "max_drawdown": 28.89,
+    "num_trades": 29,
+    "buy_hold_return": 128.49,
+    "outperformance": 40.77
+  },
+  "S3 SSO+MA50": {
+    "name": "S3 SSO+MA50",
+    "final_equity": 2248615.6,
+    "total_return": 124.86,
+    "cagr": 13.62,
+    "max_drawdown": 51.92,
+    "num_trades": 29,
+    "buy_hold_return": 128.49,
+    "outperformance": -3.63
+  },
+  "S4 SPY/SSO/Cash(MA)": {
+    "name": "S4 SPY/SSO/Cash(MA)",
+    "final_equity": 2140370.01,
+    "total_return": 114.04,
+    "cagr": 12.74,
+    "max_drawdown": 63.46,
+    "num_trades": 253,
+    "buy_hold_return": 128.49,
+    "outperformance": -14.46
+  },
+  "S5 SSO Only MA200": {
+    "name": "S5 SSO Only MA200",
+    "final_equity": 2093194.26,
+    "total_return": 109.32,
+    "cagr": 12.35,
+    "max_drawdown": 63.46,
+    "num_trades": 157,
+    "buy_hold_return": 128.49,
+    "outperformance": -19.18
+  }
+}

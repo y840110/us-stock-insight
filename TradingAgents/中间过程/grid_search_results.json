@@ -1,0 +1,210 @@
+{
+  "best_params": {
+    "stop_loss": 0.1,
+    "take_profit": 0.2,
+    "max_positions": 5,
+    "min_hold_days": 15
+  },
+  "is_sharpe": 0.5411308169401883,
+  "is_cagr": 7.211207981395185,
+  "oos_cagr": 13.966500144758221,
+  "oos_sharpe": 1.159879278757721,
+  "oos_mdd": -6.078613286213219,
+  "full_cagr": 3.739102750337109,
+  "full_sharpe": -0.03260258718230532,
+  "full_mdd": -9.899217548950489,
+  "all_results": [
+    {
+      "params": {
+        "stop_loss": 0.07,
+        "take_profit": 0.2,
+        "max_positions": 3,
+        "min_hold_days": 5
+      },
+      "sharpe": -0.15147747438534087,
+      "cagr": 2.690334076239753,
+      "mdd": -10.654456353929131,
+      "n_trades": 289
+    },
+    {
+      "params": {
+        "stop_loss": 0.07,
+        "take_profit": 0.2,
+        "max_positions": 3,
+        "min_hold_days": 15
+      },
+      "sharpe": -0.09005942166085151,
+      "cagr": 3.501407891771424,
+      "mdd": -6.440196484387595,
+      "n_trades": 147
+    },
+    {
+      "params": {
+        "stop_loss": 0.07,
+        "take_profit": 0.2,
+        "max_positions": 5,
+        "min_hold_days": 5
+      },
+      "sharpe": 0.03217418161899714,
+      "cagr": 4.0873755043343785,
+      "mdd": -8.718115640656677,
+      "n_trades": 498
+    },
+    {
+      "params": {
+        "stop_loss": 0.07,
+        "take_profit": 0.2,
+        "max_positions": 5,
+        "min_hold_days": 15
+      },
+      "sharpe": 0.21981325508597954,
+      "cagr": 5.209450143076144,
+      "mdd": -7.1273405658385025,
+      "n_trades": 420
+    },
+    {
+      "params": {
+        "stop_loss": 0.07,
+        "take_profit": 0.3,
+        "max_positions": 3,
+        "min_hold_days": 5
+      },
+      "sharpe": -0.2285146954422858,
+      "cagr": 2.6802963803931767,
+      "mdd": -5.359103832081214,
+      "n_trades": 76
+    },
+    {
+      "params": {
+        "stop_loss": 0.07,
+        "take_profit": 0.3,
+        "max_positions": 3,
+        "min_hold_days": 15
+      },
+      "sharpe": 0.010619101997188568,
+      "cagr": 3.9751201000218783,
+      "mdd": -5.478457300154471,
+      "n_trades": 125
+    },
+    {
+      "params": {
+        "stop_loss": 0.07,
+        "take_profit": 0.3,
+        "max_positions": 5,
+        "min_hold_days": 5
+      },
+      "sharpe": 0.10694546208374432,
+      "cagr": 4.543308235715138,
+      "mdd": -5.318289065218529,
+      "n_trades": 244
+    },
+    {
+      "params": {
+        "stop_loss": 0.07,
+        "take_profit": 0.3,
+        "max_positions": 5,
+        "min_hold_days": 15
+      },
+      "sharpe": 0.060145196520019234,
+      "cagr": 4.2702371461338595,
+      "mdd": -4.959292396494597,
+      "n_trades": 189
+    },
+    {
+      "params": {
+        "stop_loss": 0.1,
+        "take_profit": 0.2,
+        "max_positions": 3,
+        "min_hold_days": 5
+      },
+      "sharpe": -0.13606446764817,
+      "cagr": 2.8014600660390743,
+      "mdd": -10.553528112350142,
+      "n_trades": 294
+    },
+    {
+      "params": {
+        "stop_loss": 0.1,
+        "take_profit": 0.2,
+        "max_positions": 3,
+        "min_hold_days": 15
+      },
+      "sharpe": -0.48378056645261863,
+      "cagr": 1.4478391546186797,
+      "mdd": -6.187877302125477,
+      "n_trades": 121
+    },
+    {
+      "params": {
+        "stop_loss": 0.1,
+        "take_profit": 0.2,
+        "max_positions": 5,
+        "min_hold_days": 5
+      },
+      "sharpe": -0.10250979659558514,
+      "cagr": 3.2715646542124333,
+      "mdd": -7.95483798200769,
+      "n_trades": 452
+    },
+    {
+      "params": {
+        "stop_loss": 0.1,
+        "take_profit": 0.2,
+        "max_positions": 5,
+        "min_hold_days": 15
+      },
+      "sharpe": 0.5411308169401883,
+      "cagr": 7.211207981395185,
+      "mdd": -7.677974135025078,
+      "n_trades": 496
+    },
+    {
+      "params": {
+        "stop_loss": 0.1,
+        "take_profit": 0.3,
+        "max_positions": 3,
+        "min_hold_days": 5
+      },
+      "sharpe": 0.25834652926726365,
+      "cagr": 5.226447982604165,
+      "mdd": -5.629271344889897,
+      "n_trades": 103
+    },
+    {
+      "params": {
+        "stop_loss": 0.1,
+        "take_profit": 0.3,
+        "max_positions": 3,
+        "min_hold_days": 15
+      },
+      "sharpe": -0.302695356751459,
+      "cagr": 2.4819386198340343,
+      "mdd": -7.497704768179581,
+      "n_trades": 166
+    },
+    {
+      "params": {
+        "stop_loss": 0.1,
+        "take_profit": 0.3,
+        "max_positions": 5,
+        "min_hold_days": 5
+      },
+      "sharpe": 0.1912571711581924,
+      "cagr": 5.081269026300395,
+      "mdd": -5.877463963690277,
+      "n_trades": 250
+    },
+    {
+      "params": {
+        "stop_loss": 0.1,
+        "take_profit": 0.3,
+        "max_positions": 5,
+        "min_hold_days": 15
+      },
+      "sharpe": 0.4413818240798426,
+      "cagr": 6.748001932291214,
+      "mdd": -5.076256419516712,
+      "n_trades": 161
+    }
+  ]
+}

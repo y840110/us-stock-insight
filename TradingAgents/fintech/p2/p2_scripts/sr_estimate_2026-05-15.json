@@ -1,0 +1,74 @@
+{
+  "date": "2026-05-15",
+  "close": 739.17,
+  "atr_pct": 0.97,
+  "vol_adj": 1.0,
+  "supports": [
+    {
+      "level": 738.67,
+      "name": "S3",
+      "dist_pct": 0.07,
+      "hit_rate": 1.0,
+      "lr_prob": 98.9,
+      "method": "Pivot"
+    },
+    {
+      "level": 738.38,
+      "name": "FIB_236",
+      "dist_pct": 0.11,
+      "hit_rate": 1.0,
+      "lr_prob": 98.9,
+      "method": "Fibonacci"
+    },
+    {
+      "level": 731.48,
+      "name": "FIB_382",
+      "dist_pct": 1.04,
+      "hit_rate": 1.0,
+      "lr_prob": 97.7,
+      "method": "Fibonacci"
+    },
+    {
+      "level": 725.9,
+      "name": "FIB_500",
+      "dist_pct": 1.79,
+      "hit_rate": 0.5,
+      "lr_prob": 83.9,
+      "method": "Fibonacci"
+    }
+  ],
+  "resistances": [
+    {
+      "level": 741.12,
+      "name": "S2",
+      "dist_pct": 0.26,
+      "hit_rate": 1.0,
+      "lr_prob": 98.8,
+      "method": "Pivot"
+    },
+    {
+      "level": 744.64,
+      "name": "S1",
+      "dist_pct": 0.74,
+      "hit_rate": 1.0,
+      "lr_prob": 98.2,
+      "method": "Pivot"
+    },
+    {
+      "level": 750.34,
+      "name": "BB上轨",
+      "dist_pct": 1.51,
+      "hit_rate": 0.5,
+      "lr_prob": 86.7,
+      "method": "BBands"
+    },
+    {
+      "level": 750.61,
+      "name": "R1",
+      "dist_pct": 1.55,
+      "hit_rate": 0.5,
+      "lr_prob": 86.4,
+      "method": "Pivot"
+    }
+  ]
+}

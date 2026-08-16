@@ -1,0 +1,134 @@
+[
+  {
+    "name": "S0 基准-买入持有",
+    "initial": 100000.0,
+    "final": 228154.08,
+    "total_ret": 128.15,
+    "cagr": 13.88,
+    "max_dd": -34.02,
+    "num_trades": 1,
+    "num_stops": 0,
+    "win_rate": 0.0
+  },
+  {
+    "name": "S1 RegimeOnly≥6",
+    "initial": 100000.0,
+    "final": 197993.23,
+    "total_ret": 97.99,
+    "cagr": 11.37,
+    "max_dd": -24.68,
+    "num_trades": 67,
+    "num_stops": 2,
+    "win_rate": 43.8
+  },
+  {
+    "name": "S2 ShiftOnly",
+    "initial": 100000.0,
+    "final": 164917.5,
+    "total_ret": 64.92,
+    "cagr": 8.2,
+    "max_dd": -28.14,
+    "num_trades": 149,
+    "num_stops": 0,
+    "win_rate": 44.6
+  },
+  {
+    "name": "S3 Reg≥6+ShiftAND",
+    "initial": 100000.0,
+    "final": 167865.74,
+    "total_ret": 67.87,
+    "cagr": 8.51,
+    "max_dd": -24.28,
+    "num_trades": 177,
+    "num_stops": 0,
+    "win_rate": 44.3
+  },
+  {
+    "name": "S4 Reg≥6+ShiftOR",
+    "initial": 100000.0,
+    "final": 195782.05,
+    "total_ret": 95.78,
+    "cagr": 11.17,
+    "max_dd": -28.26,
+    "num_trades": 35,
+    "num_stops": 2,
+    "win_rate": 37.5
+  },
+  {
+    "name": "S5 Reg+Shift动态仓位",
+    "initial": 100000.0,
+    "final": 155386.69,
+    "total_ret": 55.39,
+    "cagr": 7.19,
+    "max_dd": -29.58,
+    "num_trades": 5,
+    "num_stops": 2,
+    "win_rate": 0.0
+  },
+  {
+    "name": "S6 Reg分档仓位",
+    "initial": 100000.0,
+    "final": 124549.74,
+    "total_ret": 24.55,
+    "cagr": 3.52,
+    "max_dd": -22.79,
+    "num_trades": 3,
+    "num_stops": 2,
+    "win_rate": 0.0
+  },
+  {
+    "name": "S7 Reg分档+Shift清仓",
+    "initial": 100000.0,
+    "final": 374.13,
+    "total_ret": -99.63,
+    "cagr": -58.55,
+    "max_dd": -99.64,
+    "num_trades": 58,
+    "num_stops": 0,
+    "win_rate": 51.7
+  },
+  {
+    "name": "S1b Reg≥5.5",
+    "initial": 100000.0,
+    "final": 201926.95,
+    "total_ret": 101.93,
+    "cagr": 11.71,
+    "max_dd": -34.03,
+    "num_trades": 30,
+    "num_stops": 3,
+    "win_rate": 61.5
+  },
+  {
+    "name": "S3b Reg≥5.5+ShiftAND",
+    "initial": 100000.0,
+    "final": 150913.36,
+    "total_ret": 50.91,
+    "cagr": 6.7,
+    "max_dd": -28.2,
+    "num_trades": 155,
+    "num_stops": 0,
+    "win_rate": 42.9
+  },
+  {
+    "name": "S6b Reg分档(Stop15%)",
+    "initial": 100000.0,
+    "final": 126189.72,
+    "total_ret": 26.19,
+    "cagr": 3.73,
+    "max_dd": -22.71,
+    "num_trades": 3,
+    "num_stops": 2,
+    "win_rate": 0.0
+  },
+  {
+    "name": "S7b Reg分档+Shift(Stop15%)",
+    "initial": 100000.0,
+    "final": 374.13,
+    "total_ret": -99.63,
+    "cagr": -58.55,
+    "max_dd": -99.64,
+    "num_trades": 58,
+    "num_stops": 0,
+    "win_rate": 51.7
+  }
+]

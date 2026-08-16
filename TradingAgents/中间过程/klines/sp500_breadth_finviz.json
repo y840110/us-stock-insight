@@ -1,0 +1,23 @@
+{
+  "date": "2026-05-16",
+  "source": "finviz.com",
+  "above_sma50": 0.48100000000000004,
+  "above_sma200": 0.455,
+  "advancing_pct": 0.24,
+  "declining_pct": 0.7170000000000001,
+  "new_high_pct": 0.314,
+  "new_low_pct": 0.6859999999999999,
+  "new_high_cnt": 109,
+  "new_low_cnt": 238,
+  "above_sma20": 0.5737,
+  "ad_momentum": 0.0,
+  "ad_ratio_today": 0.2508,
+  "new_high_ratio": 0.314,
+  "new_high_momentum": 0.0,
+  "divergence": {
+    "internal_decay": false,
+    "top_structure": false,
+    "leader_rotation": false
+  },
+  "breadth_score": 50.0
+}

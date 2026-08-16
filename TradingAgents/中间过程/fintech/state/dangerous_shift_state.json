@@ -1,0 +1,107 @@
+{
+  "date": "2026-05-13",
+  "signal": "SAFE",
+  "danger_count": 0,
+  "checks": {
+    "c1_breadth_collapse": {
+      "ok": false,
+      "above_sma20": 0.6489,
+      "threshold": 0.4,
+      "reason": "Above20EMA 64.9% ≥ 40.0%"
+    },
+    "c2_vix_sustained_rise": {
+      "ok": false,
+      "vix_current": 18.38,
+      "vix_5d_ago": 17.38,
+      "vix_10d_ago": 17.83,
+      "above_threshold": false,
+      "not_retreating": true,
+      "rising_trend": true,
+      "threshold": 25.0,
+      "reason": "VIX=18.4 ≤25.0"
+    },
+    "c3_highbeta_crash": {
+      "ok": false,
+      "high_beta_stocks": [
+        {
+          "code": "COIN",
+          "beta": 2.64,
+          "chg": 17.46
+        },
+        {
+          "code": "IONQ",
+          "beta": 2.57,
+          "chg": 59.09
+        },
+        {
+          "code": "ARM",
+          "beta": 2.54,
+          "chg": 31.9
+        },
+        {
+          "code": "CRWV",
+          "beta": 2.34,
+          "chg": -2.13
+        },
+        {
+          "code": "HOOD",
+          "beta": 2.14,
+          "chg": 2.14
+        }
+      ],
+      "low_beta_stocks": [
+        {
+          "code": "ASML",
+          "beta": 0.06,
+          "chg": 3.13
+        },
+        {
+          "code": "COST",
+          "beta": 0.04,
+          "chg": -0.58
+        },
+        {
+          "code": "EQIX",
+          "beta": 0.01,
+          "chg": 2.73
+        },
+        {
+          "code": "BLK",
+          "beta": -0.0,
+          "chg": 2.54
+        },
+        {
+          "code": "GEV",
+          "beta": -0.53,
+          "chg": 168.12
+        }
+      ],
+      "avg_high_beta_chg": 21.69,
+      "avg_low_beta_chg": 35.19,
+      "gap": 13.5,
+      "reason": "高Beta均+21.7% vs 低Beta均+35.2%，差距不足13.5%"
+    },
+    "c4_weak_rebound": {
+      "ok": false,
+      "reason": "未识别到明显下跌+反弹波段",
+      "data": null
+    },
+    "c5_avwap_break": {
+      "ok": false,
+      "code": "SPY",
+      "current": 739.3,
+      "avwap": 678.64,
+      "avwap_anchor": "60日前",
+      "distance_pct": 8.94,
+      "below_avwap": false,
+      "reason": "SPY=739.3 ≥ AVWAP=678.6"
+    }
+  },
+  "breadth_data": {
+    "above_sma20": 0.6489,
+    "above_sma50": 0.5529999999999999,
+    "above_sma200": 0.485,
+    "date": "2026-05-13"
+  },
+  "vix_current": 18.38
+}

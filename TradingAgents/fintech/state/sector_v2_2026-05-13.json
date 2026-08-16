@@ -1,0 +1,2182 @@
+{
+  "sectors": [
+    {
+      "ticker": "DRAM",
+      "name": "存储",
+      "category": "存储",
+      "final_score": 84.7,
+      "tier": "L1",
+      "signal": "BUY",
+      "mom1": -6.86,
+      "mom5": 10.82,
+      "mom20": 44.22,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 84.7,
+          "tier": "L1",
+          "rs": 80.0,
+          "mom": -6.86
+        },
+        "5d": {
+          "score": 84.7,
+          "tier": "L1",
+          "rs": 80.0,
+          "mom": 10.82
+        },
+        "20d": {
+          "score": 84.7,
+          "tier": "L1",
+          "rs": 80.0,
+          "mom": 44.22
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 80.0,
+          "raw": "RS=8.25",
+          "detail": "+44.2% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "2/2成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 100.0,
+          "raw": "量比7.26x",
+          "detail": "量比7.26x MA20 | ↑资金流入 +24.7%"
+        },
+        "volatility": {
+          "score": 50.0,
+          "raw": "ATR1.00",
+          "detail": "数据不足"
+        },
+        "leadership": {
+          "score": 100.0,
+          "raw": "+52.4%",
+          "detail": "龙头均+52.4% vs 板块+4e+01% | Δ+8.2%"
+        },
+        "rotation": {
+          "score": 98.4,
+          "raw": "RS=8.25 排名#2",
+          "detail": "Top2/32 板块RS排名"
+        }
+      },
+      "rank": 1
+    },
+    {
+      "ticker": "IBIT",
+      "name": "加密货币",
+      "category": "加密",
+      "final_score": 80.2,
+      "tier": "L1",
+      "signal": "BUY",
+      "mom1": -1.44,
+      "mom5": -1.04,
+      "mom20": 8.71,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 82.4,
+          "tier": "L1",
+          "rs": 80.0,
+          "mom": -1.44
+        },
+        "5d": {
+          "score": 65.3,
+          "tier": "L2",
+          "rs": 20.0,
+          "mom": -1.04
+        },
+        "20d": {
+          "score": 80.2,
+          "tier": "L1",
+          "rs": 72.0,
+          "mom": 8.71
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 72.0,
+          "raw": "RS=1.62",
+          "detail": "+8.7% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "5/5成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 100.0,
+          "raw": "量比9.35x",
+          "detail": "量比9.35x MA20 | ↑资金流入 +11.6%"
+        },
+        "volatility": {
+          "score": 31.9,
+          "raw": "ATR0.64",
+          "detail": "ATR20/ATR60=0.64 | RSI(14)=56"
+        },
+        "leadership": {
+          "score": 100.0,
+          "raw": "+30.6%",
+          "detail": "龙头均+30.6% vs 板块+9e+00% | Δ+21.9%"
+        },
+        "rotation": {
+          "score": 87.1,
+          "raw": "RS=1.62 排名#9",
+          "detail": "Top9/32 板块RS排名"
+        }
+      },
+      "rank": 2
+    },
+    {
+      "ticker": "FBTC",
+      "name": "比特币ETF",
+      "category": "加密",
+      "final_score": 80.2,
+      "tier": "L1",
+      "signal": "BUY",
+      "mom1": -1.39,
+      "mom5": -1.01,
+      "mom20": 8.73,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 82.5,
+          "tier": "L1",
+          "rs": 80.0,
+          "mom": -1.39
+        },
+        "5d": {
+          "score": 65.4,
+          "tier": "L2",
+          "rs": 20.0,
+          "mom": -1.01
+        },
+        "20d": {
+          "score": 80.2,
+          "tier": "L1",
+          "rs": 72.1,
+          "mom": 8.73
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 72.1,
+          "raw": "RS=1.63",
+          "detail": "+8.7% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "5/5成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 100.0,
+          "raw": "量比9.08x",
+          "detail": "量比9.08x MA20 | ↑资金流入 +11.6%"
+        },
+        "volatility": {
+          "score": 31.7,
+          "raw": "ATR0.63",
+          "detail": "ATR20/ATR60=0.63 | RSI(14)=57"
+        },
+        "leadership": {
+          "score": 100.0,
+          "raw": "+30.6%",
+          "detail": "龙头均+30.6% vs 板块+9e+00% | Δ+21.9%"
+        },
+        "rotation": {
+          "score": 88.7,
+          "raw": "RS=1.63 排名#8",
+          "detail": "Top8/32 板块RS排名"
+        }
+      },
+      "rank": 3
+    },
+    {
+      "ticker": "SOXX",
+      "name": "半导体",
+      "category": "半导体",
+      "final_score": 80.1,
+      "tier": "L1",
+      "signal": "BUY",
+      "mom1": -3.15,
+      "mom5": 6.89,
+      "mom20": 28.6,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 80.1,
+          "tier": "L1",
+          "rs": 80.0,
+          "mom": -3.15
+        },
+        "5d": {
+          "score": 80.1,
+          "tier": "L1",
+          "rs": 80.0,
+          "mom": 6.89
+        },
+        "20d": {
+          "score": 80.1,
+          "tier": "L1",
+          "rs": 80.0,
+          "mom": 28.6
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 80.0,
+          "raw": "RS=5.33",
+          "detail": "+28.6% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "7/7成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 100.0,
+          "raw": "量比1.99x",
+          "detail": "量比1.99x MA20 | ↑资金流入 +34.2%"
+        },
+        "volatility": {
+          "score": 70.0,
+          "raw": "ATR1.65",
+          "detail": "ATR20/ATR60=1.65 | RSI(14)=71"
+        },
+        "leadership": {
+          "score": 55.0,
+          "raw": "+16.1%",
+          "detail": "龙头均+16.1% vs 板块+3e+01% | Δ-12.5%"
+        },
+        "rotation": {
+          "score": 96.8,
+          "raw": "RS=5.33 排名#3",
+          "detail": "Top3/32 板块RS排名"
+        }
+      },
+      "rank": 4
+    },
+    {
+      "ticker": "SMH",
+      "name": "半导体ETF",
+      "category": "半导体",
+      "final_score": 79.9,
+      "tier": "L1",
+      "signal": "BUY",
+      "mom1": -2.61,
+      "mom5": 7.38,
+      "mom20": 24.17,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 79.9,
+          "tier": "L1",
+          "rs": 80.0,
+          "mom": -2.61
+        },
+        "5d": {
+          "score": 79.9,
+          "tier": "L1",
+          "rs": 80.0,
+          "mom": 7.38
+        },
+        "20d": {
+          "score": 79.9,
+          "tier": "L1",
+          "rs": 80.0,
+          "mom": 24.17
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 80.0,
+          "raw": "RS=4.51",
+          "detail": "+24.2% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "7/7成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 100.0,
+          "raw": "量比11.63x",
+          "detail": "量比11.63x MA20 | ↑资金流入 +28.6%"
+        },
+        "volatility": {
+          "score": 68.4,
+          "raw": "ATR1.45",
+          "detail": "ATR20/ATR60=1.45 | RSI(14)=75"
+        },
+        "leadership": {
+          "score": 55.0,
+          "raw": "+16.1%",
+          "detail": "龙头均+16.1% vs 板块+2e+01% | Δ-8.0%"
+        },
+        "rotation": {
+          "score": 95.2,
+          "raw": "RS=4.51 排名#4",
+          "detail": "Top4/32 板块RS排名"
+        }
+      },
+      "rank": 5
+    },
+    {
+      "ticker": "SOXL",
+      "name": "半导体3X",
+      "category": "半导体",
+      "final_score": 77.2,
+      "tier": "L1",
+      "signal": "BUY",
+      "mom1": -9.4,
+      "mom5": 19.67,
+      "mom20": 102.23,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 77.2,
+          "tier": "L1",
+          "rs": 80.0,
+          "mom": -9.4
+        },
+        "5d": {
+          "score": 77.2,
+          "tier": "L1",
+          "rs": 80.0,
+          "mom": 19.67
+        },
+        "20d": {
+          "score": 77.2,
+          "tier": "L1",
+          "rs": 80.0,
+          "mom": 102.23
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 80.0,
+          "raw": "RS=19.06",
+          "detail": "+102.2% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "7/7成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 98.8,
+          "raw": "量比1.39x",
+          "detail": "量比1.39x MA20 | ↑资金流入 +111.2%"
+        },
+        "volatility": {
+          "score": 40.0,
+          "raw": "ATR2.73",
+          "detail": "ATR20/ATR60=2.73 | RSI(14)=69"
+        },
+        "leadership": {
+          "score": 55.0,
+          "raw": "+16.1%",
+          "detail": "龙头均+16.1% vs 板块+1e+02% | Δ-86.1%"
+        },
+        "rotation": {
+          "score": 100.0,
+          "raw": "RS=19.06 排名#1",
+          "detail": "Top1/32 板块RS排名"
+        }
+      },
+      "rank": 6
+    },
+    {
+      "ticker": "XLK",
+      "name": "科技",
+      "category": "科技",
+      "final_score": 68.0,
+      "tier": "L2",
+      "signal": "HOLD",
+      "mom1": -0.06,
+      "mom5": 2.98,
+      "mom20": 16.5,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 54.9,
+          "tier": "L3",
+          "rs": 33.9,
+          "mom": -0.06
+        },
+        "5d": {
+          "score": 68.1,
+          "tier": "L2",
+          "rs": 80.0,
+          "mom": 2.98
+        },
+        "20d": {
+          "score": 68.0,
+          "tier": "L2",
+          "rs": 79.9,
+          "mom": 16.5
+        }
+      },
+      "warnings": [
+        "🔴 1日线转弱（20d=L2 → 1d=L3）"
+      ],
+      "factors": {
+        "rs": {
+          "score": 79.9,
+          "raw": "RS=3.08",
+          "detail": "+16.5% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 83.3,
+          "raw": "83%",
+          "detail": "5/6成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 59.0,
+          "raw": "量比0.26x",
+          "detail": "量比0.26x MA20 | ↑资金流入 +19.2%"
+        },
+        "volatility": {
+          "score": 60.0,
+          "raw": "ATR1.17",
+          "detail": "ATR20/ATR60=1.17 | RSI(14)=81"
+        },
+        "leadership": {
+          "score": 55.0,
+          "raw": "+10.5%",
+          "detail": "龙头均+10.5% vs 板块+2e+01% | Δ-6.0%"
+        },
+        "rotation": {
+          "score": 93.5,
+          "raw": "RS=3.08 排名#5",
+          "detail": "Top5/32 板块RS排名"
+        }
+      },
+      "rank": 7
+    },
+    {
+      "ticker": "VGT",
+      "name": "科技(VGT)",
+      "category": "科技",
+      "final_score": 68.0,
+      "tier": "L2",
+      "signal": "HOLD",
+      "mom1": 0.08,
+      "mom5": 2.58,
+      "mom20": 14.68,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 51.1,
+          "tier": "L3",
+          "rs": 20.2,
+          "mom": 0.08
+        },
+        "5d": {
+          "score": 68.1,
+          "tier": "L2",
+          "rs": 80.0,
+          "mom": 2.58
+        },
+        "20d": {
+          "score": 68.0,
+          "tier": "L2",
+          "rs": 79.7,
+          "mom": 14.68
+        }
+      },
+      "warnings": [
+        "🔴 1日线转弱（20d=L2 → 1d=L3）"
+      ],
+      "factors": {
+        "rs": {
+          "score": 79.7,
+          "raw": "RS=2.74",
+          "detail": "+14.7% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 83.3,
+          "raw": "83%",
+          "detail": "5/6成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 57.1,
+          "raw": "量比0.20x",
+          "detail": "量比0.20x MA20 | ↑资金流入 +17.5%"
+        },
+        "volatility": {
+          "score": 57.8,
+          "raw": "ATR1.09",
+          "detail": "ATR20/ATR60=1.09 | RSI(14)=82"
+        },
+        "leadership": {
+          "score": 60.0,
+          "raw": "+10.5%",
+          "detail": "龙头均+10.5% vs 板块+1e+01% | Δ-4.2%"
+        },
+        "rotation": {
+          "score": 91.9,
+          "raw": "RS=2.74 排名#6",
+          "detail": "Top6/32 板块RS排名"
+        }
+      },
+      "rank": 8
+    },
+    {
+      "ticker": "QQQ",
+      "name": "纳斯达克100",
+      "category": "宽基",
+      "final_score": 68.0,
+      "tier": "L2",
+      "signal": "HOLD",
+      "mom1": -0.85,
+      "mom5": 3.76,
+      "mom20": 12.51,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 68.3,
+          "tier": "L2",
+          "rs": 80.0,
+          "mom": -0.85
+        },
+        "5d": {
+          "score": 68.3,
+          "tier": "L2",
+          "rs": 80.0,
+          "mom": 3.76
+        },
+        "20d": {
+          "score": 68.0,
+          "tier": "L2",
+          "rs": 78.9,
+          "mom": 12.51
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 78.9,
+          "raw": "RS=2.33",
+          "detail": "+12.5% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 50.0,
+          "raw": "0%",
+          "detail": "单一资产ETF，无法计算"
+        },
+        "money_flow": {
+          "score": 100.0,
+          "raw": "量比20.00x",
+          "detail": "量比20.00x MA20 | ↑资金流入 +13.7%"
+        },
+        "volatility": {
+          "score": 56.6,
+          "raw": "ATR1.05",
+          "detail": "ATR20/ATR60=1.05 | RSI(14)=79"
+        },
+        "leadership": {
+          "score": 50.0,
+          "raw": "+0.0%",
+          "detail": "单一资产ETF"
+        },
+        "rotation": {
+          "score": 90.3,
+          "raw": "RS=2.33 排名#7",
+          "detail": "Top7/32 板块RS排名"
+        }
+      },
+      "rank": 9
+    },
+    {
+      "ticker": "XLP",
+      "name": "必需消费",
+      "category": "必需消费",
+      "final_score": 51.3,
+      "tier": "L3",
+      "signal": "REDUCE",
+      "mom1": 0.3,
+      "mom5": 0.53,
+      "mom20": 4.48,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 44.9,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": 0.3
+        },
+        "5d": {
+          "score": 54.4,
+          "tier": "L3",
+          "rs": 53.3,
+          "mom": 0.53
+        },
+        "20d": {
+          "score": 51.3,
+          "tier": "L3",
+          "rs": 42.7,
+          "mom": 4.48
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 42.7,
+          "raw": "RS=0.83",
+          "detail": "+4.5% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "2/2成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 35.9,
+          "raw": "量比0.26x",
+          "detail": "量比0.26x MA20 | ↑资金流入 +0.8%"
+        },
+        "volatility": {
+          "score": 55.7,
+          "raw": "ATR1.02",
+          "detail": "ATR20/ATR60=1.02 | RSI(14)=58"
+        },
+        "leadership": {
+          "score": 30.0,
+          "raw": "+2.9%",
+          "detail": "龙头均+2.9% vs 板块+4e+00% | Δ-1.5%"
+        },
+        "rotation": {
+          "score": 75.6,
+          "raw": "RS=0.83 排名#11",
+          "detail": "Top11/32 板块RS排名"
+        }
+      },
+      "rank": 10
+    },
+    {
+      "ticker": "VDC",
+      "name": "必需消费(VDC)",
+      "category": "必需消费",
+      "final_score": 48.4,
+      "tier": "L3",
+      "signal": "REDUCE",
+      "mom1": 0.35,
+      "mom5": 0.35,
+      "mom20": 3.77,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 43.5,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": 0.35
+        },
+        "5d": {
+          "score": 48.4,
+          "tier": "L3",
+          "rs": 37.3,
+          "mom": 0.35
+        },
+        "20d": {
+          "score": 48.4,
+          "tier": "L3",
+          "rs": 37.5,
+          "mom": 3.77
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 37.5,
+          "raw": "RS=0.70",
+          "detail": "+3.8% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "2/2成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 30.5,
+          "raw": "量比0.11x",
+          "detail": "量比0.11x MA20 | ↑资金流入 +0.7%"
+        },
+        "volatility": {
+          "score": 56.0,
+          "raw": "ATR1.03",
+          "detail": "ATR20/ATR60=1.03 | RSI(14)=55"
+        },
+        "leadership": {
+          "score": 30.0,
+          "raw": "+2.9%",
+          "detail": "龙头均+2.9% vs 板块+4e+00% | Δ-0.8%"
+        },
+        "rotation": {
+          "score": 67.4,
+          "raw": "RS=0.70 排名#12",
+          "detail": "Top12/32 板块RS排名"
+        }
+      },
+      "rank": 11
+    },
+    {
+      "ticker": "SPY",
+      "name": "标普500",
+      "category": "宽基",
+      "final_score": 48.1,
+      "tier": "L3",
+      "signal": "REDUCE",
+      "mom1": -0.09,
+      "mom5": 0.5,
+      "mom20": 5.36,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 48.1,
+          "tier": "L3",
+          "rs": 50.0,
+          "mom": -0.09
+        },
+        "5d": {
+          "score": 48.1,
+          "tier": "L3",
+          "rs": 50.0,
+          "mom": 0.5
+        },
+        "20d": {
+          "score": 48.1,
+          "tier": "L3",
+          "rs": 50.0,
+          "mom": 5.36
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 50.0,
+          "raw": "RS=1.00",
+          "detail": "+5.4% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 50.0,
+          "raw": "0%",
+          "detail": "单一资产ETF，无法计算"
+        },
+        "money_flow": {
+          "score": 48.1,
+          "raw": "量比0.14x",
+          "detail": "量比0.14x MA20 | ↑资金流入 +7.3%"
+        },
+        "volatility": {
+          "score": 39.9,
+          "raw": "ATR0.80",
+          "detail": "ATR20/ATR60=0.80 | RSI(14)=79"
+        },
+        "leadership": {
+          "score": 50.0,
+          "raw": "+0.0%",
+          "detail": "单一资产ETF"
+        },
+        "rotation": {
+          "score": 85.5,
+          "raw": "RS=1.00 排名#10",
+          "detail": "Top10/32 板块RS排名"
+        }
+      },
+      "rank": 12
+    },
+    {
+      "ticker": "VOX",
+      "name": "通信服务(VOX)",
+      "category": "通信",
+      "final_score": 47.1,
+      "tier": "L3",
+      "signal": "REDUCE",
+      "mom1": 0.34,
+      "mom5": -1.56,
+      "mom20": -0.51,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 46.4,
+          "tier": "L3",
+          "rs": 20.0,
+          "mom": 0.34
+        },
+        "5d": {
+          "score": 46.4,
+          "tier": "L3",
+          "rs": 20.0,
+          "mom": -1.56
+        },
+        "20d": {
+          "score": 47.1,
+          "tier": "L3",
+          "rs": 22.2,
+          "mom": -0.51
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 22.2,
+          "raw": "RS=-0.10",
+          "detail": "-0.5% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "1/1成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 34.7,
+          "raw": "量比0.08x",
+          "detail": "量比0.08x MA20 | ↑资金流入 +2.7%"
+        },
+        "volatility": {
+          "score": 40.1,
+          "raw": "ATR0.80",
+          "detail": "ATR20/ATR60=0.80 | RSI(14)=50"
+        },
+        "leadership": {
+          "score": 75.0,
+          "raw": "+16.4%",
+          "detail": "龙头均+16.4% vs 板块-0.5% | Δ+16.9%"
+        },
+        "rotation": {
+          "score": 12.9,
+          "raw": "RS=-0.10 排名#24",
+          "detail": "Top24/32 板块RS排名"
+        }
+      },
+      "rank": 13
+    },
+    {
+      "ticker": "XLC",
+      "name": "通信服务",
+      "category": "通信",
+      "final_score": 46.5,
+      "tier": "L3",
+      "signal": "REDUCE",
+      "mom1": 0.22,
+      "mom5": -1.06,
+      "mom20": -1.07,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 46.1,
+          "tier": "L3",
+          "rs": 20.0,
+          "mom": 0.22
+        },
+        "5d": {
+          "score": 46.1,
+          "tier": "L3",
+          "rs": 20.0,
+          "mom": -1.06
+        },
+        "20d": {
+          "score": 46.5,
+          "tier": "L3",
+          "rs": 21.6,
+          "mom": -1.07
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 21.6,
+          "raw": "RS=-0.20",
+          "detail": "-1.1% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "1/1成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 32.8,
+          "raw": "量比0.17x",
+          "detail": "量比0.17x MA20 | ↑资金流入 +0.8%"
+        },
+        "volatility": {
+          "score": 41.1,
+          "raw": "ATR0.82",
+          "detail": "ATR20/ATR60=0.82 | RSI(14)=43"
+        },
+        "leadership": {
+          "score": 75.0,
+          "raw": "+16.4%",
+          "detail": "龙头均+16.4% vs 板块-1e+00% | Δ+17.4%"
+        },
+        "rotation": {
+          "score": 11.3,
+          "raw": "RS=-0.20 排名#25",
+          "detail": "Top25/32 板块RS排名"
+        }
+      },
+      "rank": 14
+    },
+    {
+      "ticker": "VNQ",
+      "name": "房地产(VNQ)",
+      "category": "房地产",
+      "final_score": 45.8,
+      "tier": "L3",
+      "signal": "REDUCE",
+      "mom1": -1.19,
+      "mom5": -1.6,
+      "mom20": 1.33,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 61.3,
+          "tier": "L2",
+          "rs": 80.0,
+          "mom": -1.19
+        },
+        "5d": {
+          "score": 44.2,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": -1.6
+        },
+        "20d": {
+          "score": 45.8,
+          "tier": "L3",
+          "rs": 25.7,
+          "mom": 1.33
+        }
+      },
+      "warnings": [
+        "⚡ 日内反转（5d=L4 → 1d=L2）"
+      ],
+      "factors": {
+        "rs": {
+          "score": 25.7,
+          "raw": "RS=0.25",
+          "detail": "+1.3% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "1/1成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 44.6,
+          "raw": "量比0.40x",
+          "detail": "量比0.40x MA20 | ↑资金流入 +2.2%"
+        },
+        "volatility": {
+          "score": 46.7,
+          "raw": "ATR0.93",
+          "detail": "ATR20/ATR60=0.93 | RSI(14)=50"
+        },
+        "leadership": {
+          "score": 35.0,
+          "raw": "+2.2%",
+          "detail": "龙头均+2.2% vs 板块+1e+00% | Δ+0.9%"
+        },
+        "rotation": {
+          "score": 31.7,
+          "raw": "RS=0.25 排名#20",
+          "detail": "Top20/32 板块RS排名"
+        }
+      },
+      "rank": 15
+    },
+    {
+      "ticker": "XLRE",
+      "name": "房地产",
+      "category": "房地产",
+      "final_score": 44.7,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": -1.3,
+      "mom5": -1.65,
+      "mom20": 1.36,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 60.2,
+          "tier": "L2",
+          "rs": 80.0,
+          "mom": -1.3
+        },
+        "5d": {
+          "score": 43.1,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": -1.65
+        },
+        "20d": {
+          "score": 44.7,
+          "tier": "L4",
+          "rs": 25.8,
+          "mom": 1.36
+        }
+      },
+      "warnings": [
+        "🟡 1日急弹未确认（20d=L4 ← 1d=L2，谨慎追高）",
+        "⚡ 日内反转（5d=L4 → 1d=L2）"
+      ],
+      "factors": {
+        "rs": {
+          "score": 25.8,
+          "raw": "RS=0.25",
+          "detail": "+1.4% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "1/1成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 37.6,
+          "raw": "量比0.19x",
+          "detail": "量比0.19x MA20 | ↑资金流入 +2.4%"
+        },
+        "volatility": {
+          "score": 47.2,
+          "raw": "ATR0.94",
+          "detail": "ATR20/ATR60=0.94 | RSI(14)=50"
+        },
+        "leadership": {
+          "score": 35.0,
+          "raw": "+2.2%",
+          "detail": "龙头均+2.2% vs 板块+1e+00% | Δ+0.8%"
+        },
+        "rotation": {
+          "score": 35.3,
+          "raw": "RS=0.25 排名#18",
+          "detail": "Top18/32 板块RS排名"
+        }
+      },
+      "rank": 16
+    },
+    {
+      "ticker": "XLB",
+      "name": "材料",
+      "category": "材料",
+      "final_score": 43.1,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": 0.36,
+      "mom5": -0.15,
+      "mom20": 1.85,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 41.0,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": 0.36
+        },
+        "5d": {
+          "score": 41.3,
+          "tier": "L4",
+          "rs": 21.2,
+          "mom": -0.15
+        },
+        "20d": {
+          "score": 43.1,
+          "tier": "L4",
+          "rs": 27.4,
+          "mom": 1.85
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 27.4,
+          "raw": "RS=0.34",
+          "detail": "+1.8% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "2/2成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 43.5,
+          "raw": "量比0.35x",
+          "detail": "量比0.35x MA20 | ↑资金流入 +2.5%"
+        },
+        "volatility": {
+          "score": 46.2,
+          "raw": "ATR0.92",
+          "detail": "ATR20/ATR60=0.92 | RSI(14)=54"
+        },
+        "leadership": {
+          "score": 10.0,
+          "raw": "-0.5%",
+          "detail": "龙头均-0.5% vs 板块+2e+00% | Δ-2.3%"
+        },
+        "rotation": {
+          "score": 44.7,
+          "raw": "RS=0.34 排名#15",
+          "detail": "Top15/32 板块RS排名"
+        }
+      },
+      "rank": 17
+    },
+    {
+      "ticker": "XLE",
+      "name": "能源",
+      "category": "能源",
+      "final_score": 41.7,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": 0.7,
+      "mom5": -3.16,
+      "mom20": 2.9,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 38.2,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": 0.7
+        },
+        "5d": {
+          "score": 38.2,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": -3.16
+        },
+        "20d": {
+          "score": 41.7,
+          "tier": "L4",
+          "rs": 32.1,
+          "mom": 2.9
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 32.1,
+          "raw": "RS=0.54",
+          "detail": "+2.9% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 42.9,
+          "raw": "43%",
+          "detail": "3/7成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 57.2,
+          "raw": "量比0.91x",
+          "detail": "量比0.91x MA20 | ↑资金流入 +0.1%"
+        },
+        "volatility": {
+          "score": 59.6,
+          "raw": "ATR1.15",
+          "detail": "ATR20/ATR60=1.15 | RSI(14)=55"
+        },
+        "leadership": {
+          "score": 35.0,
+          "raw": "+3.6%",
+          "detail": "龙头均+3.6% vs 板块+3e+00% | Δ+0.7%"
+        },
+        "rotation": {
+          "score": 57.6,
+          "raw": "RS=0.54 排名#13",
+          "detail": "Top13/32 板块RS排名"
+        }
+      },
+      "rank": 18
+    },
+    {
+      "ticker": "XLU",
+      "name": "公用事业",
+      "category": "公用事业",
+      "final_score": 40.9,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": -1.62,
+      "mom5": -2.73,
+      "mom20": -3.39,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 57.9,
+          "tier": "L3",
+          "rs": 80.0,
+          "mom": -1.62
+        },
+        "5d": {
+          "score": 40.8,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": -2.73
+        },
+        "20d": {
+          "score": 40.9,
+          "tier": "L4",
+          "rs": 20.4,
+          "mom": -3.39
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 20.4,
+          "raw": "RS=-0.63",
+          "detail": "-3.4% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "1/1成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 26.7,
+          "raw": "量比0.32x",
+          "detail": "量比0.32x MA20 | ↓资金流出 -3.8%"
+        },
+        "volatility": {
+          "score": 55.0,
+          "raw": "ATR1.00",
+          "detail": "ATR20/ATR60=1.00 | RSI(14)=34"
+        },
+        "leadership": {
+          "score": 40.0,
+          "raw": "+3.6%",
+          "detail": "龙头均+3.6% vs 板块-3e+00% | Δ+7.0%"
+        },
+        "rotation": {
+          "score": 1.6,
+          "raw": "RS=-0.63 排名#31",
+          "detail": "Top31/32 板块RS排名"
+        }
+      },
+      "rank": 19
+    },
+    {
+      "ticker": "ITA",
+      "name": "军工",
+      "category": "军工",
+      "final_score": 40.9,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": -0.27,
+      "mom5": 4.65,
+      "mom20": -4.26,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 57.9,
+          "tier": "L3",
+          "rs": 79.7,
+          "mom": -0.27
+        },
+        "5d": {
+          "score": 57.9,
+          "tier": "L3",
+          "rs": 80.0,
+          "mom": 4.65
+        },
+        "20d": {
+          "score": 40.9,
+          "tier": "L4",
+          "rs": 20.3,
+          "mom": -4.26
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 20.3,
+          "raw": "RS=-0.80",
+          "detail": "-4.3% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 50.0,
+          "raw": "50%",
+          "detail": "3/6成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 43.9,
+          "raw": "量比0.66x",
+          "detail": "量比0.66x MA20 | ↓资金流出 -1.7%"
+        },
+        "volatility": {
+          "score": 47.2,
+          "raw": "ATR0.94",
+          "detail": "ATR20/ATR60=0.94 | RSI(14)=60"
+        },
+        "leadership": {
+          "score": 90.0,
+          "raw": "+21.7%",
+          "detail": "龙头均+21.7% vs 板块-4e+00% | Δ+25.9%"
+        },
+        "rotation": {
+          "score": 0.0,
+          "raw": "RS=-0.80 排名#32",
+          "detail": "Top32/32 板块RS排名"
+        }
+      },
+      "rank": 20
+    },
+    {
+      "ticker": "VPU",
+      "name": "公用事业(VPU)",
+      "category": "公用事业",
+      "final_score": 40.5,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": -1.69,
+      "mom5": -2.75,
+      "mom20": -3.34,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 57.4,
+          "tier": "L3",
+          "rs": 80.0,
+          "mom": -1.69
+        },
+        "5d": {
+          "score": 40.3,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": -2.75
+        },
+        "20d": {
+          "score": 40.5,
+          "tier": "L4",
+          "rs": 20.5,
+          "mom": -3.34
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 20.5,
+          "raw": "RS=-0.62",
+          "detail": "-3.3% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "1/1成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 26.8,
+          "raw": "量比0.31x",
+          "detail": "量比0.31x MA20 | ↓资金流出 -3.6%"
+        },
+        "volatility": {
+          "score": 49.4,
+          "raw": "ATR0.99",
+          "detail": "ATR20/ATR60=0.99 | RSI(14)=34"
+        },
+        "leadership": {
+          "score": 40.0,
+          "raw": "+3.6%",
+          "detail": "龙头均+3.6% vs 板块-3e+00% | Δ+6.9%"
+        },
+        "rotation": {
+          "score": 3.2,
+          "raw": "RS=-0.62 排名#30",
+          "detail": "Top30/32 板块RS排名"
+        }
+      },
+      "rank": 21
+    },
+    {
+      "ticker": "VAW",
+      "name": "材料(VAW)",
+      "category": "材料",
+      "final_score": 40.2,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": 0.25,
+      "mom5": 0.13,
+      "mom20": 1.34,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 38.6,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": 0.25
+        },
+        "5d": {
+          "score": 40.3,
+          "tier": "L4",
+          "rs": 25.9,
+          "mom": 0.13
+        },
+        "20d": {
+          "score": 40.2,
+          "tier": "L4",
+          "rs": 25.7,
+          "mom": 1.34
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 25.7,
+          "raw": "RS=0.25",
+          "detail": "+1.3% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 100.0,
+          "raw": "100%",
+          "detail": "2/2成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 34.3,
+          "raw": "量比0.10x",
+          "detail": "量比0.10x MA20 | ↑资金流入 +2.3%"
+        },
+        "volatility": {
+          "score": 45.0,
+          "raw": "ATR0.90",
+          "detail": "ATR20/ATR60=0.90 | RSI(14)=54"
+        },
+        "leadership": {
+          "score": 10.0,
+          "raw": "-0.5%",
+          "detail": "龙头均-0.5% vs 板块+1e+00% | Δ-1.8%"
+        },
+        "rotation": {
+          "score": 33.5,
+          "raw": "RS=0.25 排名#19",
+          "detail": "Top19/32 板块RS排名"
+        }
+      },
+      "rank": 22
+    },
+    {
+      "ticker": "XLV",
+      "name": "医药",
+      "category": "医药",
+      "final_score": 40.1,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": 1.96,
+      "mom5": 0.38,
+      "mom20": -2.0,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 39.8,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": 1.96
+        },
+        "5d": {
+          "score": 45.4,
+          "tier": "L3",
+          "rs": 39.7,
+          "mom": 0.38
+        },
+        "20d": {
+          "score": 40.1,
+          "tier": "L4",
+          "rs": 21.0,
+          "mom": -2.0
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 21.0,
+          "raw": "RS=-0.37",
+          "detail": "-2.0% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 50.0,
+          "raw": "0%",
+          "detail": "无成分股数据"
+        },
+        "money_flow": {
+          "score": 65.8,
+          "raw": "量比1.33x",
+          "detail": "量比1.33x MA20 | ↓资金流出 -2.3%"
+        },
+        "volatility": {
+          "score": 48.9,
+          "raw": "ATR0.98",
+          "detail": "ATR20/ATR60=0.98 | RSI(14)=48"
+        },
+        "leadership": {
+          "score": 50.0,
+          "raw": "+0.0%",
+          "detail": "无成分股数据"
+        },
+        "rotation": {
+          "score": 6.5,
+          "raw": "RS=-0.37 排名#28",
+          "detail": "Top28/32 板块RS排名"
+        }
+      },
+      "rank": 23
+    },
+    {
+      "ticker": "XLY",
+      "name": "可选消费",
+      "category": "消费",
+      "final_score": 38.2,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": -0.9,
+      "mom5": 0.19,
+      "mom20": 1.59,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 53.5,
+          "tier": "L3",
+          "rs": 80.0,
+          "mom": -0.9
+        },
+        "5d": {
+          "score": 38.6,
+          "tier": "L4",
+          "rs": 28.0,
+          "mom": 0.19
+        },
+        "20d": {
+          "score": 38.2,
+          "tier": "L4",
+          "rs": 26.5,
+          "mom": 1.59
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 26.5,
+          "raw": "RS=0.30",
+          "detail": "+1.6% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 42.9,
+          "raw": "43%",
+          "detail": "3/7成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 63.1,
+          "raw": "量比0.86x",
+          "detail": "量比0.86x MA20 | ↑资金流入 +3.2%"
+        },
+        "volatility": {
+          "score": 44.5,
+          "raw": "ATR0.89",
+          "detail": "ATR20/ATR60=0.89 | RSI(14)=47"
+        },
+        "leadership": {
+          "score": 30.0,
+          "raw": "+0.2%",
+          "detail": "龙头均+0.2% vs 板块+2e+00% | Δ-1.4%"
+        },
+        "rotation": {
+          "score": 40.6,
+          "raw": "RS=0.30 排名#16",
+          "detail": "Top16/32 板块RS排名"
+        }
+      },
+      "rank": 24
+    },
+    {
+      "ticker": "VIS",
+      "name": "工业(VIS)",
+      "category": "工业",
+      "final_score": 37.2,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": -0.72,
+      "mom5": -2.21,
+      "mom20": 1.53,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 52.6,
+          "tier": "L3",
+          "rs": 80.0,
+          "mom": -0.72
+        },
+        "5d": {
+          "score": 35.5,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": -2.21
+        },
+        "20d": {
+          "score": 37.2,
+          "tier": "L4",
+          "rs": 26.3,
+          "mom": 1.53
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 26.3,
+          "raw": "RS=0.29",
+          "detail": "+1.5% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 75.0,
+          "raw": "75%",
+          "detail": "3/4成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 36.2,
+          "raw": "量比0.16x",
+          "detail": "量比0.16x MA20 | ↑资金流入 +2.3%"
+        },
+        "volatility": {
+          "score": 55.5,
+          "raw": "ATR1.02",
+          "detail": "ATR20/ATR60=1.02 | RSI(14)=49"
+        },
+        "leadership": {
+          "score": 10.0,
+          "raw": "-0.1%",
+          "detail": "龙头均-0.1% vs 板块+2e+00% | Δ-1.6%"
+        },
+        "rotation": {
+          "score": 38.5,
+          "raw": "RS=0.29 排名#17",
+          "detail": "Top17/32 板块RS排名"
+        }
+      },
+      "rank": 25
+    },
+    {
+      "ticker": "GLD",
+      "name": "黄金",
+      "category": "贵金属",
+      "final_score": 36.4,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": -0.4,
+      "mom5": 3.5,
+      "mom20": -2.73,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 53.3,
+          "tier": "L3",
+          "rs": 80.0,
+          "mom": -0.4
+        },
+        "5d": {
+          "score": 53.3,
+          "tier": "L3",
+          "rs": 80.0,
+          "mom": 3.5
+        },
+        "20d": {
+          "score": 36.4,
+          "tier": "L4",
+          "rs": 20.6,
+          "mom": -2.73
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 20.6,
+          "raw": "RS=-0.51",
+          "detail": "-2.7% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 50.0,
+          "raw": "0%",
+          "detail": "单一资产ETF，无法计算"
+        },
+        "money_flow": {
+          "score": 54.7,
+          "raw": "量比1.01x",
+          "detail": "量比1.01x MA20 | ↓资金流出 -2.2%"
+        },
+        "volatility": {
+          "score": 34.6,
+          "raw": "ATR0.69",
+          "detail": "ATR20/ATR60=0.69 | RSI(14)=48"
+        },
+        "leadership": {
+          "score": 50.0,
+          "raw": "+0.0%",
+          "detail": "单一资产ETF"
+        },
+        "rotation": {
+          "score": 4.8,
+          "raw": "RS=-0.51 排名#29",
+          "detail": "Top29/32 板块RS排名"
+        }
+      },
+      "rank": 26
+    },
+    {
+      "ticker": "XLI",
+      "name": "工业",
+      "category": "工业",
+      "final_score": 36.3,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": -0.61,
+      "mom5": -2.02,
+      "mom20": 1.23,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 51.9,
+          "tier": "L3",
+          "rs": 80.0,
+          "mom": -0.61
+        },
+        "5d": {
+          "score": 34.8,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": -2.02
+        },
+        "20d": {
+          "score": 36.3,
+          "tier": "L4",
+          "rs": 25.4,
+          "mom": 1.23
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 25.4,
+          "raw": "RS=0.23",
+          "detail": "+1.2% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 75.0,
+          "raw": "75%",
+          "detail": "3/4成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 34.7,
+          "raw": "量比0.16x",
+          "detail": "量比0.16x MA20 | ↑资金流入 +1.7%"
+        },
+        "volatility": {
+          "score": 56.6,
+          "raw": "ATR1.05",
+          "detail": "ATR20/ATR60=1.05 | RSI(14)=48"
+        },
+        "leadership": {
+          "score": 10.0,
+          "raw": "-0.1%",
+          "detail": "龙头均-0.1% vs 板块+1e+00% | Δ-1.3%"
+        },
+        "rotation": {
+          "score": 29.2,
+          "raw": "RS=0.23 排名#21",
+          "detail": "Top21/32 板块RS排名"
+        }
+      },
+      "rank": 27
+    },
+    {
+      "ticker": "VDE",
+      "name": "能源(VDE)",
+      "category": "能源",
+      "final_score": 36.0,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": -0.39,
+      "mom5": 0.37,
+      "mom20": 2.89,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 49.7,
+          "tier": "L3",
+          "rs": 80.0,
+          "mom": -0.39
+        },
+        "5d": {
+          "score": 38.0,
+          "tier": "L4",
+          "rs": 39.0,
+          "mom": 0.37
+        },
+        "20d": {
+          "score": 36.0,
+          "tier": "L4",
+          "rs": 32.0,
+          "mom": 2.89
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 32.0,
+          "raw": "RS=0.54",
+          "detail": "+2.9% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 42.9,
+          "raw": "43%",
+          "detail": "3/7成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 29.0,
+          "raw": "量比0.11x",
+          "detail": "量比0.11x MA20 | ↓资金流出 -0.0%"
+        },
+        "volatility": {
+          "score": 57.4,
+          "raw": "ATR1.08",
+          "detail": "ATR20/ATR60=1.08 | RSI(14)=52"
+        },
+        "leadership": {
+          "score": 35.0,
+          "raw": "+3.6%",
+          "detail": "龙头均+3.6% vs 板块+3e+00% | Δ+0.7%"
+        },
+        "rotation": {
+          "score": 56.0,
+          "raw": "RS=0.54 排名#14",
+          "detail": "Top14/32 板块RS排名"
+        }
+      },
+      "rank": 28
+    },
+    {
+      "ticker": "XLF",
+      "name": "金融",
+      "category": "金融",
+      "final_score": 34.8,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": 0.78,
+      "mom5": -0.02,
+      "mom20": -0.39,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 34.2,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": 0.78
+        },
+        "5d": {
+          "score": 34.9,
+          "tier": "L4",
+          "rs": 22.5,
+          "mom": -0.02
+        },
+        "20d": {
+          "score": 34.8,
+          "tier": "L4",
+          "rs": 22.3,
+          "mom": -0.39
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 22.3,
+          "raw": "RS=-0.07",
+          "detail": "-0.4% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 42.9,
+          "raw": "43%",
+          "detail": "3/7成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 75.1,
+          "raw": "量比1.33x",
+          "detail": "量比1.33x MA20 | ↑资金流入 +1.4%"
+        },
+        "volatility": {
+          "score": 41.1,
+          "raw": "ATR0.82",
+          "detail": "ATR20/ATR60=0.82 | RSI(14)=41"
+        },
+        "leadership": {
+          "score": 10.0,
+          "raw": "-0.8%",
+          "detail": "龙头均-0.8% vs 板块-0.4% | Δ-0.4%"
+        },
+        "rotation": {
+          "score": 14.5,
+          "raw": "RS=-0.07 排名#23",
+          "detail": "Top23/32 板块RS排名"
+        }
+      },
+      "rank": 29
+    },
+    {
+      "ticker": "VHT",
+      "name": "医药(VHT)",
+      "category": "医药",
+      "final_score": 33.7,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": 0.02,
+      "mom5": -0.04,
+      "mom20": -1.24,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 33.7,
+          "tier": "L4",
+          "rs": 21.5,
+          "mom": 0.02
+        },
+        "5d": {
+          "score": 33.9,
+          "tier": "L4",
+          "rs": 22.3,
+          "mom": -0.04
+        },
+        "20d": {
+          "score": 33.7,
+          "tier": "L4",
+          "rs": 21.5,
+          "mom": -1.24
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 21.5,
+          "raw": "RS=-0.23",
+          "detail": "-1.2% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 50.0,
+          "raw": "0%",
+          "detail": "无成分股数据"
+        },
+        "money_flow": {
+          "score": 31.2,
+          "raw": "量比0.28x",
+          "detail": "量比0.28x MA20 | ↓资金流出 -1.5%"
+        },
+        "volatility": {
+          "score": 48.0,
+          "raw": "ATR0.96",
+          "detail": "ATR20/ATR60=0.96 | RSI(14)=50"
+        },
+        "leadership": {
+          "score": 50.0,
+          "raw": "+0.0%",
+          "detail": "无成分股数据"
+        },
+        "rotation": {
+          "score": 9.7,
+          "raw": "RS=-0.23 排名#26",
+          "detail": "Top26/32 板块RS排名"
+        }
+      },
+      "rank": 30
+    },
+    {
+      "ticker": "VCR",
+      "name": "可选消费(VCR)",
+      "category": "消费",
+      "final_score": 31.2,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": -0.3,
+      "mom5": -2.24,
+      "mom20": -0.14,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 47.5,
+          "tier": "L3",
+          "rs": 79.9,
+          "mom": -0.3
+        },
+        "5d": {
+          "score": 30.4,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": -2.24
+        },
+        "20d": {
+          "score": 31.2,
+          "tier": "L4",
+          "rs": 22.6,
+          "mom": -0.14
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 22.6,
+          "raw": "RS=-0.03",
+          "detail": "-0.1% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 42.9,
+          "raw": "43%",
+          "detail": "3/7成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 35.5,
+          "raw": "量比0.10x",
+          "detail": "量比0.10x MA20 | ↑资金流入 +2.8%"
+        },
+        "volatility": {
+          "score": 42.3,
+          "raw": "ATR0.85",
+          "detail": "ATR20/ATR60=0.85 | RSI(14)=48"
+        },
+        "leadership": {
+          "score": 35.0,
+          "raw": "+0.2%",
+          "detail": "龙头均+0.2% vs 板块-0.1% | Δ+0.3%"
+        },
+        "rotation": {
+          "score": 16.1,
+          "raw": "RS=-0.03 排名#22",
+          "detail": "Top22/32 板块RS排名"
+        }
+      },
+      "rank": 31
+    },
+    {
+      "ticker": "VFH",
+      "name": "金融(VFH)",
+      "category": "金融",
+      "final_score": 26.8,
+      "tier": "L4",
+      "signal": "AVOID",
+      "mom1": -0.67,
+      "mom5": -1.54,
+      "mom20": -1.96,
+      "spy_mom20": 5.36,
+      "timeframes": {
+        "1d": {
+          "score": 43.7,
+          "tier": "L4",
+          "rs": 80.0,
+          "mom": -0.67
+        },
+        "5d": {
+          "score": 26.6,
+          "tier": "L4",
+          "rs": 20.0,
+          "mom": -1.54
+        },
+        "20d": {
+          "score": 26.8,
+          "tier": "L4",
+          "rs": 21.0,
+          "mom": -1.96
+        }
+      },
+      "warnings": [],
+      "factors": {
+        "rs": {
+          "score": 21.0,
+          "raw": "RS=-0.37",
+          "detail": "-2.0% vs SPY+5e+00%"
+        },
+        "breadth": {
+          "score": 42.9,
+          "raw": "43%",
+          "detail": "3/7成分股站上EMA"
+        },
+        "money_flow": {
+          "score": 33.4,
+          "raw": "量比0.18x",
+          "detail": "量比0.18x MA20 | ↑资金流入 +0.8%"
+        },
+        "volatility": {
+          "score": 40.2,
+          "raw": "ATR0.80",
+          "detail": "ATR20/ATR60=0.80 | RSI(14)=39"
+        },
+        "leadership": {
+          "score": 15.0,
+          "raw": "-0.8%",
+          "detail": "龙头均-0.8% vs 板块-2e+00% | Δ+1.2%"
+        },
+        "rotation": {
+          "score": 8.1,
+          "raw": "RS=-0.37 排名#27",
+          "detail": "Top27/32 板块RS排名"
+        }
+      },
+      "rank": 32
+    }
+  ],
+  "hot_sectors": [
+    "DRAM",
+    "IBIT",
+    "FBTC",
+    "SOXX",
+    "SMH",
+    "SOXL",
+    "XLK",
+    "VGT",
+    "QQQ"
+  ],
+  "cold_sectors": [
+    "XLP",
+    "VDC",
+    "SPY",
+    "VOX",
+    "XLC",
+    "VNQ",
+    "XLRE",
+    "XLB",
+    "XLE",
+    "XLU",
+    "ITA",
+    "VPU",
+    "VAW",
+    "XLV",
+    "XLY",
+    "VIS",
+    "GLD",
+    "XLI",
+    "VDE",
+    "XLF",
+    "VHT",
+    "VCR",
+    "VFH"
+  ],
+  "warnings": [
+    "🔴 1日线转弱（20d=L2 → 1d=L3）",
+    "🔴 1日线转弱（20d=L2 → 1d=L3）",
+    "⚡ 日内反转（5d=L4 → 1d=L2）",
+    "🟡 1日急弹未确认（20d=L4 ← 1d=L2，谨慎追高）",
+    "⚡ 日内反转（5d=L4 → 1d=L2）"
+  ],
+  "spy_mom1": -0.09,
+  "spy_mom5": 0.5,
+  "spy_mom20": 5.36,
+  "vix": 18.38,
+  "breadth_above20ema": 64.9,
+  "last_date": "2026-05-13",
+  "weights": {
+    "rs": "30%",
+    "breadth": "20%",
+    "money_flow": "20%",
+    "volatility": "10%",
+    "leadership": "15%",
+    "rotation": "5%"
+  }
+}

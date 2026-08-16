@@ -1,0 +1,20 @@
+{
+  "cutoff_date": "Apr 30, 2025",
+  "cutoff_ymd": "2025-04-30",
+  "market_environment": {
+    "spy_close": 554.54,
+    "spy_ma20": 533.84,
+    "qqq_close": 475.47,
+    "qqq_ma20": 452.75,
+    "adx": 42.3,
+    "market_ok": true
+  },
+  "total_screened": 106,
+  "passed_all_layers": 0,
+  "layer1_failed": 2,
+  "layer2_failed": 4,
+  "layer3_failed": 0,
+  "layer5_failed": 15,
+  "skipped": 91,
+  "candidates": []
+}

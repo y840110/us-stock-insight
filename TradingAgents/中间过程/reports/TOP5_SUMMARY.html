@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRO 周度 Top 5 选股汇总报告</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0f; color: #e0e0e0; padding: 24px; font-size: 14px; line-height: 1.6; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .subtitle { color: #888; font-size: 13px; margin-bottom: 28px; }
+  h2 { font-size: 15px; font-weight: 600; color: #fff; margin: 28px 0 12px; border-left: 3px solid #00d4ff; padding-left: 10px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .badge-red { background: #2a1010; color: #f87171; border: 1px solid #4a2020; }
+  .badge-yellow { background: #2a2010; color: #fbbf24; border: 1px solid #4a3010; }
+  .badge-green { background: #102a10; color: #4ade80; border: 1px solid #204a20; }
+  .badge-blue { background: #101a2a; color: #60a5fa; border: 1px solid #203a4a; }
+  .meta-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-bottom: 20px; }
+  .meta-card { background: #111120; border: 1px solid #1e1e30; border-radius: 8px; padding: 12px 16px; }
+  .meta-card .label { font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+  .meta-card .value { font-size: 20px; font-weight: 700; color: #fff; margin-top: 2px; }
+  .meta-card .sub { font-size: 11px; color: #555; }
+  .signal-ok { color: #4ade80; }
+  .signal-warn { color: #fbbf24; }
+  .signal-danger { color: #f87171; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+  th { background: #111120; color: #666; font-weight: 600; text-align: left; padding: 8px 12px; border-bottom: 1px solid #1e1e30; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+  td { padding: 9px 12px; border-bottom: 1px solid #111120; color: #ccc; }
+  tr:hover td { background: #0f0f1a; }
+  tr.top-pick td { background: #0a1a0a; }
+  .score-plus { color: #4ade80; font-weight: 600; }
+  .divider { border: none; border-top: 1px solid #1a1a2a; margin: 24px 0; }
+  .footer { text-align: center; color: #444; font-size: 11px; margin-top: 40px; padding-top: 16px; border-top: 1px solid #111120; }
+  .verdict-add { color: #4ade80; }
+  .verdict-hold { color: #fbbf24; }
+  .verdict-reduce { color: #f87171; }
+  .stock-card { background: #111120; border: 1px solid #1e1e30; border-radius: 10px; padding: 16px 20px; margin: 12px 0; }
+  .stock-card.winner { border-color: #1a3a1a; background: #0a1a0a; }
+  .stock-name { font-size: 18px; font-weight: 700; color: #fff; }
+  .stock-sector { font-size: 12px; color: #666; margin-top: 2px; }
+  .stock-score { font-size: 28px; font-weight: 700; margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>CRO 周度 Top 5 选股汇总报告</h1>
+<div class="subtitle">报告日期：2026-05-08（数据截至 2026-05-07）| 风险偏好：低（盈亏比 ≥ 2:1）</div>
+
+<div style="background:#1a0808;border:1px solid #4a1010;border-radius:8px;padding:14px 16px;margin-bottom:20px;color:#f87171;font-size:13px;">
+  ⚠️ <strong>市场背景：</strong>QQQ RSI <strong>81.6</strong> 🔴 极度过热 | SPY RSI <strong>75.8</strong> 🟡 偏高。下周系统性回调风险极高，选股需格外谨慎。
+</div>
+
+<h2>一、一句话结论</h2>
+<table>
+  <thead><tr><th>排名</th><th>代码</th><th>板块</th><th>结论</th><th>核心逻辑</th></tr></thead>
+  <tbody>
+    <tr class="top-pick">
+      <td><span class="badge badge-green">🥇 1</span></td>
+      <td style="font-weight:700;color:#4ade80">UBER</td>
+      <td>自动驾驶</td>
+      <td><span class="badge badge-green">✅ 加仓（趋势跟随）</span></td>
+      <td>52周低位+旗形突破+盈亏比3.66:1</td>
+    </tr>
+    <tr>
+      <td><span class="badge badge-yellow">2</span></td>
+      <td style="font-weight:700">ILMN</td>
+      <td>AI医疗</td>
+      <td><span class="badge badge-yellow">⚠️ 等$132入场</span></td>
+      <td>中期趋势好但即时盈亏比1.23:1不足</td>
+    </tr>
+    <tr>
+      <td><span class="badge badge-red">3</span></td>
+      <td style="font-weight:700">DD</td>
+      <td>半导体材料</td>
+      <td><span class="badge badge-red">❌ 不动</span></td>
+      <td>52周83%高位，盈亏比0.96:1</td>
+    </tr>
+    <tr>
+      <td><span class="badge badge-red">4</span></td>
+      <td style="font-weight:700">ARM</td>
+      <td>AI芯片</td>
+      <td><span class="badge badge-red">❌ 不动</span></td>
+      <td>20日涨43%过热+IV极高+盈亏比不足</td>
+    </tr>
+    <tr>
+      <td><span class="badge badge-red">5</span></td>
+      <td style="font-weight:700">JBL</td>
+      <td>PCB连接器</td>
+      <td><span class="badge badge-red">❌ 不动（偏空）</span></td>
+      <td>RSI 20.9超卖+52周90%+头部嫌疑</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>二、综合评分对比</h2>
+<table>
+  <thead><tr><th>代码</th><th>综合分</th><th>趋势</th><th>低位优势</th><th>量价</th><th>盈亏比</th><th>市场风险</th><th>最终判断</th></tr></thead>
+  <tbody>
+    <tr class="top-pick">
+      <td style="font-weight:700;color:#4ade80">UBER</td>
+      <td class="score-plus" style="font-size:16px">4.2/5</td>
+      <td>⭐⭐⭐⭐⭐</td>
+      <td>⭐⭐⭐⭐⭐（52周25%）</td>
+      <td>⭐⭐⭐⭐</td>
+      <td class="score-plus">⭐⭐⭐⭐⭐</td>
+      <td class="signal-warn">⭐⭐</td>
+      <td><span class="badge badge-green">加仓</span></td>
+    </tr>
+    <tr>
+      <td style="font-weight:700">ILMN</td>
+      <td style="color:#fbbf24">2.6/5</td>
+      <td>⭐⭐⭐⭐</td>
+      <td class="signal-warn">⭐⭐</td>
+      <td class="signal-warn">⭐⭐⭐</td>
+      <td class="signal-warn">⭐⭐</td>
+      <td class="signal-warn">⭐⭐</td>
+      <td><span class="badge badge-yellow">等待</span></td>
+    </tr>
+    <tr>
+      <td style="font-weight:700">DD</td>
+      <td style="color:#fbbf24">2.4/5</td>
+      <td>⭐⭐⭐⭐</td>
+      <td class="signal-warn">⭐⭐</td>
+      <td>⭐⭐⭐⭐</td>
+      <td class="signal-warn">⭐⭐</td>
+      <td class="signal-warn">⭐⭐</td>
+      <td><span class="badge badge-red">不动</span></td>
+    </tr>
+    <tr>
+      <td style="font-weight:700">ARM</td>
+      <td style="color:#fbbf24">2.2/5</td>
+      <td>⭐⭐⭐⭐</td>
+      <td class="signal-warn">⭐⭐</td>
+      <td>⭐⭐⭐</td>
+      <td class="signal-danger">⭐</td>
+      <td class="signal-danger">⭐⭐</td>
+      <td><span class="badge badge-red">不动</span></td>
+    </tr>
+    <tr>
+      <td style="font-weight:700">JBL</td>
+      <td style="color:#f87171">1.6/5</td>
+      <td>⭐⭐⭐</td>
+      <td class="signal-danger">⭐</td>
+      <td>⭐⭐⭐</td>
+      <td class="signal-danger">⭐</td>
+      <td class="signal-danger">⭐</td>
+      <td><span class="badge badge-red">不动</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>三、🏆 UBER 详细交易计划（唯一达标标的）</h2>
+
+<div class="stock-card winner">
+  <div class="stock-name">UBER</div>
+  <div class="stock-sector">自动驾驶 | 综合分 4.2/5</div>
+</div>
+
+<div class="meta-grid">
+  <div class="meta-card"><div class="label">为什么 UBER 达标？</div><div class="value signal-ok">52周25%低位</div><div class="sub">距52周高点$101.99还有32.9%空间</div></div>
+  <div class="meta-card"><div class="label">RSI 状态</div><div class="value signal-ok">日45.8 / 周63.0</div><div class="sub">未超买也未超卖，最理想区间</div></div>
+  <div class="meta-card"><div class="label">趋势</div><div class="value signal-ok">5日+2.14% / 20日+8.87%</div><div class="sub">健康动量，不算"追涨"</div></div>
+  <div class="meta-card"><div class="label">量价</div><div class="value signal-ok">量比1.39</div><div class="sub">放量上涨，缩量回调</div></div>
+  <div class="meta-card"><div class="label">形态</div><div class="value signal-ok">Bull Flag 旗形</div><div class="sub">经典中继，突破在即</div></div>
+  <div class="meta-card"><div class="label">盈亏比</div><div class="value signal-ok" style="font-size:22px">3.66 : 1</div><div class="sub">远超2:1 ✅</div></div>
+</div>
+
+<table>
+  <thead><tr><th>要素</th><th>内容</th></tr></thead>
+  <tbody>
+    <tr><td>进场方式</td><td style="color:#fbbf24;font-weight:700">保守：等回调至 $74.00 附近</td></tr>
+    <tr><td>止损位</td><td style="color:#f87171;font-weight:700">$69.82（20日低点下方）</td></tr>
+    <tr><td>第一止盈</td><td style="color:#4ade80;font-weight:700">$89.18（Fib 61.8%，约+20.5%）</td></tr>
+    <tr><td>第二止盈</td><td style="color:#4ade80;font-weight:700">$101.99（52周高点，约+32.9%）</td></tr>
+    <tr><td>建议止盈</td><td style="color:#4ade80;font-weight:700">$85.00（合理波段目标）</td></tr>
+    <tr><td>即时盈亏比</td><td class="score-plus" style="font-size:16px">3.66 : 1 ✅</td></tr>
+    <tr><td>保守盈亏比（$74入）</td><td class="score-plus" style="font-size:16px">4.50 : 1 ✅</td></tr>
+  </tbody>
+</table>
+
+<div style="background:#1a0808;border:1px solid #4a1010;border-radius:8px;padding:14px 16px;margin-top:16px;color:#f87171;font-size:13px;">
+  <strong>⚠️ 市场警告：</strong>QQQ RSI 81.6 极高，UBER 可能先回探 $72.67 再启动。建议采用<strong>保守进场（$74附近）</strong>，不追高。止损 $69.82 严格执行，不加仓摊平。
+</div>
+
+<h3>期权策略（UBER）</h3>
+<table>
+  <thead><tr><th>项目</th><th>内容</th></tr></thead>
+  <tbody>
+    <tr><td>是否适合期权</td><td><span class="badge badge-yellow">有条件适合</span>（IV中等40-50%）</td></tr>
+    <tr><td>推荐策略</td><td>Long Call（买入看涨）或 Collar（风险逆转）</td></tr>
+    <tr><td>合约</td><td>UBER 2026-06-20 $80 Call</td></tr>
+    <tr><td>张数</td><td>≤2张（不超过现货仓位20%）</td></tr>
+    <tr><td>成本控制</td><td>期权金不超过现货仓位的5%</td></tr>
+    <tr><td>止损逻辑</td><td>5日内未突破$80且IV收缩则平仓</td></tr>
+    <tr><td>替代方案</td><td><strong>纯现货更稳妥</strong>（无需预测突破时机）</td></tr>
+  </tbody>
+</table>
+
+<h2>四、各标的快速索引</h2>
+<table>
+  <thead><tr><th>标的</th><th>报告文件</th><th>关键价格</th><th>行动</th></tr></thead>
+  <tbody>
+    <tr class="top-pick">
+      <td style="font-weight:700;color:#4ade80">UBER</td>
+      <td><a href="./UBER_analysis.html" style="color:#60a5fa;text-decoration:none">UBER_analysis.html</a></td>
+      <td>进$74 | 止$85-89 | 损$69.82</td>
+      <td><span class="badge badge-green">加仓</span></td>
+    </tr>
+    <tr>
+      <td style="font-weight:700">ILMN</td>
+      <td><a href="./ILMN_analysis.html" style="color:#60a5fa;text-decoration:none">ILMN_analysis.html</a></td>
+      <td>等$132 | 目标$150-155 | 损$127</td>
+      <td><span class="badge badge-yellow">观望</span></td>
+    </tr>
+    <tr>
+      <td style="font-weight:700">DD</td>
+      <td><a href="./DD_analysis.html" style="color:#60a5fa;text-decoration:none">DD_analysis.html</a></td>
+      <td>盈亏比0.96:1，不满足</td>
+      <td><span class="badge badge-red">不动</span></td>
+    </tr>
+    <tr>
+      <td style="font-weight:700">ARM</td>
+      <td><a href="./ARM_analysis.html" style="color:#60a5fa;text-decoration:none">ARM_analysis.html</a></td>
+      <td>20日+43%过热，IV极高，盈亏比不足</td>
+      <td><span class="badge badge-red">不动</span></td>
+    </tr>
+    <tr>
+      <td style="font-weight:700">JBL</td>
+      <td><a href="./JBL_analysis.html" style="color:#60a5fa;text-decoration:none">JBL_analysis.html</a></td>
+      <td>RSI 20.9超卖+52周90%+头部嫌疑</td>
+      <td><span class="badge badge-red">不动</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>五、市场整体建议</h2>
+<div class="meta-grid">
+  <div class="meta-card"><div class="label">❌ 不追涨大盘</div><div class="value signal-danger">QQQ/SPY RSI 81.6/75.8</div><div class="sub">回调概率极高</div></div>
+  <div class="meta-card"><div class="label">✅ 关注 UBER</div><div class="value signal-ok">52周低位 + 强趋势</div><div class="sub">高盈亏比</div></div>
+  <div class="meta-card"><div class="label">✅ 等待 ILMN</div><div class="value">等$132入场</div><div class="sub">中期更优，需耐心</div></div>
+  <div class="meta-card"><div class="label">❌ 规避 JBL</div><div class="value signal-danger">超卖陷阱风险</div><div class="sub">高位</div></div>
+  <div class="meta-card"><div class="label">❌ 规避 ARM</div><div class="value signal-danger">20日+43%过热</div><div class="sub">IV极高</div></div>
+  <div class="meta-card"><div class="label">❌ 规避 DD</div><div class="value signal-danger">52周83%</div><div class="sub">盈亏比不足</div></div>
+</div>
+
+<hr class="divider">
+<div class="footer">
+  汇总报告生成时间：2026-05-08 17:25 GMT+8 | 数据完整性：102/107只有效K线数据
+</div>
+
+</div>
+</body>
+</html>

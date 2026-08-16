@@ -1,0 +1,178 @@
+{
+  "strategy_final": 26278.124118353917,
+  "bh_final": 23323.236078088554,
+  "excess": 0.12669288388507063,
+  "strat_cagr": 0.16336623950754725,
+  "bh_cagr": 0.14183334608614118,
+  "strat_max_dd": 0.20493670967302313,
+  "n_buys": 6,
+  "n_sells": 5,
+  "win_rate": 1.0,
+  "avg_w": 0.09560766908105246,
+  "avg_l": 0,
+  "profit_factor": Infinity,
+  "energy_stats": {
+    "weak": {
+      "count": 4
+    },
+    "unknown": {
+      "count": 0
+    },
+    "medium": {
+      "count": 1
+    },
+    "strong": {
+      "count": 1
+    }
+  },
+  "trades": [
+    {
+      "d": "2020-04-09",
+      "a": "BUY",
+      "px": 277.5799865722656,
+      "src": "EMA50转正",
+      "bear_energy": {
+        "energy": "weak",
+        "score": 0,
+        "direction": "up",
+        "drawdown": 0,
+        "days": 0
+      }
+    },
+    {
+      "d": "2022-06-13",
+      "a": "SELL",
+      "px": 379.8500061035156,
+      "pnl": 0.3684344134249205,
+      "src": "EMA20<=0(EMA50下降确认)",
+      "exit_energy": {
+        "energy": "weak",
+        "score": 0,
+        "direction": "up",
+        "drawdown": 0,
+        "days": 0
+      }
+    },
+    {
+      "d": "2022-07-26",
+      "a": "BUY",
+      "px": 393.8399963378906,
+      "src": "EMA50转正",
+      "bear_energy": {
+        "direction": "down",
+        "drawdown": 0.01813014464386164,
+        "days": 29,
+        "energy": "medium",
+        "score": 2
+      }
+    },
+    {
+      "d": "2022-07-29",
+      "a": "SELL",
+      "px": 407.5799865722656,
+      "pnl": 0.034887239391976146,
+      "src": "RSI>60",
+      "exit_energy": {
+        "direction": "down",
+        "drawdown": 0.01813014464386164,
+        "days": 29,
+        "energy": "medium",
+        "score": 2
+      }
+    },
+    {
+      "d": "2022-10-31",
+      "a": "BUY",
+      "px": 386.44000244140625,
+      "src": "EMA50转正",
+      "bear_energy": {
+        "direction": "down",
+        "drawdown": 0.09795776444982497,
+        "days": 65,
+        "energy": "strong",
+        "score": 3
+      }
+    },
+    {
+      "d": "2022-11-01",
+      "a": "SELL",
+      "px": 390.1400146484375,
+      "pnl": 0.009574609728950776,
+      "src": "RSI>55",
+      "exit_energy": {
+        "direction": "down",
+        "drawdown": 0.09795776444982497,
+        "days": 65,
+        "energy": "strong",
+        "score": 3
+      }
+    },
+    {
+      "d": "2022-11-11",
+      "a": "BUY",
+      "px": 395.5899963378906,
+      "src": "EMA50转正",
+      "bear_energy": {
+        "direction": "mixed",
+        "drawdown": 0.0,
+        "days": 8,
+        "energy": "weak",
+        "score": 0
+      }
+    },
+    {
+      "d": "2023-03-29",
+      "a": "SELL",
+      "px": 399.92999267578125,
+      "pnl": 0.010970945620636082,
+      "src": "EMA20<=0(EMA50下降确认)",
+      "exit_energy": {
+        "direction": "mixed",
+        "drawdown": 0.0,
+        "days": 8,
+        "energy": "weak",
+        "score": 0
+      }
+    },
+    {
+      "d": "2023-03-30",
+      "a": "BUY",
+      "px": 404.0899963378906,
+      "src": "EMA50转正",
+      "bear_energy": {
+        "direction": "mixed",
+        "drawdown": 0,
+        "days": 1,
+        "energy": "weak",
+        "score": 1
+      }
+    },
+    {
+      "d": "2023-10-20",
+      "a": "SELL",
+      "px": 425.9800109863281,
+      "pnl": 0.05417113723877881,
+      "src": "EMA20<=0(EMA50下降确认)",
+      "exit_energy": {
+        "direction": "mixed",
+        "drawdown": 0,
+        "days": 1,
+        "energy": "weak",
+        "score": 1
+      }
+    },
+    {
+      "d": "2023-11-08",
+      "a": "BUY",
+      "px": 437.54998779296875,
+      "src": "EMA50转正",
+      "bear_energy": {
+        "direction": "mixed",
+        "drawdown": 0.00997570529761841,
+        "days": 13,
+        "energy": "weak",
+        "score": 0
+      }
+    }
+  ]
+}

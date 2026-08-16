@@ -1,0 +1,77 @@
+{
+  "name": "GAMMA_REGIME_PROXY",
+  "formula": "VIX_level*w1 + VIX_momentum*w2 + PCR*w3 + SPY_EMA20*w4 + RSI14*w5",
+  "description": "Gamma Regime Proxy using market behavioral indicators. Score range: -7~+7. >=+3=POSITIVE_GAMMA, <=-3=NEGATIVE_GAMMA, else=NEUTRAL.",
+  "source": "VIX(Yahoo)+SPY(Yahoo)+PutCallRatio(CBOE via Chrome CDP)",
+  "last_updated": "2026-06-03T18:08:23.118470",
+  "data": [
+    {
+      "date": "2026-05-15",
+      "regime": "NEUTRAL",
+      "score": 2,
+      "signals": {
+        "vix_level": {
+          "value": 17.26,
+          "signal": "NEUTRAL",
+          "score": 0
+        },
+        "vix_momentum": {
+          "value": 0.0,
+          "signal": "POSITIVE (VIX下降)",
+          "score": 1,
+          "unit": "%"
+        },
+        "pcr": {
+          "value": 0.67,
+          "signal": "POSITIVE",
+          "score": 1
+        },
+        "spy_ema20": {
+          "value": 3.62,
+          "signal": "POSITIVE (SPY强势)",
+          "score": 1,
+          "unit": "% vs EMA20"
+        },
+        "rsi14": {
+          "value": 82.0,
+          "signal": "NEGATIVE (极端区)",
+          "score": -1
+        }
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "regime": "NEUTRAL",
+      "score": 0,
+      "signals": {
+        "vix_level": {
+          "value": 16.08,
+          "signal": "NEUTRAL",
+          "score": 0
+        },
+        "vix_momentum": {
+          "value": 1.97,
+          "signal": "SLIGHT_NEGATIVE",
+          "score": 0,
+          "unit": "%"
+        },
+        "pcr": {
+          "value": 0.96,
+          "signal": "NEUTRAL",
+          "score": 0
+        },
+        "spy_ema20": {
+          "value": 2.39,
+          "signal": "POSITIVE (SPY强势)",
+          "score": 1,
+          "unit": "% vs EMA20"
+        },
+        "rsi14": {
+          "value": 71.2,
+          "signal": "NEGATIVE (极端区)",
+          "score": -1
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+[
+  {
+    "date": "2026-05-12",
+    "regime": "🚀 超强牛市",
+    "signal": "AGGRESSIVE_LONG",
+    "score": 6.5,
+    "spy_close": 739.3,
+    "spy_rsi": 80.5,
+    "vix": 18.72,
+    "dxy": 98.224,
+    "breadth": 71.5,
+    "note": "加密资产领涨 → 流动性外溢，高风险偏好"
+  },
+  {
+    "date": "2026-05-12",
+    "regime": "🚀 超强牛市",
+    "signal": "AGGRESSIVE_LONG",
+    "score": 7.0,
+    "spy_close": 737.62,
+    "spy_rsi": 73.8,
+    "vix": 18.38,
+    "dxy": 98.132,
+    "breadth": 65.9,
+    "note": "加密资产领涨 → 流动性外溢，高风险偏好"
+  },
+  {
+    "date": "2026-05-11",
+    "regime": "🚀 超强牛市",
+    "signal": "AGGRESSIVE_LONG",
+    "score": 7.0,
+    "spy_close": 737.62,
+    "spy_rsi": 73.8,
+    "vix": 18.17,
+    "dxy": 98.016,
+    "breadth": 66.1,
+    "note": "加密资产领涨 → 流动性外溢，高风险偏好"
+  },
+  {
+    "date": "2026-05-11",
+    "regime": "🚀 超强牛市",
+    "signal": "AGGRESSIVE_LONG",
+    "score": 7.0,
+    "spy_close": 737.62,
+    "spy_rsi": 73.8,
+    "vix": 18.16,
+    "dxy": 98.009,
+    "breadth": 66.1,
+    "note": "加密资产领涨 → 流动性外溢，高风险偏好"
+  },
+  {
+    "date": "2026-05-11",
+    "regime": "🚀 超强牛市",
+    "signal": "AGGRESSIVE_LONG",
+    "score": 7.0,
+    "spy_close": 737.62,
+    "spy_rsi": 73.8,
+    "vix": 18.16,
+    "dxy": 98.002,
+    "breadth": 66.1,
+    "note": "加密资产领涨 → 流动性外溢，高风险偏好"
+  },
+  {
+    "date": "2026-05-11",
+    "regime": "🚀 超强牛市",
+    "signal": "AGGRESSIVE_LONG",
+    "score": 7.0,
+    "spy_close": 737.62,
+    "spy_rsi": 73.8,
+    "vix": 18.16,
+    "dxy": 97.999,
+    "breadth": 66.1,
+    "note": "加密资产领涨 → 流动性外溢，高风险偏好"
+  },
+  {
+    "date": "2026-05-11",
+    "regime": "🚀 超强牛市",
+    "signal": "AGGRESSIVE_LONG",
+    "score": 7.0,
+    "spy_close": 737.62,
+    "spy_rsi": 73.8,
+    "vix": 18.17,
+    "dxy": 97.987,
+    "breadth": 66.1,
+    "note": "加密资产领涨 → 流动性外溢，高风险偏好"
+  },
+  {
+    "date": "2026-05-11",
+    "regime": "🚀 超强牛市",
+    "signal": "AGGRESSIVE_LONG",
+    "score": 7.0,
+    "spy_close": 737.62,
+    "spy_rsi": 73.8,
+    "vix": 18.18,
+    "dxy": 97.974,
+    "breadth": 66.1,
+    "note": "半导体独自强势（AI分化）"
+  },
+  {
+    "date": "2026-05-11",
+    "regime": "🚀 超强牛市",
+    "signal": "AGGRESSIVE_LONG",
+    "score": 7.0,
+    "spy_close": 737.62,
+    "spy_rsi": 73.8,
+    "vix": 18.17,
+    "dxy": 97.973,
+    "breadth": 66.1,
+    "note": "半导体独自强势（AI分化）"
+  },
+  {
+    "date": "2026-05-11",
+    "regime": "🚀 超强牛市",
+    "score": 6.5,
+    "signal": "AGGRESSIVE_LONG",
+    "spy_close": 737.62,
+    "qqq_close": 711.23,
+    "vix": 18.15,
+    "dxy": 97.921
+  }
+]

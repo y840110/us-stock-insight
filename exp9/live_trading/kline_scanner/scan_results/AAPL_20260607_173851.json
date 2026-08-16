@@ -1,0 +1,1824 @@
+{
+  "ticker": "AAPL",
+  "timestamp": "2026-06-07T17:38:51.874161",
+  "total_bars": 210,
+  "total_trades": 43,
+  "logs": [
+    {
+      "time": "2025-06-03",
+      "bar_index": 0,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 203.27
+    },
+    {
+      "time": "2025-06-04",
+      "bar_index": 1,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 202.82
+    },
+    {
+      "time": "2025-06-05",
+      "bar_index": 2,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 200.63
+    },
+    {
+      "time": "2025-06-06",
+      "bar_index": 3,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 203.92
+    },
+    {
+      "time": "2025-06-09",
+      "bar_index": 4,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 201.45
+    },
+    {
+      "time": "2025-06-10",
+      "bar_index": 5,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 202.67
+    },
+    {
+      "time": "2025-06-11",
+      "bar_index": 6,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 198.78
+    },
+    {
+      "time": "2025-06-12",
+      "bar_index": 7,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 199.2
+    },
+    {
+      "time": "2025-06-13",
+      "bar_index": 8,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 196.45
+    },
+    {
+      "time": "2025-06-16",
+      "bar_index": 9,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 198.42
+    },
+    {
+      "time": "2025-06-17",
+      "bar_index": 10,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 195.64
+    },
+    {
+      "time": "2025-06-18",
+      "bar_index": 11,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 196.58
+    },
+    {
+      "time": "2025-06-20",
+      "bar_index": 12,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 201.0
+    },
+    {
+      "time": "2025-06-23",
+      "bar_index": 13,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 201.5
+    },
+    {
+      "time": "2025-06-24",
+      "bar_index": 14,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 200.3
+    },
+    {
+      "time": "2025-06-25",
+      "bar_index": 15,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 201.56
+    },
+    {
+      "time": "2025-06-26",
+      "bar_index": 16,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 201.0
+    },
+    {
+      "time": "2025-06-27",
+      "bar_index": 17,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 201.08
+    },
+    {
+      "time": "2025-06-30",
+      "bar_index": 18,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 205.17
+    },
+    {
+      "time": "2025-07-01",
+      "bar_index": 19,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 207.82
+    },
+    {
+      "time": "2025-07-03",
+      "bar_index": 21,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 213.55
+    },
+    {
+      "time": "2025-07-08",
+      "bar_index": 23,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 210.01
+    },
+    {
+      "time": "2025-07-09",
+      "bar_index": 24,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 211.14
+    },
+    {
+      "time": "2025-07-10",
+      "bar_index": 25,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 212.41
+    },
+    {
+      "time": "2025-07-14",
+      "bar_index": 27,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 208.62
+    },
+    {
+      "time": "2025-07-15",
+      "bar_index": 28,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 209.11
+    },
+    {
+      "time": "2025-07-16",
+      "bar_index": 29,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 210.16
+    },
+    {
+      "time": "2025-07-17",
+      "bar_index": 30,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 210.02
+    },
+    {
+      "time": "2025-07-18",
+      "bar_index": 31,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 211.18
+    },
+    {
+      "time": "2025-07-21",
+      "bar_index": 32,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 212.48
+    },
+    {
+      "time": "2025-07-22",
+      "bar_index": 33,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 214.4
+    },
+    {
+      "time": "2025-07-24",
+      "bar_index": 35,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 213.76
+    },
+    {
+      "time": "2025-07-25",
+      "bar_index": 36,
+      "signal": "HOLD",
+      "action": "HOLD",
+      "price": 213.88
+    },
+    {
+      "time": "2025-07-28",
+      "bar_index": 37,
+      "signal": "HOLD",
+      "action": "HOLD",
+      "price": 214.05
+    },
+    {
+      "time": "2025-07-29",
+      "bar_index": 38,
+      "signal": "HOLD",
+      "action": "HOLD",
+      "price": 211.27
+    },
+    {
+      "time": "2025-07-30",
+      "bar_index": 39,
+      "signal": "HOLD",
+      "action": "HOLD",
+      "price": 209.05
+    },
+    {
+      "time": "2025-08-01",
+      "bar_index": 41,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 202.38
+    },
+    {
+      "time": "2025-08-04",
+      "bar_index": 42,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 203.35
+    },
+    {
+      "time": "2025-08-05",
+      "bar_index": 43,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 202.92
+    },
+    {
+      "time": "2025-08-06",
+      "bar_index": 44,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 213.25
+    },
+    {
+      "time": "2025-08-07",
+      "bar_index": 45,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 220.03
+    },
+    {
+      "time": "2025-08-08",
+      "bar_index": 46,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 229.35
+    },
+    {
+      "time": "2025-08-11",
+      "bar_index": 47,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 227.18
+    },
+    {
+      "time": "2025-08-13",
+      "bar_index": 49,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 233.33
+    },
+    {
+      "time": "2025-08-15",
+      "bar_index": 51,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 231.59
+    },
+    {
+      "time": "2025-08-19",
+      "bar_index": 53,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 230.56
+    },
+    {
+      "time": "2025-08-20",
+      "bar_index": 54,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 226.01
+    },
+    {
+      "time": "2025-08-21",
+      "bar_index": 55,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 224.9
+    },
+    {
+      "time": "2025-08-22",
+      "bar_index": 56,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 227.76
+    },
+    {
+      "time": "2025-08-25",
+      "bar_index": 57,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 227.16
+    },
+    {
+      "time": "2025-08-26",
+      "bar_index": 58,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 229.31
+    },
+    {
+      "time": "2025-08-27",
+      "bar_index": 59,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 230.49
+    },
+    {
+      "time": "2025-08-28",
+      "bar_index": 60,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 232.56
+    },
+    {
+      "time": "2025-09-02",
+      "bar_index": 62,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 229.72
+    },
+    {
+      "time": "2025-09-03",
+      "bar_index": 63,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 238.47
+    },
+    {
+      "time": "2025-09-05",
+      "bar_index": 65,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 239.69
+    },
+    {
+      "time": "2025-09-09",
+      "bar_index": 67,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 234.35
+    },
+    {
+      "time": "2025-09-10",
+      "bar_index": 68,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 226.79
+    },
+    {
+      "time": "2025-09-11",
+      "bar_index": 69,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 230.03
+    },
+    {
+      "time": "2025-09-12",
+      "bar_index": 70,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 234.07
+    },
+    {
+      "time": "2025-09-15",
+      "bar_index": 71,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 236.7
+    },
+    {
+      "time": "2025-09-16",
+      "bar_index": 72,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 238.15
+    },
+    {
+      "time": "2025-09-17",
+      "bar_index": 73,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 238.99
+    },
+    {
+      "time": "2025-09-18",
+      "bar_index": 74,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 237.88
+    },
+    {
+      "time": "2025-09-22",
+      "bar_index": 76,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 256.08
+    },
+    {
+      "time": "2025-09-23",
+      "bar_index": 77,
+      "signal": "TRAILING_STOP",
+      "action": "TRAILING_STOP",
+      "price": 254.43
+    },
+    {
+      "time": "2025-09-25",
+      "bar_index": 79,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 256.87
+    },
+    {
+      "time": "2025-09-26",
+      "bar_index": 80,
+      "signal": "TRAILING_STOP",
+      "action": "TRAILING_STOP",
+      "price": 255.46
+    },
+    {
+      "time": "2025-09-30",
+      "bar_index": 82,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 254.63
+    },
+    {
+      "time": "2025-10-01",
+      "bar_index": 83,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 255.45
+    },
+    {
+      "time": "2025-10-03",
+      "bar_index": 85,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 258.02
+    },
+    {
+      "time": "2025-10-07",
+      "bar_index": 87,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 256.48
+    },
+    {
+      "time": "2025-10-08",
+      "bar_index": 88,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 258.06
+    },
+    {
+      "time": "2025-10-10",
+      "bar_index": 90,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 245.27
+    },
+    {
+      "time": "2025-10-13",
+      "bar_index": 91,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 247.66
+    },
+    {
+      "time": "2025-10-14",
+      "bar_index": 92,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 247.77
+    },
+    {
+      "time": "2025-10-15",
+      "bar_index": 93,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 249.34
+    },
+    {
+      "time": "2025-10-16",
+      "bar_index": 94,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 247.45
+    },
+    {
+      "time": "2025-10-17",
+      "bar_index": 95,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 252.29
+    },
+    {
+      "time": "2025-10-20",
+      "bar_index": 96,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 262.24
+    },
+    {
+      "time": "2025-10-21",
+      "bar_index": 97,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 262.77
+    },
+    {
+      "time": "2025-10-22",
+      "bar_index": 98,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 258.45
+    },
+    {
+      "time": "2025-10-23",
+      "bar_index": 99,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 259.58
+    },
+    {
+      "time": "2025-10-24",
+      "bar_index": 100,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 262.82
+    },
+    {
+      "time": "2025-10-28",
+      "bar_index": 102,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 269.0
+    },
+    {
+      "time": "2025-10-30",
+      "bar_index": 104,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 271.4
+    },
+    {
+      "time": "2025-11-03",
+      "bar_index": 106,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 269.05
+    },
+    {
+      "time": "2025-11-04",
+      "bar_index": 107,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 270.04
+    },
+    {
+      "time": "2025-11-05",
+      "bar_index": 108,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 270.14
+    },
+    {
+      "time": "2025-11-06",
+      "bar_index": 109,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 269.77
+    },
+    {
+      "time": "2025-11-07",
+      "bar_index": 110,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 268.47
+    },
+    {
+      "time": "2025-11-10",
+      "bar_index": 111,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 269.43
+    },
+    {
+      "time": "2025-11-11",
+      "bar_index": 112,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 275.25
+    },
+    {
+      "time": "2025-11-13",
+      "bar_index": 114,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 272.95
+    },
+    {
+      "time": "2025-11-17",
+      "bar_index": 116,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 267.46
+    },
+    {
+      "time": "2025-11-18",
+      "bar_index": 117,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 267.44
+    },
+    {
+      "time": "2025-11-19",
+      "bar_index": 118,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 268.56
+    },
+    {
+      "time": "2025-11-20",
+      "bar_index": 119,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 266.25
+    },
+    {
+      "time": "2025-11-21",
+      "bar_index": 120,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 271.49
+    },
+    {
+      "time": "2025-11-24",
+      "bar_index": 121,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 275.92
+    },
+    {
+      "time": "2025-11-25",
+      "bar_index": 122,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 276.97
+    },
+    {
+      "time": "2025-11-28",
+      "bar_index": 124,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 278.85
+    },
+    {
+      "time": "2025-12-02",
+      "bar_index": 126,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 286.19
+    },
+    {
+      "time": "2025-12-04",
+      "bar_index": 128,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 280.7
+    },
+    {
+      "time": "2025-12-05",
+      "bar_index": 129,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 278.78
+    },
+    {
+      "time": "2025-12-08",
+      "bar_index": 130,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 277.89
+    },
+    {
+      "time": "2025-12-09",
+      "bar_index": 131,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 277.18
+    },
+    {
+      "time": "2025-12-10",
+      "bar_index": 132,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 278.78
+    },
+    {
+      "time": "2025-12-11",
+      "bar_index": 133,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 278.03
+    },
+    {
+      "time": "2025-12-12",
+      "bar_index": 134,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 278.28
+    },
+    {
+      "time": "2025-12-15",
+      "bar_index": 135,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 274.11
+    },
+    {
+      "time": "2025-12-16",
+      "bar_index": 136,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 274.61
+    },
+    {
+      "time": "2025-12-17",
+      "bar_index": 137,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 271.84
+    },
+    {
+      "time": "2025-12-18",
+      "bar_index": 138,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 272.19
+    },
+    {
+      "time": "2025-12-19",
+      "bar_index": 139,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 273.67
+    },
+    {
+      "time": "2025-12-22",
+      "bar_index": 140,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 270.97
+    },
+    {
+      "time": "2025-12-23",
+      "bar_index": 141,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 272.36
+    },
+    {
+      "time": "2025-12-24",
+      "bar_index": 142,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 273.81
+    },
+    {
+      "time": "2025-12-26",
+      "bar_index": 143,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 273.4
+    },
+    {
+      "time": "2025-12-29",
+      "bar_index": 144,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 273.76
+    },
+    {
+      "time": "2025-12-30",
+      "bar_index": 145,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 273.08
+    },
+    {
+      "time": "2025-12-31",
+      "bar_index": 146,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 271.86
+    },
+    {
+      "time": "2026-01-02",
+      "bar_index": 147,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 271.01
+    },
+    {
+      "time": "2026-01-05",
+      "bar_index": 148,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 267.26
+    },
+    {
+      "time": "2026-01-06",
+      "bar_index": 149,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 262.36
+    },
+    {
+      "time": "2026-01-07",
+      "bar_index": 150,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 260.33
+    },
+    {
+      "time": "2026-01-08",
+      "bar_index": 151,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 259.04
+    },
+    {
+      "time": "2026-01-09",
+      "bar_index": 152,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 259.37
+    },
+    {
+      "time": "2026-01-12",
+      "bar_index": 153,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 260.25
+    },
+    {
+      "time": "2026-01-13",
+      "bar_index": 154,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 261.05
+    },
+    {
+      "time": "2026-01-14",
+      "bar_index": 155,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 259.96
+    },
+    {
+      "time": "2026-01-15",
+      "bar_index": 156,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 258.21
+    },
+    {
+      "time": "2026-01-16",
+      "bar_index": 157,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 255.53
+    },
+    {
+      "time": "2026-01-20",
+      "bar_index": 158,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 246.7
+    },
+    {
+      "time": "2026-01-21",
+      "bar_index": 159,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 247.65
+    },
+    {
+      "time": "2026-01-22",
+      "bar_index": 160,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 248.35
+    },
+    {
+      "time": "2026-01-23",
+      "bar_index": 161,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 248.04
+    },
+    {
+      "time": "2026-01-26",
+      "bar_index": 162,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 255.41
+    },
+    {
+      "time": "2026-01-27",
+      "bar_index": 163,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 258.27
+    },
+    {
+      "time": "2026-01-28",
+      "bar_index": 164,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 256.44
+    },
+    {
+      "time": "2026-01-29",
+      "bar_index": 165,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 258.28
+    },
+    {
+      "time": "2026-01-30",
+      "bar_index": 166,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 259.48
+    },
+    {
+      "time": "2026-02-02",
+      "bar_index": 167,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 270.01
+    },
+    {
+      "time": "2026-02-03",
+      "bar_index": 168,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 269.48
+    },
+    {
+      "time": "2026-02-04",
+      "bar_index": 169,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 276.49
+    },
+    {
+      "time": "2026-02-06",
+      "bar_index": 171,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 278.12
+    },
+    {
+      "time": "2026-02-10",
+      "bar_index": 173,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 273.68
+    },
+    {
+      "time": "2026-02-11",
+      "bar_index": 174,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 275.5
+    },
+    {
+      "time": "2026-02-12",
+      "bar_index": 175,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 261.73
+    },
+    {
+      "time": "2026-02-13",
+      "bar_index": 176,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 255.78
+    },
+    {
+      "time": "2026-02-17",
+      "bar_index": 177,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 263.88
+    },
+    {
+      "time": "2026-02-18",
+      "bar_index": 178,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 264.35
+    },
+    {
+      "time": "2026-02-19",
+      "bar_index": 179,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 260.58
+    },
+    {
+      "time": "2026-02-20",
+      "bar_index": 180,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 264.58
+    },
+    {
+      "time": "2026-02-23",
+      "bar_index": 181,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 266.18
+    },
+    {
+      "time": "2026-02-24",
+      "bar_index": 182,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 272.14
+    },
+    {
+      "time": "2026-02-25",
+      "bar_index": 183,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 274.23
+    },
+    {
+      "time": "2026-02-26",
+      "bar_index": 184,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 272.95
+    },
+    {
+      "time": "2026-02-27",
+      "bar_index": 185,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 264.18
+    },
+    {
+      "time": "2026-03-02",
+      "bar_index": 186,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 264.72
+    },
+    {
+      "time": "2026-03-03",
+      "bar_index": 187,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 263.75
+    },
+    {
+      "time": "2026-03-04",
+      "bar_index": 188,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 262.52
+    },
+    {
+      "time": "2026-03-05",
+      "bar_index": 189,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 260.29
+    },
+    {
+      "time": "2026-03-06",
+      "bar_index": 190,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 257.46
+    },
+    {
+      "time": "2026-03-09",
+      "bar_index": 191,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 259.88
+    },
+    {
+      "time": "2026-03-10",
+      "bar_index": 192,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 260.83
+    },
+    {
+      "time": "2026-03-11",
+      "bar_index": 193,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 260.81
+    },
+    {
+      "time": "2026-03-12",
+      "bar_index": 194,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 255.76
+    },
+    {
+      "time": "2026-03-13",
+      "bar_index": 195,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 250.12
+    },
+    {
+      "time": "2026-03-16",
+      "bar_index": 196,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 252.82
+    },
+    {
+      "time": "2026-03-17",
+      "bar_index": 197,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 254.23
+    },
+    {
+      "time": "2026-03-18",
+      "bar_index": 198,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 249.94
+    },
+    {
+      "time": "2026-03-19",
+      "bar_index": 199,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 248.96
+    },
+    {
+      "time": "2026-03-20",
+      "bar_index": 200,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 247.99
+    },
+    {
+      "time": "2026-03-23",
+      "bar_index": 201,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 251.49
+    },
+    {
+      "time": "2026-03-24",
+      "bar_index": 202,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 251.64
+    },
+    {
+      "time": "2026-03-25",
+      "bar_index": 203,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 252.62
+    },
+    {
+      "time": "2026-03-26",
+      "bar_index": 204,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 252.89
+    },
+    {
+      "time": "2026-03-27",
+      "bar_index": 205,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 248.8
+    },
+    {
+      "time": "2026-03-30",
+      "bar_index": 206,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 246.63
+    },
+    {
+      "time": "2026-03-31",
+      "bar_index": 207,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 253.79
+    },
+    {
+      "time": "2026-04-01",
+      "bar_index": 208,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 255.63
+    },
+    {
+      "time": "2026-04-02",
+      "bar_index": 209,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 255.92
+    },
+    {
+      "time": "2026-04-06",
+      "bar_index": 210,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 258.86
+    },
+    {
+      "time": "2026-04-07",
+      "bar_index": 211,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 253.5
+    },
+    {
+      "time": "2026-04-08",
+      "bar_index": 212,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 258.9
+    },
+    {
+      "time": "2026-04-10",
+      "bar_index": 214,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 260.48
+    },
+    {
+      "time": "2026-04-14",
+      "bar_index": 216,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 258.83
+    },
+    {
+      "time": "2026-04-15",
+      "bar_index": 217,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 266.43
+    },
+    {
+      "time": "2026-04-17",
+      "bar_index": 219,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 270.23
+    },
+    {
+      "time": "2026-04-21",
+      "bar_index": 221,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 266.17
+    },
+    {
+      "time": "2026-04-22",
+      "bar_index": 222,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 273.17
+    },
+    {
+      "time": "2026-04-24",
+      "bar_index": 224,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 271.06
+    },
+    {
+      "time": "2026-04-27",
+      "bar_index": 225,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 267.61
+    },
+    {
+      "time": "2026-04-28",
+      "bar_index": 226,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 270.71
+    },
+    {
+      "time": "2026-04-29",
+      "bar_index": 227,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 270.17
+    },
+    {
+      "time": "2026-04-30",
+      "bar_index": 228,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 271.35
+    },
+    {
+      "time": "2026-05-01",
+      "bar_index": 229,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 280.14
+    },
+    {
+      "time": "2026-05-05",
+      "bar_index": 231,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 284.18
+    },
+    {
+      "time": "2026-05-07",
+      "bar_index": 233,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 287.44
+    },
+    {
+      "time": "2026-05-11",
+      "bar_index": 235,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 292.68
+    },
+    {
+      "time": "2026-05-13",
+      "bar_index": 237,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 298.87
+    },
+    {
+      "time": "2026-05-15",
+      "bar_index": 239,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 300.23
+    },
+    {
+      "time": "2026-05-19",
+      "bar_index": 241,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 298.97
+    },
+    {
+      "time": "2026-05-21",
+      "bar_index": 243,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 304.99
+    },
+    {
+      "time": "2026-05-26",
+      "bar_index": 245,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 308.33
+    },
+    {
+      "time": "2026-05-28",
+      "bar_index": 247,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 312.51
+    },
+    {
+      "time": "2026-06-01",
+      "bar_index": 249,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 306.31
+    },
+    {
+      "time": "2026-06-02",
+      "bar_index": 250,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 315.2
+    },
+    {
+      "time": "2026-06-04",
+      "bar_index": 252,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 311.0
+    }
+  ],
+  "trades": [
+    {
+      "entry_time": "2025-07-01",
+      "entry_price": 207.82,
+      "exit_time": "2025-07-02",
+      "exit_price": 212.44,
+      "profit": 2.2230776633625275,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-07-03",
+      "entry_price": 213.55,
+      "exit_time": "2025-07-07",
+      "exit_price": 209.95,
+      "profit": -1.6857878716928225,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-07-10",
+      "entry_price": 212.41,
+      "exit_time": "2025-07-11",
+      "exit_price": 211.16,
+      "profit": -0.58848453462643,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-07-22",
+      "entry_price": 214.4,
+      "exit_time": "2025-07-23",
+      "exit_price": 214.15,
+      "profit": -0.11660447761194029,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-07-24",
+      "entry_price": 213.76,
+      "exit_time": "2025-07-31",
+      "exit_price": 207.57,
+      "profit": -2.895770958083831,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-08-11",
+      "entry_price": 227.18,
+      "exit_time": "2025-08-12",
+      "exit_price": 229.65,
+      "profit": 1.0872435953869173,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-08-13",
+      "entry_price": 233.33,
+      "exit_time": "2025-08-14",
+      "exit_price": 232.78,
+      "profit": -0.23571765310933498,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-08-15",
+      "entry_price": 231.59,
+      "exit_time": "2025-08-18",
+      "exit_price": 230.89,
+      "profit": -0.302258301308354,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-08-28",
+      "entry_price": 232.56,
+      "exit_time": "2025-08-29",
+      "exit_price": 232.14,
+      "profit": -0.18059855521156515,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-09-03",
+      "entry_price": 238.47,
+      "exit_time": "2025-09-04",
+      "exit_price": 239.78,
+      "profit": 0.549335346165137,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-09-05",
+      "entry_price": 239.69,
+      "exit_time": "2025-09-08",
+      "exit_price": 237.88,
+      "profit": -0.75514205849222,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-09-18",
+      "entry_price": 237.88,
+      "exit_time": "2025-09-19",
+      "exit_price": 245.5,
+      "profit": 3.2032957793845656,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-09-22",
+      "entry_price": 256.08,
+      "exit_time": "2025-09-24",
+      "exit_price": 252.31,
+      "profit": -1.4721961886910269,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2025-09-25",
+      "entry_price": 256.87,
+      "exit_time": "2025-09-29",
+      "exit_price": 254.43,
+      "profit": -0.9498968349748891,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-10-01",
+      "entry_price": 255.45,
+      "exit_time": "2025-10-02",
+      "exit_price": 257.13,
+      "profit": 0.6576629477392864,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-10-03",
+      "entry_price": 258.02,
+      "exit_time": "2025-10-06",
+      "exit_price": 256.69,
+      "profit": -0.515463917525767,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-10-08",
+      "entry_price": 258.06,
+      "exit_time": "2025-10-09",
+      "exit_price": 254.04,
+      "profit": -1.5577772611020733,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-10-24",
+      "entry_price": 262.82,
+      "exit_time": "2025-10-27",
+      "exit_price": 268.81,
+      "profit": 2.2791263982954146,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2025-10-28",
+      "entry_price": 269.0,
+      "exit_time": "2025-10-29",
+      "exit_price": 269.7,
+      "profit": 0.26022304832713333,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-10-30",
+      "entry_price": 271.4,
+      "exit_time": "2025-10-31",
+      "exit_price": 270.37,
+      "profit": -0.3795136330139915,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-11-11",
+      "entry_price": 275.25,
+      "exit_time": "2025-11-12",
+      "exit_price": 273.47,
+      "profit": -0.6466848319709256,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-11-13",
+      "entry_price": 272.95,
+      "exit_time": "2025-11-14",
+      "exit_price": 272.41,
+      "profit": -0.19783843194722978,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-11-25",
+      "entry_price": 276.97,
+      "exit_time": "2025-11-26",
+      "exit_price": 277.55,
+      "profit": 0.2094089612593364,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-11-28",
+      "entry_price": 278.85,
+      "exit_time": "2025-12-01",
+      "exit_price": 283.1,
+      "profit": 1.5241169087322932,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2025-12-02",
+      "entry_price": 286.19,
+      "exit_time": "2025-12-03",
+      "exit_price": 284.15,
+      "profit": -0.7128131660784864,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2026-02-04",
+      "entry_price": 276.49,
+      "exit_time": "2026-02-05",
+      "exit_price": 275.91,
+      "profit": -0.20977250533472605,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2026-02-06",
+      "entry_price": 278.12,
+      "exit_time": "2026-02-09",
+      "exit_price": 274.62,
+      "profit": -1.2584495901049906,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2026-04-08",
+      "entry_price": 258.9,
+      "exit_time": "2026-04-09",
+      "exit_price": 260.49,
+      "profit": 0.6141367323290969,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2026-04-10",
+      "entry_price": 260.48,
+      "exit_time": "2026-04-13",
+      "exit_price": 259.2,
+      "profit": -0.49140049140050274,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2026-04-15",
+      "entry_price": 266.43,
+      "exit_time": "2026-04-16",
+      "exit_price": 263.4,
+      "profit": -1.1372593176444206,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2026-04-17",
+      "entry_price": 270.23,
+      "exit_time": "2026-04-20",
+      "exit_price": 273.05,
+      "profit": 1.0435554897679729,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2026-04-22",
+      "entry_price": 273.17,
+      "exit_time": "2026-04-23",
+      "exit_price": 273.43,
+      "profit": 0.09517882637185301,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2026-05-01",
+      "entry_price": 280.14,
+      "exit_time": "2026-05-04",
+      "exit_price": 276.83,
+      "profit": -1.181552081102307,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2026-05-05",
+      "entry_price": 284.18,
+      "exit_time": "2026-05-06",
+      "exit_price": 287.51,
+      "profit": 1.1717925258638835,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2026-05-07",
+      "entry_price": 287.44,
+      "exit_time": "2026-05-08",
+      "exit_price": 293.32,
+      "profit": 2.045644308377399,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2026-05-11",
+      "entry_price": 292.68,
+      "exit_time": "2026-05-12",
+      "exit_price": 294.8,
+      "profit": 0.7243405767391022,
+      "reason": "EXIT_BREAK_EVEN"
+    },
+    {
+      "entry_time": "2026-05-13",
+      "entry_price": 298.87,
+      "exit_time": "2026-05-14",
+      "exit_price": 298.21,
+      "profit": -0.22083179977917655,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2026-05-15",
+      "entry_price": 300.23,
+      "exit_time": "2026-05-18",
+      "exit_price": 297.84,
+      "profit": -0.7960563567931397,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2026-05-19",
+      "entry_price": 298.97,
+      "exit_time": "2026-05-20",
+      "exit_price": 302.25,
+      "profit": 1.0971000434826144,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2026-05-21",
+      "entry_price": 304.99,
+      "exit_time": "2026-05-22",
+      "exit_price": 308.82,
+      "profit": 1.2557788779959946,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2026-05-26",
+      "entry_price": 308.33,
+      "exit_time": "2026-05-27",
+      "exit_price": 310.85,
+      "profit": 0.8173061330392887,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2026-05-28",
+      "entry_price": 312.51,
+      "exit_time": "2026-05-29",
+      "exit_price": 312.06,
+      "profit": -0.14399539214744764,
+      "reason": "STOP_OUT"
+    },
+    {
+      "entry_time": "2026-06-02",
+      "entry_price": 315.2,
+      "exit_time": "2026-06-03",
+      "exit_price": 310.26,
+      "profit": -1.5672588832487302,
+      "reason": "STOP_OUT"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "CBOE Total Put/Call Ratio",
+  "source": "CBOE",
+  "source_url": "https://www.cboe.com/us/options/market_statistics/?downloadable=1",
+  "last_updated": "2026-05-25T13:24:48.735810",
+  "note": "CBOE每日期权统计，包含put/call比率",
+  "method": "cboe_web",
+  "data": [
+    {
+      "date": "2026-05-15",
+      "ratio_name": "TOTAL PUT/CALL RATIO",
+      "value": 0.67
+    },
+    {
+      "date": "2026-05-22",
+      "ratio_name": "DJXW PUT/CALL RATIO",
+      "value": 1.27
+    },
+    {
+      "date": "2026-05-25",
+      "ratio_name": "DJXW PUT/CALL RATIO",
+      "value": 0.96
+    }
+  ]
+}

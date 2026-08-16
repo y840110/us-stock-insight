@@ -1,0 +1,2237 @@
+from __future__ import annotations
+import sys, json, math
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+
+from datetime import datetime, timedelta
+from typing import Dict, Any
+
+# ───────────────────────────────────────────────────────────────
+# 常量
+# ───────────────────────────────────────────────────────────────
+
+BULL_REGIMES    = {"BULL_TREND", "EXPANSION", "RECOVERY", "LOW_RISK"}
+BEAR_REGIMES    = {"RISK_OFF", "CURDLE", "STRESS", "HIGH_RISK", "BEARISH"}
+NEUTRAL_REGIMES = {"NEUTRAL", "CAUTION"}
+
+REGIME_FAMILY = {
+    "BULL_TREND":  {"family":"偏多","desc":"上升趋势，趋势跟随为主","action":"多头或加仓"},
+    "EXPANSION":   {"family":"偏多","desc":"经济扩张期，成长股领涨","action":"多头为主"},
+    "RECOVERY":    {"family":"偏多","desc":"复苏期，宽松政策利好成长","action":"多头配置"},
+    "LOW_RISK":    {"family":"偏多","desc":"风险低，环境有利多头","action":"正常多头"},
+    "RISK_OFF":    {"family":"防御","desc":"风险资产抛售，现金为王","action":"清仓或对冲"},
+    "CURDLE":      {"family":"防御","desc":"紧缩后期，信用风险上升","action":"降低仓位"},
+    "STRESS":      {"family":"防御","desc":"市场压力极大，系统性风险","action":"离场"},
+    "HIGH_RISK":   {"family":"防御","desc":"高风险环境","action":"清仓"},
+    "BEARISH":     {"family":"偏空","desc":"下跌趋势，顺势做空或空仓","action":"空头或空仓"},
+    "NEUTRAL":     {"family":"中性","desc":"方向不明，震荡整理","action":"观望或区间操作"},
+    "CAUTION":     {"family":"中性","desc":"谨慎对待，防控风险为主","action":"轻仓试探"},
+}
+
+# 指标解释字典：(名称, 说明, 阈值区间, 单位)
+# 阈值格式: (lo_bad, lo_warn, hi_warn, hi_bad, direction)
+# lo_bad~lo_warn = 差(红), lo_warn~hi_warn = 正常/黄, hi_warn~hi_bad = 好(绿)
+# direction: "auto"=两侧判断, "low"=越低越好, "high"=越高越好, "above"=>0好, "below"=<0好
+# 对于非对称指标，直接写字符串如 ">0偏多" 或 "百分比/倍数"
+INDICATOR_BANDS = {
+    "SPY_CLOSE":          ("SPY收盘价",          "绝对价格",                                            None),
+    "SPY_EMA20":          ("EMA20",              "价格在EMA20上方=偏多",                                  None),
+    "SPY_SMA50":          ("SMA50",              "价格在SMA50上方=偏多",                                  None),
+    "SPY_SMA200":         ("SMA200",             "价格在SMA200上方=长多",                                None),
+    "SPY_RSI14":          ("RSI(14)",            "超买>70 | 超卖<30；高位钝化需结合背离判断",            (25,35,70,80,"auto")),
+    "MACD_HISTOGRAM":     ("MACD直方图",         "由负转正=多头信号；持续放大=趋势加速",               None),
+    "BB_PERCENT":         ("BB%位置",             ">0.95超买 | <0.05超卖",                                (0.05,0.20,0.80,0.95,"auto")),
+    "BB_BANDWIDTH":        ("BB带宽",              "收口=盘整即将突破，张口=趋势加速",                    None),
+    "ATR14":              ("ATR(14)",             "实际波动幅度，用于止损止盈计算",                      None),
+    "VIX":               ("VIX",                 ">25高波动 | <15低波动自满",                            (10,15,25,35,"auto")),
+    "VVIX":              ("VVIX",                "VIX预期波动率；极端值预警",                              (50,70,120,150,"auto")),
+    "VIX9D":             ("VIX 9D",              "短期VIX变化率",                                        None),
+    "VIX1M":             ("VIX 1M",              "中期VIX变化率",                                        None),
+    "NYAD_SLOPE":        ("NYAD斜率",            ">0上涨趋势 | <0下跌；与SPY背离=关键信号",             (-30,-15,15,30,"auto")),
+    "SPY_NEW_HIGH":       ("SPY创20日新高",       "是=确认上升趋势；否=警惕顶部结构",                 None),
+    "SP500_ABOVE_50MA":  ("SP500>50MA%",         ">60%强势广度 | <40%弱势广度",                         (0.30,0.40,0.60,0.70,"auto")),
+    "SP500_ABOVE_200MA": ("SP500>200MA%",        ">50%长期健康 | <30%长期弱势",                         (0.20,0.30,0.50,0.60,"auto")),
+    "NEW_HIGH_LOW_RATIO": ("新高/新低比",          ">1.0多头格局 | <0.5空头格局",                          (0.3,0.5,1.5,2.0,"auto")),
+    "HY_SPREAD":          ("HY利差(%)",           ">5%预警 | >7%危机 | <3.5%风险偏好",                 (3.0,3.5,5.5,7.0,"auto")),
+    "FCI":               ("FCI",                 ">0紧缩 | <0宽松",                                      (-0.5,-0.2,0.8,1.5,"auto")),
+    "GEX":               ("GEX",                 ">0缓冲支撑 | <0空头对冲助跌",                          None),
+    "PUT_CALL_RATIO":    ("Put/Call比",           ">1.0恐慌抄底 | <0.5乐观",                             (0.4,0.5,1.0,1.2,"auto")),
+    "CTA_POSITIONING":   ("CTA仓位%ile",          "<15极度做空(逼空风险) | >85极度做多(回调风险)",       (0,10,85,95,"auto")),
+    "REALIZED_VOL":      ("已实现波动率(%)",        "年化实际波动幅度",                                      (10,12,20,25,"auto")),
+    "SPY_20D_RETURN":   ("SPY 20日收益",         ">5%强势 | <-5%弱势",                                   (-8,-5,5,8,"auto")),
+    "SPY_5D_RETURN":    ("SPY 5日收益",           "短期动量",                                              None),
+    "SPY_DISTANCE_EMA20":("SPY距EMA20%",           "价格在EMA20上方=强势",                                   None),
+}
+
+# ─────────────────────────────────────────────────────────────
+# 工具函数
+# ───────────────────────────────────────────────────────────────
+
+def _esc(s):
+    return str(s).replace("&","&amp;").replace("<","&lt;").replace(">","&gt;").replace('"',"&quot;").replace("'","&#39;")
+
+def _regime_color(regime):
+    colors = {
+        "BULL_TREND":  ("#00c853","rgba(0,200,83,0.15)"),
+        "RISK_OFF":    ("#ff1744","rgba(255,23,68,0.15)"),
+        "CURDLE":      ("#ff6d00","rgba(255,109,0,0.15)"),
+        "STRESS":      ("#ff1744","rgba(255,23,68,0.15)"),
+        "HIGH_RISK":   ("#ff5252","rgba(255,82,82,0.15)"),
+        "NEUTRAL":     ("#ffc107","rgba(255,193,7,0.15)"),
+        "CAUTION":     ("#ff9800","rgba(255,152,0,0.15)"),
+        "LOW_RISK":    ("#00e676","rgba(0,230,118,0.15)"),
+        "RECOVERY":    ("#64dd17","rgba(100,221,23,0.15)"),
+        "BEARISH":     ("#ff5252","rgba(255,82,82,0.15)"),
+        "EXPANSION":   ("#00c853","rgba(0,200,83,0.15)"),
+    }
+    return colors.get(regime, ("#9e9e9e","rgba(158,158,158,0.15)"))
+
+def _exp_color(pct):
+    if pct >= 60: return "#00c853"
+    if pct >= 30: return "#64dd17"
+    if pct >= 10: return "#ffc107"
+    return "#ff1744"
+
+def _conf_color(c):
+    if c >= 0.7: return "#00c853"
+    if c >= 0.5: return "#ffc107"
+    return "#ff5252"
+
+def _change_color(val):
+    if val is None or val == 0: return "#9e9e9e"
+    return "#00c853" if val > 0 else "#ff5252"
+
+def _arrow(val):
+    if val is None or val == 0: return "→"
+    return "↑" if val > 0 else "↓"
+
+def _simple_state(regime):
+    if regime in BULL_REGIMES:   return "牛"
+    if regime in BEAR_REGIMES:   return "熊"
+    if regime in NEUTRAL_REGIMES: return "震"
+    return "震"
+
+def _state_color(state):
+    return {
+        "牛": ("#00c853","rgba(0,200,83,0.15)"),
+        "熊": ("#ff1744","rgba(255,23,68,0.15)"),
+        "震": ("#ffc107","rgba(255,193,7,0.15)"),
+    }.get(state, ("#9e9e9e","rgba(158,158,158,0.15)"))
+
+# ───────────────────────────────────────────────────────────────
+# 数据加载
+# ───────────────────────────────────────────────────────────────
+
+def _load_klines(ticker, trade_date, lookback=120):
+    from p2_shared.utils import P1_KLINES
+    path = P1_KLINES / (ticker + "_1d.json")
+    if not path.exists(): return []
+    try:
+        with open(path) as f:
+            raw = json.load(f)
+        bars = raw.get("data", raw) if isinstance(raw, dict) else raw
+        cutoff = (datetime.strptime(trade_date, "%Y-%m-%d") - timedelta(days=lookback + 15)).strftime("%Y-%m-%d")
+        return [b for b in bars if cutoff <= b.get("date","") <= trade_date]
+    except Exception:
+        return []
+
+def _load_spy_bars(trade_date, lookback=30):
+    return _load_klines("SPY", trade_date, lookback)
+
+def _ema(closes, period):
+    if len(closes) < period: return float("nan")
+    k = 2.0 / (period + 1)
+    ema_val = float(closes[0])
+    for c in closes[1:]:
+        ema_val = float(c) * k + ema_val * (1 - k)
+    return ema_val
+
+def _rsi(closes, period=14):
+    if len(closes) < period + 2: return float("nan")
+    gains, losses = [], []
+    for i in range(1, len(closes)):
+        d = float(closes[i]) - float(closes[i-1])
+        gains.append(max(d, 0)); losses.append(max(-d, 0))
+    avg_gain = sum(gains[-period:]) / period
+    avg_loss = sum(losses[-period:]) / period
+    if avg_loss == 0: return 100.0
+    return 100.0 - 100.0 / (1.0 + avg_gain / avg_loss)
+
+def _atr(bars, period=14):
+    if len(bars) < period + 1: return None
+    trs = []
+    for i in range(1, len(bars)):
+        h = float(bars[i]["high"]); l = float(bars[i]["low"])
+        pc = float(bars[i-1]["close"])
+        tr = max(h - l, abs(h - pc), abs(l - pc))
+        trs.append(tr)
+    return sum(trs[-period:]) / period
+
+# ───────────────────────────────────────────────────────────────
+# 计算 SPY 支撑/压力位
+# ───────────────────────────────────────────────────────────────
+
+def compute_support_resistance(trade_date, v):
+    bars = _load_klines("SPY", trade_date, 120)
+    close  = v.get("SPY_CLOSE")
+    ema20  = v.get("SPY_EMA20")
+    sma50  = v.get("SPY_SMA50")
+    sma200 = v.get("SPY_SMA200")
+    rsi14  = v.get("SPY_RSI14")
+
+    if not bars or close is None: return {}
+
+    closes = [float(b["close"]) for b in bars]
+    highs  = [float(b["high"])  for b in bars]
+    lows   = [float(b["low"])   for b in bars]
+    vols   = [float(b.get("volume", 0)) for b in bars]
+
+    y_h = highs[-2]; y_l = lows[-2]; y_c = closes[-2]
+    pp  = (y_h + y_l + y_c) / 3
+    r1  = 2 * pp - y_l;  r2 = pp + (y_h - y_l);    r3 = y_h + 2 * (pp - y_l)
+    s1  = 2 * pp - y_h;  s2 = pp - (y_h - y_l);    s3 = y_l - 2 * (y_h - pp)
+
+    low_20  = min(lows[-20:]); high_20 = max(highs[-20:]); rng = high_20 - low_20
+    mean20  = sum(closes[-20:]) / 20
+    std20   = math.sqrt(sum((c - mean20) ** 2 for c in closes[-20:]) / 20)
+    bb_up   = mean20 + 2 * std20; bb_low = mean20 - 2 * std20
+
+    typical = [(h + l + c) / 3 for h, l, c in zip(highs, lows, closes)]
+    cum_vol, cum_pv = 0.0, 0.0
+    for p, vol in zip(typical, vols):
+        cum_vol += vol; cum_pv += p * vol
+    vwap = cum_pv / cum_vol if cum_vol > 0 else close
+
+    atr14  = _atr(bars[-15:]) if len(bars) >= 15 else None
+    atr_pct = (atr14 / close * 100) if atr14 else 1.5
+    vol_adj = 1.0 if atr_pct < 1.5 else (0.92 if atr_pct < 2.5 else 0.82)
+
+    # 构建候选：支撑（<现价-0.3），压力（>现价+0.3）
+    cands = []
+    if s3  < close - 0.5: cands.append(("S3_Pivot",  round(s3, 2),  "sup"))
+    if s2  < close - 0.5: cands.append(("S2_Pivot",  round(s2, 2),  "sup"))
+    if s1  < close - 0.5: cands.append(("S1_Pivot",  round(s1, 2),  "sup"))
+    if bb_low < close - 0.3: cands.append(("BB下轨",   round(bb_low, 2), "sup"))
+    if ema20  and ema20  < close - 0.5: cands.append(("EMA20",    round(ema20, 2),  "sup"))
+    if sma50  and sma50  < close - 0.5: cands.append(("SMA50",    round(sma50, 2),  "sup"))
+    if sma200 and sma200 < close - 0.5: cands.append(("SMA200",   round(sma200, 2), "sup"))
+    cands.append(("20日最低", round(low_20, 2), "sup"))
+    cands.append(("Pivot_PP", round(pp, 2),    "both"))
+    cands.append(("VWAP",     round(vwap, 2),   "both"))
+    if ema20  and ema20  > close + 0.5: cands.append(("EMA20",    round(ema20, 2),  "res"))
+    if sma50  and sma50  > close + 0.5: cands.append(("SMA50",    round(sma50, 2),  "res"))
+    if sma200 and sma200 > close + 0.5: cands.append(("SMA200",   round(sma200, 2), "res"))
+    if high_20 > close + 0.3: cands.append(("20日最高",  round(high_20, 2), "res"))
+    if bb_up   > close + 0.3: cands.append(("BB上轨",    round(bb_up, 2),   "res"))
+    if rng > 1.0:
+        for fp, lbl in [(0.236,"Fib_236"),(0.382,"Fib_382"),(0.500,"Fib_500"),(0.618,"Fib_618")]:
+            lvl = high_20 - rng * fp
+            if lvl > close + 0.5: cands.append((lbl, round(lvl, 2), "res"))
+    if r1 > close + 0.5: cands.append(("R1_Pivot", round(r1, 2), "res"))
+    if r2 > close + 0.5: cands.append(("R2_Pivot", round(r2, 2), "res"))
+    if r3 > close + 0.5: cands.append(("R3_Pivot", round(r3, 2), "res"))
+
+    sup_levels, res_levels = [], []
+    for name, level, kind in cands:
+        if kind in ("sup", "both") and level < close - 0.3:
+            sup_levels.append((name, level, abs(close - level) / close * 100))
+        if kind in ("res", "both") and level > close + 0.3:
+            res_levels.append((name, level, abs(level - close) / close * 100))
+
+    sup_levels.sort(key=lambda x: x[2])
+    res_levels.sort(key=lambda x: x[2])
+    top_sup = sup_levels[:3]
+    top_res = res_levels[:3]
+
+    def hold_prob(level, direction):
+        tests, tol = 0, 0.012
+        for lo, hi, cl in zip(lows, highs, closes):
+            if lo <= level <= hi:
+                if direction == "sup" and cl >= level * (1 - tol): tests += 1
+                if direction == "res" and cl <= level * (1 + tol): tests += 1
+        base = min(62 + tests * 2.5, 91) if tests > 0 else 62.0
+        dist = abs(close - level) / close  # 距离越近，可靠性越高
+        # 线性递减：0%距离=+9, 10%距离=-5，中间线性插值
+        dist_bonus = 9.0 - dist * 140  # 0%→+9, 10%→-5
+        dist_bonus = max(-6, min(9, dist_bonus))
+        base += dist_bonus
+        return round(min(base * vol_adj, 95), 1)
+
+    def dist_str(lv):
+        return "{:+.2f}%%".format((close - lv) / lv * 100)
+
+    result = {
+        "close":    round(close, 2),
+        "ema20":    round(ema20, 2)  if ema20  else None,
+        "sma50":    round(sma50, 2)  if sma50  else None,
+        "sma200":   round(sma200, 2) if sma200 else None,
+        "atr_pct":  round(atr_pct, 2),
+        "vol_adj":   round(vol_adj, 2),
+        "rsi":      round(rsi14, 1) if rsi14 else None,
+    }
+    for i, (nm, lv, dist) in enumerate(top_sup, 1):
+        result["sup{}_name".format(i)] = nm
+        result["sup{}".format(i)]      = lv
+        result["sup{}_dist".format(i)] = dist_str(lv)
+        result["sup{}_prob".format(i)] = hold_prob(lv, "sup")
+    for i, (nm, lv, dist) in enumerate(top_res, 1):
+        result["res{}_name".format(i)] = nm
+        result["res{}".format(i)]      = lv
+        result["res{}_dist".format(i)] = dist_str(lv)
+        result["res{}_prob".format(i)] = hold_prob(lv, "res")
+    result["above_ema20"]  = (close > ema20)  if ema20  else None
+    result["above_sma50"]  = (close > sma50)  if sma50  else None
+    result["above_sma200"] = (close > sma200) if sma200 else None
+    return result
+
+# ───────────────────────────────────────────────────────────────
+# 计算指标变化
+# ───────────────────────────────────────────────────────────────
+
+def compute_indicator_changes(trade_date, v):
+    bars = _load_spy_bars(trade_date, 35)
+    result = {}
+    if bars and len(bars) >= 6:
+        cs = [float(b["close"]) for b in bars]
+        result["SPY_CLOSE"]   = round(cs[-1], 2)
+        result["SPY_5D_AGO"]  = round(cs[-6], 2)   if len(cs) >= 6  else None
+        result["SPY_20D_AGO"] = round(cs[-21], 2)  if len(cs) >= 21 else None
+        result["SPY_5D_CHG"]  = round((cs[-1] - cs[-6]) / cs[-6] * 100, 2) if len(cs) >= 6 else None
+        result["SPY_20D_CHG"] = round((cs[-1] - cs[-21]) / cs[-21] * 100, 2) if len(cs) >= 21 else None
+        result["RSI_5D_AGO"]  = round(_rsi(cs[:-5] if len(cs) > 5 else cs, 14), 1) if len(cs) >= 6 else None
+        result["RSI_5D_CHG"]  = round(_rsi(cs, 14) - _rsi(cs[:-5] if len(cs) > 5 else cs, 14), 1) if len(cs) >= 6 else None
+        result["RSI_20D_AGO"] = round(_rsi(cs[:-20] if len(cs) > 20 else cs, 14), 1) if len(cs) >= 21 else None
+        result["RSI_20D_CHG"] = round(_rsi(cs, 14) - _rsi(cs[:-20] if len(cs) > 20 else cs, 14), 1) if len(cs) >= 21 else None
+        result["ATR_NOW"]     = round(_atr(bars, 14), 3) if len(bars) >= 15 else None
+        result["ATR_5D_AGO"]  = round(_atr(bars[:-5] if len(bars) > 5 else bars, 14), 3) if len(bars) >= 6 else None
+        result["ATR_5D_CHG"]  = None
+        if len(bars) >= 6 and _atr(bars[:-5], 14):
+            a_now = _atr(bars, 14); a_old = _atr(bars[:-5], 14)
+            if a_old > 0: result["ATR_5D_CHG"] = round((a_now - a_old) / a_old * 100, 1)
+    return result
+
+# ───────────────────────────────────────────────────────────────
+# 市场状态 + 变盘信号
+# ───────────────────────────────────────────────────────────────
+
+def _judge_market_state(v):
+    vix = v.get("VIX", 20); nyad = v.get("NYAD_SLOPE", 0)
+    cta = v.get("CTA_POSITIONING", 50); bb = v.get("BB_PERCENT", 0.5)
+    fci = v.get("FCI", 0); hy = v.get("HY_SPREAD", 4)
+    risk = 0
+    # 收紧阈值：VIX须明显偏高才算风险
+    if vix > 35:  risk += 3
+    elif vix > 28: risk += 2
+    elif vix > 22: risk += 1
+    # NYAD须明显恶化
+    if nyad < -40: risk += 2
+    elif nyad < -15: risk += 1
+    # CTA须极度做空（<10%分位）才算风险
+    if cta < 10:  risk += 2
+    elif cta < 20: risk += 1
+    # BB须在极端区域
+    if bb > 0.93: risk += 1
+    elif bb > 0.88: risk += 0.5
+    # HY利差须明显走阔
+    if hy > 7:   risk += 2
+    elif hy > 5.5: risk += 1
+    # FCI须明显紧缩
+    if fci > 1.5: risk += 1
+    elif fci > 0.8: risk += 0.5
+    bull = 0
+    # VIX须明显低才算安全
+    if vix < 12: bull += 2
+    elif vix < 15: bull += 1
+    # NYAD须明显强势
+    if nyad > 25: bull += 2
+    elif nyad > 12: bull += 1
+    # CTA须极度做多
+    if cta > 80: bull += 2
+    elif cta > 65: bull += 1
+    # BB须在极端区域
+    if bb < 0.08: bull += 1
+    elif bb < 0.2: bull += 0.5
+    net = bull - risk
+    if net >= 3:
+        return ("🐂 牛市", "#00c853", "多方主导：VIX低位 + NYAD强势 + 广度健康 + CTA未极度做空")
+    if net >= 1.5:
+        return ("📈 偏多", "#64dd17", "偏多格局：部分风险指标改善，需警惕VIX和NYAD背离")
+    if net <= -3:
+        return ("🐻 熊市", "#ff1744", "空方主导：VIX高企 + NYAD下跌 + 宏观紧缩延续")
+    if net <= -1.5:
+        return ("⚠️ 偏空", "#ff6d00", "偏空格局：风险资产承压，保持防御，控制仓位")
+    return ("⚖️ 震荡", "#ffc107", "多空博弈：方向不明，震荡整理")
+
+
+def _judge_shift_signal(v):
+    signals = []
+    rsi  = v.get("SPY_RSI14", 50)
+    vix  = v.get("VIX", 20)
+    nyad = v.get("NYAD_SLOPE", 0)
+    bb   = v.get("BB_PERCENT", 0.5)
+    cta  = v.get("CTA_POSITIONING", 50)
+    macdh = v.get("MACD_HISTOGRAM", 0)
+    atr   = v.get("ATR14", 1)
+    atr_pk = v.get("ATR14_PEAK", 0)
+
+    if rsi > 80:
+        signals.append(("🔴 RSI极度超买", "RSI(14)={:.0f}，历史极值区域，警惕短期回调".format(rsi)))
+    elif rsi > 70:
+        signals.append(("🟠 RSI超买", "RSI(14)={:.0f}，高位钝化中，均值回归风险累积".format(rsi)))
+    elif rsi < 25:
+        signals.append(("🟢 RSI超卖", "RSI(14)={:.0f}，历史超卖区域，反弹概率较高".format(rsi)))
+    elif rsi < 35:
+        signals.append(("🟡 RSI偏低", "RSI(14)={:.0f}，偏低位，均值回归机会".format(rsi)))
+    if vix > 30:
+        signals.append(("🔴 VIX极度恐慌", "VIX={:.0f}，历史恐慌区，危机定价中".format(vix)))
+    elif vix > 25:
+        signals.append(("🟠 VIX高位", "VIX={:.0f}，市场紧张，高波动常态".format(vix)))
+    elif vix < 13:
+        signals.append(("🟢 VIX低位", "VIX={:.0f}，自满区间，低波动预警".format(vix)))
+    if nyad < -30 and v.get("SPY_NEW_HIGH"):
+        signals.append(("🔴 NYAD严重背离", "NYAD斜率={:.0f}，SPY却创新高，顶背离警示".format(nyad)))
+    elif nyad < -15:
+        signals.append(("🟠 NYAD下行", "NYAD斜率={:.0f}，市场广度走弱，注意风险".format(nyad)))
+    if bb > 0.95:
+        signals.append(("🔴 BB%极度超买", "BB%={:.3f}，几乎触及上轨，极端区域".format(bb)))
+    elif bb < 0.1:
+        signals.append(("🟢 BB%极度超卖", "BB%={:.3f}，触及下轨，反弹机会".format(bb)))
+    if cta < 12:
+        signals.append(("🔴 CTA极度做空", "CTA={:.0f}%历史百分位，逼空风险极高".format(cta)))
+    elif cta > 88:
+        signals.append(("🔴 CTA极度做多", "CTA={:.0f}%历史百分位，回调风险累积".format(cta)))
+    if macdh is not None and abs(macdh) < 0.5 and atr and atr > 0:
+        signals.append(("🟡 MACD收缩", "MACD直方图接近零，势能减弱，震荡整理"))
+    if atr_pk and atr and atr > 0 and atr / atr_pk < 0.3:
+        signals.append(("🟡 ATR收敛", "ATR/ATR峰值={:.1%}，波动率极度收缩，突破在即".format(atr / atr_pk)))
+    if not signals:
+        signals.append(("⚪ 无极端信号", "各指标未触发极端阈值，市场相对均衡"))
+    return signals
+
+
+def _compute_5d_state(trade_date, v_today):
+    bars = _load_spy_bars(trade_date, 15)
+    if len(bars) < 2:
+        regime = v_today.get("SPY_MARKET_REGIME", "NEUTRAL")
+        return [(trade_date[-5:], _simple_state(regime), regime)]
+    dates_5d = [b["date"] for b in bars][-5:]
+    results = []
+    try:
+        from p2_master_dispatcher import run
+        for d in reversed(dates_5d):
+            try:
+                r = run(d, output_html=False, verbose=False)
+                comb_regime = r.get("combined", {}).get("regime")
+                regime_a    = r.get("strategy_A", {}).get("market_regime", "NEUTRAL")
+                regime = comb_regime or regime_a or "NEUTRAL"
+                results.append((d[-5:], _simple_state(regime), regime))
+            except Exception:
+                regime = v_today.get("SPY_MARKET_REGIME", "NEUTRAL")
+                results.append((d[-5:], _simple_state(regime), regime))
+    except Exception:
+        regime = v_today.get("SPY_MARKET_REGIME", "NEUTRAL")
+        results = [(d[-5:], _simple_state(regime), regime) for d in reversed(dates_5d)]
+    return results
+
+# ───────────────────────────────────────────────────────────────
+# HTML 片段构建
+# ───────────────────────────────────────────────────────────────
+
+
+
+def _build_strategy_params(label, emoji, v, result) -> str:
+    """构建策略参数详情区块"""
+    regime   = result.get("market_regime", "N/A")
+    reg_score= result.get("regime_score", 0)
+    timing   = result.get("timing_state", "N/A")
+    tim_score= result.get("timing_score", 0)
+    risk     = result.get("risk_score", 5)
+
+    if "策略A" in label or "动量" in label:
+        return _momentum_params(v, result, regime, reg_score, timing, tim_score, risk)
+    elif "策略B" in label or "宏观" in label:
+        return _macro_params(v, result, regime, reg_score, timing, tim_score, risk)
+    elif "策略C" in label or "ML" in label:
+        return _ml_params(v, result, regime, reg_score, timing, tim_score, risk)
+    elif "策略D" in label or "Agents" in label:
+        return _agents_params(v, result, regime, reg_score, timing, tim_score, risk)
+    return ""
+
+
+def _score_bar(score, lo=-10, hi=10) -> str:
+    """绘制分数条"""
+    norm = (score - lo) / (hi - lo)
+    w = max(5, min(95, norm * 100))
+    color = "#00c853" if score > 0 else ("#ff1744" if score < 0 else "#ffc107")
+    return "<div class='score-bar-wrap'><div class='score-bar-fill' style='width:{}%;background:{};position:absolute;height:6px;border-radius:3px'></div><div style='position:relative;height:6px;background:#21262d;border-radius:3px'></div></div>".format(w, color)
+
+
+def _param_row(name, value, threshold="", note="", good_bad="", th_pos="value"):
+    """生成参数行"""
+    vb = ""
+    if good_bad == "good" and value != "N/A":
+        vb = "color:#00c853"
+    elif good_bad == "bad" and value != "N/A":
+        vb = "color:#ff1744"
+    elif good_bad == "warn" and value != "N/A":
+        vb = "color:#ffc107"
+    vstr = "{}" if isinstance(value, (int, float)) and value != int(value) else "{}"
+    val_html = ("<span style='" + vb + ";font-weight:700'>" + vstr + "</span>").format(value)
+    th_html = ("<span class='thresh-note'>{}</span>").format(threshold) if threshold else "<span class='thresh-note'>—</span>"
+    note_html = ("<span class='param-note'>{}</span>").format(note) if note else ""
+    return (
+        "<tr class='param-row'>"
+        "<td class='param-name'>{}</td>"
+        "<td class='param-value'>" + val_html + "</td>"
+        "<td class='param-thresh'>" + th_html + "</td>"
+        "<td class='param-note-cell'>" + note_html + "</td>"
+        "</tr>"
+    ).format(name)
+
+
+# ─────────────────────────────────────────────────────────────────
+# 策略A：动量趋势参数详情
+# ─────────────────────────────────────────────────────────────────
+
+def _momentum_params(v, result, regime, reg_score, timing, tim_score, risk) -> str:
+    # 提取关键参数
+    spy_close = v.get("SPY_CLOSE"); ema20 = v.get("SPY_EMA20"); sma50 = v.get("SPY_SMA50")
+    sma200 = v.get("SPY_SMA200"); rsi = v.get("SPY_RSI14"); macdh = v.get("MACD_HISTOGRAM")
+    macd_pk = v.get("MACD_HISTOGRAM_PEAK"); bb_pct = v.get("BB_PERCENT"); bb_bw = v.get("BB_BANDWIDTH")
+    nyad_slp = v.get("NYAD_SLOPE"); above50 = v.get("SP500_ABOVE_50MA"); nh_nl = v.get("NEW_HIGH_LOW_RATIO")
+    vix = v.get("VIX"); vix_ts = v.get("VIX_TERM_STRUCTURE"); vvix = v.get("VVIX")
+    hy = v.get("HY_SPREAD"); liq = v.get("LIQUIDITY_SCORE"); gex = v.get("GEX")
+    iwm_rs = v.get("IWM_RS_SLOPE"); vol_ratio = v.get("VOLUME_RATIO"); atr_comp = v.get("ATR_COMPRESSION")
+
+    def fv(val, fmt="{:.2f}", na="—"):
+        if val is None: return na
+        try: return fmt.format(val)
+        except: return str(val)
+
+    # 计算各维度得分
+    trend_score = 0; breadth_score = 0; vol_score = 0; credit_score = 0; option_score = 0
+
+    # 趋势结构
+    if spy_close and ema20 and spy_close > ema20: trend_score += 1
+    if ema20 and sma50 and ema20 > sma50: trend_score += 1
+    if sma50 and sma200 and sma50 > sma200: trend_score += 1
+    if (v.get("SPY_EMA20_SLOPE", 0) or 0) > 0: trend_score += 1
+
+    # 广度
+    if (nyad_slp or 0) > 0: breadth_score += 2
+    if (above50 or 0) > 0.60: breadth_score += 1
+    if (nh_nl or 0) > 1.5: breadth_score += 1
+    if v.get("BREADTH_DIVERGENCE"): breadth_score -= 3
+    if (iwm_rs or 0) < 0: breadth_score -= 1
+
+    # 波动率
+    if (vix or 99) < 20: vol_score += 1
+    if (vix_ts or 0) > 0: vol_score += 1
+    else: vol_score -= 2
+    if (vvix or 0) > 110: vol_score -= 2
+
+    # 信用+流动性
+    if (hy or 999) < 4.2: credit_score += 1
+    elif (hy or 0) >= 4.2: credit_score -= 2
+    if (liq or 0) > 0: credit_score += 1
+    else: credit_score -= 1
+
+    # 期权
+    if (gex or 0) > 0: option_score += 1
+    else: option_score -= 2
+
+    total = trend_score + breadth_score + vol_score + credit_score + option_score
+
+    rows = ""
+    rows += "<tr><td colspan='4' class='param-group-title'>📈 趋势结构</td></tr>"
+    rows += _param_row("SPY_CLOSE", fv(spy_close), "> EMA20", "判断价格方向", "good" if (spy_close and ema20 and spy_close > ema20) else "bad")
+    rows += _param_row("EMA20", fv(ema20), "> SMA50", "短期上升趋势", "good" if (ema20 and sma50 and ema20 > sma50) else "bad")
+    rows += _param_row("SMA50", fv(sma50), "> SMA200", "中期上升趋势", "good" if (sma50 and sma200 and sma50 > sma200) else "bad")
+    rows += _param_row("EMA20_SLOPE", fv(v.get("SPY_EMA20_SLOPE"), "{:+.4f}"), "> 0", "短期趋势方向")
+    rows += "<tr><td colspan='4' class='param-group-title'>📊 广度分析</td></tr>"
+    rows += _param_row("NYAD_SLOPE", fv(nyad_slp, "{:.1f}"), "> 0 (+2) / < 0 (-0)", "市场广度趋势", "good" if (nyad_slp or 0) > 0 else "bad")
+    rows += _param_row("SP500>50MA%", fv(above50, "{:.1%}"), "> 60% (+1)", "标普广度")
+    rows += _param_row("新高/新低比", fv(nh_nl, "{:.2f}"), "> 1.5 (+1)", "市场强弱")
+    rows += _param_row("BREADTH_DIVERGENCE", v.get("BREADTH_DIVERGENCE", False), "存在 → -3", "顶背离警告", "bad" if v.get("BREADTH_DIVERGENCE") else "")
+    rows += _param_row("IWM_RS_SLOPE", fv(iwm_rs, "{:+.4f}"), "< 0 → -1", "小盘股相对走弱")
+    rows += "<tr><td colspan='4' class='param-group-title'>🌡️ 波动率</td></tr>"
+    rows += _param_row("VIX", fv(vix, "{:.1f}"), "< 20 (+1) / > 22 (-1)", "市场恐慌度", "good" if (vix or 99) < 20 else ("bad" if (vix or 0) > 22 else ""))
+    rows += _param_row("VIX_TERM_STRUCTURE", fv(vix_ts, "{:+.2f}"), "> 0 (+1) / < 0 (-2)", "VIX期限结构")
+    rows += _param_row("VVIX", fv(vvix, "{:.1f}"), "> 110 → -2", "波动率波动率")
+    rows += "<tr><td colspan='4' class='param-group-title'>💳 信用+流动性</td></tr>"
+    rows += _param_row("HY_SPREAD", fv(hy, "{:.2f}%%"), "< 4.2 (+1) / ≥ 4.2 (-2)", "高收益债利差", "good" if (hy or 999) < 4.2 else ("bad" if (hy or 0) >= 4.2 else ""))
+    rows += _param_row("LIQUIDITY_SCORE", fv(liq, "{:.3f}"), "> 0 (+1) / < 0 (-1)", "流动性状态")
+    rows += "<tr><td colspan='4' class='param-group-title'>📊 期权仓位</td></tr>"
+    rows += _param_row("GEX", fv(gex, "{:.0f}"), "> 0 (+1) / < 0 (-2)", "Gamma指数", "good" if (gex or 0) > 0 else "bad")
+
+    regime_table = (
+        "<table class='regime-table'>"
+        "<tr><th>Regime</th><th>条件</th><th>动作</th></tr>"
+        "<tr><td style='color:#00c853'>BULL_TREND</td><td>score ≥ 8</td><td>趋势跟随，多头为主</td></tr>"
+        "<tr><td style='color:#ffc107'>NEUTRAL</td><td>score ≥ 4</td><td>区间操作，仓位减半</td></tr>"
+        "<tr><td style='color:#ff1744'>RISK_OFF</td><td>score &lt; 4</td><td>清仓/空仓</td></tr>"
+        "</table>"
+    )
+
+    timing_table = (
+        "<table class='regime-table'>"
+        "<tr><th>Timing</th><th>条件</th></tr>"
+        "<tr><td style='color:#00c853'>GOOD_ENTRY</td><td>score ≥ 2（RSI&lt;35/MACD&gt;0/BB扩张）</td></tr>"
+        "<tr><td style='color:#ffc107'>NEUTRAL_TIMING</td><td>-3 &lt; score &lt; 2</td></tr>"
+        "<tr><td style='color:#ff1744'>OVERHEATED</td><td>score ≤ -3（RSI&gt;75/BB极端）</td></tr>"
+        "</table>"
+    )
+
+    return (
+        "<div class='params-section'>"
+        "<div class='params-title'>🔍 参数详情</div>"
+        "<div class='score-summary'>"
+        "<div class='score-row'>"
+        "<span class='score-label'>Regime Score: <b style='color:{}'>{:+.0f}</b></span>"
+        "<span class='score-sub'>(趋势{} + 广度{} + 波动{} + 信用{} + 期权{})</span>"
+        "</div>"
+        "<div class='score-detail-row'>"
+        "<div class='score-item'>趋势结构: {:+d}</div>"
+        "<div class='score-item'>广度: {:+d}</div>"
+        "<div class='score-item'>波动率: {:+d}</div>"
+        "<div class='score-item'>信用+流动性: {:+d}</div>"
+        "<div class='score-item'>期权: {:+d}</div>"
+        "</div>"
+        "<div class='regime-table-wrap'>{}</div>"
+        "<div class='timing-table-wrap'><div class='params-sub-title'>⏱️ Timing 判定规则</div>{}</div>"
+        "</div>"
+        "<div class='param-table-wrap'>"
+        "<table class='param-table'>"
+        "<thead><tr><th>参数</th><th>当前值</th><th>阈值 / 加分规则</th><th>说明</th></tr></thead>"
+        "<tbody>{}</tbody>"
+        "</table></div>"
+        "<div class='param-footer-note'>"
+        "⚠️ Regime判定: score≥8→BULL_TREND, ≥4→NEUTRAL, &lt;4→RISK_OFF<br>"
+        "⚠️ 仓位 = 基础仓位 × max(0.2, 1 - risk_score×0.15)"
+        "</div>"
+        "</div>"
+    ).format(
+        "#00c853" if total >= 8 else ("#ffc107" if total >= 4 else "#ff1744"), total,
+        trend_score, breadth_score, vol_score, credit_score, option_score,
+        trend_score, breadth_score, vol_score, credit_score, option_score,
+        regime_table, timing_table, rows
+    )
+
+
+# ─────────────────────────────────────────────────────────────────
+# 策略B：宏观择时参数详情
+# ─────────────────────────────────────────────────────────────────
+
+def _macro_params(v, result, regime, reg_score, timing, tim_score, risk) -> str:
+    fci = v.get("FCI"); hy = v.get("HY_SPREAD"); dxy = v.get("DXY")
+    liq = v.get("LIQUIDITY_SCORE"); us10y = v.get("US10Y"); vix = v.get("VIX")
+    rsi = v.get("SPY_RSI14"); bb_pct = v.get("BB_PERCENT")
+    realized_vol = v.get("REALIZED_VOL")
+
+    def fv(val, fmt="{:.2f}", na="—"):
+        if val is None: return na
+        try: return fmt.format(val)
+        except: return str(val)
+
+    score = 0
+    # FCI
+    if (fci or 0) < -0.2: score += 2
+    elif (fci or 0) > 0.2: score -= 2
+    # HY
+    if (hy or 999) < 3.5: score += 2
+    elif (hy or 999) < 4.2: score += 1
+    elif (hy or 0) > 6.0: score -= 2
+    elif (hy or 0) > 5.0: score -= 1
+    # LIQ
+    if (liq or 0) > 0.5: score += 1
+    elif (liq or 0) < -0.5: score -= 1
+    # VIX
+    if (vix or 99) < 14: score += 1
+    elif (vix or 0) > 28: score -= 2
+    elif (vix or 0) > 22: score -= 1
+    # DXY
+    if (dxy or 100) < 95: score += 1
+    elif (dxy or 0) > 105: score -= 1
+    # US10Y
+    if (us10y or 4.0) < 3.5: score += 1
+    elif (us10y or 0) > 5.0: score -= 1
+
+    mr_score = 0; mr_tags = []
+    if (rsi or 50) < 25: mr_score += 3; mr_tags.append("RSI<25")
+    elif (rsi or 50) < 35: mr_score += 2; mr_tags.append("RSI<35")
+    elif (rsi or 50) > 80: mr_score -= 3; mr_tags.append("RSI>80")
+    if (bb_pct or 0.5) > 0.90: mr_score -= 2; mr_tags.append("BB%极端")
+    if (vix or 18) > 30: mr_score += 1; mr_tags.append("VIX>30逆向")
+
+    mr_signal = "OVERSOLD" if mr_score >= 3 else ("OVERBOUGHT" if mr_score <= -2 else "NEUTRAL_REVERSION")
+
+    rows = ""
+    rows += "<tr><td colspan='4' class='param-group-title'>🏦 货币政策（FCI）</td></tr>"
+    rows += _param_row("FCI", fv(fci, "{:.4f}"), "< -0.2 (+2) / > 0.2 (-2)", "金融状况指数", "good" if (fci or 0) < -0.2 else ("bad" if (fci or 0) > 0.2 else ""))
+    rows += "<tr><td colspan='4' class='param-group-title'>💳 信用利差（HY）</td></tr>"
+    rows += _param_row("HY_SPREAD", fv(hy, "{:.2f}%%"), "< 3.5 (+2) / 3.5~4.2 (+1) / >5.0 (-1) / >6.0 (-2)", "经济健康度", "good" if (hy or 999) < 3.5 else ("bad" if (hy or 0) > 6.0 else ""))
+    rows += "<tr><td colspan='4' class='param-group-title'>💧 流动性</td></tr>"
+    rows += _param_row("LIQUIDITY_SCORE", fv(liq, "{:.3f}"), "> 0.5 (+1) / < -0.5 (-1)", "市场流动性", "good" if (liq or 0) > 0.5 else ("bad" if (liq or 0) < -0.5 else ""))
+    rows += "<tr><td colspan='4' class='param-group-title'>🌡️ 市场恐慌（VIX）</td></tr>"
+    rows += _param_row("VIX", fv(vix, "{:.1f}"), "< 14 (+1) / > 28 (-2) / > 22 (-1)", "恐慌指数", "good" if (vix or 99) < 14 else ("bad" if (vix or 0) > 28 else ""))
+    rows += "<tr><td colspan='4' class='param-group-title'>💵 美元 + 利率</td></tr>"
+    rows += _param_row("DXY", fv(dxy, "{:.2f}"), "< 95 (+1) / > 105 (-1)", "美元指数风险偏好")
+    rows += _param_row("US10Y", fv(us10y, "{:.2f}%%"), "< 3.5 (+1) / > 5.0 (-1)", "10年期国债收益率")
+    rows += "<tr><td colspan='4' class='param-group-title'>📉 均值回归信号（Timing）</td></tr>"
+    rows += _param_row("RSI(14)", fv(rsi, "{:.1f}"), "<25(+3) / <35(+2) / >80(-3)", "RSI超买超卖", "good" if (rsi or 50) < 35 else ("bad" if (rsi or 50) > 80 else ""))
+    rows += _param_row("BB_PERCENT", fv(bb_pct, "{:.3f}"), "> 0.90 (-2)", "布林带位置", "bad" if (bb_pct or 0.5) > 0.90 else "")
+    rows += _param_row("VIX", fv(vix, "{:.1f}"), "> 30 → +1逆向买入", "VIX极端逆向", "good" if (vix or 18) > 30 else "")
+    rows += _param_row("均值回归信号", mr_signal + (" (" + ",".join(mr_tags) + ")" if mr_tags else ""), "≥3→OVERSOLD / ≤-2→OVERBOUGHT", "最终均值回归判定")
+
+    regime_table = (
+        "<table class='regime-table'>"
+        "<tr><th>宏观Regime</th><th>标准Regime</th><th>条件(score)</th><th>建议</th></tr>"
+        "<tr><td style='color:#00c853'>EXPANSION</td><td>BULL</td><td>≥ 4</td><td>经济增长，多头</td></tr>"
+        "<tr><td style='color:#64dd17'>RECOVERY</td><td>BULL</td><td>1~3</td><td>宽松延续，成长</td></tr>"
+        "<tr><td style='color:#ffc107'>NEUTRAL</td><td>NEUTRAL</td><td>-1~0</td><td>观望</td></tr>"
+        "<tr><td style='color:#ff6d00'>CURDLE</td><td>RISK_OFF</td><td>-3~-1</td><td>防御降低仓位</td></tr>"
+        "<tr><td style='color:#ff1744'>STRESS</td><td>RISK_OFF</td><td>&lt; -3</td><td>离场</td></tr>"
+        "</table>"
+    )
+
+    return (
+        "<div class='params-section'>"
+        "<div class='params-title'>🔍 参数详情</div>"
+        "<div class='score-summary'>"
+        "<div class='score-row'>"
+        "<span class='score-label'>宏观Score: <b style='color:{};font-size:16px'>{:+.0f}</b></span>"
+        "<span class='score-sub'>→ {} → {}</span>"
+        "</div>"
+        "<div class='regime-table-wrap'>{}</div>"
+        "</div>"
+        "<div class='param-table-wrap'>"
+        "<table class='param-table'>"
+        "<thead><tr><th>参数</th><th>当前值</th><th>阈值</th><th>说明</th></tr></thead>"
+        "<tbody>{}</tbody>"
+        "</table></div>"
+        "<div class='param-footer-note'>"
+        "⚠️ 仓位 = 基础仓位 × max(0.15, 1 - risk_score×0.12)<br>"
+        "⚠️ 均值回归信号: CURDLE/STRESS下VIX>30的OVERSOLD不作逆向买入"
+        "</div>"
+        "</div>"
+    ).format(
+        "#00c853" if score >= 4 else ("#64dd17" if score >= 1 else ("#ffc107" if score >= -1 else ("#ff6d00" if score >= -3 else "#ff1744"))),
+        score,
+        {">=4":"EXPANSION","1~3":"RECOVERY","-1~0":"NEUTRAL","-3~-1":"CURDLE","<-3":"STRESS"}.get(
+            ">=4" if score >= 4 else "1~3" if score >= 1 else "-1~0" if score >= -1 else "-3~-1" if score >= -3 else "<-3", "—"
+        ),
+        regime,
+        regime_table, rows
+    )
+
+
+# ─────────────────────────────────────────────────────────────────
+# 策略C：ML概率参数详情
+# ─────────────────────────────────────────────────────────────────
+
+def _ml_params(v, result, regime, reg_score, timing, tim_score, risk) -> str:
+    prob_gbr = result.get("prob_gbr"); prob_nn = result.get("prob_nn"); prob_lr = result.get("prob_lr")
+    prob_ens = result.get("prob_ensemble"); pct = result.get("prob_percentile", 0)
+    stale = result.get("data_staleness_days", 0)
+
+    def fp(val, na="—"): return "N/A" if val is None else "{:.2%}".format(val)
+
+    rows = ""
+    rows += "<tr><td colspan='4' class='param-group-title'>🤖 三模型概率</td></tr>"
+    rows += _param_row("GBR (GradientBoosting)", fp(prob_gbr), "> 50% → CAUTION / < 30% → LOW_RISK", "主模型，26特征", "warn" if prob_gbr and prob_gbr > 0.5 else "good" if prob_gbr and prob_gbr < 0.3 else "")
+    rows += _param_row("NN (Neural Network)", fp(prob_nn), "样本受限(仅2024-05后)，接近随机", "MLP 128→64→32", "warn")
+    rows += _param_row("LR (Logistic Regression)", fp(prob_lr), "28特征含VIX+DXY，AUC=0.721", "回测+18.95%", "good" if prob_lr and prob_lr < 0.3 else "bad" if prob_lr and prob_lr > 0.5 else "")
+    rows += _param_row("Ensemble均值", fp(prob_ens), "三模型等权平均", "综合概率")
+    rows += "<tr><td colspan='4' class='param-group-title'>📊 历史分位</td></tr>"
+    rows += _param_row("历史百分位", "{:.0f}%%".format(pct) if pct else "—", "> 70% → 高概率警惕 / < 30% → 低概率安全", "近300日历史分位", "bad" if pct and pct > 70 else "good" if pct and pct < 30 else "")
+    rows += _param_row("数据新鲜度", "{}天".format(stale) if stale else "最新", "> 0 → ⚠️数据过期", "最后有效数据日期", "bad" if stale and stale > 0 else "good")
+
+    regime_table = (
+        "<table class='regime-table'>"
+        "<tr><th>Regime</th><th>条件</th><th>基础仓位</th></tr>"
+        "<tr><td style='color:#00e676'>LOW_RISK</td><td>prob &lt; 0.3 (score+2)</td><td>80%</td></tr>"
+        "<tr><td style='color:#ff9800'>CAUTION</td><td>0.3 ≤ prob ≤ 0.5 (score-1)</td><td>40%</td></tr>"
+        "<tr><td style='color:#ff1744'>RISK_OFF</td><td>prob &gt; 0.5 (score-2)</td><td>10%</td></tr>"
+        "</table>"
+    )
+
+    risk_rows = ""
+    if result.get("prob_gbr") is not None:
+        risk_rows += _param_row("风险评分", str(risk) + "/10", "1~10，越高越降低仓位", "综合风险")
+        risk_rows += _param_row("风险衰减系数", "{:.2f}".format(max(0.20, 1 - risk * 0.10)), "max(0.20, 1 - risk×0.10)", "仓位衰减")
+
+    return (
+        "<div class='params-section'>"
+        "<div class='params-title'>🔍 参数详情</div>"
+        "<div class='score-summary'>"
+        "<div class='score-row'>"
+        "<span class='score-label'>Ensemble概率: <b style='color:{};font-size:16px'>{}</b></span>"
+        "<span class='score-sub'>历史分位: {:.0f}% | 数据: {}</span>"
+        "</div>"
+        "<div class='regime-table-wrap'>{}</div>"
+        "</div>"
+        "<div class='param-table-wrap'>"
+        "<table class='param-table'>"
+        "<thead><tr><th>参数</th><th>当前值</th><th>阈值规则</th><th>说明</th></tr></thead>"
+        "<tbody>{}</tbody>"
+        "</table></div>"
+        "<div class='param-footer-note'>"
+        "⚠️ 最终仓位 = 基础仓位 × 风险衰减系数 × max(0.20, 1 - risk×0.10)<br>"
+        "⚠️ NN模型局限：VIX数据仅2024-05后，样本少(AUC=0.509)，主要依赖GBR+LR"
+        "</div>"
+        "</div>"
+    ).format(
+        "#ff9800" if prob_ens and 0.3 <= prob_ens <= 0.5 else ("#ff1744" if prob_ens and prob_ens > 0.5 else "#00e676"),
+        fp(prob_ens), pct, "✅最新" if stale == 0 else "⚠️过期{}天".format(stale),
+        regime_table, rows
+    )
+
+
+# ─────────────────────────────────────────────────────────────────
+# 策略D：Agents辩论参数详情
+# ─────────────────────────────────────────────────────────────────
+
+def _agents_params(v, result, regime, reg_score, timing, tim_score, risk) -> str:
+    bull_count = result.get("bull_count", 0); bear_count = result.get("bear_count", 0)
+    bb_score = result.get("bull_bear_score", 0)
+    decision = result.get("decision", "")
+    debate_text = result.get("debate_text", "")
+    signals = result.get("signals", [])
+
+    agents_map = {
+        "MarketAnalyst": "市场分析师",
+        "FundamentalsAnalyst": "基本面分析师",
+        "BullResearcher": "多头研究员",
+        "BearResearcher": "空头研究员",
+        "RiskDebater": "风险辩论者",
+        "ResearchManager": "研究经理",
+        "Trader": "交易员",
+    }
+    debate_map = {
+        "BULL": "🐂 多头",
+        "BEAR": "🐻 空头",
+        "HOLD": "⏸️ 观望",
+    }
+
+    regime_table = (
+        "<table class='regime-table'>"
+        "<tr><th>决策</th><th>条件</th><th>仓位</th></tr>"
+        "<tr><td style='color:#00c853'>BULL</td><td>bull_count &gt; bear_count×1.5</td><td>70%</td></tr>"
+        "<tr><td style='color:#ff1744'>BEAR</td><td>bear_count &gt; bull_count×1.5</td><td>10%</td></tr>"
+        "<tr><td style='color:#ffc107'>HOLD</td><td>多空接近均衡</td><td>30%</td></tr>"
+        "</table>"
+    )
+
+    rows = ""
+    rows += "<tr><td colspan='4' class='param-group-title'>🗳️ 多空辩论统计</td></tr>"
+    rows += _param_row("🐂 多头Agent数", bull_count, "> bear×1.5 → BULL", "看涨Agent数量")
+    rows += _param_row("🐻 空头Agent数", bear_count, "> bull×1.5 → BEAR", "看跌Agent数量")
+    rows += _param_row("Bull/Bear比分差", "{:+.2f}".format(bb_score), "> +0.1偏多 / < -0.1偏空", "多空净分差")
+    rows += _param_row("最终决策", decision, "由ResearchManager裁定", "辩论最终结论")
+    rows += "<tr><td colspan='4' class='param-group-title'>📝 辩论摘要</td></tr>"
+    rows += "<tr><td colspan='4' class='debate-text-cell'>{}</td></tr>".format(_esc(debate_text[:300]) if debate_text else "（无）")
+
+    return (
+        "<div class='params-section'>"
+        "<div class='params-title'>🔍 参数详情</div>"
+        "<div class='score-summary'>"
+        "<div class='score-row'>"
+        "<span class='score-label'>辩论结果: <b style='color:{};font-size:16px'>{}</b></span>"
+        "<span class='score-sub'>🐂{} vs 🐻{} | score={:+.2f}</span>"
+        "</div>"
+        "<div class='regime-table-wrap'>{}</div>"
+        "</div>"
+        "<div class='param-table-wrap'>"
+        "<table class='param-table'>"
+        "<thead><tr><th>参数</th><th>当前值</th><th>判定规则</th><th>说明</th></tr></thead>"
+        "<tbody>{}</tbody>"
+        "</table></div>"
+        "<div class='param-footer-note'>⚠️ Agents辩论通过6层Agent多角度博弈，最终由Research Manager综合裁定决策</div>"
+        "</div>"
+    ).format(
+        "#00c853" if decision == "BULL" else ("#ff1744" if decision == "BEAR" else "#ffc107"),
+        decision, bull_count, bear_count, bb_score,
+        regime_table, rows
+    )
+
+
+def _build_strategy_card(label, emoji, result, color, bg, v=None):
+    regime    = result.get("market_regime", "N/A")
+    reg_score = result.get("regime_score", 0)
+    timing    = result.get("timing_state", "N/A")
+    tim_score = result.get("timing_score", 0)
+    risk      = result.get("risk_score", 5)
+    exposure  = result.get("target_exposure", 0)
+    confidence= result.get("confidence", 0.5)
+    signals   = result.get("signals", [])
+    interp    = result.get("interpretation", "")
+
+    r_color, r_bg = _regime_color(regime)
+    e_color = _exp_color(exposure)
+    c_color = _conf_color(confidence)
+    risk_c  = "#ff1744" if risk >= 7 else ("#ffc107" if risk >= 4 else "#00c853")
+
+    # ── 策略参数详情 ──
+    params_html = ""
+    if v is not None:
+        params_html = _build_strategy_params(label, emoji, v, result)
+
+    extra_parts = []
+    if "prob_ensemble" in result:
+        p = result["prob_ensemble"]; pct = result.get("prob_percentile", 0)
+        p_color = "#ff9800" if p > 0.4 else "#00e676"
+        extra_parts.append("<div class='sig-row'><span class='sig-label'>Ensemble概率</span><span class='sig-value' style='color:{}'>{:.1%}</span></div>".format(p_color, p))
+        extra_parts.append("<div class='sig-row'><span class='sig-label'>历史分位</span><span class='sig-value'>{:.0f}%</span></div>".format(pct))
+    if result.get("prob_gbr") is not None:
+        extra_parts.append("<div class='sig-row'><span class='sig-label'>GBR概率</span><span class='sig-value'>{:.2%}</span></div>".format(result.get("prob_gbr", 0)))
+        extra_parts.append("<div class='sig-row'><span class='sig-label'>NN概率</span><span class='sig-value'>{:.4%}</span></div>".format(result.get("prob_nn", 0)))
+        extra_parts.append("<div class='sig-row'><span class='sig-label'>LR概率</span><span class='sig-value'>{:.2%}</span></div>".format(result.get("prob_lr", 0)))
+    if result.get("decision"):
+        extra_parts.append("<div class='sig-row'><span class='sig-label'>辩论决策</span><span class='sig-value' style='font-weight:700;color:#ffc150'>{}</span></div>".format(_esc(result["decision"])))
+    bc = result.get("bull_count", 0); br = result.get("bear_count", 0)
+    if bc or br:
+        extra_parts.append("<div class='sig-row'><span class='sig-label'>多空辩论</span><span class='sig-value'>🐂{} vs 🐻{}</span></div>".format(bc, br))
+    extra_html = "".join(extra_parts)
+    sig_tags = "".join("<span class='sig-tag'>{}</span>".format(_esc(s)) for s in signals[:8])
+
+    deriv_parts = []
+    deriv_parts.append("<div class='deriv-item'>▸ Regime判定: <b style='color:#58a6ff'>{}</b> (score={:+.0f}) → 决定基础仓位方向</div>".format(regime, reg_score))
+    if timing:
+        deriv_parts.append("<div class='deriv-item'>▸ Timing判定: <b>{}</b> (score={:+.0f}) → 影响入场时机和仓位调整</div>".format(_esc(timing), tim_score))
+    risk_txt = "高风险，降低仓位" if risk >= 7 else ("中等风险" if risk >= 4 else "低风险，可适当加仓")
+    deriv_parts.append("<div class='deriv-item'>▸ 风险评分: {:d}/10 → {}".format(risk, risk_txt))
+    if "prob_ensemble" in result:
+        p = result["prob_ensemble"]; pct = result.get("prob_percentile", 0)
+        prob_txt = "低概率，安全" if p < 0.3 else ("中等概率，谨慎" if p < 0.5 else "高概率，警惕")
+        deriv_parts.append("<div class='deriv-item'>▸ Ensemble概率: {:.1%}（历史{:.0f}%分位）→ {}".format(p, pct, prob_txt))
+        stale = result.get("data_staleness_days", 0)
+        fresh = "✅ 最新" if stale == 0 else "⚠️ 过期{}天".format(stale)
+        deriv_parts.append("<div class='deriv-item'>▸ 数据新鲜度: {}".format(fresh))
+    if result.get("decision"):
+        bb_score = result.get("bull_bear_score", 0)
+        debate_txt = "多头占优" if bb_score > 0.1 else ("空头占优" if bb_score < -0.1 else "多空均衡")
+        deriv_parts.append("<div class='deriv-item'>▸ 多空辩论: 🐂{} vs 🐻{}（score={:+.2f}）→ {}".format(bc, br, bb_score, debate_txt))
+        deriv_parts.append("<div class='deriv-item'>▸ 最终决策: <b style='color:#ffc150'>{}</b></div>".format(_esc(result["decision"])))
+        dt = result.get("debate_text", "")
+        if dt:
+            deriv_parts.append("<div class='deriv-item'>▸ 裁判摘要: <span style='color:#9e9e9e'>{}...</span></div>".format(_esc(dt[:200])))
+    deriv_html = "".join("<div class='deriv-block'>{}</div>".format(p) for p in deriv_parts)
+
+    tim_str = ("+" if tim_score > 0 else "") + str(tim_score)
+
+    return (
+        "<div class='strat-card'>"
+        "<div class='sc-header' style='border-left:4px solid {};background:{}'>"
+        "<div class='sc-title-row'>"
+        "<span class='sc-emoji'>{}</span>"
+        "<span class='sc-name'>{}</span>"
+        "<span class='sc-regime' style='color:{};background:{}'>{}</span>"
+        "</div>"
+        "<div class='sc-meta-row'>"
+        "<div class='sc-meta'><div class='sc-meta-label'>Regime</div><div class='sc-meta-val' style='color:{}'>{:+.0f}</div></div>"
+        "<div class='sc-meta'><div class='sc-meta-label'>Timing</div><div class='sc-meta-val'>{}</div></div>"
+        "<div class='sc-meta'><div class='sc-meta-label'>TimingScore</div><div class='sc-meta-val'>{}</div></div>"
+        "<div class='sc-meta'><div class='sc-meta-label'>Risk</div><div class='sc-meta-val' style='color:{}'>{}/10</div></div>"
+        "<div class='sc-meta'><div class='sc-meta-label'>仓位</div><div class='sc-meta-val' style='color:{};font-weight:700'>{:.0f}%</div></div>"
+        "<div class='sc-meta'><div class='sc-meta-label'>置信度</div><div class='sc-meta-val' style='color:{}'>{:.0%}</div></div>"
+        "</div></div>"
+        "<div class='sc-body'>"
+        "<div class='sc-signals'>{}</div>"
+        "{}"
+        "{}"
+        "<div class='deriv-section'>"
+        "<div class='deriv-title'>📐 推导逻辑</div>"
+        "{}"
+        "</div>"
+        "<div class='sc-interpretation'>"
+        "<span class='intp-label'>💬 解读</span>"
+        "<span class='intp-text'>{}</span>"
+        "</div>"
+        "</div></div>"
+    ).format(
+        color, bg,
+        emoji, _esc(label), r_color, r_bg, regime,
+        r_color, reg_score, _esc(timing), tim_str, risk_c, risk, e_color, exposure, c_color, confidence,
+        sig_tags, extra_html, deriv_html, _esc(interp), params_html
+    )
+
+
+def _build_combined_card(comb, rA, rB, rC, rD):
+    regime     = comb["regime"]
+    exposure   = comb["exposure"]
+    confidence = comb["confidence"]
+    divergence = comb["divergence"]
+    raw       = comb["raw_weighted_exposure"]
+    c_sup     = comb.get("C_suppressed", False)
+    interp    = comb.get("interpretation", "")
+
+    r_color, r_bg = _regime_color(regime)
+    e_color = _exp_color(exposure)
+    c_color = _conf_color(confidence)
+    div_txt = "⚠️ 是" if divergence else "✅ 否"
+    sup_txt = "⚠️ 是" if c_sup else "✅ 否"
+    regime_text = {"BULL_TREND":"📈 总体偏多","RISK_OFF":"🔴 总体防御","NEUTRAL":"⚪ 方向待确认","CURDLE":"⚠️ 宏观紧缩"}.get(regime, regime)
+    sup_note = ""
+    if c_sup:
+        sup_note = "<div class='suppression-note'>⚠️ ML_PROB被压制（与A+B+D冲突），仓位降至最终{:.1f}%（原始{:.1f}%）</div>".format(exposure, raw)
+
+    weights_rows = ""
+    for name, col, exp in [
+        ("A Momentum","#58a6ff",rA["target_exposure"]),
+        ("B Macro","#ab47bc",rB["target_exposure"]),
+        ("C ML_Prob","#26c6da",rC["target_exposure"]),
+        ("D Agents","#ffa726",rD["target_exposure"]),
+    ]:
+        weights_rows += (
+            "<div class='exp-bar-row'>"
+            "<span class='exp-bar-label'>{}</span>"
+            "<div class='exp-bar-track'><div class='exp-bar-fill' style='width:{:.0f}%;background:{}'></div></div>"
+            "<span class='exp-bar-pct'>{:.0f}%</span>"
+            "</div>"
+        ).format(name, exp, col, exp)
+
+    return (
+        "<div class='combined-card'>"
+        "<div class='cc-header'>"
+        "<div class='cc-title'>🎯 综合结论</div>"
+        "<div class='cc-regime-badge' style='color:{};background:{}'>{}</div>"
+        "</div>"
+        "<div class='cc-body'>"
+        "<div class='cc-kpi-row'>"
+        "<div class='cc-kpi'><div class='cc-kpi-label'>最终仓位</div><div class='cc-kpi-val' style='color:{}'>{:.1f}%</div></div>"
+        "<div class='cc-kpi'><div class='cc-kpi-label'>置信度</div><div class='cc-kpi-val' style='color:{}'>{:.0%}</div></div>"
+        "<div class='cc-kpi'><div class='cc-kpi-label'>原始仓位</div><div class='cc-kpi-val'>{:.1f}%</div></div>"
+        "<div class='cc-kpi'><div class='cc-kpi-label'>分歧</div><div class='cc-kpi-val' style='color:{}'>{}</div></div>"
+        "<div class='cc-kpi'><div class='cc-kpi-label'>C被压制</div><div class='cc-kpi-val' style='color:{}'>{}</div></div>"
+        "</div>"
+        "<div class='cc-exp-bars'>"
+        "<div class='cc-weights-title'>策略仓位分布</div>"
+        "{}"
+        "</div>"
+        "{}"
+        "<div class='cc-interpretation'>"
+        "<div class='cc-intp-title'>📋 综合解读</div>"
+        "<div class='cc-intp-text'>{}</div>"
+        "</div></div></div>"
+    ).format(
+        r_color, r_bg, regime_text,
+        e_color, exposure, c_color, confidence, raw,
+        "#ff1744" if divergence else "#00c853", div_txt,
+        "#ff1744" if c_sup else "#00c853", sup_txt,
+        weights_rows,
+        sup_note, _esc(interp)
+    )
+
+
+def _build_indicators_table(v, changes):
+    rows_def = [
+        ("SPY_CLOSE","SPY收盘价","{:.2f}"),("SPY_EMA20","EMA20","{:.2f}"),
+        ("SPY_SMA50","SMA50","{:.2f}"),("SPY_SMA200","SMA200","{:.2f}"),
+        ("SPY_20D_RETURN","SPY 20日收益","{:+.2%}"),("SPY_5D_RETURN","SPY 5日收益","{:+.2%}"),
+        ("SPY_RSI14","RSI(14)","{:.1f}"),("MACD_HISTOGRAM","MACD直方图","{:.4f}"),
+        ("BB_PERCENT","BB%位置","{:.3f}"),("BB_BANDWIDTH","BB带宽","{:.4f}"),
+        ("ATR14","ATR(14)","{:.3f}"),("VIX","VIX","{:.2f}"),
+        ("VVIX","VVIX","{:.2f}"),("VIX9D","VIX 9D","{:.1f}"),
+        ("VIX1M","VIX 1M","{:.1f}"),("NYAD","NYAD","{:.0f}"),
+        ("NYAD_SLOPE","NYAD斜率","{:.1f}"),("SPY_NEW_HIGH","SPY创20日新高","{}"),
+        ("SP500_ABOVE_50MA","SP500>50MA%","{:.1%}"),("SP500_ABOVE_200MA","SP500>200MA%","{:.1%}"),
+        ("NEW_HIGH_LOW_RATIO","新高/新低比","{:.3f}"),
+        ("HY_SPREAD","HY利差(%)","{:.2f}%%"),("FCI","FCI","{:.4f}"),
+        ("GEX","GEX","{}"),("PUT_CALL_RATIO","Put/Call比","{:.2f}"),
+        ("CTA_POSITIONING","CTA仓位%ile","{:.1f}"),("REALIZED_VOL","已实现波动率","{:.2f}%%"),
+    ]
+
+    def fmt_val(val, tmpl):
+        if val is None: return "N/A"
+        try: return tmpl.format(val)
+        except: return str(val)
+
+    def val_band(key, val):
+        """返回 (颜色, 状态文字) 当前值在哪个区间"""
+        if val is None: return ("#9e9e9e", "—")
+        band = INDICATOR_BANDS.get(key)
+        if not band or band[2] is None: return ("#9e9e9e", "—")
+        thresholds = band[2]
+        if not thresholds: return ("#9e9e9e", "—")
+        lo_bad, lo_warn, hi_warn, hi_bad, direction = thresholds
+        if val < lo_bad:   return ("#ff1744", "很差")
+        if val < lo_warn:  return ("#ff6d00", "偏差")
+        if val < hi_warn:  return ("#00c853", "正常")
+        if val < hi_bad:   return ("#ffc107", "偏高")
+        return ("#ff1744", "很高")
+
+    def interp_text(k):
+        band = INDICATOR_BANDS.get(k)
+        if not band: return ""
+        return "<span class='ind-interp'>{}</span>".format(band[1])
+
+    def chg_text(k):
+        if k == "SPY_CLOSE":    c5 = changes.get("SPY_5D_CHG");  c20 = changes.get("SPY_20D_CHG")
+        elif k == "SPY_RSI14":  c5 = changes.get("RSI_5D_CHG");  c20 = changes.get("RSI_20D_CHG")
+        elif k == "VIX":         c5 = None; c20 = None
+        elif k == "ATR14":       c5 = changes.get("ATR_5D_CHG");  c20 = None
+        else:                    c5 = None; c20 = None
+        parts = []
+        if c5 is not None: parts.append("<span style='color:{}'>{}{:.1f}%</span>".format(_change_color(c5), _arrow(c5), abs(c5)))
+        if c20 is not None: parts.append("<span style='color:{}'>{}{:.1f}%</span>".format(_change_color(c20), _arrow(c20), abs(c20)))
+        return " ".join(parts) if parts else "—"
+
+    def band_bar(key, val):
+        """生成当前值在区间中的位置条"""
+        band = INDICATOR_BANDS.get(key)
+        if val is None or not band or band[2] is None: return ""
+        thresholds = band[2]
+        if not thresholds: return ""
+        lo_bad, lo_warn, hi_warn, hi_bad, direction = thresholds
+        # 计算val在区间的相对位置（百分比）
+        total_range = hi_bad - lo_bad
+        if total_range <= 0: return ""
+        # 计算val落在哪个段
+        if val < lo_warn:
+            seg = "lo_bad" if val < lo_bad else "lo_warn"
+        elif val < hi_warn:
+            seg = "normal"
+        else:
+            seg = "hi_warn" if val < hi_bad else "hi_bad"
+        # 计算百分比位置
+        pct = max(2, min(98, (val - lo_bad) / total_range * 100))
+        # 颜色
+        color = "#ff1744" if seg in ("lo_bad","hi_bad") else ("#ff6d00" if seg in ("lo_warn","hi_warn") else "#00c853")
+        return (
+            "<div class='band-bar-wrap'>"
+            "<div class='band-bar-track'>"
+            "<div class='band-bar-zone band-lo-bad' style='width:25%'></div>"
+            "<div class='band-bar-zone band-lo-warn' style='width:25%'></div>"
+            "<div class='band-bar-zone band-normal' style='width:25%'></div>"
+            "<div class='band-bar-zone band-hi-warn' style='width:25%'></div>"
+            "<div class='band-bar-marker' style='left:{}%;background:{}'></div>"
+            "</div>"
+            "<div class='band-bar-labels'>"
+            "<span class='bl-bad'>差</span>"
+            "<span class='bl-warn'>偏差</span>"
+            "<span class='bl-normal'>正常</span>"
+            "<span class='bl-hi'>偏高/很低</span>"
+            "</div></div>"
+        ).format(pct, color)
+
+    rows_html = ""
+    for key, label, tmpl in rows_def:
+        val = v.get(key)
+        color, state_txt = val_band(key, val)
+        alert_cls = "alert-text-red" if "很差" in state_txt or "很高" in state_txt else ("alert-text-orange" if "偏差" in state_txt or "偏高" in state_txt else "")
+        rows_html += (
+            "<tr>"
+            "<td>"
+            "<div class='ind-name'>{}</div>"
+            "{}"
+            "<div class='ind-band'>{}</div>"
+            "</td>"
+            "<td class='num {}' style='color:{}'>{}</td>"
+            "<td class='num chg-cell'>{}</td>"
+            "</tr>"
+        ).format(
+            _esc(label),
+            interp_text(key),
+            band_bar(key, val),
+            alert_cls, color,
+            fmt_val(val, tmpl),
+            chg_text(key)
+        )
+
+    return (
+        "<div class='section'>"
+        "<div class='section-header'>📊 关键指标（含状态区间参考）</div>"
+        "<div class='section-body'>"
+        "<table class='data-table'>"
+        "<thead><tr>"
+        "<th>指标 / 说明 / 参考区间</th>"
+        "<th class='num'>当前值</th>"
+        "<th class='num'>5日/20日变化</th>"
+        "</tr></thead>"
+        "<tbody>{}</tbody>"
+        "</table></div></div>"
+    ).format(rows_html)
+
+
+# ───────────────────────────────────────────────────────────────
+# 生成完整 HTML
+# ───────────────────────────────────────────────────────────────
+
+# This file contains just the new generate_html function body
+# (without the 'def generate_html(result):' line - that's added separately)
+
+# Tabler helper functions to insert before generate_html
+
+def _build_tabler_strategy_card(title, result, accent_color, bg_color, v):
+    """Build comprehensive strategy detail card — conclusion first, then parameters and logic."""
+    strat = result.get("strategy", "")
+    regime = result.get("market_regime", "N/A")
+    reg_score = result.get("regime_score", 0)
+    timing = result.get("timing_state", "N/A")
+    tim_score = result.get("timing_score", 0)
+    risk_val = result.get("risk_score", 0)
+    exposure = result.get("target_exposure", 0)
+    confidence = result.get("confidence", 0) * 100
+    interpretation = result.get("interpretation", "No data")
+    signals = result.get("signals", [])
+
+    # ── Helpers ──────────────────────────────────────────────────────────
+    def _val_color(val, thresholds):
+        try:
+            if val is None or val == "N/A":
+                return "#6b7280"
+            v_num = float(val)
+        except (TypeError, ValueError):
+            return "#6b7280"
+        t = thresholds
+        if t.get("type") == "bullish_good":
+            if v_num >= t.get("green", 999):
+                return "#2fb344"
+            elif v_num <= t.get("red", -999):
+                return "#d63939"
+            return "#f59f00"
+        elif t.get("type") == "bearish_good":
+            if v_num <= t.get("green", -999):
+                return "#2fb344"
+            elif v_num >= t.get("red", 999):
+                return "#d63939"
+            return "#f59f00"
+        return "#6b7280"
+
+    def _badge_text(val, thresholds):
+        c = _val_color(val, thresholds)
+        if c == "#2fb344":
+            return "✅ 偏多", c
+        elif c == "#d63939":
+            return "🔴 偏空", c
+        return "🟡 中性", c
+
+    def _fmt_val(val, fmt_str):
+        try:
+            if val is None:
+                return "N/A"
+            return fmt_str.format(float(val))
+        except (TypeError, ValueError):
+            return str(val)
+
+    def _sig_color(sig_str):
+        sig_str = str(sig_str)
+        if any(k in sig_str for k in ["多", "BUY", "买入", "好", "强", "持有", "乐观"]):
+            return "#2fb344"
+        if any(k in sig_str for k in ["空", "SELL", "卖出", "熊", "减", "规避", "防御", "高风险", "过热度", "压力"]):
+            return "#d63939"
+        return "#6b7280"
+
+    def _build_sig_badge(sig):
+        sc = _sig_color(sig)
+        rgb = str(int(sc[1:3], 16)) + "," + str(int(sc[3:5], 16)) + "," + str(int(sc[5:7], 16))
+        return "<span class='badge' style='background:rgba(" + rgb + ",0.15);color:" + sc + ";font-size:.8rem'>" + str(sig) + "</span>"
+
+    def _translate_to_chinese(text):
+        """Simple English-to-Chinese translation for debate content."""
+        if not text:
+            return ""
+        replacements = [
+            ("Perfect MA alignment - all above key MAs", "均线完美多头排列，所有关键技术均线之上"),
+            ("Healthy volume/price cooperation", "量价健康配合"),
+            ("low volume consolidation followed by higher volume push", "地量整理后放量上攻"),
+            ("RSI at 65-70 not overbought", "RSI 处于 65-70，未进入超买区"),
+            ("Bollinger Band expansion = new trend", "布林带扩张 = 新趋势形成"),
+            ("Strong support layers at 715-720", "715-720 区间存在强劲支撑层"),
+            ("Trend momentum intact", "趋势动量保持完整"),
+            ("MA divergence - price 40-45 dollars above 50-day MA", "均线背离 - 价格高于50日均线40-45美元"),
+            ("(75% correction probability)", "（75%概率回撤）"),
+            ("Triple top divergence - price makes new high but volume/RSI/MACD don't confirm", "三重顶背离 - 价格创新高但成交量/RSI/MACD未确认"),
+            ("Macro risks - high interest rates, corporate profit pressure", "宏观风险 - 高利率、企业利润压力"),
+            ("Seasonal timing - historical May peaks followed by declines", "季节性时机 - 历史数据显示5月高点后往往回落"),
+            ("Institutional positioning - smart money reducing exposure", "机构仓位 - 聪明钱正在降低风险敞口"),
+            ("Head and shoulders forming", "头肩顶形态正在形成"),
+            ("A clear investment rating", "明确的投资评级"),
+            ("Buy, Overweight, Hold, Underweight, or Sell", "买入/超配/持有/低配/卖出"),
+            ("Concrete trading recommendations", "具体交易建议"),
+            ("Clear risk management parameters", "明确的风险管理参数"),
+            ("Based on the technical data provided and analyzing both sides", "基于提供的技术数据对双方观点进行分析"),
+            ("The most compelling evidence", "最有说服力的证据"),
+            ("The bearish case about the triple divergence", "关于三重背离的看空观点"),
+            ("price making new high while volume/RSI/MACD decline", "价格创新高但成交量/RSI/MACD却下降"),
+            ("The 749.53 high on May 14 with declining volume", "5月14日749.53高点伴随成交量萎缩"),
+            ("However, the bull case about trend integrity", "然而，看多方关于趋势完整性的观点"),
+            ("higher lows being maintained", "低点在不断抬高"),
+            ("RSI hasn't reached truly overbought levels", "RSI尚未达到真正超买水平"),
+            ("Given the current data", "基于当前数据"),
+            ("moderately bullish but not extreme", "中度看多但未至极端"),
+            ("Price above all major MAs", "价格位于所有主要均线上方"),
+            ("Volume divergence at new high: bearish warning sign", "新高处成交量背离：看空警告信号"),
+            ("Support at 735-738 currently being tested", "735-738支撑正在接受测试"),
+            ("Key support at 715-720", "关键支撑在715-720"),
+            ("My assessment", "我的评估"),
+            ("critical technical warning that can't be dismissed", "不可忽视的关键技术警告"),
+            ("momentum is weakening", "动量正在减弱"),
+            ("I'm leaning toward", "我倾向于"),
+            ("Underweight", "低配"),
+            ("position because the technical evidence points to elevated risk", "仓位，因为技术证据指向风险升高"),
+            ("institutional distribution", "机构派发"),
+            ("a reasonable probability of a 10-15% pullback toward the 715-720 support level", "合理概率出现10-15%回撤，指向715-720支撑"),
+            ("leaning toward", "倾向于"),
+            ("a cautious approach seems prudent until the divergence resolves", "在背离解决之前，谨慎的策略更为妥当"),
+            ("successful retest of 735-738 support", "成功测试735-738支撑"),
+            ("clean break through 750", "干净利落突破750"),
+            ("resistance sits at 745-750", "阻力位在745-750"),
+            ("with support spanning 735", "支撑位在735"),
+            ("I recommend", "我建议"),
+            ("reducing the SPY allocation to 40% of target exposure", "将SPY配置降至目标仓位的40%"),
+            ("stops placed at 710 if holding long positions", "若持有多头，设置710止损"),
+            ("Triple divergence", "三重背离"),
+            ("price-volume divergence", "价格-成交量背离"),
+            ("The bullish argument about RSI not being truly overbought", "关于RSI未真正超买的看多论点"),
+            ("has merit", "有其道理"),
+            ("but the volume divergence at the high is the stronger signal here", "但高点的成交量背离是更强的信号"),
+            ("overbought RSI reading", "超买RSI读数"),
+            ("The price-volume divergence at the May 14 high represents a", "5月14日高点的价格-成交量背离代表"),
+            ("For positioning", "对于仓位配置"),
+            ("Buy", "买入"),
+            ("Hold", "持有"),
+            ("Sell", "卖出"),
+            ("Overweight", "超配"),
+            ("Underweight", "低配"),
+            ("All of the above", "以上全部"),
+            ("None of the above", "以上都不是"),
+        ]
+        result = text
+        for eng, zh in replacements:
+            result = result.replace(eng, zh)
+        # Remove markdown bold markers
+        result = result.replace("**", "")
+        return result
+
+    def _parse_bull_bear(text):
+        """Extract bull arguments, bear arguments, and judge verdict from judge text."""
+        if not text:
+            return [], [], ""
+        lines = text.split("\n")
+        phase = "intro"
+        bull_args = []
+        bear_args = []
+        judge_lines = []
+        for line in lines:
+            line_s = line.strip()
+            if "**Bull Arguments:**" in line_s or "Bull Arguments:" in line_s:
+                phase = "bull"
+                continue
+            if "**Bear Arguments:**" in line_s or "Bear Arguments:" in line_s:
+                phase = "bear"
+                continue
+            if phase in ("bull", "bear", "intro"):
+                if any(kw in line_s for kw in ["My assessment", "Based on the", "Based on analysis",
+                                                "Given the current", "The most compelling",
+                                                "Now I need to weigh", "I recommend"]):
+                    phase = "judge"
+                    if line_s:
+                        judge_lines.append(line_s)
+                    continue
+            if phase == "bull" and line_s and not line_s.startswith("**"):
+                bull_args.append(line_s)
+            elif phase == "bear" and line_s and not line_s.startswith("**"):
+                bear_args.append(line_s)
+            elif phase == "judge" and line_s:
+                judge_lines.append(line_s)
+        if not bull_args and not bear_args and not judge_lines:
+            judge_lines = [l.strip() for l in lines if l.strip() and not l.startswith("<think>")]
+        # Translate all content to Chinese
+        bull_args = [_translate_to_chinese(a) for a in bull_args]
+        bear_args = [_translate_to_chinese(a) for a in bear_args]
+        judge_text = _translate_to_chinese(" ".join(judge_lines[:50]))
+        return bull_args, bear_args, judge_text
+
+    # ── Card shell ───────────────────────────────────────────────────────
+    h = ""
+    h += "<div class='card mb-4' style='border-top:3px solid " + accent_color + "'>"
+    h += "<div class='card-header' style='background:" + bg_color + "'>"
+    h += "<div class='d-flex align-items-center justify-content-between'>"
+    h += "<h3 class='card-title mb-0' style='color:" + accent_color + "'>" + title + "</h3>"
+    h += "<span class='badge' style='background:" + accent_color + ";color:#fff;font-size:.8rem'>Target: " + str(exposure) + "%</span>"
+    h += "</div></div>"
+    h += "<div class='card-body'>"
+
+    # ── KPI strip ────────────────────────────────────────────────────────
+    regime_names = {
+        "BULL_TREND": "🐂 牛市", "EXPANSION": "📈 扩张", "RECOVERY": "🔄 复苏",
+        "LOW_RISK": "🟢 低风险", "RISK_OFF": "🐻 风险规避", "CURDLE": "⚠️ 凝固",
+        "STRESS": "🚨 压力", "HIGH_RISK": "🔴 高风险", "NEUTRAL": "⚖️ 中性",
+        "CAUTION": "⚡ 谨慎", "BEAR_TREND": "🐻 熊市"
+    }
+    timing_names = {
+        "GOOD_ENTRY": "✅ 好时机", "NEUTRAL_TIMING": "⚖️ 中性",
+        "OVERHEATED": "🔥 过热", "AVOID": "⛔ 回避"
+    }
+    regime_c = "#2fb344" if "BULL" in regime or "EXPAN" in regime or "REC" in regime or "LOW_RISK" in regime else ("#d63939" if "RISK" in regime or "STRESS" in regime or "BEAR" in regime else "#f59f00")
+    timing_c = "#2fb344" if "GOOD" in timing else ("#d63939" if "OVERHEATED" in timing or "AVOID" in timing else "#f59f00")
+    regime_d = regime_names.get(regime, regime)
+    timing_d = timing_names.get(timing, timing)
+
+    kpis = [
+        ("市场状态", regime_d, regime_c),
+        ("择时信号", timing_d, timing_c),
+        ("置信度", "{:.0f}%%".format(confidence), "#6b7280"),
+        ("风险评分", str(risk_val) + "/10", "#6b7280"),
+    ]
+    h += "<div class='row mb-3'>"
+    for lbl, val, col in kpis:
+        h += "<div class='col-6 col-md-3 mb-2'>"
+        h += "<div class='card' style='background:var(--tblr-bg-surface)'>"
+        h += "<div class='card-body py-2 px-2 text-center'>"
+        h += "<div style='font-size:.6rem;color:var(--tblr-text-secondary);text-transform:uppercase;margin-bottom:4px'>" + lbl + "</div>"
+        h += "<div style='font-size:1rem;font-weight:800;color:" + col + "'>" + str(val) + "</div>"
+        h += "</div></div></div>"
+    h += "</div>"
+
+    # ══════════════════════════════════════════════════════════════════════
+    # SECTION 1: CONCLUSION FIRST (用户要求结论先行)
+    # ══════════════════════════════════════════════════════════════════════
+    h += "<div class='card mb-4' style='border-left:4px solid " + accent_color + "'>"
+    h += "<div class='card-header'><h4 class='card-title mb-0' style='font-size:.95rem'>💡 结论</h4></div>"
+    h += "<div class='card-body py-3'>"
+    h += "<div style='font-size:.9rem;line-height:1.8'>" + interpretation + "</div>"
+    h += "</div></div>"
+
+    # ── Sub-Signals ─────────────────────────────────────────────────────
+    if signals:
+        h += "<div class='card mb-4'>"
+        h += "<div class='card-header'><h4 class='card-title mb-0' style='font-size:.95rem'>🏷 子信号</h4></div>"
+        h += "<div class='card-body'><div class='d-flex flex-wrap gap-2'>"
+        for sig in signals:
+            h += _build_sig_badge(sig)
+        h += "</div></div></div>"
+
+    # ══════════════════════════════════════════════════════════════════════
+    # SECTION 2: STRATEGY D — AGENTS DEBATE DETAIL (正方/反方/裁判)
+    # ══════════════════════════════════════════════════════════════════════
+    if strat == "AGENTS_DEBATE" or strat == "" or strat == "AGENTS":
+        debate_text = result.get("debate_text", "")
+        judge_decision_full = result.get("judge_decision_full", debate_text)
+        bull_args, bear_args, judge_verdict = _parse_bull_bear(judge_decision_full)
+        bull_count = result.get("bull_count", 0)
+        bear_count = result.get("bear_count", 0)
+        bb_score = result.get("bull_bear_score", 0)
+        decision = result.get("decision", "N/A")
+        dec_map = {"BUY": ("买入", "#2fb344"), "SELL": ("卖出", "#d63939"),
+                   "HOLD": ("观望", "#f59f00"), "NO_POSITION": ("空仓", "#6b7280")}
+        dec_lbl, dec_c = dec_map.get(decision, (decision, "#6b7280"))
+
+        # Debate scores strip
+        h += "<div class='card mb-4'>"
+        h += "<div class='card-header'><h4 class='card-title mb-0' style='font-size:.95rem'>🧠 Agents 辩论详情</h4></div>"
+        h += "<div class='card-body'>"
+        h += "<div class='row mb-3'>"
+        for lbl, val, c in [
+            ("正方论点", str(bull_count), "#2fb344"),
+            ("反方论点", str(bear_count), "#d63939"),
+            ("多空得分", "{:.3f}".format(bb_score), "#2fb344" if bb_score > 0 else "#d63939"),
+            ("裁判决策", dec_lbl, dec_c),
+        ]:
+            h += "<div class='col-6 col-md-3 mb-2'>"
+            h += "<div class='card' style='background:var(--tblr-bg-surface)'>"
+            h += "<div class='card-body py-2 text-center'>"
+            h += "<div style='font-size:.6rem;color:var(--tblr-text-secondary);text-transform:uppercase;margin-bottom:4px'>" + lbl + "</div>"
+            h += "<div style='font-size:1.1rem;font-weight:800;color:" + c + "'>" + str(val) + "</div>"
+            h += "</div></div></div>"
+        h += "</div>"
+
+        # Bull arguments
+        if bull_args:
+            h += "<div class='mb-3'>"
+            h += "<div style='font-size:.75rem;font-weight:700;color:#2fb344;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px'>📈 正方论点 (" + str(len(bull_args)) + " 条)</div>"
+            h += "<div class='card' style='border-left:3px solid #2fb344'>"
+            h += "<div class='card-body py-2' style='font-size:.8rem;line-height:1.7'>"
+            for arg in bull_args[:12]:
+                clean = arg.strip("- *").strip()
+                if clean:
+                    h += "<div style='margin-bottom:4px;color:var(--tblr-body-color)'>• " + clean + "</div>"
+            h += "</div></div></div>"
+
+        # Bear arguments
+        if bear_args:
+            h += "<div class='mb-3'>"
+            h += "<div style='font-size:.75rem;font-weight:700;color:#d63939;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px'>📉 反方论点 (" + str(len(bear_args)) + " 条)</div>"
+            h += "<div class='card' style='border-left:3px solid #d63939'>"
+            h += "<div class='card-body py-2' style='font-size:.8rem;line-height:1.7'>"
+            for arg in bear_args[:12]:
+                clean = arg.strip("- *").strip()
+                if clean:
+                    h += "<div style='margin-bottom:4px;color:var(--tblr-body-color)'>• " + clean + "</div>"
+            h += "</div></div></div>"
+
+        # Judge verdict
+        if judge_verdict:
+            h += "<div>"
+            h += "<div style='font-size:.75rem;font-weight:700;color:#f59f00;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px'>⚖️ 裁判裁决</div>"
+            h += "<div class='card' style='border-left:3px solid #f59f00;background:var(--tblr-bg-surface)'>"
+            h += "<div class='card-body py-2' style='font-size:.8rem;line-height:1.8;color:var(--tblr-body-color)'>"
+            h += judge_verdict
+            h += "</div></div></div>"
+
+        h += "</div></div>"
+
+    # ══════════════════════════════════════════════════════════════════════
+    # SECTION 3: PARAMETERS TABLE
+    # ══════════════════════════════════════════════════════════════════════
+    h += "<div class='card mb-4'>"
+    h += "<div class='card-header'><h4 class='card-title mb-0' style='font-size:.95rem'>📊 计算参数表</h4></div>"
+    h += "<div class='table-responsive'><table class='table table-vcenter mb-0'>"
+    h += "<thead><tr><th style='width:22%'>参数</th><th style='width:14%'>当前值</th><th style='width:14%'>信号</th><th style='width:50%'>阈值范围与含义</th></tr></thead><tbody>"
+
+    if strat == "MOMENTUM":
+        rows = [
+            ("SPY_CLOSE", v.get("SPY_CLOSE"), "{:.2f}", {"type":"bullish_good","green":700}, "收盘价 > EMA20 → 偏多"),
+            ("SPY_EMA20", v.get("SPY_EMA20"), "{:.2f}", {"type":"bullish_good","green":690}, "EMA20 > SMA50 → 偏多"),
+            ("SPY_SMA50", v.get("SPY_SMA50"), "{:.2f}", {"type":"bullish_good","green":680}, "SMA50 > SMA200 → 长期偏多"),
+            ("SPY_SMA200", v.get("SPY_SMA200"), "{:.2f}", {"type":"bullish_good","green":660}, "200日均线锚点"),
+            ("SPY_RSI14", v.get("SPY_RSI14"), "{:.1f}", {"type":"neutral_good","green":50,"red":70}, "RSI<35=超卖 | >75=超买"),
+            ("SPY_EMA20_SLOPE", v.get("SPY_EMA20_SLOPE"), "{:.3f}", {"type":"bullish_good","green":0}, ">0 = 上升趋势"),
+            ("NYAD_SLOPE", v.get("NYAD_SLOPE"), "{:.1f}", {"type":"bullish_good","green":0}, ">0 = 广度改善"),
+            ("SP500_ABOVE_50MA", v.get("SP500_ABOVE_50MA"), "{:.1%}", {"type":"bullish_good","green":0.6}, ">60% = 广泛参与"),
+            ("NEW_HIGH_LOW_RATIO", v.get("NEW_HIGH_LOW_RATIO"), "{:.2f}", {"type":"bullish_good","green":1.5}, ">1.5 = 新高主导"),
+            ("VIX", v.get("VIX"), "{:.2f}", {"type":"bearish_good","green":20}, "<20=低恐慌 | >25=高恐慌"),
+            ("VIX_TERM_STRUCTURE", v.get("VIX_TERM_STRUCTURE"), "{:.2f}", {"type":"bullish_good","green":0}, ">0=正常 | <0=倒挂预警"),
+            ("VVIX", v.get("VVIX"), "{:.1f}", {"type":"bearish_good","green":110}, ">110=VVIX风险"),
+            ("HY_SPREAD", v.get("HY_SPREAD"), "{:.2f}%%", {"type":"bearish_good","green":4.2}, "<4.2%=低风险 | >5%=高风险"),
+            ("GEX", v.get("GEX"), "{:.0f}", {"type":"bullish_good","green":0}, ">0=机构多头gamma"),
+            ("MACD_HISTOGRAM", v.get("MACD_HISTOGRAM"), "{:.4f}", {"type":"bullish_good","green":0}, ">0=动量向上"),
+            ("BB_PERCENT", v.get("BB_PERCENT"), "{:.2f}", {"type":"neutral_good","green":0.5,"red":0.9}, ">0.9=超买 | <0.5=超卖"),
+            ("BB_BANDWIDTH", v.get("BB_BANDWIDTH"), "{:.3f}", {"type":"neutral_good","green":0.05,"red":0.15}, "<0.05=压缩蓄势"),
+            ("VOLUME_RATIO", v.get("VOLUME_RATIO"), "{:.2f}", {"type":"bullish_good","green":1.0}, ">1.0=量价配合"),
+            ("LIQUIDITY_SCORE", v.get("LIQUIDITY_SCORE"), "{:.0f}", {"type":"bullish_good","green":0}, ">0=流动性良好"),
+            ("BREADTH_DIVERGENCE", v.get("BREADTH_DIVERGENCE"), "{}", {"type":"bullish_good","green":0}, "True=熊市背离"),
+        ]
+        for key, raw_val, fmt, thresh, thresh_txt in rows:
+            if key == "BREADTH_DIVERGENCE":
+                val_str = "是" if raw_val else "否"
+                c = "#d63939" if raw_val else "#6b7280"
+                badge = "🔴 偏空" if raw_val else "✅ 正常"
+                h += "<tr><td><code style='font-size:.75rem'>" + key + "</code></td>"
+                h += "<td style='font-weight:700'>" + val_str + "</td>"
+                h += "<td><span class='badge' style='background:" + c + ";color:#fff;font-size:.7rem'>" + badge + "</span></td>"
+                h += "<td style='font-size:.75rem;color:var(--tblr-text-secondary)'>" + thresh_txt + "</td></tr>"
+            else:
+                val_str = _fmt_val(raw_val, fmt)
+                c = _val_color(raw_val, thresh)
+                badge_txt, _ = _badge_text(raw_val, thresh)
+                h += "<tr>"
+                h += "<td><code style='font-size:.75rem'>" + key + "</code></td>"
+                h += "<td style='font-weight:700'>" + val_str + "</td>"
+                h += "<td><span class='badge' style='background:" + c + ";color:#fff;font-size:.7rem'>" + badge_txt + "</span></td>"
+                h += "<td style='font-size:.75rem;color:var(--tblr-text-secondary)'>" + thresh_txt + "</td></tr>"
+
+    elif strat == "MACRO":
+        rows = [
+            ("VIX", v.get("VIX"), "{:.2f}", {"type":"bearish_good","green":20}, "<20=正常 | >25=恐慌"),
+            ("HY_SPREAD", v.get("HY_SPREAD"), "{:.2f}%%", {"type":"bearish_good","green":4.2}, "<4.2%=低风险 | >5%=高风险"),
+            ("FCI", v.get("FCI"), "{:.3f}", {"type":"bullish_good","green":-0.5}, ">-0.5=宽松 | <-1=紧缩"),
+            ("DXY", v.get("DXY"), "{:.2f}", {"type":"neutral_good","green":100,"red":110}, ">110=强势美元"),
+            ("US10Y", v.get("US10Y"), "{:.2f}%%", {"type":"neutral_good","green":4.0,"red":5.0}, ">5%=利率压力"),
+            ("VIX3M", v.get("VIX3M"), "{:.2f}", {"type":"neutral_good","green":20,"red":30}, "3个月VIX"),
+            ("VIX9D", v.get("VIX9D"), "{:.2f}", {"type":"neutral_good","green":20,"red":30}, "9天VIX"),
+            ("BB_BANDWIDTH", v.get("BB_BANDWIDTH"), "{:.3f}", {"type":"neutral_good","green":0.05,"red":0.15}, "<0.05=蓄势整理"),
+            ("LIQUIDITY_SCORE", v.get("LIQUIDITY_SCORE"), "{:.0f}", {"type":"bullish_good","green":0}, ">0=流动性充足"),
+        ]
+        for key, raw_val, fmt, thresh, thresh_txt in rows:
+            val_str = _fmt_val(raw_val, fmt)
+            c = _val_color(raw_val, thresh)
+            badge_txt, _ = _badge_text(raw_val, thresh)
+            h += "<tr><td><code style='font-size:.75rem'>" + key + "</code></td>"
+            h += "<td style='font-weight:700'>" + val_str + "</td>"
+            h += "<td><span class='badge' style='background:" + c + ";color:#fff;font-size:.7rem'>" + badge_txt + "</span></td>"
+            h += "<td style='font-size:.75rem;color:var(--tblr-text-secondary)'>" + thresh_txt + "</td></tr>"
+
+    elif strat == "ML_PROB":
+        rows = [
+            ("prob_gbr", result.get("prob_gbr"), "{:.1%}", {"type":"bullish_good","green":0.5}, ">50%=偏多 | <30%=偏空"),
+            ("prob_nn", result.get("prob_nn"), "{:.1%}", {"type":"bullish_good","green":0.5}, ">50%=偏多 | <30%=偏空"),
+            ("prob_lr", result.get("prob_lr"), "{:.1%}", {"type":"bullish_good","green":0.5}, ">50%=偏多 | <30%=偏空"),
+            ("prob_ensemble", result.get("prob_ensemble"), "{:.1%}", {"type":"bullish_good","green":0.5}, "三模型 Ensemble 概率"),
+            ("prob_percentile", result.get("prob_percentile"), "{:.0f}%%", {"type":"neutral_good","green":30,"red":70}, ">70%=历史高位 | <30%=历史低位"),
+            ("SPY_RSI14", v.get("SPY_RSI14"), "{:.1f}", {"type":"neutral_good","green":50,"red":70}, "当前RSI"),
+        ]
+        for key, raw_val, fmt, thresh, thresh_txt in rows:
+            val_str = _fmt_val(raw_val, fmt)
+            c = _val_color(raw_val, thresh)
+            badge_txt, _ = _badge_text(raw_val, thresh)
+            h += "<tr><td><code style='font-size:.75rem'>" + key + "</code></td>"
+            h += "<td style='font-weight:700'>" + val_str + "</td>"
+            h += "<td><span class='badge' style='background:" + c + ";color:#fff;font-size:.7rem'>" + badge_txt + "</span></td>"
+            h += "<td style='font-size:.75rem;color:var(--tblr-text-secondary)'>" + thresh_txt + "</td></tr>"
+
+    else:  # AGENTS
+        rows = [
+            ("bull_count", result.get("bull_count", 0), "{:.0f}", {"type":"bullish_good","green":5000}, "正方论点数量"),
+            ("bear_count", result.get("bear_count", 0), "{:.0f}", {"type":"bearish_good","green":3000}, "反方论点数量"),
+            ("bull_bear_score", result.get("bull_bear_score", 0), "{:.3f}", {"type":"bullish_good","green":0}, ">0=偏多 | <0=偏空"),
+            ("SPY_RSI14", v.get("SPY_RSI14"), "{:.1f}", {"type":"neutral_good","green":50,"red":70}, "RSI < 35=超卖 | > 75=超买"),
+            ("VIX", v.get("VIX"), "{:.2f}", {"type":"bearish_good","green":20}, "波动率指数"),
+        ]
+        for key, raw_val, fmt, thresh, thresh_txt in rows:
+            val_str = _fmt_val(raw_val, fmt)
+            c = _val_color(raw_val, thresh)
+            badge_txt, _ = _badge_text(raw_val, thresh)
+            h += "<tr><td><code style='font-size:.75rem'>" + key + "</code></td>"
+            h += "<td style='font-weight:700'>" + val_str + "</td>"
+            h += "<td><span class='badge' style='background:" + c + ";color:#fff;font-size:.7rem'>" + badge_txt + "</span></td>"
+            h += "<td style='font-size:.75rem;color:var(--tblr-text-secondary)'>" + thresh_txt + "</td></tr>"
+
+    h += "</tbody></table></div></div>"
+
+    # ══════════════════════════════════════════════════════════════════════
+    # SECTION 4: DECISION LOGIC AND WEIGHTS
+    # ══════════════════════════════════════════════════════════════════════
+    h += "<div class='card mb-4'>"
+    h += "<div class='card-header'><h4 class='card-title mb-0' style='font-size:.95rem'>🧮 决策逻辑与权重</h4></div>"
+    h += "<div class='card-body'>"
+
+    if strat == "MOMENTUM":
+        # Compute per-category scores
+        def _cat_score(conditions):
+            s = 0
+            for cond, pts in conditions:
+                if cond: s += pts
+            return s
+        def _parse_pts(p):
+            return int(p.rstrip('+-').replace('+','').replace('-','').replace('▲',''))
+        def _is_override(p):
+            return p.startswith('▲')
+        def _pt_color(pts_str, cond):
+            if not cond: return "#6b7280"
+            p = _parse_pts(pts_str)
+            return "#2fb344" if p > 0 else "#d63939"
+
+        trend_items = [
+            (bool(v.get("SPY_CLOSE",0) > v.get("SPY_EMA20",0)), "SPY > EMA20", "+1"),
+            (bool(v.get("SPY_EMA20",0) > v.get("SPY_SMA50",0)), "EMA20 > SMA50", "+1"),
+            (bool(v.get("SPY_SMA50",0) > v.get("SPY_SMA200",0)), "SMA50 > SMA200", "+1"),
+            (bool((v.get("SPY_EMA20_SLOPE",0) or 0) > 0), "EMA20斜率 > 0", "+1"),
+        ]
+        breadth_items = [
+            (bool((v.get("NYAD_SLOPE",0) or 0) > 0), "NYAD斜率 > 0", "+2"),
+            (bool((v.get("SP500_ABOVE_50MA",0) or 0) > 0.6), "SP500站上50MA > 60%", "+1"),
+            (bool((v.get("NEW_HIGH_LOW_RATIO",0) or 0) > 1.5), "新高/新低比 > 1.5", "+1"),
+            (bool(v.get("BREADTH_DIVERGENCE", False)), "广度背离", "▲-3"),
+        ]
+        vol_items = [
+            (bool((v.get("VIX",99) or 99) < 20), "VIX < 20", "+1"),
+            (bool((v.get("VIX_TERM_STRUCTURE",0) or 0) > 0), "VIX期限结构 > 0", "+1"),
+            (bool((v.get("VIX_TERM_STRUCTURE",0) or 0) <= 0), "VIX期限结构 ≤ 0（倒挂）", "▲-2"),
+            (bool((v.get("VVIX",0) or 0) > 110), "VVIX > 110", "▲-2"),
+        ]
+        credit_items = [
+            (bool((v.get("HY_SPREAD",999) or 999) < 4.2), "HY利差 < 4.2%", "+1"),
+            (bool((v.get("HY_SPREAD",0) or 0) >= 4.2), "HY利差 ≥ 4.2%", "▲-2"),
+            (bool((v.get("LIQUIDITY_SCORE",0) or 0) > 0), "流动性评分 > 0", "+1"),
+        ]
+        options_items = [
+            (bool((v.get("GEX",0) or 0) > 0), "GEX > 0", "+1"),
+            (bool((v.get("GEX",0) or 0) <= 0), "GEX ≤ 0（负GAMMA）", "▲-2"),
+        ]
+
+        categories = [
+            ("L1 综合仓位", [
+                ("L2 趋势结构", trend_items, "📐"),
+                ("L2 市场广度", breadth_items, "📊"),
+                ("L2 波动率", vol_items, "🌊"),
+                ("L2 信用+流动性", credit_items, "💧"),
+                ("L2 期权持仓", options_items, "📋"),
+            ])
+        ]
+
+        # Build hierarchical display
+        h += "<div style='font-size:.75rem;color:var(--tblr-text-secondary);margin-bottom:10px'>"
+        h += "评分层级：<strong>L1 综合仓位</strong> = L2 各项加权求和 → Regime判定 → 仓位配置"
+        h += "</div>"
+
+        total_score = 0
+        for l1_name, l2_cats in categories:
+            h += "<div class='mb-3'>"
+            for l2_name, items, icon in l2_cats:
+                cat_score = _cat_score(items)
+                total_score += cat_score
+                # Sub-score badge color
+                sc = "#2fb344" if cat_score > 0 else ("#d63939" if cat_score < 0 else "#6b7280")
+                # Show items
+                item_html = ""
+                for cond, param, pts in items:
+                    icon2 = "✅" if cond else "❌"
+                    ic = "#2fb344" if cond else "#d63939"
+                    is_ov = _is_override(pts)
+                    pts_clean = pts.lstrip('▲')
+                    pc = _pt_color(pts_clean, cond)
+                    # If condition is false but there's a negative override, show it in red
+                    if not cond and is_ov:
+                        icon2 = "❌"
+                        ic = "#d63939"
+                    override_tag = " <span style='font-size:.65rem;background:#d63939;color:#fff;padding:1px 4px;border-radius:3px'>强</span>" if is_ov else ""
+                    item_html += ("<div class='d-flex align-items-center mb-1' style='font-size:.8rem;padding-left:4px'>"
+                        "<div style='width:16px;color:" + ic + ";font-weight:700'>" + icon2 + "</div>"
+                        "<div style='flex:1;color:var(--tblr-body-color)'>" + param + override_tag + "</div>"
+                        "<div style='color:" + pc + ";font-weight:700;width:36px;text-align:right'>" + pts_clean + "</div>"
+                        "</div>")
+                h += ("<div style='border:1px solid var(--tblr-border-color);border-radius:6px;margin-bottom:6px;overflow:hidden;"> + "
+                    + ""<div style='background:var(--tblr-bg-surface);padding:6px 10px;display:flex;align-items:center;justify-content:space-between'>"
+                    "<div style='display:flex;align-items:center;gap:6px'>"
+                    "<span style='font-size:.9rem'>" + icon + "</span>"
+                    "<span style='font-size:.8rem;font-weight:600;color:var(--tblr-body-color)'>" + l2_name + "</span>"
+                    "</div>"
+                    "<span class='badge' style='background:" + sc + ";color:#fff;font-size:.75rem'>" + ("+" if cat_score > 0 else "") + str(cat_score) + "</span>"
+                    "</div>"
+                    "<div style='padding:6px 10px;background:var(--tblr-card-bg)'>" + item_html + "</div>"
+                    "</div>")
+            h += "</div>"
+
+        # Regime decision box
+        reg_thresholds = [
+            ("≥ 8", "🐂 牛市", "#2fb344"),
+            ("4~7", "⚖️ 中性", "#f59f00"),
+            ("< 4", "🐻 风险规避", "#d63939"),
+        ]
+        current_thresh = "< 4" if total_score < 4 else ("4~7" if total_score < 8 else "≥ 8")
+        current_regime_color = "#d63939" if total_score < 4 else ("#f59f00" if total_score < 8 else "#2fb344")
+        h += "<div class='alert alert-primary mb-3' style='font-size:.8rem'>"
+        h += "<strong>Regime 判定规则：</strong>"
+        for thresh, label, tc in reg_thresholds:
+            sep = "&nbsp;&nbsp;" if thresh != "< 4" else ""
+            active = "<strong>" if current_thresh == thresh else ""
+            end_a = "</strong>" if current_thresh == thresh else ""
+            h += sep + active + thresh + " → " + label + end_a
+        h += "<br><strong>当前总分 " + str(total_score) + " 分 → " + current_regime_color.replace("#","#") + "</strong>"
+        h += "</div>"
+
+        # Why RISK_OFF? Explanation box
+        vts_val = v.get("VIX_TERM_STRUCTURE", 0) or 0
+        hy_val = v.get("HY_SPREAD", 0) or 0
+        nyad_val = v.get("NYAD_SLOPE", 0) or 0
+        gex_val = v.get("GEX", 0) or 0
+        why_items = []
+        if vts_val <= 0:
+            why_items.append(("VIX期限结构", "{:.1f}".format(vts_val), "严重倒挂（<0），看空预警", "#d63939"))
+        if hy_val >= 4.2:
+            why_items.append(("HY利差", "{:.2f}%".format(hy_val), "偏高（≥4.2%），信用紧缩", "#d63939"))
+        if nyad_val <= 0:
+            why_items.append(("NYAD斜率", "{:.1f}".format(nyad_val), "负值，广度恶化", "#d63939"))
+        if gex_val <= 0:
+            why_items.append(("GEX", "{:.0f}".format(gex_val), "负值，机构做空期权gamma", "#d63939"))
+        if why_items:
+            h += "<div class='card mb-3' style='border-left:4px solid #d63939;background:rgba(214,57,57,0.08)'>"
+            h += "<div class='card-body py-2 px-3'>"
+            h += "<div style='font-size:.75rem;font-weight:700;color:#d63939;margin-bottom:6px'>🚨 主导看空因子（覆盖价格多头信号）</div>"
+            for param, val, reason, rc in why_items:
+                h += ("<div class='d-flex align-items-center mb-1' style='font-size:.8rem'>"
+                    "<div style='width:100px;color:var(--tblr-text-secondary)'>" + param + "</div>"
+                    "<div style='width:60px;font-weight:700;color:" + rc + ";font-size:.8rem'>" + val + "</div>"
+                    "<div style='color:var(--tblr-text-secondary);font-size:.75rem'>" + reason + "</div></div>")
+            h += "<div style='font-size:.75rem;color:var(--tblr-text-secondary);margin-top:4px'>"
+            h += "→ 趋势结构均满足（+4），但宏观/信用/期权维度拖累 → Regime = " + current_regime_color.replace("#","#") + "风险规避"
+            h += "</div></div></div>"
+
+        # Timing section
+        tim_rows = [
+            ("RSI < 35",               bool((v.get("SPY_RSI14",50) or 50) < 35), "+2", "#2fb344"),
+            ("RSI > 75 (⚠️)",          bool((v.get("SPY_RSI14",50) or 50) > 75), "-2", "#d63939"),
+            ("MACD直方图 > 0",         bool((v.get("MACD_HISTOGRAM",0) or 0) > 0), "+1", "#2fb344"),
+            ("MACD收缩 > 60% (⚠️)",   bool((v.get("MACD_CONTRACTION",0) or 0) > 0.6), "-2", "#d63939"),
+            ("BB位置 > 90% (⚠️)",      bool((v.get("BB_PERCENT",0) or 0) > 0.9), "-1", "#d63939"),
+            ("BB带宽 < 0.05 (⚠️)",     bool((v.get("BB_BANDWIDTH",0) or 0) < 0.05), "-1", "#d63939"),
+            ("成交量比 > 1.2",         bool((v.get("VOLUME_RATIO",0) or 0) > 1.2), "+1", "#2fb344"),
+            ("ATR压缩 > 15% (⚠️)",     bool((v.get("ATR_COMPRESSION",0) or 0) > 0.15), "-1", "#d63939"),
+        ]
+        h += "<div class='mb-0'><h5 style='font-size:.875rem;font-weight:700;margin-bottom:8px'>Timing 评分（当前: " + str(tim_score) + " 分）</h5>"
+        for param, cond, pts, ic in tim_rows:
+            icon = "✅" if cond else "❌"
+            tc = "#2fb344" if cond else "#6b7280"
+            h += "<div class='d-flex align-items-center mb-1' style='font-size:.8rem'>"
+            h += "<div style='width:16px;color:" + tc + ";font-weight:700'>" + icon + "</div>"
+            h += "<div style='flex:1'>" + param + "</div>"
+            h += "<div style='color:" + ic + ";font-weight:700;width:30px;text-align:right'>" + pts + "</div>"
+            h += "</div>"
+        h += "<div class='alert alert-info mb-0 mt-2' style='font-size:.8rem'>"
+        h += "<strong>Timing 判定：</strong>≥ 2 → ✅ 好时机 | ≤ -3 → 🔥 过热 | 其他 → ⚖️ 中性"
+        h += "</div></div>"
+
+        h += "<div class='alert alert-dark mt-3 mb-0' style='font-size:.8rem'>"
+        h += "<strong>仓位公式：</strong>多头: 80%(中性) / 100%(好时机) / 60%(过热) × max(0.2, 1 - RiskScore×0.15) | 中性: 40% | 熊市: 10%"
+        h += "</div>"
+
+    elif strat == "MACRO":
+        h += "<div class='alert alert-dark mb-3' style='font-size:.8rem'>"
+        h += "<strong>宏观 Regime：</strong>基于 VIX、HY利差、FCI、DXY、US10Y、流动性评分的综合宏观评分体系<br>"
+        h += "总分 ≥ 8 → 🐂 牛市 | ≥ 4 → ⚖️ 中性 | &lt; 4 → 🐻 风险规避"
+        h += "</div>"
+        h += "<div class='alert alert-info mb-0' style='font-size:.8rem'>"
+        h += "<strong>入场 Timing：</strong>VIX > 30 = 逆向买入好时机 | BB < 0.05 = 压缩蓄势 | 均值回归信号综合判断<br>"
+        h += "<strong>仓位公式：</strong>宏观熊市(STRESS/CURDLE) = 10% | 中性 = 40% | 宏观牛市 = 80% → ×风险调整系数"
+        h += "</div>"
+
+    elif strat == "ML_PROB":
+        prob_e = result.get("prob_ensemble", 0)
+        pct = result.get("prob_percentile", 0)
+        models = [
+            {
+                "abbr": "GBR",
+                "name": "Gradient Boosting",
+                "prob": result.get("prob_gbr", 0),
+                "zh_interpret": "主模型 · 18特征 · AUC≈0.60",
+                "backtest": "历史回测 +9.44%",
+                "signal": "偏多" if result.get("prob_gbr", 0) >= 0.5 else ("偏空" if result.get("prob_gbr", 0) < 0.3 else "中性"),
+            },
+            {
+                "abbr": "NN",
+                "name": "Neural Network",
+                "prob": result.get("prob_nn", 0),
+                "zh_interpret": "MLP 128→64→32 · 样本受限(VIX数据仅2024-05后) · AUC=0.509",
+                "backtest": "接近随机（训练样本281个）",
+                "signal": "⚠️ 样本不足" if result.get("prob_nn", 0) > 0.9 else ("偏多" if result.get("prob_nn", 0) >= 0.5 else "偏空"),
+            },
+            {
+                "abbr": "LR",
+                "name": "Logistic Regression",
+                "prob": result.get("prob_lr", 0),
+                "zh_interpret": "28特征(含VIX+DXY) · AUC=0.721",
+                "backtest": "历史回测 +18.95%",
+                "signal": "偏多" if result.get("prob_lr", 0) >= 0.5 else ("偏空" if result.get("prob_lr", 0) < 0.3 else "中性"),
+            },
+        ]
+        h += "<div class='mb-3'><h5 style='font-size:.875rem;font-weight:700;margin-bottom:10px'>🤖 各模型输出详情</h5></div>"
+        for m in models:
+            prob_pct = m["prob"] * 100
+            if m["abbr"] == "GBR":
+                bar_c = "#2fb344" if m["prob"] >= 0.5 else ("#d63939" if m["prob"] < 0.3 else "#f59f00")
+            elif m["abbr"] == "NN":
+                bar_c = "#f59f00"
+            else:
+                bar_c = "#2fb344" if m["prob"] >= 0.5 else ("#d63939" if m["prob"] < 0.3 else "#f59f00")
+            h += "<div class='card mb-2' style='border-left:3px solid " + bar_c + "'>"
+            h += "<div class='card-body py-2 px-3'>"
+            h += "<div class='d-flex align-items-center justify-content-between mb-2'>"
+            h += "<div><span style='font-weight:700;font-size:.875rem;color:var(--tblr-body-color)'>" + m["abbr"] + "</span>"
+            h += "<span style='font-size:.75rem;color:var(--tblr-text-secondary);margin-left:8px'>" + m["name"] + "</span></div>"
+            h += "<div style='font-size:1.1rem;font-weight:800;color:" + bar_c + "'>" + "{:.1f}%".format(prob_pct) + "</div>"
+            h += "</div>"
+            h += "<div class='progress' style='height:6px;margin-bottom:8px'>"
+            h += "<div class='progress-bar' style='background:" + bar_c + ";width:" + "{:.0f}%".format(prob_pct) + "'></div>"
+            h += "</div>"
+            h += "<div style='font-size:.75rem;color:var(--tblr-text-secondary);line-height:1.5'>"
+            h += m["zh_interpret"] + " · " + m["backtest"]
+            h += "</div>"
+            h += "</div></div>"
+        # Ensemble summary
+        h += "<div class='alert alert-dark mb-0' style='font-size:.8rem'>"
+        h += "<strong>Ensemble：</strong>avg(GBR, NN, LR) = " + "{:.1%}".format(prob_e) + " | <strong>历史分位数：</strong>第 " + "{:.0f}%%".format(pct) + " 百分位 | <strong>风险评分：</strong>" + str(risk_val) + "/10"
+        h += "</div>"
+        h += "<div style='font-size:.75rem;color:var(--tblr-text-secondary);margin-top:6px'>"
+        h += "<strong>仓位公式：</strong>Ensemble概率 × max(0.2, 1 - RiskScore × 0.15) × 100% = " + "{:.1f}%%".format(exposure)
+        h += "</div>"
+
+    else:  # AGENTS
+        bb = result.get("bull_bear_score", 0)
+        decision = result.get("decision", "N/A")
+        bull_c = result.get("bull_count", 0)
+        bear_c = result.get("bear_count", 0)
+        dec_map_d = {"BUY": "买入", "SELL": "卖出", "HOLD": "观望", "NO_POSITION": "空仓"}
+        h += "<div class='mb-0'><h5 style='font-size:.875rem;font-weight:700;margin-bottom:8px'>🧠 Agent 辩论机制</h5>"
+        h += "<div class='row mb-2'>"
+        for lbl, val, c in [
+            ("正方论点总数", bull_c, "#2fb344"),
+            ("反方论点总数", bear_c, "#d63939"),
+            ("多空得分", "{:.3f}".format(bb), "#2fb344" if bb > 0 else "#d63939"),
+        ]:
+            h += "<div class='col-4'>"
+            h += "<div class='card' style='background:var(--tblr-bg-surface)'>"
+            h += "<div class='card-body py-2 text-center'>"
+            h += "<div style='font-size:.65rem;color:var(--tblr-text-secondary);text-transform:uppercase'>" + lbl + "</div>"
+            h += "<div style='font-size:1.1rem;font-weight:800;color:" + c + "'>" + str(val) + "</div>"
+            h += "</div></div></div>"
+        h += "</div>"
+        h += "<div style='font-size:.8rem;color:var(--tblr-text-secondary);line-height:1.6'>"
+        h += "<strong>决策流程：</strong>Market Analyst → 基本面研究 → 正方研究员 vs 反方研究员 → 风险辩论 → 研究经理 → 交易员决策<br>"
+        h += "<strong>多头得分 = </strong>正方论点数 / (正方+反方) × 2 - 1 | 正方 > 反方 → 得分 &gt; 0<br>"
+        h += "<strong>最终决策：</strong>HOLD (得分在 [-0.3, 0.3] 区间) → 0% 仓位 | BUY/SELL → 对应方向"
+        h += "</div></div>"
+
+    h += "</div></div>"
+    h += "</div></div>"
+    return h
+
+
+def _build_tabler_indicators_table(v, changes):
+    """Build indicators table using Tabler CSS."""
+    indicators = [
+        ("SPY_CLOSE", "SPY 收盘价", "{:.2f}", None),
+        ("SPY_EMA20", "EMA20", "{:.2f}", None),
+        ("SPY_SMA50", "SMA50", "{:.2f}", None),
+        ("SPY_SMA200", "SMA200", "{:.2f}", None),
+        ("SPY_RSI14", "RSI(14)", "{:.1f}", None),
+        ("VIX", "VIX", "{:.2f}", None),
+        ("SPY_ATR", "ATR", "{:.2f}", None),
+        ("SPY_BOLL_UPPER", "BB上轨", "{:.2f}", None),
+        ("SPY_BOLL_LOWER", "BB下轨", "{:.2f}", None),
+        ("NYAD", "NYAD", "{:.0f}", None),
+        ("QQQ_CLOSE", "QQQ 收盘", "{:.2f}", None),
+        ("QQQ_RSI14", "QQQ RSI", "{:.1f}", None),
+    ]
+
+    rows = ""
+    for key, lbl, fmt, _ in indicators:
+        val = v.get(key)
+        chg = changes.get(key) if changes else None
+        val_str = fmt.format(val) if val is not None else "N/A"
+        chg_str = ""
+        if chg is not None and chg != 0:
+            chg_c = "#2fb344" if chg > 0 else "#d63939"
+            chg_str = "<span style='color:" + chg_c + "'>{:+.1f}</span>".format(chg)
+        rows += "<tr><td style='color:var(--tblr-text-secondary);font-size:.8rem'>" + lbl + "</td>"
+        rows += "<td style='font-weight:700'>" + val_str + "</td>"
+        rows += "<td style='font-size:.875rem'>" + chg_str + "</td></tr>"
+
+    h = "<div class='card mb-4'>"
+    h += "<div class='card-header'><h3 class='card-title'>SPY 关键指标</h3></div>"
+    h += "<div class='table-responsive'><table class='table table-vcenter'>"
+    h += "<thead><tr><th style='width:40%'>指标</th><th style='width:30%'>当前值</th><th style='width:30%'>日变化</th></tr></thead>"
+    h += "<tbody>" + rows + "</tbody>"
+    h += "</table></div></div>\n"
+    return h
+
+
+def generate_html(result):
+    """P2 择时层报告 - Tabler 多页面版本，左侧导航"""
+    trade_date = result["trade_date"]
+    rA = result["strategy_A"]; rB = result["strategy_B"]
+    rC = result["strategy_C"]; rD = result["strategy_D"]
+    comb = result["combined"]; v = result["variables"]
+    now = datetime.now().strftime("%Y-%m-%d %H:%M")
+    sr = compute_support_resistance(trade_date, v)
+    changes = compute_indicator_changes(trade_date, v)
+    state_label, state_color, state_desc = _judge_market_state(v)
+    shift_signals = _judge_shift_signal(v)
+    state5d = _compute_5d_state(trade_date, v)
+    diag = result.get("diagnostic", {})
+    spy = v.get("SPY_CLOSE", 0)
+    spy_f = "{:.2f}".format(spy) if spy else "N/A"
+    spy_rsi = v.get("SPY_RSI14")
+    regime = comb.get("regime", "NEUTRAL")
+    position = comb.get("exposure", 0) or 0
+    confidence = comb.get("confidence", 0) * 100
+    suppressed = comb.get("suppressed", False)
+    out_dir = Path(__file__).parent / "layout"
+    out_dir.mkdir(exist_ok=True)
+    reg_colors_map = {
+        "BULL_TREND":"#2fb344","EXPANSION":"#2fb344","RECOVERY":"#2fb344","LOW_RISK":"#2fb344",
+        "RISK_OFF":"#d63939","CURDLE":"#f76707","STRESS":"#d63939","HIGH_RISK":"#ff5250",
+        "NEUTRAL":"#6b7280","CAUTION":"#f59f00",
+    }
+    reg_names_map = {
+        "BULL_TREND":"🐂 牛市","EXPANSION":"📈 扩张","RECOVERY":"🔄 复苏","LOW_RISK":"🟢 低风险",
+        "RISK_OFF":"🐻 熊市","CURDLE":"⚠️ 凝固","STRESS":"🚨 压力","HIGH_RISK":"🔴 高风险",
+        "NEUTRAL":"⚖️ 中性","CAUTION":"⚡ 谨慎",
+    }
+    rc = reg_colors_map.get(regime, "#6b7280")
+    rn = reg_names_map.get(regime, regime)
+    pos_c = "#2fb344" if position >= 10 else ("#d63939" if position < 3 else "#f59f00")
+
+    def page_head():
+        h = ""
+        h += "<!DOCTYPE html>\n<html lang='zh-CN' data-bs-theme='dark'>\n<head>\n"
+        h += "<meta charset='UTF-8'>\n<meta name='viewport' content='width=device-width,initial-scale=1'>\n"
+        h += "<title>P2 择时层 · " + trade_date + " · 美股投资洞察分析</title>\n"
+        h += "<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@tabler/core@1.2.0/dist/css/tabler.min.css'>\n"
+        h += "<style>\n"
+        h += "body{background:var(--tblr-body-bg);color:var(--tblr-body-color)}\n"
+        h += ".kpi-value{font-size:2rem!important;font-weight:800!important}\n"
+        h += ".shift-badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.75rem;margin:2px}\n"
+        h += ".state-dot{width:10px;height:10px;border-radius:50%;display:inline-block}\n"
+        h += ".page-content{flex:1;min-width:0;max-width:1400px}\n"
+        h += ".page-sidebar{width:200px;min-width:200px;background:var(--tblr-card-bg);border-right:1px solid var(--tblr-border-color);min-height:calc(100vh - 70px)}\n"
+        h += ".nav-vertical .nav-link:hover{background:rgba(255,255,255,0.05);color:var(--tblr-body-color)}\n"
+        h += ".nav-vertical .nav-link.active{background:rgba(6,111,209,0.15);color:var(--tblr-primary);font-weight:600}\n"
+        h += ".navbar{background:linear-gradient(135deg,#066fd1,#04293a)}\n"
+        h += "</style>\n</head>\n<body>\n"
+        return h
+
+    def navbar():
+        h = ""
+        h += "<div class='navbar'>"
+        h += "<div class='container-xl'>"
+        h += "<div class='d-flex align-items-center justify-content-between py-3'>"
+        h += "<div class='d-flex align-items-center gap-2'>"
+        h += "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' style='color:#fff'><polyline points='22 12 18 12 15 21 9 3 6 12 2 12'/></svg>"
+        h += "<span class='navbar-brand mb-0 me-0' style='font-size:1.1rem;font-weight:700;color:#fff'>美股投资洞察分析</span>"
+        h += "</div>"
+        h += "<div class='d-flex gap-2'>"
+        h += "<span class='badge' style='background:rgba(255,255,255,0.15);color:#fff'>📅 " + trade_date + "</span>"
+        h += "<span class='badge bg-danger'>P2 择时层</span>"
+        h += "</div></div></div></div>\n"
+        return h
+
+    def sidebar_nav(active_page):
+        pages = [
+            ("index", "📋", "首页结论"),
+            ("strategy_a", "📈", "策略A 动量"),
+            ("strategy_b", "🌐", "策略B 宏观"),
+            ("strategy_c", "🤖", "策略C ML"),
+            ("strategy_d", "🧠", "策略D Agent"),
+            ("indicators", "📊", "关键指标"),
+        ]
+        prefix = "p2_" + trade_date + "_"
+        h = "<div class='page-sidebar'>"
+        h += "<div class='py-3 px-3'>"
+        h += "<div style='font-size:.65rem;text-transform:uppercase;letter-spacing:.5px;color:var(--tblr-text-secondary);margin-bottom:8px;font-weight:700'>导航菜单</div>"
+        h += "<nav class='nav nav-vertical'>"
+        for pid, icon, pname in pages:
+            active = " active" if pid == active_page else ""
+            fname = prefix + pid + ".html"
+            h += "<a class='nav-link" + active + "' href='" + fname + "' style='border-radius:6px;padding:.6rem .75rem;margin-bottom:2px;font-size:.875rem;color:var(--tblr-text-secondary)'>"
+            h += "<span style='margin-right:8px'>" + icon + "</span>" + pname
+            h += "</a>"
+        h += "</nav></div></div>\n"
+        return h
+
+    def page_footer():
+        h = "<footer style='border-top:1px solid var(--tblr-border-color);padding:16px 0;margin-top:2rem'>"
+        h += "<div class='container-xl'><div class='text-secondary' style='font-size:.7rem'>"
+        h += "美股投资洞察分析 · P2 择时层 · " + trade_date + " | 生成时间 " + now
+        h += "</div></div></footer>\n"
+        return h
+
+    def kpi_cards():
+        kpi_items = [
+            ("最终仓位", "{:.1f}%%".format(position), pos_c, "目标80% · 置信 {:.0f}%%".format(confidence)),
+            ("市场状态", rn, rc, (state_desc or "")[:40]),
+            ("SPY 收盘", spy_f, "#066fd1", "RSI(14): {:.1f}".format(spy_rsi or 0)),
+            ("置信度", "{:.0f}%%".format(confidence), "#ae3ec9",
+             "C被压制" if suppressed else ("策略分歧" if diag.get("divergence") else "四策略无分歧")),
+        ]
+        kpi_html = ""
+        for lbl, val, col, sub in kpi_items:
+            kpi_html += "<div class='col-12 col-md-6 col-xl-3'>"
+            kpi_html += "<div class='card'>"
+            kpi_html += "<div class='card-body text-center py-3'>"
+            kpi_html += "<p class='text-secondary mb-1' style='font-size:.7rem;text-transform:uppercase;letter-spacing:.5px'>" + _esc(lbl) + "</p>"
+            kpi_html += "<p class='kpi-value mb-1' style='color:" + col + "'>" + _esc(val) + "</p>"
+            kpi_html += "<p class='text-secondary mb-0' style='font-size:.7rem'>" + _esc(sub) + "</p>"
+            kpi_html += "</div></div></div>\n"
+        return "<div class='row row-cards mb-4'>" + kpi_html + "</div>\n"
+
+    def market_status_hero():
+        state5d_html = ""
+        for d, s, regime_s in state5d:
+            dot_c = _state_color(s)[0]
+            emoji = "🐂" if "牛" in s or "多" in s else ("🐻" if "熊" in s else "⚖️")
+            state5d_html += "<div class='col text-center'>"
+            state5d_html += "<p class='mb-1' style='font-size:.7rem;color:var(--tblr-text-secondary)'>" + _esc(d) + "</p>"
+            state5d_html += "<div class='state-dot' style='background:" + dot_c + ";margin:0 auto 6px;border:2px solid #0f1117'></div>"
+            state5d_html += "<p class='mb-0' style='font-size:1.1rem;font-weight:800;color:" + dot_c + "'>" + emoji + "</p>"
+            state5d_html += "<p class='mb-0' style='font-size:.65rem;color:var(--tblr-text-secondary)'>" + _esc(regime_s) + "</p></div>"
+
+        shift_html = ""
+        for tag, desc_s in shift_signals:
+            tc = "#d63939" if "🔴" in tag else ("#f59f00" if "🟠" in tag else "#6b7280")
+            shift_html += "<span class='shift-badge' style='background:rgba(" + tc[1:] + ",0.15);color:" + tc + "'>" + _esc(tag) + "</span> "
+            shift_html += "<span style='font-size:.8rem;color:var(--tblr-text-secondary)'>" + _esc(desc_s) + "</span><br>"
+
+        spy_prices_html = ""
+        for lbl, val in [("EMA20","{:.2f}".format(v.get("SPY_EMA20") or 0)),
+            ("SMA50","{:.2f}".format(v.get("SPY_SMA50") or 0)),
+            ("SMA200","{:.2f}".format(v.get("SPY_SMA200") or 0)),
+            ("RSI(14)","{:.1f}".format(spy_rsi or 0))]:
+            spy_prices_html += "<div class='col-6 col-md-3'>"
+            spy_prices_html += "<div class='card' style='background:var(--tblr-bg-surface)'>"
+            spy_prices_html += "<div class='card-body py-2 px-2 text-center'>"
+            spy_prices_html += "<div style='font-size:.65rem;color:var(--tblr-text-secondary);text-transform:uppercase;margin-bottom:4px'>" + lbl + "</div>"
+            spy_prices_html += "<div style='font-size:1rem;font-weight:800'>" + val + "</div>"
+            spy_prices_html += "</div></div></div>"
+
+        h = "<div class='card mb-4'>"
+        h += "<div class='card-header' style='background:rgba(6,111,209,0.12)'>"
+        h += "<div class='d-flex align-items-center justify-content-between flex-wrap gap-2'>"
+        h += "<div><h2 class='card-title mb-1' style='color:" + state_color + "'>" + _esc(state_label) + "</h2>"
+        h += "<div style='font-size:.8rem;color:var(--tblr-text-secondary)'>" + _esc(state_desc or "") + "</div></div>"
+        h += "<div style='font-size:1.75rem;font-weight:800;color:#fff'>" + spy_f + "</div>"
+        h += "</div></div>"
+        h += "<div class='card-body'>"
+        h += "<div class='mb-4'><div style='font-size:.7rem;color:var(--tblr-text-secondary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px'>近5日市场状态</div>"
+        h += "<div class='row text-center'>" + state5d_html + "</div></div>"
+        h += "<div class='mb-3'><div style='font-size:.7rem;color:var(--tblr-text-secondary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px'>SPY 关键价格</div>"
+        h += "<div class='row g-2'>" + spy_prices_html + "</div></div>"
+        h += "<div><div style='font-size:.7rem;color:var(--tblr-text-secondary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px'>🚨 变盘信号 (" + str(len(shift_signals)) + "项)</div>"
+        h += "<div>" + shift_html + "</div></div></div></div>\n"
+        return h
+
+    def support_resistance():
+        def _pct_bar(level):
+            if not level or not spy: return 15
+            return max(10, min(90, 100 - abs(spy - level) / spy * 100))
+
+        sup_list = []; res_list = []
+        for i in range(1, 4):
+            lv = sr.get("sup{}".format(i)); ln = sr.get("sup{}_name".format(i))
+            ld = sr.get("sup{}_dist".format(i)); lp = sr.get("sup{}_prob".format(i))
+            rv = sr.get("res{}".format(i)); rn2 = sr.get("res{}_name".format(i))
+            rd = sr.get("res{}_dist".format(i)); rp = sr.get("res{}_prob".format(i))
+            if lv:
+                w = _pct_bar(lv)
+                sup_list.append(
+                    "<div class='card mb-2' style='background:var(--tblr-bg-surface)'>"
+                    "<div class='card-body py-2 px-3'>"
+                    "<div style='font-size:.7rem;color:var(--tblr-text-secondary);margin-bottom:4px'>支撑{} · {}</div>".format(i, _esc(ln)) +
+                    "<div style='font-size:1.25rem;font-weight:800;color:#2fb344;margin-bottom:2px'>{:.2f}</div>".format(lv) +
+                    "<div style='font-size:.7rem;color:var(--tblr-text-secondary);margin-bottom:6px'>距当前 " + _esc(ld) + "</div>"
+                    "<div class='progress mb-1' style='height:4px'><div class='progress-bar' style='background:#2fb344;width:{:.1f}%'></div></div>".format(w) +
+                    "<div style='font-size:.7rem;color:var(--tblr-text-secondary)'>维持概率: {:.1f}%</div>".format(lp or 0) +
+                    "</div></div>"
+                )
+            if rv:
+                w = _pct_bar(rv)
+                res_list.append(
+                    "<div class='card mb-2' style='background:var(--tblr-bg-surface)'>"
+                    "<div class='card-body py-2 px-3'>"
+                    "<div style='font-size:.7rem;color:var(--tblr-text-secondary);margin-bottom:4px'>压力{} · {}</div>".format(i, _esc(rn2)) +
+                    "<div style='font-size:1.25rem;font-weight:800;color:#d63939;margin-bottom:2px'>{:.2f}</div>".format(rv) +
+                    "<div style='font-size:.7rem;color:var(--tblr-text-secondary);margin-bottom:6px'>距当前 " + _esc(rd) + "</div>"
+                    "<div class='progress mb-1' style='height:4px'><div class='progress-bar' style='background:#d63939;width:{:.1f}%'></div></div>".format(w) +
+                    "<div style='font-size:.7rem;color:var(--tblr-text-secondary)'>突破概率: {:.1f}%</div>".format(rp or 0) +
+                    "</div></div>"
+                )
+
+        sup_html = "".join(sup_list) if sup_list else "<div class='text-secondary' style='font-size:.85rem'>暂无有效支撑</div>"
+        res_html = "".join(res_list) if res_list else "<div class='text-secondary' style='font-size:.85rem'>暂无有效压力</div>"
+        vol_note = "低波动" if sr.get("atr_pct",99) < 1.5 else ("中波动" if sr.get("atr_pct",99) < 2.5 else "高波动")
+
+        h = "<div class='card mb-4'>"
+        h += "<div class='card-header'><h3 class='card-title'>SPY 支撑 / 压力位</h3>"
+        h += "<p class='card-subtitle text-secondary' style='font-size:.8rem'>支撑=现价之下 · 压力=现价之上</p></div>"
+        h += "<div class='table-responsive'><table class='table table-vcenter mb-0'>"
+        h += "<thead><tr><th style='width:35%'>▼ 支撑位</th><th style='width:30%;text-align:center'>当前价格</th><th style='width:35%'>▲ 压力位</th></tr></thead>"
+        h += "<tbody><tr><td>" + sup_html + "</td>"
+        h += "<td class='text-center'>"
+        h += "<div class='fw-bold' style='font-size:1.375rem'>" + spy_f + "</div>"
+        h += "<div style='font-size:.7rem;color:var(--tblr-text-secondary)'>SPY 收盘价</div>"
+        h += "<div style='font-size:.7rem;color:var(--tblr-text-secondary);margin-top:4px'>ATR/价格: {}% · ".format(sr.get("atr_pct","—")) + vol_note + "</div>"
+        h += "</td><td>" + res_html + "</td></tr></tbody>"
+        h += "</table></div>"
+        h += "<div class='card-footer text-secondary' style='font-size:.7rem'>方法：标准Pivot · Fibonacci回撤 · Bollinger Bands · VWAP · 20日高低 | 波动率调整已计入概率</div>"
+        h += "</div>\n"
+        return h
+
+    def combined_conclusion():
+        weight_bars = ""
+        for lbl, pct, col in [("📈 动量A",rA.get("target_exposure",0)*100,"#066fd1"),
+            ("🌐 宏观B",rB.get("target_exposure",0)*100,"#ae3ec9"),
+            ("🤖 MLC",rC.get("target_exposure",0)*100,"#17a2b8"),
+            ("🧠 AgentD",rD.get("target_exposure",0)*100,"#f76707")]:
+            pct_c = min(100, max(0, pct))
+            weight_bars += "<div class='d-flex align-items-center mb-1' style='font-size:.8rem'>"
+            weight_bars += "<div style='width:60px;color:var(--tblr-text-secondary)'>" + lbl + "</div>"
+            weight_bars += "<div class='progress flex-fill me-2' style='height:5px;background:var(--tblr-bg-surface-secondary)'>"
+            weight_bars += "<div class='progress-bar' style='background:" + col + ";width:{:.1f}%'></div></div>".format(pct_c)
+            weight_bars += "<div style='width:45px;text-align:right;font-size:.8rem'>{:.1f}%</div></div>".format(pct)
+
+        supp_html = "<div class='alert alert-warning mb-3'><strong>⚠️ ML策略C被压制</strong>：与A/B/D方向冲突，仓位降至50%</div>" if suppressed else ""
+        div_html = ""
+        if diag.get("divergence"):
+            div_html = "<div class='alert alert-warning mb-3'><strong>⚠️ 策略分歧</strong><br>" + "<br>".join(_esc(r) for r in diag.get("reasons",[])) + "</div>"
+        sig_str = "强" if confidence >= 70 else ("中" if confidence >= 40 else "弱")
+        intp_text = comb.get("interpretation","") or "数据不足"
+
+        h = "<div class='card mb-4'>"
+        h += "<div class='card-header'><h3 class='card-title'>综合结论</h3>"
+        h += "<p class='card-subtitle text-secondary' style='font-size:.8rem'>四策略并行 · 动态加权</p></div>"
+        h += "<div class='card-body'>"
+        h += "<div class='row mb-3'>"
+        for lbl, val, col in [("最终仓位","{:.1f}%%".format(position), pos_c),
+            ("置信度","{:.0f}%%".format(confidence), "#6b7280"),
+            ("市场状态", rn, rc),
+            ("信号强度", sig_str, "#6b7280")]:
+            h += "<div class='col-6 col-md-3 mb-2'>"
+            h += "<div class='card' style='background:var(--tblr-bg-surface)'>"
+            h += "<div class='card-body py-2 px-2 text-center'>"
+            h += "<div style='font-size:.65rem;color:var(--tblr-text-secondary);text-transform:uppercase;margin-bottom:4px'>" + lbl + "</div>"
+            h += "<div style='font-size:1.375rem;font-weight:800;color:" + col + "'>" + val + "</div>"
+            h += "</div></div></div>"
+        h += "</div>"
+        h += "<div class='mb-3'>"
+        h += "<div style='font-size:.7rem;color:var(--tblr-text-secondary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px'>四策略仓位</div>"
+        h += weight_bars
+        h += "</div>"
+        h += supp_html + div_html
+        h += "<div class='card' style='background:var(--tblr-bg-surface)'>"
+        h += "<div class='card-body'>"
+        h += "<div style='font-size:.65rem;color:var(--tblr-text-secondary);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px'>综合解读</div>"
+        h += "<div style='font-size:.875rem;line-height:1.7'>" + _esc(intp_text) + "</div>"
+        h += "</div></div>"
+        h += "</div></div>\n"
+        return h
+
+    # ── Page builders ──────────────────────────────────────────────
+    def build_index():
+        h = page_head() + navbar() + "<div class='d-flex'>" + sidebar_nav('index') + "<div class='page-content py-4 px-3'>\n"
+        h += kpi_cards()
+        h += market_status_hero()
+        h += support_resistance()
+        h += combined_conclusion()
+        h += "</div></div>\n" + page_footer() + "</body></html>\n"
+        return h
+
+    def build_strategy_page(page_id, title, r, accent_color):
+        h = page_head() + navbar() + "<div class='d-flex'>" + sidebar_nav(page_id) + "<div class='page-content py-4 px-3'>\n"
+        h += _build_tabler_strategy_card(title, r, accent_color, "#0f1a1a", v)
+        h += "</div></div>\n" + page_footer() + "</body></html>\n"
+        return h
+
+    def build_indicators():
+        h = page_head() + navbar() + "<div class='d-flex'>" + sidebar_nav('indicators') + "<div class='page-content py-4 px-3'>\n"
+        h += _build_tabler_indicators_table(v, changes)
+        rf = REGIME_FAMILY
+        bull_list = " · ".join(k for k,info in rf.items() if info["family"]=="偏多")
+        bear_list = " · ".join(k for k,info in rf.items() if info["family"]=="防御")
+        neut_list = " · ".join(k for k,info in rf.items() if info["family"]=="中性")
+        regime_rows = ""
+        for r, info in rf.items():
+            c = _regime_color(r)[0]
+            regime_rows += "<tr><td><span class='badge me-1' style='background:" + c + ";color:#fff;font-size:.7rem'>" + _esc(r) + "</span></td>"
+            regime_rows += "<td style='color:" + c + "'>" + _esc(info["family"]) + "</td><td>" + _esc(info["desc"]) + "</td><td>" + _esc(info["action"]) + "</td></tr>"
+        h += "<div class='card mb-4'>"
+        h += "<div class='card-header'><h3 class='card-title'>Regime 判定体系(" + str(len(rf)) + "种)</h3></div>"
+        h += "<div class='card-body p-0'>"
+        h += "<div style='background:var(--tblr-bg-surface-secondary);border-radius:6px;margin:12px;padding:10px 12px;font-size:.75rem'>"
+        h += "<span style='color:#2fb344;font-weight:700'>偏多系：</span>" + bull_list + " · "
+        h += "<span style='color:#d63939;font-weight:700'>防御系：</span>" + bear_list + " · "
+        h += "<span style='color:#6b7280;font-weight:700'>中性系：</span>" + neut_list
+        h += "</div>"
+        h += "<div class='table-responsive'><table class='table table-vcenter mb-0'>"
+        h += "<thead><tr><th>Regime</th><th>分类</th><th>含义</th><th>建议动作</th></tr></thead>"
+        h += "<tbody>" + regime_rows + "</tbody>"
+        h += "</table></div></div></div>\n"
+        h += "</div></div>\n" + page_footer() + "</body></html>\n"
+        return h
+
+    # ── Write all pages ──────────────────────────────────────────────
+    pages = {
+        "index": build_index(),
+        "strategy_a": build_strategy_page("strategy_a", "📈 策略A · 动量趋势", rA, "#066fd1"),
+        "strategy_b": build_strategy_page("strategy_b", "🌐 策略B · 宏观择时", rB, "#ae3ec9"),
+        "strategy_c": build_strategy_page("strategy_c", "🤖 策略C · ML概率", rC, "#17a2b8"),
+        "strategy_d": build_strategy_page("strategy_d", "🧠 策略D · Agents辩论", rD, "#f76707"),
+        "indicators": build_indicators(),
+    }
+
+    for fname, content_html in pages.items():
+        out_path = out_dir / ("p2_" + trade_date + "_" + fname + ".html")
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(content_html)
+        print("Generated: " + str(out_path))
+
+    return out_dir / ("p2_" + trade_date + "_index.html")
+
+
+if __name__ == "__main__":
+    from p2_master_dispatcher import run
+    import sys
+    td = sys.argv[1] if len(sys.argv) > 1 else "2026-05-15"
+    result = run(td, output_html=False, verbose=False)
+    path = generate_html(result)
+    print("HTML: " + str(path))

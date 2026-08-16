@@ -1,0 +1,104 @@
+{
+  "date": "2026-05-13",
+  "is_healthy": false,
+  "signal": "WARNING",
+  "checks": {
+    "volume_pullback": {
+      "ok": false,
+      "recent_vol_avg": 50054660,
+      "prior_vol_avg": 48206740,
+      "vol_ratio": 1.04,
+      "price_pullback": 0.2,
+      "reason": "量能104%>前量 或 回撤0.2%>15%"
+    },
+    "breadth_ok": {
+      "ok": true,
+      "above_sma20": 0.6489,
+      "threshold": 0.55,
+      "reason": "Breadth健康"
+    },
+    "vix_ok": {
+      "ok": true,
+      "vix": 18.38,
+      "threshold": 25.0,
+      "reason": "VIX=18.4 < 25.0"
+    },
+    "leaders_ok": {
+      "ok": true,
+      "leaders": {
+        "NVDA": {
+          "ok": true,
+          "reason": "结构健康",
+          "last_close": 220.78,
+          "ema20": 204.96,
+          "vol_ratio": 1.0,
+          "last_date": "2026-05-12"
+        },
+        "MSFT": {
+          "ok": true,
+          "reason": "结构健康",
+          "last_close": 407.77,
+          "ema20": 411.42,
+          "vol_ratio": 1.1,
+          "last_date": "2026-05-12"
+        },
+        "AAPL": {
+          "ok": true,
+          "reason": "结构健康",
+          "last_close": 294.8,
+          "ema20": 278.36,
+          "vol_ratio": 0.9,
+          "last_date": "2026-05-12"
+        }
+      }
+    },
+    "money_return": {
+      "ok": true,
+      "spys": {
+        "ok": true,
+        "reason": "未发生回踩（持续在EMA20上方）",
+        "ema20_current": 716.85,
+        "price_current": 738.18,
+        "days_to_return": 0,
+        "pullback_depth": 0.0,
+        "current_above_ema": true
+      },
+      "qqqs": {
+        "ok": true,
+        "reason": "未发生回踩（持续在EMA20上方）",
+        "ema20_current": 670.92,
+        "price_current": 707.24,
+        "days_to_return": 0,
+        "pullback_depth": 0.0,
+        "current_above_ema": true
+      },
+      "reason": "SPY+QQQ至少一个回流成功"
+    }
+  },
+  "leaders": {
+    "NVDA": {
+      "ok": true,
+      "reason": "结构健康",
+      "last_close": 220.78,
+      "ema20": 204.96,
+      "vol_ratio": 1.0,
+      "last_date": "2026-05-12"
+    },
+    "MSFT": {
+      "ok": true,
+      "reason": "结构健康",
+      "last_close": 407.77,
+      "ema20": 411.42,
+      "vol_ratio": 1.1,
+      "last_date": "2026-05-12"
+    },
+    "AAPL": {
+      "ok": true,
+      "reason": "结构健康",
+      "last_close": 294.8,
+      "ema20": 278.36,
+      "vol_ratio": 0.9,
+      "last_date": "2026-05-12"
+    }
+  }
+}

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PingFang+SC:wght@400;500;600&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { width: 1600px; height: 3000px; background: #0d1117; overflow: hidden; font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+</style>
+</head><body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 3000" width="1600" height="3000">
+<defs>
+  <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#6e7681"/>
+  </marker>
+  <marker id="arr-blue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#388bfd"/>
+  </marker>
+  <marker id="arr-green" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#3fb950"/>
+  </marker>
+  <marker id="arr-purple" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#a371f7"/>
+  </marker>
+  <marker id="arr-yellow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#d29922"/>
+  </marker>
+  <marker id="arr-red" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <path d="M0,0 L8,3 L0,6 Z" fill="#f85149"/>
+  </marker>
+  <filter id="shadow" x="-3%" y="-3%" width="106%" height="106%">
+    <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+  </filter>
+  <filter id="shadow-sm" x="-3%" y="-3%" width="106%" height="106%">
+    <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+  </filter>
+</defs>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- TITLE -->
+<!-- ═══════════════════════════════════════════════ -->
+<rect x="0" y="0" width="1600" height="80" fill="#161b22"/>
+<text x="800" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#58a6ff">AI量化投资体系 v3</text>
+<text x="800" y="60" text-anchor="middle" font-size="12" fill="#6e7681">P1数据 → P2择时 → P3择势 → P4择股 → P5复盘 → P6假设辩论</text>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- LEGEND -->
+<!-- ═══════════════════════════════════════════════ -->
+<rect x="1100" y="95" width="480" height="60" rx="10" fill="#161b22" stroke="#30363d"/>
+<text x="1120" y="118" font-size="10" font-weight="700" fill="#8b949e">图例</text>
+<line x1="1120" y1="132" x2="1160" y2="132" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+<text x="1168" y="136" font-size="10" fill="#8b949e">数据流</text>
+<rect x="1280" y="122" width="12" height="12" rx="3" fill="#388bfd"/>
+<text x="1298" y="133" font-size="10" fill="#8b949e">P1数据</text>
+<rect x="1380" y="122" width="12" height="12" rx="3" fill="#3fb950"/>
+<text x="1398" y="133" font-size="10" fill="#8b949e">P2择时</text>
+<rect x="1470" y="122" width="12" height="12" rx="3" fill="#a371f7"/>
+<text x="1488" y="133" font-size="10" fill="#8b949e">P3择势</text>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- P1 - 数据层 -->
+<!-- ═══════════════════════════════════════════════ -->
+<rect x="30" y="175" width="8" height="50" rx="4" fill="#388bfd"/>
+<text x="50" y="200" font-size="14" font-weight="700" fill="#388bfd">P1 · 数据层</text>
+<text x="50" y="218" font-size="10" fill="#6e7681">数据输入 · 指标计算 · 模型参数</text>
+
+<rect x="50" y="235" width="1480" height="200" rx="14" fill="#0d1b2a" stroke="#388bfd" stroke-width="2" filter="url(#shadow)"/>
+<rect x="50" y="235" width="1480" height="38" rx="14" fill="#1e3a5f"/>
+<rect x="50" y="261" width="1480" height="12" fill="#1e3a5f"/>
+<text x="75" y="258" font-size="13" font-weight="700" fill="#58a6ff">DATA LAYER · 每日17:00自动采集</text>
+
+<!-- 3 data sources -->
+<rect x="70" y="290" width="440" height="130" rx="10" fill="#161b22" stroke="#388bfd44"/>
+<text x="90" y="315" font-size="12" font-weight="700" fill="#58a6ff">📊 市场数据</text>
+<text x="90" y="337" font-size="10" fill="#e6edf3">172只股票日K（Open/High/Low/Close/Volume）</text>
+<text x="90" y="355" font-size="10" fill="#8b949e">2020-01-02 ~ 今日，约1596个交易日</text>
+<text x="90" y="377" font-size="10" fill="#58a6ff">↓ 计算指标</text>
+<text x="90" y="395" font-size="10" fill="#e6edf3">EMA5/10/20/50/200 · RSI(6/14/26)</text>
+<text x="90" y="412" font-size="10" fill="#e6edf3">MACD · Bollinger Bands · ATR · ADX</text>
+
+<rect x="530" y="290" width="440" height="130" rx="10" fill="#161b22" stroke="#388bfd44"/>
+<text x="550" y="315" font-size="12" font-weight="700" fill="#58a6ff">🌐 宏观数据</text>
+<text x="550" y="337" font-size="10" fill="#e6edf3">VIX · DXY · TNX（CDP实时抓取）</text>
+<text x="550" y="355" font-size="10" fill="#8b949e">SPY/QQQ/SOXX 指数价格</text>
+<text x="550" y="377" font-size="10" fill="#58a6ff">↓ 计算指标</text>
+<text x="550" y="395" font-size="10" fill="#e6edf3">VIX趋势 · DXY趋势 · 利率差</text>
+<text x="550" y="412" font-size="10" fill="#e6edf3">广度指标（NYSE上涨/总家数）</text>
+
+<rect x="990" y="290" width="520" height="130" rx="10" fill="#161b22" stroke="#388bfd44"/>
+<text x="1010" y="315" font-size="12" font-weight="700" fill="#58a6ff">📰 新闻与消息</text>
+<text x="1010" y="337" font-size="10" fill="#e6edf3">MinMax实时搜索宏观新闻</text>
+<text x="1010" y="355" font-size="10" fill="#8b949e">Fed讲话 · CPI数据 · 财报季 · 地缘政治</text>
+<text x="1010" y="377" font-size="10" fill="#58a6ff">↓ NLP分析</text>
+<text x="1010" y="395" font-size="10" fill="#e6edf3">情绪评分 · 主题识别 · 事件标签</text>
+<text x="1010" y="412" font-size="10" fill="#e6edf3">市场共识度 · 意外程度</text>
+
+<!-- Output -->
+<rect x="70" y="430" width="320" height="22" rx="11" fill="#388bfd22" stroke="#388bfd44"/>
+<text x="80" y="445" font-size="9" fill="#58a6ff">输出：技术指标库 + 宏观指标 + 事件标签</text>
+
+<!-- Arrow to P2 -->
+<line x1="200" y1="435" x2="200" y2="480" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+<text x="160" y="462" font-size="9" fill="#6e7681">指标输出</text>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- P2 - 择时层 -->
+<!-- ═══════════════════════════════════════════════ -->
+<rect x="30" y="490" width="8" height="50" rx="4" fill="#3fb950"/>
+<text x="50" y="515" font-size="14" font-weight="700" fill="#3fb950">P2 · 择时层</text>
+<text x="50" y="533" font-size="10" fill="#6e7681">大盘状态判断 · 市场情绪 · 趋势强度</text>
+
+<rect x="50" y="550" width="1480" height="290" rx="14" fill="#0d1b2a" stroke="#3fb950" stroke-width="2" filter="url(#shadow)"/>
+<rect x="50" y="550" width="1480" height="38" rx="14" fill="#1a3a1e"/>
+<rect x="50" y="576" width="1480" height="12" fill="#1a3a1e"/>
+<text x="75" y="573" font-size="13" font-weight="700" fill="#3fb950">MARKET TIMING · 判断大盘状态与情绪</text>
+
+<!-- 5 Regime levels -->
+<rect x="70" y="605" width="280" height="65" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="1"/>
+<rect x="70" y="605" width="280" height="22" rx="8" fill="#1a3a1e"/>
+<rect x="70" y="617" width="280" height="10" fill="#1a3a1e"/>
+<text x="88" y="619" font-size="11" font-weight="700" fill="#3fb950">5级Regime判断</text>
+<text x="88" y="642" font-size="10" fill="#e6edf3">大牛市 · 牛市 · 震荡 · 熊市 · 大熊市</text>
+<text x="88" y="660" font-size="9" fill="#8b949e">Score 8-10 · 6-7.9 · 4-5.9 · 2-3.9 · 0-1.9</text>
+
+<!-- Trend signal -->
+<rect x="370" y="605" width="280" height="65" rx="8" fill="#161b22" stroke="#388bfd" stroke-width="1"/>
+<rect x="370" y="605" width="280" height="22" rx="8" fill="#1e3a5f"/>
+<rect x="370" y="617" width="280" height="10" fill="#1e3a5f"/>
+<text x="388" y="619" font-size="11" font-weight="700" fill="#58a6ff">趋势信号</text>
+<text x="388" y="642" font-size="10" fill="#e6edf3">趋势延续 / 趋势加强 / 趋势减弱</text>
+<text x="388" y="660" font-size="9" fill="#8b949e">结合量价背离、波动率变化</text>
+
+<!-- VIX analysis -->
+<rect x="670" y="605" width="280" height="65" rx="8" fill="#161b22" stroke="#a371f7" stroke-width="1"/>
+<rect x="670" y="605" width="280" height="22" rx="8" fill="#2a1a3a"/>
+<rect x="670" y="617" width="280" height="10" fill="#2a1a3a"/>
+<text x="688" y="619" font-size="11" font-weight="700" fill="#a371f7">VIX分析</text>
+<text x="688" y="642" font-size="10" fill="#e6edf3">VIX &lt; 15：低波动牛市</text>
+<text x="688" y="660" font-size="9" fill="#8b949e">VIX > 30：高波动熊市预警</text>
+
+<!-- Breadth -->
+<rect x="970" y="605" width="280" height="65" rx="8" fill="#161b22" stroke="#d29922" stroke-width="1"/>
+<rect x="970" y="605" width="280" height="22" rx="8" fill="#2a2510"/>
+<rect x="970" y="617" width="280" height="10" fill="#2a2510"/>
+<text x="988" y="619" font-size="11" font-weight="700" fill="#d29922">市场广度</text>
+<text x="988" y="642" font-size="10" fill="#e6edf3">广度 > 60%：健康多头</text>
+<text x="988" y="660" font-size="9" fill="#8b949e">广度 &lt; 40%：顶背离预警</text>
+
+<!-- RSI analysis -->
+<rect x="1270" y="605" width="240" height="65" rx="8" fill="#161b22" stroke="#f85149" stroke-width="1"/>
+<rect x="1270" y="605" width="240" height="22" rx="8" fill="#2a0d0d"/>
+<rect x="1270" y="617" width="240" height="10" fill="#2a0d0d"/>
+<text x="1288" y="619" font-size="11" font-weight="700" fill="#f85149">RSI位置</text>
+<text x="1288" y="642" font-size="10" fill="#e6edf3">RSI 40-70：趋势可持续</text>
+<text x="1288" y="660" font-size="9" fill="#8b949e">RSI > 80 / &lt; 30：极端信号</text>
+
+<!-- Regime output display -->
+<rect x="70" y="685" width="1440" height="45" rx="8" fill="#161b22" stroke="#3fb95044"/>
+<text x="90" y="710" font-size="11" font-weight="700" fill="#3fb950">当前判断：</text>
+<rect x="170" y="696" width="200" height="24" rx="12" fill="#388bfd33" stroke="#388bfd66"/>
+<text x="270" y="711" font-size="12" font-weight="700" fill="#58a6ff" text-anchor="middle">🚀 超强牛市</text>
+<text x="400" y="710" font-size="10" fill="#8b949e">Score: 7.0/8</text>
+<rect x="480" y="696" width="160" height="24" rx="12" fill="#3fb95022" stroke="#3fb95044"/>
+<text x="560" y="711" font-size="11" font-weight="600" fill="#3fb950" text-anchor="middle">趋势延续</text>
+<text x="680" y="710" font-size="10" fill="#8b949e">VIX 18.18 ✅ 低波动</text>
+<text x="860" y="710" font-size="10" fill="#8b949e">广度 66.1% ✅ 健康</text>
+<text x="1050" y="710" font-size="10" fill="#8b949e">DXY 97.97 ✅ 弱美元</text>
+<text x="1210" y="710" font-size="10" fill="#8b949e">NVDA +34.6% ✅ 龙头强势</text>
+
+<!-- Output -->
+<rect x="70" y="745" width="380" height="22" rx="11" fill="#3fb95022" stroke="#3fb95044"/>
+<text x="80" y="760" font-size="9" fill="#3fb950">输出：Regime(5级) + 趋势信号 + 情绪指标 → 决定G1/G2/G3权重</text>
+
+<!-- Arrow to P3 -->
+<line x1="200" y1="767" x2="200" y2="810" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+<text x="160" y="792" font-size="9" fill="#6e7681">Regime + 权重</text>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- P3 - 择势层 -->
+<!-- ═══════════════════════════════════════════════ -->
+<rect x="30" y="820" width="8" height="50" rx="4" fill="#a371f7"/>
+<text x="50" y="845" font-size="14" font-weight="700" fill="#a371f7">P3 · 择势层</text>
+<text x="50" y="863" font-size="10" fill="#6e7681">板块强弱判断 · 资金流向 · 轮动信号</text>
+
+<rect x="50" y="880" width="1480" height="320" rx="14" fill="#0d1b2a" stroke="#a371f7" stroke-width="2" filter="url(#shadow)"/>
+<rect x="50" y="880" width="1480" height="38" rx="14" fill="#2a1a3a"/>
+<rect x="50" y="906" width="1480" height="12" fill="#2a1a3a"/>
+<text x="75" y="903" font-size="13" font-weight="700" fill="#a371f7">SECTOR ROTATION · 判断板块强弱与资金轮动</text>
+
+<!-- 7 sectors in 2 rows -->
+<rect x="70" y="935" width="200" height="70" rx="8" fill="#161b22" stroke="#388bfd" stroke-width="2"/>
+<rect x="70" y="935" width="200" height="22" rx="8" fill="#1e3a5f"/>
+<rect x="70" y="947" width="200" height="10" fill="#1e3a5f"/>
+<text x="88" y="949" font-size="11" font-weight="700" fill="#58a6ff">AI / 半导体</text>
+<text x="88" y="972" font-size="10" fill="#e6edf3">SOXX · NVDA · SOXL</text>
+<text x="88" y="990" font-size="10" fill="#3fb950">↑ 强势领涨</text>
+
+<rect x="290" y="935" width="200" height="70" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+<rect x="290" y="935" width="200" height="22" rx="8" fill="#1a3a1e"/>
+<rect x="290" y="947" width="200" height="10" fill="#1a3a1e"/>
+<text x="308" y="949" font-size="11" font-weight="700" fill="#3fb950">加密货币</text>
+<text x="308" y="972" font-size="10" fill="#e6edf3">COIN · IBIT</text>
+<text x="308" y="990" font-size="10" fill="#3fb950">↑ 领涨 +19.8%</text>
+
+<rect x="510" y="935" width="200" height="70" rx="8" fill="#161b22" stroke="#6e7681" stroke-width="2"/>
+<rect x="510" y="935" width="200" height="22" rx="8" fill="#21262d"/>
+<rect x="510" y="947" width="200" height="10" fill="#21262d"/>
+<text x="528" y="949" font-size="11" font-weight="700" fill="#8b949e">金融</text>
+<text x="528" y="972" font-size="10" fill="#e6edf3">XLF</text>
+<text x="528" y="990" font-size="10" fill="#f85149">↓ 落后 -7.7% vs SPY</text>
+
+<rect x="730" y="935" width="200" height="70" rx="8" fill="#161b22" stroke="#6e7681" stroke-width="2"/>
+<rect x="730" y="935" width="200" height="22" rx="8" fill="#21262d"/>
+<rect x="730" y="947" width="200" height="10" fill="#21262d"/>
+<text x="748" y="949" font-size="11" font-weight="700" fill="#8b949e">消费</text>
+<text x="748" y="972" font-size="10" fill="#e6edf3">XLY</text>
+<text x="748" y="990" font-size="10" fill="#d29922">→ 中性 +6.5%</text>
+
+<rect x="950" y="935" width="200" height="70" rx="8" fill="#161b22" stroke="#6e7681" stroke-width="2"/>
+<rect x="950" y="935" width="200" height="22" rx="8" fill="#21262d"/>
+<rect x="950" y="947" width="200" height="10" fill="#21262d"/>
+<text x="968" y="949" font-size="11" font-weight="700" fill="#8b949e">军工</text>
+<text x="968" y="972" font-size="10" fill="#e6edf3">ITA</text>
+<text x="968" y="990" font-size="10" fill="#f85149">↓ 弱势 -2.7%</text>
+
+<rect x="1170" y="935" width="200" height="70" rx="8" fill="#161b22" stroke="#6e7681" stroke-width="2"/>
+<rect x="1170" y="935" width="200" height="22" rx="8" fill="#21262d"/>
+<rect x="1170" y="947" width="200" height="10" fill="#21262d"/>
+<text x="1188" y="949" font-size="11" font-weight="700" fill="#8b949e">能源</text>
+<text x="1188" y="972" font-size="10" fill="#e6edf3">XLE</text>
+<text x="1188" y="990" font-size="10" fill="#8b949e">— 跟随大盘</text>
+
+<rect x="1390" y="935" width="120" height="70" rx="8" fill="#161b22" stroke="#6e7681" stroke-width="2"/>
+<rect x="1390" y="935" width="120" height="22" rx="8" fill="#21262d"/>
+<rect x="1390" y="947" width="120" height="10" fill="#21262d"/>
+<text x="1408" y="949" font-size="11" font-weight="700" fill="#8b949e">医药</text>
+<text x="1408" y="972" font-size="10" fill="#e6edf3">XLV</text>
+<text x="1408" y="990" font-size="10" fill="#f85149">↓ 防御弱</text>
+
+<!-- Rotation signals -->
+<rect x="70" y="1020" width="1440" height="60" rx="8" fill="#161b22" stroke="#a371f744"/>
+<text x="90" y="1042" font-size="11" font-weight="700" fill="#a371f7">轮动信号检测</text>
+<text x="90" y="1062" font-size="10" fill="#e6edf3">💰 资金流入：AI/加密  →  资金流出：金融/军工/医药</text>
+<text x="420" y="1062" font-size="10" fill="#d29922">⚠️ 预警：XLF 持续60日下跌，可能酝酿补涨</text>
+<text x="820" y="1062" font-size="10" fill="#3fb950">✅ 变盘确认：COIN领涨信号持续</text>
+
+<!-- Sector output -->
+<rect x="70" y="1095" width="500" height="22" rx="11" fill="#a371f722" stroke="#a371f744"/>
+<text x="80" y="1110" font-size="9" fill="#a371f7">输出：板块强弱排序 + 资金流向 + 变盘信号 → 决定板块配置权重</text>
+
+<!-- Arrow to P4 -->
+<line x1="200" y1="1117" x2="200" y2="1160" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+<text x="160" y="1142" font-size="9" fill="#6e7681">Regime + 板块</text>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- P4 - 择股层 -->
+<!-- ═══════════════════════════════════════════════ -->
+<rect x="30" y="1170" width="8" height="50" rx="4" fill="#d29922"/>
+<text x="50" y="1195" font-size="14" font-weight="700" fill="#d29922">P4 · 择股层</text>
+<text x="50" y="1213" font-size="10" fill="#6e7681">策略权重分配 · 信号发现 · 候选池输出</text>
+
+<rect x="50" y="1230" width="1480" height="360" rx="14" fill="#0d1b2a" stroke="#d29922" stroke-width="2" filter="url(#shadow)"/>
+<rect x="50" y="1230" width="1480" height="38" rx="14" fill="#2a2510"/>
+<rect x="50" y="1256" width="1480" height="12" fill="#2a2510"/>
+<text x="75" y="1253" font-size="13" font-weight="700" fill="#d29922">STOCK SCREENING · 基于P2+P3判断决定策略权重并筛选个股</text>
+
+<!-- Strategy weight decision -->
+<rect x="70" y="1285" width="600" height="50" rx="8" fill="#161b22" stroke="#d2992244"/>
+<text x="90" y="1308" font-size="11" font-weight="700" fill="#d29922">策略权重决策（基于P2 Regime + P3 板块）</text>
+<text x="90" y="1325" font-size="10" fill="#8b949e">超强牛市：G1=80% G2=10% G3=10%  |  震荡市：G1=20% G2=60% G3=20%</text>
+
+<!-- 3 Strategy cards -->
+<rect x="70" y="1350" width="440" height="110" rx="10" fill="#0d1b2a" stroke="#388bfd" stroke-width="2"/>
+<rect x="70" y="1350" width="440" height="30" rx="10" fill="#1e3a5f"/>
+<rect x="70" y="1368" width="440" height="12" fill="#1e3a5f"/>
+<text x="90" y="1370" font-size="13" font-weight="700" fill="#58a6ff">G1 趋势跟随</text>
+<text x="190" y="1370" font-size="10" fill="#3fb950">EMA多头排列 + RSI 40-70</text>
+<text x="90" y="1400" font-size="10" fill="#e6edf3">条件：EMA20 > EMA50 · RSI 40-70 · MACD>0</text>
+<text x="90" y="1418" font-size="10" fill="#e6edf3">超额收益来源：动量延续 + 趋势加速</text>
+<text x="90" y="1436" font-size="10" fill="#8b949e">输出：L1候选池（76只）→ CDP实时价格验证</text>
+
+<rect x="530" y="1350" width="440" height="110" rx="10" fill="#0d1b2a" stroke="#3fb950" stroke-width="2"/>
+<rect x="530" y="1350" width="440" height="30" rx="10" fill="#1a3a1e"/>
+<rect x="530" y="1368" width="440" height="12" fill="#1a3a1e"/>
+<text x="550" y="1370" font-size="13" font-weight="700" fill="#3fb950">G2 SETUPS 低吸</text>
+<text x="665" y="1370" font-size="10" fill="#d29922">回踩EMA + RSI偏低 + 底背离</text>
+<text x="550" y="1400" font-size="10" fill="#e6edf3">条件：价格回踩EMA · RSI &lt; 45 · 锤子线/底背离</text>
+<text x="550" y="1418" font-size="10" fill="#e6edf3">超额收益来源：均值回归 + 超卖反弹</text>
+<text x="550" y="1436" font-size="10" fill="#8b949e">输出：L2候选池（18只）→ CDP实时价格验证</text>
+
+<rect x="990" y="1350" width="520" height="110" rx="10" fill="#0d1b2a" stroke="#a371f7" stroke-width="2"/>
+<rect x="990" y="1350" width="520" height="30" rx="10" fill="#2a1a3a"/>
+<rect x="990" y="1368" width="520" height="12" fill="#2a1a3a"/>
+<text x="1010" y="1370" font-size="13" font-weight="700" fill="#a371f7">G3 ML 概率过滤</text>
+<text x="1115" y="1370" font-size="10" fill="#a371f7">P_up ≥ 45%（31特征模型）</text>
+<text x="1010" y="1400" font-size="10" fill="#e6edf3">条件：先有G1/G2信号 · P_up ≥ 45% · R/R ≥ 1.5</text>
+<text x="1010" y="1418" font-size="10" fill="#e6edf3">超额收益来源：概率优势 + 赔率优势</text>
+<text x="1010" y="1436" font-size="10" fill="#8b949e">输出：L3候选池（10只）→ 仓位计算（P_up≥60%→$15K）</text>
+
+<!-- Output -->
+<rect x="70" y="1475" width="380" height="22" rx="11" fill="#d2992222" stroke="#d2992244"/>
+<text x="80" y="1490" font-size="9" fill="#d29922">输出：L1/L2/L3/L4分层候选池 → HTML报告</text>
+<rect x="480" y="1475" width="280" height="22" rx="11" fill="#3fb95022" stroke="#3fb95044"/>
+<text x="490" y="1490" font-size="9" fill="#3fb950">动态仓位：P_up≥60%→$15K · ≥50%→$10K · ≥45%→$5K</text>
+
+<!-- Arrow to P5 -->
+<line x1="200" y1="1497" x2="200" y2="1540" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+<text x="160" y="1522" font-size="9" fill="#6e7681">候选池 →</text>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- P5 - 复盘层 -->
+<!-- ═══════════════════════════════════════════════ -->
+<rect x="30" y="1550" width="8" height="50" rx="4" fill="#f85149"/>
+<text x="50" y="1575" font-size="14" font-weight="700" fill="#f85149">P5 · 复盘层</text>
+<text x="50" y="1593" font-size="10" fill="#6e7681">验证昨日信号 · 统计命中率 · 分析假突破</text>
+
+<rect x="50" y="1610" width="1480" height="260" rx="14" fill="#0d1b2a" stroke="#f85149" stroke-width="2" filter="url(#shadow)"/>
+<rect x="50" y="1610" width="1480" height="38" rx="14" fill="#2a0d0d"/>
+<rect x="50" y="1636" width="1480" height="12" fill="#2a0d0d"/>
+<text x="75" y="1633" font-size="13" font-weight="700" fill="#f85149">DAILY REVIEW · 复盘验证与Setup有效性追踪</text>
+
+<!-- 3 modules -->
+<rect x="70" y="1665" width="440" height="180" rx="8" fill="#161b22" stroke="#f8514944"/>
+<text x="90" y="1688" font-size="11" font-weight="700" fill="#f85149">模块1：最强股票追踪</text>
+<text x="90" y="1710" font-size="10" fill="#e6edf3">CDP抓30日K线计算真实动量</text>
+<text x="90" y="1730" font-size="10" fill="#e6edf3">资金类型识别：机构/散户/Short squeeze</text>
+<text x="90" y="1750" font-size="10" fill="#e6edf3">板块归因 + 新闻催化剂</text>
+<text x="90" y="1770" font-size="10" fill="#8b949e">今日最强：SOXL +131.6% 20日动量</text>
+<text x="90" y="1790" font-size="10" fill="#8b949e">IONQ +71.0% 量子计算概念</text>
+<text x="90" y="1810" font-size="10" fill="#8b949e">INTC +100.3% 半导体周期</text>
+
+<rect x="530" y="1665" width="440" height="180" rx="8" fill="#161b22" stroke="#f8514944"/>
+<text x="550" y="1688" font-size="11" font-weight="700" fill="#f85149">模块2：Setup有效性统计</text>
+<text x="550" y="1710" font-size="10" fill="#e6edf3">追踪每笔交易的Setup类型</text>
+<text x="550" y="1730" font-size="10" fill="#e6edf3">胜率 / 盈亏比 / 持仓周期</text>
+<text x="550" y="1750" font-size="10" fill="#e6edf3">按Regime分类统计（牛市 vs 熊市）</text>
+<text x="550" y="1770" font-size="10" fill="#8b949e">MA20 Pullback: 84样本累计中</text>
+<text x="550" y="1790" font-size="10" fill="#8b949e">VCP Breakout: 45样本累计中</text>
+<text x="550" y="1810" font-size="10" fill="#8b949e">→ 10+交易日后统计才有意义</text>
+
+<rect x="990" y="1665" width="520" height="180" rx="8" fill="#161b22" stroke="#f8514944"/>
+<text x="1010" y="1688" font-size="11" font-weight="700" fill="#f85149">模块3：假突破检测</text>
+<text x="1010" y="1710" font-size="10" fill="#e6edf3">涨幅>3% + 量比&lt;0.8 → 假突破嫌疑</text>
+<text x="1010" y="1730" font-size="10" fill="#e6edf3">失败原因归因：</text>
+<text x="1010" y="1750" font-size="10" fill="#e6edf3">· 广度不足（市场不支持）</text>
+<text x="1010" y="1770" font-size="10" fill="#e6edf3">· 宏观冲击（Fed/CPI）</text>
+<text x="1010" y="1790" font-size="10" fill="#e6edf3">· 板块轮动（资金流出）</text>
+<text x="1010" y="1810" font-size="10" fill="#8b949e">AAOI +24.1% ⚠️需人工确认基本面</text>
+
+<!-- Output -->
+<rect x="70" y="1860" width="380" height="22" rx="11" fill="#f8514922" stroke="#f8514944"/>
+<text x="80" y="1875" font-size="9" fill="#f85149">输出：setup_stats.json（持续累积）→ 改进P4策略权重</text>
+
+<!-- Arrow to P6 -->
+<line x1="200" y1="1882" x2="200" y2="1925" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+<text x="160" y="1907" font-size="9" fill="#6e7681">命中率反馈</text>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- P6 - 假设辩论层 -->
+<!-- ═══════════════════════════════════════════════ -->
+<rect x="30" y="1935" width="8" height="50" rx="4" fill="#58a6ff"/>
+<text x="50" y="1960" font-size="14" font-weight="700" fill="#58a6ff">P6 · 假设辩论层</text>
+<text x="50" y="1978" font-size="10" fill="#6e7681">提出假设 · 挑战辩论 · 实盘等待验证</text>
+
+<rect x="50" y="1995" width="1480" height="340" rx="14" fill="#0d1b2a" stroke="#58a6ff" stroke-width="2" filter="url(#shadow)"/>
+<rect x="50" y="1995" width="1480" height="38" rx="14" fill="#1e3a5f"/>
+<rect x="50" y="2021" width="1480" height="12" fill="#1e3a5f"/>
+<text x="75" y="2018" font-size="13" font-weight="700" fill="#58a6ff">HYPOTHESIS ENGINE · 提出假设并在实盘中等待验证</text>
+
+<!-- 5 agents flow -->
+<rect x="70" y="2050" width="220" height="130" rx="8" fill="#161b22" stroke="#388bfd" stroke-width="2"/>
+<rect x="70" y="2050" width="220" height="24" rx="8" fill="#1e3a5f"/>
+<rect x="70" y="2064" width="220" height="10" fill="#1e3a5f"/>
+<text x="88" y="2066" font-size="11" font-weight="700" fill="#58a6ff">Generator</text>
+<text x="88" y="2090" font-size="10" fill="#e6edf3">基于P2+P3+P5数据</text>
+<text x="88" y="2110" font-size="10" fill="#e6edf3">提出市场异常假设</text>
+<text x="88" y="2130" font-size="10" fill="#e6edf3">"XLF为什么持续落后？"</text>
+<text x="88" y="2150" font-size="10" fill="#8b949e">→ 3条初始假设</text>
+<text x="88" y="2170" font-size="9" fill="#6e7681">读取：regime + 板块 + setup_stats</text>
+
+<line x1="290" y1="2115" x2="320" y2="2115" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+
+<rect x="320" y="2050" width="220" height="60" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="2"/>
+<rect x="320" y="2050" width="220" height="24" rx="8" fill="#1a3a1e"/>
+<rect x="320" y="2064" width="220" height="10" fill="#1a3a1e"/>
+<text x="338" y="2066" font-size="11" font-weight="700" fill="#3fb950">🐂 Bull Agent</text>
+<text x="338" y="2090" font-size="10" fill="#e6edf3">3条支持证据</text>
+<text x="338" y="2110" font-size="9" fill="#8b949e">量化论据 + 可信度评分</text>
+
+<rect x="320" y="2120" width="220" height="60" rx="8" fill="#161b22" stroke="#f85149" stroke-width="2"/>
+<rect x="320" y="2120" width="220" height="24" rx="8" fill="#2a0d0d"/>
+<rect x="320" y="2134" width="220" height="10" fill="#2a0d0d"/>
+<text x="338" y="2136" font-size="11" font-weight="700" fill="#f85149">🐻 Bear Agent</text>
+<text x="338" y="2160" font-size="10" fill="#e6edf3">3条反对证据</text>
+<text x="338" y="2180" font-size="9" fill="#8b949e">脆弱点识别 + 风险评估</text>
+
+<line x1="540" y1="2115" x2="570" y2="2115" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+
+<rect x="570" y="2050" width="220" height="130" rx="8" fill="#161b22" stroke="#d29922" stroke-width="2"/>
+<rect x="570" y="2050" width="220" height="24" rx="8" fill="#2a2510"/>
+<rect x="570" y="2064" width="220" height="10" fill="#2a2510"/>
+<text x="588" y="2066" font-size="11" font-weight="700" fill="#d29922">Data Agent</text>
+<text x="588" y="2090" font-size="10" fill="#e6edf3">核查Bull/Bear每条论据</text>
+<text x="588" y="2110" font-size="10" fill="#3fb950">✅ 已验证</text>
+<text x="588" y="2130" font-size="10" fill="#d29922">⚠️ 部分验证</text>
+<text x="588" y="2150" font-size="10" fill="#f85149">❌ 无法验证</text>
+<text x="588" y="2170" font-size="9" fill="#8b949e">→ 真实性系数（0-1）</text>
+
+<line x1="790" y1="2115" x2="820" y2="2115" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+
+<rect x="820" y="2050" width="220" height="130" rx="8" fill="#161b22" stroke="#a371f7" stroke-width="2"/>
+<rect x="820" y="2050" width="220" height="24" rx="8" fill="#2a1a3a"/>
+<rect x="820" y="2064" width="220" height="10" fill="#2a1a3a"/>
+<text x="838" y="2066" font-size="11" font-weight="700" fill="#a371f7">Synthesizer</text>
+<text x="838" y="2090" font-size="10" fill="#e6edf3">加权置信度 = 50%</text>
+<text x="838" y="2110" font-size="10" fill="#e6edf3">+ Bull论据 × 真实性</text>
+<text x="838" y="2130" font-size="10" fill="#e6edf3">- Bear论据 × 真实性</text>
+<text x="838" y="2150" font-size="10" fill="#e6edf3">→ 置信度 0-100%</text>
+<text x="838" y="2170" font-size="9" fill="#8b949e">最可能解释 + 最大风险</text>
+
+<line x1="1040" y1="2115" x2="1070" y2="2115" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+
+<rect x="1070" y="2050" width="440" height="130" rx="8" fill="#161b22" stroke="#6e7681" stroke-width="2"/>
+<text x="1090" y="2075" font-size="11" font-weight="700" fill="#8b949e">📋 假设输出</text>
+<text x="1090" y="2100" font-size="10" fill="#e6edf3">假设#1: SOXL量价背离  置信度 39.5%</text>
+<text x="1090" y="2120" font-size="10" fill="#e6edf3">假设#2: COIN vs IBIT分化  置信度 51.0%</text>
+<text x="1090" y="2140" font-size="10" fill="#58a6ff">假设#3: XLF金融落后  置信度 53.9% ← 最佳</text>
+<text x="1090" y="2165" font-size="10" fill="#d29922">→ 进入 hypothesis_history.json 追踪</text>
+<text x="1090" y="2185" font-size="9" fill="#6e7681">后续P5复盘时验证假设是否正确</text>
+
+<!-- Brain-split feedback loop -->
+<path d="M 200,2180 L 200,2240 L 800,2240 L 800,2180" stroke="#58a6ff" stroke-width="1.5" fill="none" stroke-dasharray="6,4" marker-end="url(#arr-blue)"/>
+<text x="400" y="2235" font-size="10" fill="#58a6ff">← 置信度反馈到P2+P3，调整板块/Regime判断</text>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- Strategy × Regime Matrix (compact) -->
+<!-- ═══════════════════════════════════════════════ -->
+<rect x="50" y="2350" width="1480" height="140" rx="12" fill="#161b22" stroke="#30363d"/>
+<text x="70" y="2375" font-size="12" font-weight="700" fill="#8b949e">策略权重分配表（基于P2 Regime × P3 板块）</text>
+
+<rect x="70" y="2390" width="120" height="22" rx="4" fill="#21262d"/>
+<rect x="190" y="2390" width="200" height="22" rx="4" fill="#1e3a5f"/>
+<rect x="390" y="2390" width="200" height="22" rx="4" fill="#1a3a1e"/>
+<rect x="590" y="2390" width="200" height="22" rx="4" fill="#2a2510"/>
+<rect x="790" y="2390" width="200" height="22" rx="4" fill="#6e768122"/>
+<rect x="990" y="2390" width="200" height="22" rx="4" fill="#2a0d0d"/>
+<rect x="1190" y="2390" width="120" height="22" rx="4" fill="#21262d"/>
+<text x="130" y="2404" font-size="9" font-weight="700" fill="#8b949e" text-anchor="middle">Regime</text>
+<text x="290" y="2404" font-size="9" font-weight="700" fill="#58a6ff" text-anchor="middle">🚀大牛/牛市</text>
+<text x="490" y="2404" font-size="9" font-weight="700" fill="#3fb950" text-anchor="middle">↔️震荡</text>
+<text x="690" y="2404" font-size="9" font-weight="700" fill="#d29922" text-anchor="middle">⬇️走弱</text>
+<text x="890" y="2404" font-size="9" font-weight="700" fill="#f85149" text-anchor="middle">🔴熊市</text>
+<text x="1090" y="2404" font-size="9" font-weight="700" fill="#f85149" text-anchor="middle">🔴大熊市</text>
+<text x="1250" y="2404" font-size="9" font-weight="700" fill="#8b949e" text-anchor="middle">仓位</text>
+
+<text x="80" y="2427" font-size="10" fill="#58a6ff">G1趋势</text>
+<text x="290" y="2427" font-size="11" fill="#58a6ff" text-anchor="middle">★★★ 80%</text>
+<text x="490" y="2427" font-size="11" fill="#58a6ff" text-anchor="middle">★ 20%</text>
+<text x="690" y="2427" font-size="10" fill="#8b949e" text-anchor="middle">★ 5%</text>
+<text x="890" y="2427" font-size="10" fill="#f85149" text-anchor="middle">✗ 禁止</text>
+<text x="1090" y="2427" font-size="10" fill="#f85149" text-anchor="middle">✗ 禁止</text>
+<text x="1250" y="2427" font-size="10" fill="#3fb950" text-anchor="middle">$15K</text>
+
+<text x="80" y="2450" font-size="10" fill="#3fb950">G2低吸</text>
+<text x="290" y="2450" font-size="11" fill="#3fb950" text-anchor="middle">★ 10%</text>
+<text x="490" y="2450" font-size="11" fill="#3fb950" text-anchor="middle">★★★ 60%</text>
+<text x="690" y="2450" font-size="11" fill="#3fb950" text-anchor="middle">★★ 40%</text>
+<text x="890" y="2450" font-size="11" fill="#3fb950" text-anchor="middle">★★ 超跌反弹</text>
+<text x="1090" y="2450" font-size="10" fill="#3fb950" text-anchor="middle">★ 极轻仓</text>
+<text x="1250" y="2450" font-size="10" fill="#8b949e" text-anchor="middle">$10K</text>
+
+<text x="80" y="2473" font-size="10" fill="#a371f7">G3 ML</text>
+<text x="290" y="2473" font-size="11" fill="#a371f7" text-anchor="middle">★★ 10%</text>
+<text x="490" y="2473" font-size="11" fill="#a371f7" text-anchor="middle">★★ 20%</text>
+<text x="690" y="2473" font-size="10" fill="#a371f7" text-anchor="middle">★ 严格</text>
+<text x="890" y="2473" font-size="10" fill="#f85149" text-anchor="middle">✗ 禁止</text>
+<text x="1090" y="2473" font-size="10" fill="#f85149" text-anchor="middle">✗ 禁止</text>
+<text x="1250" y="2473" font-size="10" fill="#8b949e" text-anchor="middle">$5K</text>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ═══════════════════════════════════════════════ -->
+<rect x="0" y="2510" width="1600" height="490" fill="#161b22"/>
+<line x1="0" y1="2510" x2="1600" y2="2510" stroke="#30363d" stroke-width="1"/>
+<text x="800" y="2545" text-anchor="middle" font-size="13" fill="#6e7681">AI量化投资体系 v3 · 核心架构</text>
+<text x="800" y="2575" text-anchor="middle" font-size="11" fill="#484f58">P1数据(固定) → P2择时(Regime) → P3择势(板块) → P4择股(G1/G2/G3) → P5复盘 → P6假设辩论</text>
+<text x="800" y="2600" text-anchor="middle" font-size="10" fill="#484f58">每日17:00 HK全自动运行 · 2020-2026历史数据 · OpenClaw调度</text>
+
+<!-- Architecture summary boxes -->
+<rect x="100" y="2620" width="280" height="100" rx="10" fill="#0d1117" stroke="#388bfd44"/>
+<text x="120" y="2648" font-size="11" font-weight="700" fill="#388bfd">P1 数据层</text>
+<text x="120" y="2670" font-size="10" fill="#8b949e">K线 + 宏观 + 新闻</text>
+<text x="120" y="2690" font-size="10" fill="#8b949e">指标计算（EMA/RSI/MACD）</text>
+<text x="120" y="2710" font-size="10" fill="#8b949e">→ 固定输入层</text>
+
+<rect x="420" y="2620" width="280" height="100" rx="10" fill="#0d1117" stroke="#3fb95044"/>
+<text x="440" y="2648" font-size="11" font-weight="700" fill="#3fb950">P2 择时层</text>
+<text x="440" y="2670" font-size="10" fill="#8b949e">Regime: 大牛/牛/震/熊/大熊</text>
+<text x="440" y="2690" font-size="10" fill="#8b949e">趋势: 延续/加强/减弱</text>
+<text x="440" y="2710" font-size="10" fill="#8b949e">→ 决定G1/G2/G3权重</text>
+
+<rect x="740" y="2620" width="280" height="100" rx="10" fill="#0d1117" stroke="#a371f744"/>
+<text x="760" y="2648" font-size="11" font-weight="700" fill="#a371f7">P3 择势层</text>
+<text x="760" y="2670" font-size="10" fill="#8b949e">AI/加密/金融/消费/军工</text>
+<text x="760" y="2690" font-size="10" fill="#8b949e">能源/医药 板块强弱排序</text>
+<text x="760" y="2710" font-size="10" fill="#8b949e">→ 资金流向 + 变盘信号</text>
+
+<rect x="1060" y="2620" width="440" height="100" rx="10" fill="#0d1117" stroke="#d2992244"/>
+<text x="1080" y="2648" font-size="11" font-weight="700" fill="#d29922">P4 择股层</text>
+<text x="1080" y="2670" font-size="10" fill="#8b949e">G1(EMA趋势) · G2(SETUPS低吸) · G3(ML概率)</text>
+<text x="1080" y="2690" font-size="10" fill="#8b949e">→ L1/L2/L3/L4分层候选池</text>
+<text x="1080" y="2710" font-size="10" fill="#8b949e">动态仓位: P_up≥60%→$15K · ≥50%→$10K · ≥45%→$5K</text>
+
+<!-- Flow arrows between boxes -->
+<line x1="380" y1="2670" x2="420" y2="2670" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="700" y1="2670" x2="740" y2="2670" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="1020" y1="2670" x2="1060" y2="2670" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+
+<!-- Bottom P5+P6 -->
+<rect x="100" y="2750" width="280" height="100" rx="10" fill="#0d1117" stroke="#f8514944"/>
+<text x="120" y="2778" font-size="11" font-weight="700" fill="#f85149">P5 复盘层</text>
+<text x="120" y="2800" font-size="10" fill="#8b949e">验证昨日信号</text>
+<text x="120" y="2820" font-size="10" fill="#8b949e">Setup有效性统计</text>
+<text x="120" y="2840" font-size="10" fill="#8b949e">→ 反馈到P4策略权重</text>
+
+<line x1="380" y1="2800" x2="420" y2="2800" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+
+<rect x="420" y="2750" width="280" height="100" rx="10" fill="#0d1117" stroke="#58a6ff44"/>
+<text x="440" y="2778" font-size="11" font-weight="700" fill="#58a6ff">P6 假设辩论层</text>
+<text x="440" y="2800" font-size="10" fill="#8b949e">5 Agent: Gen→Bull+Bear→Data→Syn</text>
+<text x="440" y="2820" font-size="10" fill="#8b949e">置信度 0-100% · 实盘追踪验证</text>
+<text x="440" y="2840" font-size="10" fill="#8b949e">→ 反馈到P2+P3调整判断</text>
+
+<line x1="700" y1="2800" x2="740" y2="2800" stroke="#6e7681" stroke-width="2" marker-end="url(#arr)"/>
+
+<!-- Feedback arrow from P5+P6 back to P2 -->
+<path d="M 560,2750 L 560,2580 L 400,2580 L 400,2380" stroke="#58a6ff" stroke-width="1.5" fill="none" stroke-dasharray="6,4" marker-end="url(#arr-blue)"/>
+<text x="570" y="2650" font-size="9" fill="#58a6ff" transform="rotate(90, 570, 2650)">实盘验证反馈</text>
+
+<rect x="740" y="2750" width="760" height="100" rx="10" fill="#0d1117" stroke="#30363d"/>
+<text x="760" y="2778" font-size="11" font-weight="700" fill="#8b949e">关键区别：旧框架 vs 新框架</text>
+<text x="760" y="2800" font-size="10" fill="#e6edf3">旧: Phase1-4是"数据层"叠加，"策略"是额外模块</text>
+<text x="760" y="2820" font-size="10" fill="#e6edf3">新: P1=数据 · P2=择时 · P3=择势 · P4=择股（清晰因果链）</text>
+<text x="760" y="2840" font-size="10" fill="#8b949e">策略(G1/G2/G3)在P4根据P2+P3的判断动态分配权重</text>
+
+</svg>
+</body>
+</html>

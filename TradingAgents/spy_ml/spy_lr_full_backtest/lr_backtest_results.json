@@ -1,0 +1,544 @@
+{
+  "S0 Buy-Hold": {
+    "name": "S0 Buy-Hold",
+    "final_equity": 2284944.75,
+    "total_return": 128.49,
+    "cagr": 13.91,
+    "max_drawdown": 34.1,
+    "num_trades": 0,
+    "win_rate": 0.0,
+    "buy_hold_return": 128.49,
+    "outperformance": 0.0,
+    "avg_win": 0,
+    "avg_loss": 0,
+    "trades": []
+  },
+  "S1 LR Continuous": {
+    "name": "S1 LR Continuous",
+    "final_equity": 1672479.43,
+    "total_return": 67.25,
+    "cagr": 8.44,
+    "max_drawdown": 14.88,
+    "num_trades": 49,
+    "win_rate": 46.94,
+    "buy_hold_return": 128.49,
+    "outperformance": -61.25,
+    "avg_win": 3979.0,
+    "avg_loss": -12554.0,
+    "trades": [
+      {
+        "date": "2020-01-16",
+        "exit": 330.92,
+        "pnl": 8368.35,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-02-24",
+        "exit": 322.42,
+        "pnl": -17184.72,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-03-16",
+        "exit": 239.85,
+        "pnl": -57585.37,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-06-01",
+        "exit": 305.55,
+        "pnl": 2560.67,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-06-22",
+        "exit": 310.62,
+        "pnl": 4283.0,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-07-07",
+        "exit": 313.78,
+        "pnl": -7287.49,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-07-21",
+        "exit": 325.01,
+        "pnl": 1503.11,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-08-04",
+        "exit": 330.06,
+        "pnl": 2772.04,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-08-25",
+        "exit": 344.12,
+        "pnl": 2578.59,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-09-11",
+        "exit": 334.06,
+        "pnl": 362.73,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-10-23",
+        "exit": 345.78,
+        "pnl": 2389.04,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-12-23",
+        "exit": 367.57,
+        "pnl": 669.78,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2021-01-11",
+        "exit": 378.69,
+        "pnl": -5203.17,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2021-01-29",
+        "exit": 370.07,
+        "pnl": -15486.64,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2021-03-04",
+        "exit": 376.7,
+        "pnl": -9183.05,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2021-04-07",
+        "exit": 406.59,
+        "pnl": 877.36,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2021-05-12",
+        "exit": 405.41,
+        "pnl": -16338.61,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2021-07-26",
+        "exit": 441.02,
+        "pnl": 1881.26,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2021-09-17",
+        "exit": 441.4,
+        "pnl": -10112.74,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2021-10-20",
+        "exit": 452.41,
+        "pnl": 3072.01,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2021-11-26",
+        "exit": 458.97,
+        "pnl": -23835.56,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2022-01-14",
+        "exit": 464.72,
+        "pnl": 321.74,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2022-02-18",
+        "exit": 434.23,
+        "pnl": -6617.02,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2022-03-21",
+        "exit": 444.39,
+        "pnl": -228.06,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2022-04-18",
+        "exit": 437.97,
+        "pnl": 299.28,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2022-06-21",
+        "exit": 375.07,
+        "pnl": 21515.53,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2022-09-06",
+        "exit": 390.76,
+        "pnl": -3463.76,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2022-09-21",
+        "exit": 377.39,
+        "pnl": -16005.82,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2022-12-22",
+        "exit": 380.72,
+        "pnl": -9660.57,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2023-02-21",
+        "exit": 399.09,
+        "pnl": -14068.62,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2023-05-04",
+        "exit": 405.13,
+        "pnl": -5005.09,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2023-08-07",
+        "exit": 450.71,
+        "pnl": 6788.43,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2023-09-19",
+        "exit": 442.71,
+        "pnl": -1595.38,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2024-04-10",
+        "exit": 514.12,
+        "pnl": -8211.07,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2024-07-23",
+        "exit": 553.78,
+        "pnl": -1408.16,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2024-09-10",
+        "exit": 548.79,
+        "pnl": 3929.82,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2024-10-31",
+        "exit": 568.64,
+        "pnl": -23375.23,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2024-12-19",
+        "exit": 586.1,
+        "pnl": -276.13,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2025-01-08",
+        "exit": 589.49,
+        "pnl": 1295.43,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2025-02-24",
+        "exit": 597.21,
+        "pnl": -4129.5,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2025-04-02",
+        "exit": 564.52,
+        "pnl": 5702.42,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2025-04-14",
+        "exit": 539.12,
+        "pnl": 8892.87,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2025-10-17",
+        "exit": 664.39,
+        "pnl": 6471.06,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2025-11-13",
+        "exit": 672.04,
+        "pnl": -19020.68,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2025-12-24",
+        "exit": 690.38,
+        "pnl": 3996.77,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2026-01-20",
+        "exit": 677.58,
+        "pnl": -23386.86,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2026-02-05",
+        "exit": 677.62,
+        "pnl": -13910.2,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2026-02-23",
+        "exit": 682.39,
+        "pnl": -13820.76,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2026-04-02",
+        "exit": 655.83,
+        "pnl": 981.09,
+        "reason": "signal_exit"
+      }
+    ]
+  },
+  "S2 LR Discrete": {
+    "name": "S2 LR Discrete",
+    "final_equity": 889222.92,
+    "total_return": -11.08,
+    "cagr": -1.83,
+    "max_drawdown": 14.36,
+    "num_trades": 3,
+    "win_rate": 66.67,
+    "buy_hold_return": 128.49,
+    "outperformance": -139.57,
+    "avg_win": 5127.0,
+    "avg_loss": -17620.0,
+    "trades": [
+      {
+        "date": "2020-01-16",
+        "exit": 330.92,
+        "pnl": 8368.35,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-02-24",
+        "exit": 322.42,
+        "pnl": -17620.41,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-03-19",
+        "exit": 240.51,
+        "pnl": 1885.59,
+        "reason": "signal_exit"
+      }
+    ]
+  },
+  "S3 LR Threshold": {
+    "name": "S3 LR Threshold",
+    "final_equity": 887328.91,
+    "total_return": -11.27,
+    "cagr": -1.87,
+    "max_drawdown": 17.04,
+    "num_trades": 3,
+    "win_rate": 66.67,
+    "buy_hold_return": 128.49,
+    "outperformance": -139.76,
+    "avg_win": 41060.0,
+    "avg_loss": -32789.0,
+    "trades": [
+      {
+        "date": "2020-01-16",
+        "exit": 330.92,
+        "pnl": 8403.36,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-03-05",
+        "exit": 302.46,
+        "pnl": -32788.72,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-03-24",
+        "exit": 243.15,
+        "pnl": 73715.99,
+        "reason": "signal_exit"
+      }
+    ]
+  },
+  "S4 LR Aggressive": {
+    "name": "S4 LR Aggressive",
+    "final_equity": 1247036.77,
+    "total_return": 24.7,
+    "cagr": 3.54,
+    "max_drawdown": 3.21,
+    "num_trades": 23,
+    "win_rate": 56.52,
+    "buy_hold_return": 128.49,
+    "outperformance": -103.79,
+    "avg_win": 4196.0,
+    "avg_loss": -4175.0,
+    "trades": [
+      {
+        "date": "2020-01-15",
+        "exit": 328.19,
+        "pnl": 1148.69,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-05-07",
+        "exit": 287.68,
+        "pnl": 4727.13,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-05-20",
+        "exit": 296.93,
+        "pnl": 11254.22,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-06-18",
+        "exit": 311.78,
+        "pnl": 269.48,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2020-12-22",
+        "exit": 367.24,
+        "pnl": -1597.22,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2021-12-20",
+        "exit": 454.98,
+        "pnl": -7266.24,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2022-04-05",
+        "exit": 451.03,
+        "pnl": -5526.44,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2022-08-11",
+        "exit": 419.99,
+        "pnl": 0.0,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2022-08-26",
+        "exit": 405.31,
+        "pnl": -15533.58,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2022-11-08",
+        "exit": 382.0,
+        "pnl": 2399.66,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2022-12-13",
+        "exit": 401.97,
+        "pnl": 3483.61,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2023-12-06",
+        "exit": 454.76,
+        "pnl": -1877.05,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2024-01-05",
+        "exit": 467.92,
+        "pnl": 613.56,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2024-03-05",
+        "exit": 507.18,
+        "pnl": -7131.67,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2024-03-19",
+        "exit": 515.71,
+        "pnl": 2488.41,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2024-04-03",
+        "exit": 519.41,
+        "pnl": 488.51,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2024-06-04",
+        "exit": 528.39,
+        "pnl": 777.81,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2024-07-03",
+        "exit": 551.46,
+        "pnl": 3122.55,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2024-09-04",
+        "exit": 550.95,
+        "pnl": -1428.72,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2024-10-03",
+        "exit": 567.82,
+        "pnl": -1258.36,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2024-11-20",
+        "exit": 590.5,
+        "pnl": 150.12,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2025-05-12",
+        "exit": 582.99,
+        "pnl": 23624.53,
+        "reason": "signal_exit"
+      },
+      {
+        "date": "2025-06-04",
+        "exit": 595.93,
+        "pnl": -133.45,
+        "reason": "signal_exit"
+      }
+    ]
+  }
+}

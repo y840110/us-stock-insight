@@ -1,0 +1,72 @@
+[
+  {
+    "d": "2020-04-09",
+    "a": "BUY",
+    "px": 277.5799865722656,
+    "src": "EMA50转正",
+    "bear_energy": {
+      "energy": "weak",
+      "score": 0,
+      "direction": "up",
+      "drawdown": 0,
+      "days": 0
+    },
+    "exit_energy": {}
+  },
+  {
+    "d": "2022-07-12",
+    "a": "BUY",
+    "px": 383.6499938964844,
+    "src": "EMA20再转正",
+    "bear_energy": {
+      "direction": "down",
+      "drawdown": 0.01813014464386164,
+      "days": 19,
+      "energy": "weak",
+      "score": 1
+    },
+    "exit_energy": {}
+  },
+  {
+    "d": "2022-07-21",
+    "a": "BUY",
+    "px": 394.1600036621094,
+    "src": "EMA20再转正",
+    "bear_energy": {
+      "direction": "mixed",
+      "drawdown": 0.0,
+      "days": 5,
+      "energy": "weak",
+      "score": 0
+    },
+    "exit_energy": {}
+  },
+  {
+    "d": "2023-03-30",
+    "a": "BUY",
+    "px": 404.0899963378906,
+    "src": "EMA50转正",
+    "bear_energy": {
+      "direction": "mixed",
+      "drawdown": 0,
+      "days": 1,
+      "energy": "weak",
+      "score": 1
+    },
+    "exit_energy": {}
+  },
+  {
+    "d": "2023-11-07",
+    "a": "BUY",
+    "px": 435.69000244140625,
+    "src": "EMA20再转正",
+    "bear_energy": {
+      "direction": "mixed",
+      "drawdown": 0.00997570529761841,
+      "days": 12,
+      "energy": "weak",
+      "score": 0
+    },
+    "exit_energy": {}
+  }
+]

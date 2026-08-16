@@ -1,0 +1,50 @@
+[
+  {
+    "date": "2026-05-13",
+    "source": "finviz.com",
+    "above_sma50": 0.526,
+    "above_sma200": 0.478,
+    "advancing_pct": 0.355,
+    "declining_pct": 0.601,
+    "new_high_pct": 0.384,
+    "new_low_pct": 0.616,
+    "new_high_cnt": 155,
+    "new_low_cnt": 249
+  },
+  {
+    "date": "2026-05-14",
+    "source": "finviz.com",
+    "above_sma50": 0.525,
+    "above_sma200": 0.479,
+    "advancing_pct": 0.389,
+    "declining_pct": 0.5660000000000001,
+    "new_high_pct": 0.426,
+    "new_low_pct": 0.574,
+    "new_high_cnt": 219,
+    "new_low_cnt": 295
+  },
+  {
+    "date": "2026-05-15",
+    "source": "finviz.com",
+    "above_sma50": 0.54,
+    "above_sma200": 0.483,
+    "advancing_pct": 0.5429999999999999,
+    "declining_pct": 0.409,
+    "new_high_pct": 0.5760000000000001,
+    "new_low_pct": 0.424,
+    "new_high_cnt": 223,
+    "new_low_cnt": 164
+  },
+  {
+    "date": "2026-05-16",
+    "source": "finviz.com",
+    "above_sma50": 0.48100000000000004,
+    "above_sma200": 0.455,
+    "advancing_pct": 0.24,
+    "declining_pct": 0.7170000000000001,
+    "new_high_pct": 0.314,
+    "new_low_pct": 0.6859999999999999,
+    "new_high_cnt": 109,
+    "new_low_cnt": 238
+  }
+]

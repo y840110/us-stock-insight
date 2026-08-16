@@ -1,0 +1,738 @@
+{
+  "date": "2026-05-08",
+  "market_context": {
+    "qqq_latest": 695.77,
+    "qqq_rsi": 81.6,
+    "qqq_chg_5d": 5.17,
+    "qqq_chg_20d": 14.8,
+    "spy_latest": 733.83,
+    "spy_rsi": 75.8,
+    "spy_chg_5d": 3.13,
+    "spy_chg_20d": 8.55,
+    "market_status": "看涨",
+    "key_risks": [
+      "关税政策不确定性影响科技股情绪",
+      "AI资本开支增速放缓担忧",
+      "美联储鹰派风险",
+      "技术股高估值回调压力"
+    ]
+  },
+  "candidate_pool": [
+    {
+      "ticker": "DD",
+      "sector": "上游资源/材料",
+      "sub_sector": "半导体材料",
+      "scores": {
+        "trend": 97.2,
+        "momentum": 88,
+        "volume": 90,
+        "safety": 80
+      },
+      "composite": 87.9,
+      "latest_price": 48.36,
+      "rsi_14": 53.9,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.45,
+      "price_change_5d": 5.91,
+      "price_change_20d": 1.98,
+      "position_52w": 0.867,
+      "reason": "RSI=53.9处于安全上升区间; MA多头排列(5>10>20); 5日5.9%+20日2.0%量价启动"
+    },
+    {
+      "ticker": "ILMN",
+      "sector": "AI医疗",
+      "sub_sector": "AI制药/医疗",
+      "scores": {
+        "trend": 97.4,
+        "momentum": 95,
+        "volume": 75,
+        "safety": 80
+      },
+      "composite": 86.0,
+      "latest_price": 138.71,
+      "rsi_14": 54.5,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.22,
+      "price_change_5d": 9.44,
+      "price_change_20d": 12.16,
+      "position_52w": 0.805,
+      "reason": "RSI=54.5处于安全上升区间; MA多头排列(5>10>20); 动量加速:5日9.4%/20日12.2%"
+    },
+    {
+      "ticker": "UBER",
+      "sector": "自动驾驶",
+      "sub_sector": "Robotaxi/自动驾驶",
+      "scores": {
+        "trend": 96.0,
+        "momentum": 82,
+        "volume": 90,
+        "safety": 75
+      },
+      "composite": 84.7,
+      "latest_price": 76.73,
+      "rsi_14": 49.0,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.39,
+      "price_change_5d": 2.84,
+      "price_change_20d": 6.85,
+      "position_52w": 0.244,
+      "reason": "RSI=49.0处于安全上升区间; MA多头排列(5>10>20); 量比=1.39量能健康放大"
+    },
+    {
+      "ticker": "ARM",
+      "sector": "AI芯片",
+      "sub_sector": "CPU",
+      "scores": {
+        "trend": 83.6,
+        "momentum": 85,
+        "volume": 90,
+        "safety": 80
+      },
+      "composite": 84.5,
+      "latest_price": 213.31,
+      "rsi_14": 62.7,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.31,
+      "price_change_5d": 1.42,
+      "price_change_20d": 42.41,
+      "position_52w": 0.819,
+      "reason": "RSI=62.7偏高但仍合理; MA多头排列(5>10>20); 量比=1.31量能健康放大"
+    },
+    {
+      "ticker": "JBL",
+      "sector": "PCB/连接",
+      "sub_sector": "高速PCB/连接器",
+      "scores": {
+        "trend": 83.4,
+        "momentum": 85,
+        "volume": 90,
+        "safety": 80
+      },
+      "composite": 84.4,
+      "latest_price": 349.6,
+      "rsi_14": 63.2,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.6,
+      "price_change_5d": 3.59,
+      "price_change_20d": 19.31,
+      "position_52w": 0.896,
+      "reason": "RSI=63.2偏高但仍合理; MA多头排列(5>10>20); 量比=1.60量能健康放大"
+    },
+    {
+      "ticker": "MP",
+      "sector": "上游资源/材料",
+      "sub_sector": "稀土/磁材",
+      "scores": {
+        "trend": 85.1,
+        "momentum": 85,
+        "volume": 75,
+        "safety": 90
+      },
+      "composite": 84.0,
+      "latest_price": 69.13,
+      "rsi_14": 59.9,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.15,
+      "price_change_5d": 4.68,
+      "price_change_20d": 28.26,
+      "position_52w": 0.63,
+      "reason": "RSI=59.9偏高但仍合理; MA多头排列(5>10>20); 52周位置63%，上升通道中"
+    },
+    {
+      "ticker": "AAOI",
+      "sector": "光模块/硅光",
+      "sub_sector": "光模块/CPO",
+      "scores": {
+        "trend": 96.1,
+        "momentum": 85,
+        "volume": 75,
+        "safety": 80
+      },
+      "composite": 83.2,
+      "latest_price": 157.55,
+      "rsi_14": 49.4,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.04,
+      "price_change_5d": -4.14,
+      "price_change_20d": 18.19,
+      "position_52w": 0.846,
+      "reason": "RSI=49.4处于安全上升区间; MA多头排列(5>10>20)"
+    },
+    {
+      "ticker": "SIEGY",
+      "sector": "EDA/IP",
+      "sub_sector": "EDA软件",
+      "scores": {
+        "trend": 84.9,
+        "momentum": 85,
+        "volume": 75,
+        "safety": 80
+      },
+      "composite": 81.0,
+      "latest_price": 153.99,
+      "rsi_14": 60.1,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.05,
+      "price_change_5d": 3.72,
+      "price_change_20d": 15.77,
+      "position_52w": 0.891,
+      "reason": "RSI=60.1偏高但仍合理; MA多头排列(5>10>20)"
+    },
+    {
+      "ticker": "TSLA",
+      "sector": "自动驾驶",
+      "sub_sector": "Robotaxi/自动驾驶",
+      "scores": {
+        "trend": 86.7,
+        "momentum": 85,
+        "volume": 60,
+        "safety": 90
+      },
+      "composite": 80.6,
+      "latest_price": 411.79,
+      "rsi_14": 56.6,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 0.89,
+      "price_change_5d": 7.9,
+      "price_change_20d": 19.15,
+      "position_52w": 0.619,
+      "reason": "RSI=56.6偏高但仍合理; MA多头排列(5>10>20); 52周位置62%，上升通道中"
+    },
+    {
+      "ticker": "COHR",
+      "sector": "上游资源/材料",
+      "sub_sector": "半导体材料",
+      "scores": {
+        "trend": 86.2,
+        "momentum": 82,
+        "volume": 75,
+        "safety": 80
+      },
+      "composite": 80.5,
+      "latest_price": 319.19,
+      "rsi_14": 39.7,
+      "ma_status": "短期多头",
+      "volume_ratio_5d_vs_20d": 1.26,
+      "price_change_5d": -0.16,
+      "price_change_20d": 12.32,
+      "position_52w": 0.888,
+      "reason": "RSI=39.7处于安全上升区间; MA短期多头(5>10)"
+    },
+    {
+      "ticker": "CRWV",
+      "sector": "数据中心",
+      "sub_sector": "超大规模IDC",
+      "scores": {
+        "trend": 86.1,
+        "momentum": 85,
+        "volume": 60,
+        "safety": 90
+      },
+      "composite": 80.5,
+      "latest_price": 128.84,
+      "rsi_14": 57.7,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 0.9,
+      "price_change_5d": 15.45,
+      "price_change_20d": 40.04,
+      "position_52w": 0.586,
+      "reason": "RSI=57.7偏高但仍合理; MA多头排列(5>10>20); 52周位置59%，上升通道中"
+    },
+    {
+      "ticker": "ALAB",
+      "sector": "AI ASIC",
+      "sub_sector": "定制芯片",
+      "scores": {
+        "trend": 85.8,
+        "momentum": 85,
+        "volume": 60,
+        "safety": 90
+      },
+      "composite": 80.4,
+      "latest_price": 195.65,
+      "rsi_14": 58.4,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 0.98,
+      "price_change_5d": 0.47,
+      "price_change_20d": 51.13,
+      "position_52w": 0.689,
+      "reason": "RSI=58.4偏高但仍合理; MA多头排列(5>10>20); 52周位置69%，上升通道中"
+    },
+    {
+      "ticker": "ET",
+      "sector": "电力/能源",
+      "sub_sector": "天然气/LNG",
+      "scores": {
+        "trend": 80.5,
+        "momentum": 70,
+        "volume": 90,
+        "safety": 80
+      },
+      "composite": 80.1,
+      "latest_price": 19.92,
+      "rsi_14": 68.9,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.45,
+      "price_change_5d": -1.34,
+      "price_change_20d": 4.35,
+      "position_52w": 0.888,
+      "reason": "RSI=68.9偏高但仍合理; MA多头排列(5>10>20); 量比=1.45量能健康放大"
+    },
+    {
+      "ticker": "SMCI",
+      "sector": "数据中心",
+      "sub_sector": "AI服务器",
+      "scores": {
+        "trend": 83.4,
+        "momentum": 70,
+        "volume": 90,
+        "safety": 75
+      },
+      "composite": 79.2,
+      "latest_price": 33.62,
+      "rsi_14": 63.3,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.58,
+      "price_change_5d": 22.7,
+      "price_change_20d": 44.79,
+      "position_52w": 0.326,
+      "reason": "RSI=63.3偏高但仍合理; MA多头排列(5>10>20); 量比=1.58量能健康放大"
+    },
+    {
+      "ticker": "CARR",
+      "sector": "液冷/散热",
+      "sub_sector": "液冷",
+      "scores": {
+        "trend": 81.8,
+        "momentum": 82,
+        "volume": 60,
+        "safety": 90
+      },
+      "composite": 78.9,
+      "latest_price": 67.22,
+      "rsi_14": 66.5,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 0.93,
+      "price_change_5d": 0.07,
+      "price_change_20d": 9.37,
+      "position_52w": 0.555,
+      "reason": "RSI=66.5偏高但仍合理; MA多头排列(5>10>20); 52周位置56%，上升通道中"
+    },
+    {
+      "ticker": "FN",
+      "sector": "光模块/硅光",
+      "sub_sector": "光模块/CPO",
+      "scores": {
+        "trend": 86.4,
+        "momentum": 70,
+        "volume": 80,
+        "safety": 80
+      },
+      "composite": 78.8,
+      "latest_price": 626.12,
+      "rsi_14": 40.7,
+      "ma_status": "短期多头",
+      "volume_ratio_5d_vs_20d": 3.34,
+      "price_change_5d": -8.39,
+      "price_change_20d": 1.27,
+      "position_52w": 0.818,
+      "reason": "RSI=40.7处于安全上升区间; MA短期多头(5>10); 量比=3.34量能异常放大"
+    },
+    {
+      "ticker": "SNOW",
+      "sector": "AI软件",
+      "sub_sector": "Agent/企业AI",
+      "scores": {
+        "trend": 78.7,
+        "momentum": 85,
+        "volume": 75,
+        "safety": 75
+      },
+      "composite": 78.2,
+      "latest_price": 153.72,
+      "rsi_14": 57.5,
+      "ma_status": "短期多头",
+      "volume_ratio_5d_vs_20d": 1.0,
+      "price_change_5d": 12.64,
+      "price_change_20d": 16.24,
+      "position_52w": 0.209,
+      "reason": "RSI=57.5偏高但仍合理; MA短期多头(5>10)"
+    },
+    {
+      "ticker": "GLW",
+      "sector": "上游资源/材料",
+      "sub_sector": "半导体材料",
+      "scores": {
+        "trend": 76.7,
+        "momentum": 95,
+        "volume": 90,
+        "safety": 55
+      },
+      "composite": 78.1,
+      "latest_price": 182.4,
+      "rsi_14": 61.6,
+      "ma_status": "短期多头",
+      "volume_ratio_5d_vs_20d": 1.37,
+      "price_change_5d": 11.06,
+      "price_change_20d": 7.42,
+      "position_52w": 1.0,
+      "reason": "RSI=61.6偏高但仍合理; MA短期多头(5>10); 动量加速:5日11.1%/20日7.4%"
+    },
+    {
+      "ticker": "MOD",
+      "sector": "液冷/散热",
+      "sub_sector": "液冷",
+      "scores": {
+        "trend": 83.5,
+        "momentum": 95,
+        "volume": 80,
+        "safety": 55
+      },
+      "composite": 76.9,
+      "latest_price": 269.65,
+      "rsi_14": 63.1,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.84,
+      "price_change_5d": 5.9,
+      "price_change_20d": 11.65,
+      "position_52w": 0.975,
+      "reason": "RSI=63.1偏高但仍合理; MA多头排列(5>10>20); 动量加速:5日5.9%/20日11.6%"
+    },
+    {
+      "ticker": "ROK",
+      "sector": "机器人/边缘AI",
+      "sub_sector": "工业自动化",
+      "scores": {
+        "trend": 83.0,
+        "momentum": 95,
+        "volume": 80,
+        "safety": 55
+      },
+      "composite": 76.9,
+      "latest_price": 448.55,
+      "rsi_14": 63.9,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 3.99,
+      "price_change_5d": 9.69,
+      "price_change_20d": 13.59,
+      "position_52w": 0.936,
+      "reason": "RSI=63.9偏高但仍合理; MA多头排列(5>10>20); 动量加速:5日9.7%/20日13.6%"
+    },
+    {
+      "ticker": "AMAT",
+      "sector": "先进封装",
+      "sub_sector": "封装/封测",
+      "scores": {
+        "trend": 97.4,
+        "momentum": 88,
+        "volume": 75,
+        "safety": 55
+      },
+      "composite": 76.7,
+      "latest_price": 410.64,
+      "rsi_14": 54.8,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.05,
+      "price_change_5d": 4.09,
+      "price_change_20d": 3.23,
+      "position_52w": 0.934,
+      "reason": "RSI=54.8处于安全上升区间; MA多头排列(5>10>20); 5日4.1%+20日3.2%量价启动"
+    },
+    {
+      "ticker": "COHU",
+      "sector": "芯片测试",
+      "sub_sector": "检测/测试",
+      "scores": {
+        "trend": 82.1,
+        "momentum": 85,
+        "volume": 90,
+        "safety": 55
+      },
+      "composite": 76.7,
+      "latest_price": 47.48,
+      "rsi_14": 65.8,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.42,
+      "price_change_5d": 0.27,
+      "price_change_20d": 34.12,
+      "position_52w": 0.936,
+      "reason": "RSI=65.8偏高但仍合理; MA多头排列(5>10>20); 量比=1.42量能健康放大"
+    },
+    {
+      "ticker": "CRM",
+      "sector": "AI软件",
+      "sub_sector": "Agent/企业AI",
+      "scores": {
+        "trend": 97.1,
+        "momentum": 95,
+        "volume": 60,
+        "safety": 60
+      },
+      "composite": 76.2,
+      "latest_price": 186.34,
+      "rsi_14": 53.6,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 0.86,
+      "price_change_5d": 5.56,
+      "price_change_20d": 9.07,
+      "position_52w": 0.169,
+      "reason": "RSI=53.6处于安全上升区间; MA多头排列(5>10>20); 动量加速:5日5.6%/20日9.1%"
+    },
+    {
+      "ticker": "LRCX",
+      "sector": "半导体设备",
+      "sub_sector": "光刻/前道设备",
+      "scores": {
+        "trend": 85.8,
+        "momentum": 95,
+        "volume": 75,
+        "safety": 55
+      },
+      "composite": 76.2,
+      "latest_price": 286.52,
+      "rsi_14": 58.4,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.06,
+      "price_change_5d": 11.11,
+      "price_change_20d": 10.73,
+      "position_52w": 0.952,
+      "reason": "RSI=58.4偏高但仍合理; MA多头排列(5>10>20); 动量加速:5日11.1%/20日10.7%"
+    },
+    {
+      "ticker": "TEM",
+      "sector": "AI医疗",
+      "sub_sector": "AI制药/医疗",
+      "scores": {
+        "trend": 92.9,
+        "momentum": 82,
+        "volume": 75,
+        "safety": 60
+      },
+      "composite": 75.8,
+      "latest_price": 49.47,
+      "rsi_14": 36.6,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.17,
+      "price_change_5d": -10.83,
+      "price_change_20d": 12.02,
+      "position_52w": 0.117,
+      "reason": "RSI=36.6处于安全上升区间; MA多头排列(5>10>20)"
+    },
+    {
+      "ticker": "CEG",
+      "sector": "电力/能源",
+      "sub_sector": "核电",
+      "scores": {
+        "trend": 86.9,
+        "momentum": 82,
+        "volume": 60,
+        "safety": 75
+      },
+      "composite": 75.4,
+      "latest_price": 311.28,
+      "rsi_14": 56.1,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 0.95,
+      "price_change_5d": -0.55,
+      "price_change_20d": 11.07,
+      "position_52w": 0.409,
+      "reason": "RSI=56.1偏高但仍合理; MA多头排列(5>10>20)"
+    },
+    {
+      "ticker": "AAPL",
+      "sector": "AI终端",
+      "sub_sector": "AI PC/终端",
+      "scores": {
+        "trend": 81.5,
+        "momentum": 95,
+        "volume": 75,
+        "safety": 55
+      },
+      "composite": 75.3,
+      "latest_price": 287.44,
+      "rsi_14": 67.1,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 1.17,
+      "price_change_5d": 5.93,
+      "price_change_20d": 10.35,
+      "position_52w": 0.999,
+      "reason": "RSI=67.1偏高但仍合理; MA多头排列(5>10>20); 动量加速:5日5.9%/20日10.3%"
+    },
+    {
+      "ticker": "MDB",
+      "sector": "AI软件",
+      "sub_sector": "AI开发平台",
+      "scores": {
+        "trend": 82.3,
+        "momentum": 85,
+        "volume": 60,
+        "safety": 75
+      },
+      "composite": 75.2,
+      "latest_price": 293.42,
+      "rsi_14": 65.4,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 0.82,
+      "price_change_5d": 16.98,
+      "price_change_20d": 27.86,
+      "position_52w": 0.438,
+      "reason": "RSI=65.4偏高但仍合理; MA多头排列(5>10>20)"
+    },
+    {
+      "ticker": "BHP",
+      "sector": "上游资源/材料",
+      "sub_sector": "铜/电力金属",
+      "scores": {
+        "trend": 97.5,
+        "momentum": 95,
+        "volume": 60,
+        "safety": 55
+      },
+      "composite": 74.7,
+      "latest_price": 82.55,
+      "rsi_14": 55.0,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 0.89,
+      "price_change_5d": 4.1,
+      "price_change_20d": 6.89,
+      "position_52w": 0.953,
+      "reason": "RSI=55.0处于安全上升区间; MA多头排列(5>10>20); 动量加速:5日4.1%/20日6.9%"
+    },
+    {
+      "ticker": "TECK",
+      "sector": "上游资源/材料",
+      "sub_sector": "铜/电力金属",
+      "scores": {
+        "trend": 97.0,
+        "momentum": 95,
+        "volume": 60,
+        "safety": 55
+      },
+      "composite": 74.7,
+      "latest_price": 60.76,
+      "rsi_14": 53.2,
+      "ma_status": "多头排列",
+      "volume_ratio_5d_vs_20d": 0.98,
+      "price_change_5d": 3.99,
+      "price_change_20d": 11.16,
+      "position_52w": 0.959,
+      "reason": "RSI=53.2处于安全上升区间; MA多头排列(5>10>20); 动量加速:5日4.0%/20日11.2%"
+    }
+  ],
+  "top5": [
+    {
+      "rank": 1,
+      "ticker": "DD",
+      "sector": "上游资源/材料",
+      "sub_sector": "半导体材料",
+      "composite_score": 87.9,
+      "entry_rationale": "RSI=53.9处于安全上升区间; MA多头排列(5>10>20); 5日5.9%+20日2.0%量价启动; 量比=1.45量能健康放大",
+      "risk_level": "中",
+      "target_logic": "MA多头持续+量比1.45量能配合",
+      "key_support": 44.62,
+      "key_resistance": 50.07,
+      "latest_price": 48.36,
+      "rsi_14": 53.9,
+      "ma_status": "多头排列",
+      "chg_5d": 5.91,
+      "chg_20d": 1.98,
+      "vol_ratio": 1.45,
+      "pos_52w": 0.867
+    },
+    {
+      "rank": 2,
+      "ticker": "ILMN",
+      "sector": "AI医疗",
+      "sub_sector": "AI制药/医疗",
+      "composite_score": 86.0,
+      "entry_rationale": "RSI=54.5处于安全上升区间; MA多头排列(5>10>20); 动量加速:5日9.4%/20日12.2%",
+      "risk_level": "中",
+      "target_logic": "MA多头持续+量比1.22量能配合",
+      "key_support": 120.37,
+      "key_resistance": 142.58,
+      "latest_price": 138.71,
+      "rsi_14": 54.5,
+      "ma_status": "多头排列",
+      "chg_5d": 9.44,
+      "chg_20d": 12.16,
+      "vol_ratio": 1.22,
+      "pos_52w": 0.805
+    },
+    {
+      "rank": 3,
+      "ticker": "UBER",
+      "sector": "自动驾驶",
+      "sub_sector": "Robotaxi/自动驾驶",
+      "composite_score": 84.7,
+      "entry_rationale": "RSI=49.0处于安全上升区间; MA多头排列(5>10>20); 量比=1.39量能健康放大",
+      "risk_level": "中",
+      "target_logic": "MA多头持续+量比1.39量能配合",
+      "key_support": 70.48,
+      "key_resistance": 79.17,
+      "latest_price": 76.73,
+      "rsi_14": 49.0,
+      "ma_status": "多头排列",
+      "chg_5d": 2.84,
+      "chg_20d": 6.85,
+      "vol_ratio": 1.39,
+      "pos_52w": 0.244
+    },
+    {
+      "rank": 4,
+      "ticker": "ARM",
+      "sector": "AI芯片",
+      "sub_sector": "CPU",
+      "composite_score": 84.5,
+      "entry_rationale": "RSI=62.7偏高但仍合理; MA多头排列(5>10>20); 量比=1.31量能健康放大",
+      "risk_level": "中",
+      "target_logic": "MA多头持续+量比1.31量能配合",
+      "key_support": 148.93,
+      "key_resistance": 237.3,
+      "latest_price": 213.31,
+      "rsi_14": 62.7,
+      "ma_status": "多头排列",
+      "chg_5d": 1.42,
+      "chg_20d": 42.41,
+      "vol_ratio": 1.31,
+      "pos_52w": 0.819
+    },
+    {
+      "rank": 5,
+      "ticker": "JBL",
+      "sector": "PCB/连接",
+      "sub_sector": "高速PCB/连接器",
+      "composite_score": 84.4,
+      "entry_rationale": "RSI=63.2偏高但仍合理; MA多头排列(5>10>20); 量比=1.60量能健康放大",
+      "risk_level": "中",
+      "target_logic": "MA多头持续+量比1.60量能配合",
+      "key_support": 299.5,
+      "key_resistance": 372.34,
+      "latest_price": 349.6,
+      "rsi_14": 63.2,
+      "ma_status": "多头排列",
+      "chg_5d": 3.59,
+      "chg_20d": 19.31,
+      "vol_ratio": 1.6,
+      "pos_52w": 0.896
+    }
+  ],
+  "analysis_framework": {
+    "step1_screening": "RSI 30-70 + MA多头排列 + 量比>0.8 + 20日涨幅>0",
+    "step2_sector_ranking": "板块内按综合评分排序",
+    "step3_final_selection": "权重打分：动量25%+量能25%+趋势20%+RS强度15%+安全边际15%",
+    "indicators_used": [
+      "RSI(14)",
+      "MA(5/10/20)",
+      "成交量比",
+      "价格动量",
+      "52周位置"
+    ],
+    "note": "数据来自Yahoo Finance，已验证"
+  },
+  "data_integrity": {
+    "total_stocks_in_list": 124,
+    "with_1d_kline": 104,
+    "passed_filter": 42,
+    "notes": "K-line数据来自Yahoo Finance经CDP抓取"
+  }
+}

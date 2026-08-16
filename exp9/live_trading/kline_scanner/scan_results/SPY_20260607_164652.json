@@ -1,0 +1,1780 @@
+{
+  "ticker": "SPY",
+  "timestamp": "2026-06-07T16:46:52.434430",
+  "total_bars": 253,
+  "total_trades": 0,
+  "logs": [
+    {
+      "time": "2025-06-03",
+      "bar_index": 0,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 596.09
+    },
+    {
+      "time": "2025-06-04",
+      "bar_index": 1,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 595.93
+    },
+    {
+      "time": "2025-06-05",
+      "bar_index": 2,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 593.05
+    },
+    {
+      "time": "2025-06-06",
+      "bar_index": 3,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 599.14
+    },
+    {
+      "time": "2025-06-09",
+      "bar_index": 4,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 599.68
+    },
+    {
+      "time": "2025-06-10",
+      "bar_index": 5,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 603.08
+    },
+    {
+      "time": "2025-06-11",
+      "bar_index": 6,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 601.36
+    },
+    {
+      "time": "2025-06-12",
+      "bar_index": 7,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 603.75
+    },
+    {
+      "time": "2025-06-13",
+      "bar_index": 8,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 597.0
+    },
+    {
+      "time": "2025-06-16",
+      "bar_index": 9,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 602.68
+    },
+    {
+      "time": "2025-06-17",
+      "bar_index": 10,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 597.53
+    },
+    {
+      "time": "2025-06-18",
+      "bar_index": 11,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 597.44
+    },
+    {
+      "time": "2025-06-20",
+      "bar_index": 12,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 594.28
+    },
+    {
+      "time": "2025-06-23",
+      "bar_index": 13,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 600.15
+    },
+    {
+      "time": "2025-06-24",
+      "bar_index": 14,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 606.78
+    },
+    {
+      "time": "2025-06-25",
+      "bar_index": 15,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 607.12
+    },
+    {
+      "time": "2025-06-26",
+      "bar_index": 16,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 611.87
+    },
+    {
+      "time": "2025-06-27",
+      "bar_index": 17,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 614.91
+    },
+    {
+      "time": "2025-06-30",
+      "bar_index": 18,
+      "signal": "NO_SIGNAL",
+      "action": null,
+      "price": 617.85
+    },
+    {
+      "time": "2025-07-01",
+      "bar_index": 19,
+      "signal": "BUY_NOW",
+      "action": "BUY",
+      "price": 617.65
+    },
+    {
+      "time": "2025-07-02",
+      "bar_index": 20,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 620.45
+    },
+    {
+      "time": "2025-07-03",
+      "bar_index": 21,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 625.34
+    },
+    {
+      "time": "2025-07-07",
+      "bar_index": 22,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 620.68
+    },
+    {
+      "time": "2025-07-08",
+      "bar_index": 23,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 620.34
+    },
+    {
+      "time": "2025-07-09",
+      "bar_index": 24,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 624.06
+    },
+    {
+      "time": "2025-07-10",
+      "bar_index": 25,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 625.82
+    },
+    {
+      "time": "2025-07-11",
+      "bar_index": 26,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 623.62
+    },
+    {
+      "time": "2025-07-14",
+      "bar_index": 27,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 624.81
+    },
+    {
+      "time": "2025-07-15",
+      "bar_index": 28,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 622.14
+    },
+    {
+      "time": "2025-07-16",
+      "bar_index": 29,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 624.22
+    },
+    {
+      "time": "2025-07-17",
+      "bar_index": 30,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 628.04
+    },
+    {
+      "time": "2025-07-18",
+      "bar_index": 31,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 627.58
+    },
+    {
+      "time": "2025-07-21",
+      "bar_index": 32,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 628.77
+    },
+    {
+      "time": "2025-07-22",
+      "bar_index": 33,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 628.86
+    },
+    {
+      "time": "2025-07-23",
+      "bar_index": 34,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 634.21
+    },
+    {
+      "time": "2025-07-24",
+      "bar_index": 35,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 634.42
+    },
+    {
+      "time": "2025-07-25",
+      "bar_index": 36,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 637.1
+    },
+    {
+      "time": "2025-07-28",
+      "bar_index": 37,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 636.94
+    },
+    {
+      "time": "2025-07-29",
+      "bar_index": 38,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 635.26
+    },
+    {
+      "time": "2025-07-30",
+      "bar_index": 39,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 634.46
+    },
+    {
+      "time": "2025-07-31",
+      "bar_index": 40,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 632.08
+    },
+    {
+      "time": "2025-08-01",
+      "bar_index": 41,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 621.72
+    },
+    {
+      "time": "2025-08-04",
+      "bar_index": 42,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 631.17
+    },
+    {
+      "time": "2025-08-05",
+      "bar_index": 43,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 627.97
+    },
+    {
+      "time": "2025-08-06",
+      "bar_index": 44,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 632.78
+    },
+    {
+      "time": "2025-08-07",
+      "bar_index": 45,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 632.25
+    },
+    {
+      "time": "2025-08-08",
+      "bar_index": 46,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 637.18
+    },
+    {
+      "time": "2025-08-11",
+      "bar_index": 47,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 635.92
+    },
+    {
+      "time": "2025-08-12",
+      "bar_index": 48,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 642.69
+    },
+    {
+      "time": "2025-08-13",
+      "bar_index": 49,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 644.89
+    },
+    {
+      "time": "2025-08-14",
+      "bar_index": 50,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 644.95
+    },
+    {
+      "time": "2025-08-15",
+      "bar_index": 51,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 643.44
+    },
+    {
+      "time": "2025-08-18",
+      "bar_index": 52,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 643.3
+    },
+    {
+      "time": "2025-08-19",
+      "bar_index": 53,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 639.81
+    },
+    {
+      "time": "2025-08-20",
+      "bar_index": 54,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 638.11
+    },
+    {
+      "time": "2025-08-21",
+      "bar_index": 55,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 635.55
+    },
+    {
+      "time": "2025-08-22",
+      "bar_index": 56,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 645.31
+    },
+    {
+      "time": "2025-08-25",
+      "bar_index": 57,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 642.47
+    },
+    {
+      "time": "2025-08-26",
+      "bar_index": 58,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 645.16
+    },
+    {
+      "time": "2025-08-27",
+      "bar_index": 59,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 646.63
+    },
+    {
+      "time": "2025-08-28",
+      "bar_index": 60,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 648.92
+    },
+    {
+      "time": "2025-08-29",
+      "bar_index": 61,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 645.05
+    },
+    {
+      "time": "2025-09-02",
+      "bar_index": 62,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 640.27
+    },
+    {
+      "time": "2025-09-03",
+      "bar_index": 63,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 643.74
+    },
+    {
+      "time": "2025-09-04",
+      "bar_index": 64,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 649.12
+    },
+    {
+      "time": "2025-09-05",
+      "bar_index": 65,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 647.24
+    },
+    {
+      "time": "2025-09-08",
+      "bar_index": 66,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 648.83
+    },
+    {
+      "time": "2025-09-09",
+      "bar_index": 67,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 650.33
+    },
+    {
+      "time": "2025-09-10",
+      "bar_index": 68,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 652.21
+    },
+    {
+      "time": "2025-09-11",
+      "bar_index": 69,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 657.63
+    },
+    {
+      "time": "2025-09-12",
+      "bar_index": 70,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 657.41
+    },
+    {
+      "time": "2025-09-15",
+      "bar_index": 71,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 660.91
+    },
+    {
+      "time": "2025-09-16",
+      "bar_index": 72,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 660.0
+    },
+    {
+      "time": "2025-09-17",
+      "bar_index": 73,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 659.18
+    },
+    {
+      "time": "2025-09-18",
+      "bar_index": 74,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 662.26
+    },
+    {
+      "time": "2025-09-19",
+      "bar_index": 75,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 663.7
+    },
+    {
+      "time": "2025-09-22",
+      "bar_index": 76,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 666.84
+    },
+    {
+      "time": "2025-09-23",
+      "bar_index": 77,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 663.21
+    },
+    {
+      "time": "2025-09-24",
+      "bar_index": 78,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 661.1
+    },
+    {
+      "time": "2025-09-25",
+      "bar_index": 79,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 658.05
+    },
+    {
+      "time": "2025-09-26",
+      "bar_index": 80,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 661.82
+    },
+    {
+      "time": "2025-09-29",
+      "bar_index": 81,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 663.68
+    },
+    {
+      "time": "2025-09-30",
+      "bar_index": 82,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 666.18
+    },
+    {
+      "time": "2025-10-01",
+      "bar_index": 83,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 668.45
+    },
+    {
+      "time": "2025-10-02",
+      "bar_index": 84,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 669.22
+    },
+    {
+      "time": "2025-10-03",
+      "bar_index": 85,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 669.21
+    },
+    {
+      "time": "2025-10-06",
+      "bar_index": 86,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 671.61
+    },
+    {
+      "time": "2025-10-07",
+      "bar_index": 87,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 669.12
+    },
+    {
+      "time": "2025-10-08",
+      "bar_index": 88,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 673.11
+    },
+    {
+      "time": "2025-10-09",
+      "bar_index": 89,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 671.16
+    },
+    {
+      "time": "2025-10-10",
+      "bar_index": 90,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 653.02
+    },
+    {
+      "time": "2025-10-13",
+      "bar_index": 91,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 663.04
+    },
+    {
+      "time": "2025-10-14",
+      "bar_index": 92,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 662.23
+    },
+    {
+      "time": "2025-10-15",
+      "bar_index": 93,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 665.17
+    },
+    {
+      "time": "2025-10-16",
+      "bar_index": 94,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 660.64
+    },
+    {
+      "time": "2025-10-17",
+      "bar_index": 95,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 664.39
+    },
+    {
+      "time": "2025-10-20",
+      "bar_index": 96,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 671.3
+    },
+    {
+      "time": "2025-10-21",
+      "bar_index": 97,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 671.29
+    },
+    {
+      "time": "2025-10-22",
+      "bar_index": 98,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 667.8
+    },
+    {
+      "time": "2025-10-23",
+      "bar_index": 99,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 671.76
+    },
+    {
+      "time": "2025-10-24",
+      "bar_index": 100,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 677.25
+    },
+    {
+      "time": "2025-10-27",
+      "bar_index": 101,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 685.24
+    },
+    {
+      "time": "2025-10-28",
+      "bar_index": 102,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 687.06
+    },
+    {
+      "time": "2025-10-29",
+      "bar_index": 103,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 687.39
+    },
+    {
+      "time": "2025-10-30",
+      "bar_index": 104,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 679.83
+    },
+    {
+      "time": "2025-10-31",
+      "bar_index": 105,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 682.06
+    },
+    {
+      "time": "2025-11-03",
+      "bar_index": 106,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 683.34
+    },
+    {
+      "time": "2025-11-04",
+      "bar_index": 107,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 675.24
+    },
+    {
+      "time": "2025-11-05",
+      "bar_index": 108,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 677.58
+    },
+    {
+      "time": "2025-11-06",
+      "bar_index": 109,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 670.31
+    },
+    {
+      "time": "2025-11-07",
+      "bar_index": 110,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 670.97
+    },
+    {
+      "time": "2025-11-10",
+      "bar_index": 111,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 681.44
+    },
+    {
+      "time": "2025-11-11",
+      "bar_index": 112,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 683.0
+    },
+    {
+      "time": "2025-11-12",
+      "bar_index": 113,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 683.38
+    },
+    {
+      "time": "2025-11-13",
+      "bar_index": 114,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 672.04
+    },
+    {
+      "time": "2025-11-14",
+      "bar_index": 115,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 671.93
+    },
+    {
+      "time": "2025-11-17",
+      "bar_index": 116,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 665.67
+    },
+    {
+      "time": "2025-11-18",
+      "bar_index": 117,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 660.08
+    },
+    {
+      "time": "2025-11-19",
+      "bar_index": 118,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 662.63
+    },
+    {
+      "time": "2025-11-20",
+      "bar_index": 119,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 652.53
+    },
+    {
+      "time": "2025-11-21",
+      "bar_index": 120,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 659.03
+    },
+    {
+      "time": "2025-11-24",
+      "bar_index": 121,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 668.73
+    },
+    {
+      "time": "2025-11-25",
+      "bar_index": 122,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 675.02
+    },
+    {
+      "time": "2025-11-26",
+      "bar_index": 123,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 679.68
+    },
+    {
+      "time": "2025-11-28",
+      "bar_index": 124,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 683.39
+    },
+    {
+      "time": "2025-12-01",
+      "bar_index": 125,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 680.27
+    },
+    {
+      "time": "2025-12-02",
+      "bar_index": 126,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 681.53
+    },
+    {
+      "time": "2025-12-03",
+      "bar_index": 127,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 683.89
+    },
+    {
+      "time": "2025-12-04",
+      "bar_index": 128,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 684.39
+    },
+    {
+      "time": "2025-12-05",
+      "bar_index": 129,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 685.69
+    },
+    {
+      "time": "2025-12-08",
+      "bar_index": 130,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 683.63
+    },
+    {
+      "time": "2025-12-09",
+      "bar_index": 131,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 683.04
+    },
+    {
+      "time": "2025-12-10",
+      "bar_index": 132,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 687.57
+    },
+    {
+      "time": "2025-12-11",
+      "bar_index": 133,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 689.17
+    },
+    {
+      "time": "2025-12-12",
+      "bar_index": 134,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 681.76
+    },
+    {
+      "time": "2025-12-15",
+      "bar_index": 135,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 680.73
+    },
+    {
+      "time": "2025-12-16",
+      "bar_index": 136,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 678.87
+    },
+    {
+      "time": "2025-12-17",
+      "bar_index": 137,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 671.4
+    },
+    {
+      "time": "2025-12-18",
+      "bar_index": 138,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 676.47
+    },
+    {
+      "time": "2025-12-19",
+      "bar_index": 139,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 680.59
+    },
+    {
+      "time": "2025-12-22",
+      "bar_index": 140,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 684.83
+    },
+    {
+      "time": "2025-12-23",
+      "bar_index": 141,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 687.96
+    },
+    {
+      "time": "2025-12-24",
+      "bar_index": 142,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 690.38
+    },
+    {
+      "time": "2025-12-26",
+      "bar_index": 143,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 690.31
+    },
+    {
+      "time": "2025-12-29",
+      "bar_index": 144,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 687.85
+    },
+    {
+      "time": "2025-12-30",
+      "bar_index": 145,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 687.01
+    },
+    {
+      "time": "2025-12-31",
+      "bar_index": 146,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 681.92
+    },
+    {
+      "time": "2026-01-02",
+      "bar_index": 147,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 683.17
+    },
+    {
+      "time": "2026-01-05",
+      "bar_index": 148,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 687.72
+    },
+    {
+      "time": "2026-01-06",
+      "bar_index": 149,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 691.81
+    },
+    {
+      "time": "2026-01-07",
+      "bar_index": 150,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 689.58
+    },
+    {
+      "time": "2026-01-08",
+      "bar_index": 151,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 689.51
+    },
+    {
+      "time": "2026-01-09",
+      "bar_index": 152,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 694.07
+    },
+    {
+      "time": "2026-01-12",
+      "bar_index": 153,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 695.16
+    },
+    {
+      "time": "2026-01-13",
+      "bar_index": 154,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 693.77
+    },
+    {
+      "time": "2026-01-14",
+      "bar_index": 155,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 690.36
+    },
+    {
+      "time": "2026-01-15",
+      "bar_index": 156,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 692.24
+    },
+    {
+      "time": "2026-01-16",
+      "bar_index": 157,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 691.66
+    },
+    {
+      "time": "2026-01-20",
+      "bar_index": 158,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 677.58
+    },
+    {
+      "time": "2026-01-21",
+      "bar_index": 159,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 685.4
+    },
+    {
+      "time": "2026-01-22",
+      "bar_index": 160,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 688.98
+    },
+    {
+      "time": "2026-01-23",
+      "bar_index": 161,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 689.23
+    },
+    {
+      "time": "2026-01-26",
+      "bar_index": 162,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 692.73
+    },
+    {
+      "time": "2026-01-27",
+      "bar_index": 163,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 695.49
+    },
+    {
+      "time": "2026-01-28",
+      "bar_index": 164,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 695.42
+    },
+    {
+      "time": "2026-01-29",
+      "bar_index": 165,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 694.04
+    },
+    {
+      "time": "2026-01-30",
+      "bar_index": 166,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 691.97
+    },
+    {
+      "time": "2026-02-02",
+      "bar_index": 167,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 695.41
+    },
+    {
+      "time": "2026-02-03",
+      "bar_index": 168,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 689.53
+    },
+    {
+      "time": "2026-02-04",
+      "bar_index": 169,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 686.19
+    },
+    {
+      "time": "2026-02-05",
+      "bar_index": 170,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 677.62
+    },
+    {
+      "time": "2026-02-06",
+      "bar_index": 171,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 690.62
+    },
+    {
+      "time": "2026-02-09",
+      "bar_index": 172,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 693.95
+    },
+    {
+      "time": "2026-02-10",
+      "bar_index": 173,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 692.12
+    },
+    {
+      "time": "2026-02-11",
+      "bar_index": 174,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 691.96
+    },
+    {
+      "time": "2026-02-12",
+      "bar_index": 175,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 681.27
+    },
+    {
+      "time": "2026-02-13",
+      "bar_index": 176,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 681.75
+    },
+    {
+      "time": "2026-02-17",
+      "bar_index": 177,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 682.85
+    },
+    {
+      "time": "2026-02-18",
+      "bar_index": 178,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 686.29
+    },
+    {
+      "time": "2026-02-19",
+      "bar_index": 179,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 684.48
+    },
+    {
+      "time": "2026-02-20",
+      "bar_index": 180,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 689.43
+    },
+    {
+      "time": "2026-02-23",
+      "bar_index": 181,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 682.39
+    },
+    {
+      "time": "2026-02-24",
+      "bar_index": 182,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 687.35
+    },
+    {
+      "time": "2026-02-25",
+      "bar_index": 183,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 693.15
+    },
+    {
+      "time": "2026-02-26",
+      "bar_index": 184,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 689.3
+    },
+    {
+      "time": "2026-02-27",
+      "bar_index": 185,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 685.99
+    },
+    {
+      "time": "2026-03-02",
+      "bar_index": 186,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 686.38
+    },
+    {
+      "time": "2026-03-03",
+      "bar_index": 187,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 680.33
+    },
+    {
+      "time": "2026-03-04",
+      "bar_index": 188,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 685.13
+    },
+    {
+      "time": "2026-03-05",
+      "bar_index": 189,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 681.31
+    },
+    {
+      "time": "2026-03-06",
+      "bar_index": 190,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 672.38
+    },
+    {
+      "time": "2026-03-09",
+      "bar_index": 191,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 678.27
+    },
+    {
+      "time": "2026-03-10",
+      "bar_index": 192,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 677.18
+    },
+    {
+      "time": "2026-03-11",
+      "bar_index": 193,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 676.33
+    },
+    {
+      "time": "2026-03-12",
+      "bar_index": 194,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 666.06
+    },
+    {
+      "time": "2026-03-13",
+      "bar_index": 195,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 662.29
+    },
+    {
+      "time": "2026-03-16",
+      "bar_index": 196,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 669.03
+    },
+    {
+      "time": "2026-03-17",
+      "bar_index": 197,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 670.79
+    },
+    {
+      "time": "2026-03-18",
+      "bar_index": 198,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 661.43
+    },
+    {
+      "time": "2026-03-19",
+      "bar_index": 199,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 659.8
+    },
+    {
+      "time": "2026-03-20",
+      "bar_index": 200,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 648.57
+    },
+    {
+      "time": "2026-03-23",
+      "bar_index": 201,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 655.38
+    },
+    {
+      "time": "2026-03-24",
+      "bar_index": 202,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 653.18
+    },
+    {
+      "time": "2026-03-25",
+      "bar_index": 203,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 656.82
+    },
+    {
+      "time": "2026-03-26",
+      "bar_index": 204,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 645.09
+    },
+    {
+      "time": "2026-03-27",
+      "bar_index": 205,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 634.09
+    },
+    {
+      "time": "2026-03-30",
+      "bar_index": 206,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 631.97
+    },
+    {
+      "time": "2026-03-31",
+      "bar_index": 207,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 650.34
+    },
+    {
+      "time": "2026-04-01",
+      "bar_index": 208,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 655.24
+    },
+    {
+      "time": "2026-04-02",
+      "bar_index": 209,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 655.83
+    },
+    {
+      "time": "2026-04-06",
+      "bar_index": 210,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 658.93
+    },
+    {
+      "time": "2026-04-07",
+      "bar_index": 211,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 659.22
+    },
+    {
+      "time": "2026-04-08",
+      "bar_index": 212,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 676.01
+    },
+    {
+      "time": "2026-04-09",
+      "bar_index": 213,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 679.91
+    },
+    {
+      "time": "2026-04-10",
+      "bar_index": 214,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 679.46
+    },
+    {
+      "time": "2026-04-13",
+      "bar_index": 215,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 686.1
+    },
+    {
+      "time": "2026-04-14",
+      "bar_index": 216,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 694.46
+    },
+    {
+      "time": "2026-04-15",
+      "bar_index": 217,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 699.94
+    },
+    {
+      "time": "2026-04-16",
+      "bar_index": 218,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 701.66
+    },
+    {
+      "time": "2026-04-17",
+      "bar_index": 219,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 710.14
+    },
+    {
+      "time": "2026-04-20",
+      "bar_index": 220,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 708.72
+    },
+    {
+      "time": "2026-04-21",
+      "bar_index": 221,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 704.08
+    },
+    {
+      "time": "2026-04-22",
+      "bar_index": 222,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 711.21
+    },
+    {
+      "time": "2026-04-23",
+      "bar_index": 223,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 708.45
+    },
+    {
+      "time": "2026-04-24",
+      "bar_index": 224,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 713.94
+    },
+    {
+      "time": "2026-04-27",
+      "bar_index": 225,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 715.17
+    },
+    {
+      "time": "2026-04-28",
+      "bar_index": 226,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 711.69
+    },
+    {
+      "time": "2026-04-29",
+      "bar_index": 227,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 711.58
+    },
+    {
+      "time": "2026-04-30",
+      "bar_index": 228,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 718.66
+    },
+    {
+      "time": "2026-05-01",
+      "bar_index": 229,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 720.65
+    },
+    {
+      "time": "2026-05-04",
+      "bar_index": 230,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 718.01
+    },
+    {
+      "time": "2026-05-05",
+      "bar_index": 231,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 723.77
+    },
+    {
+      "time": "2026-05-06",
+      "bar_index": 232,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 733.83
+    },
+    {
+      "time": "2026-05-07",
+      "bar_index": 233,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 731.58
+    },
+    {
+      "time": "2026-05-08",
+      "bar_index": 234,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 737.62
+    },
+    {
+      "time": "2026-05-11",
+      "bar_index": 235,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 739.3
+    },
+    {
+      "time": "2026-05-12",
+      "bar_index": 236,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 738.18
+    },
+    {
+      "time": "2026-05-13",
+      "bar_index": 237,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 742.31
+    },
+    {
+      "time": "2026-05-14",
+      "bar_index": 238,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 748.17
+    },
+    {
+      "time": "2026-05-15",
+      "bar_index": 239,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 739.17
+    },
+    {
+      "time": "2026-05-18",
+      "bar_index": 240,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 738.65
+    },
+    {
+      "time": "2026-05-19",
+      "bar_index": 241,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 733.73
+    },
+    {
+      "time": "2026-05-20",
+      "bar_index": 242,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 741.25
+    },
+    {
+      "time": "2026-05-21",
+      "bar_index": 243,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 742.72
+    },
+    {
+      "time": "2026-05-22",
+      "bar_index": 244,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 745.64
+    },
+    {
+      "time": "2026-05-26",
+      "bar_index": 245,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 750.59
+    },
+    {
+      "time": "2026-05-27",
+      "bar_index": 246,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 750.46
+    },
+    {
+      "time": "2026-05-28",
+      "bar_index": 247,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 754.6
+    },
+    {
+      "time": "2026-05-29",
+      "bar_index": 248,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 756.48
+    },
+    {
+      "time": "2026-06-01",
+      "bar_index": 249,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 758.54
+    },
+    {
+      "time": "2026-06-02",
+      "bar_index": 250,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 759.57
+    },
+    {
+      "time": "2026-06-03",
+      "bar_index": 251,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 754.24
+    },
+    {
+      "time": "2026-06-04",
+      "bar_index": 252,
+      "signal": "ERROR",
+      "action": "'<=' not supported between instances of 'list' and 'float'",
+      "price": 756.83
+    }
+  ],
+  "trades": []
+}
