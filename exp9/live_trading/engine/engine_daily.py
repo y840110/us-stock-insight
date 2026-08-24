@@ -76,6 +76,22 @@ class DailyBacktester:
         self.trade_id = 0
         self._peak_cash = float(initial_capital)
         self._dd_active = False
+        self.equity_curve = []  # 逐交易日权益快照（现金+持仓市值），用于权益口径回撤
+
+    # ── 权益快照（含浮亏浮盈） ──────────────────────
+    def _record_equity(self, all_daily, spy, i):
+        eq = self.cash
+        for ticker, pos in self.positions.items():
+            daily = all_daily.get(ticker, [])
+            if daily and i < len(daily):
+                px = float(daily[i]['close'])
+            else:
+                px = pos['entry_price']
+            shares = pos['shares']
+            if pos.get('lot1_done'):
+                shares = shares / 2  # lot1 已卖，剩余 lot2 股数
+            eq += shares * px
+        self.equity_curve.append({'date': spy[i]['date'], 'equity': round(eq, 2)})
 
     # ── 账户熔断检查 ──────────────────────────────────
     def _check_dd(self, spy_bars, idx):
@@ -350,6 +366,10 @@ class DailyBacktester:
                 elif stage == 'STAGE_1' and not l5_veto:
                     # 记录待突破价格（次日突破则为 STAGE_4 NOW）
                     new_pending[ticker] = float(daily[i]['high'])
+
+            # 权益快照（现金 + 持仓市值，含浮亏浮盈）
+            self._record_equity(all_daily, spy, i)
+
         for ticker in list(self.positions):
             daily = all_daily.get(ticker, [])
             pos = self.positions[ticker]
@@ -408,7 +428,17 @@ class DailyBacktester:
         final_cash = round(self.cash, 2)
         pnl = round(self.cash - self.initial, 2)
         peak_cash = self._peak_cash
-        max_dd = (peak_cash - min(tx['cash'] for tx in self.tx_log)) / peak_cash * 100 if self.tx_log else 0
+
+        # 权益口径回撤（含浮亏浮盈）：peak-to-trough on equity_curve
+        eq_max_dd = 0.0
+        eq_peak = self.initial
+        for _snap in self.equity_curve:
+            _eq = _snap['equity']
+            if _eq > eq_peak:
+                eq_peak = _eq
+            if eq_peak > 0:
+                eq_max_dd = max(eq_max_dd, (eq_peak - _eq) / eq_peak)
+        eq_max_dd *= 100
 
         print(f'\n{"="*60}')
         print(f'  日线引擎 回测结果')
@@ -416,7 +446,7 @@ class DailyBacktester:
         print(f'总入场: {len(lot2_trades)} 笔 | Lot1触达: {len(lot1_trades)} 笔')
         print(f'胜率: {wr:.1f}% | avg win: {avg_w:+.2f}% | avg loss: {avg_l:+.2f}% | RR: {rr:.2f}')
         print(f'初始: ${self.initial:,.0f} → 期末: ${final_cash:,.2f} | 净盈亏: ${pnl:+,.2f} ({pnl/self.initial*100:+.1f}%)')
-        print(f'最大回撤: {max_dd:.1f}% | 熔断触发: {self._dd_active}')
+        print(f'最大回撤(权益口径): {eq_max_dd:.1f}% | 熔断触发: {self._dd_active}')
 
         print(f'\n按评级:')
         for g in sorted(grade_stats.keys()):
@@ -426,25 +456,12 @@ class DailyBacktester:
         for rule, cnt in sorted(exit_stats.items(), key=lambda x: -x[1]):
             print(f'  {rule}: {cnt}笔')
 
-        # 计算峰值回撤序列
-        eq = [(t['date'], t['cash']) for t in self.tx_log]
-        peaks = []; dds = []
-        running_peak = self.initial
-        for date, cash in eq:
-            if cash > running_peak:
-                running_peak = cash
-            dd = (running_peak - cash) / running_peak * 100 if running_peak > 0 else 0
-            peaks.append(running_peak)
-            dds.append(dd)
-        avg_dd = sum(dds) / len(dds) if dds else 0
-
         return {
             'initial_capital': self.initial,
             'final_cash': final_cash,
             'total_pnl_dollar': pnl,
             'peak_cash': round(peak_cash, 2),
-            'max_drawdown_pct': round(max(dds) if dds else 0, 2),
-            'avg_drawdown_pct': round(avg_dd, 2),
+            'max_drawdown_pct': round(eq_max_dd, 2),
             'total': total,
             'win_rate': round(wr, 2),
             'avg_win': round(avg_w, 2),

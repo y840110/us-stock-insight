@@ -1,8 +1,8 @@
 {
   "title": "盘中推送",
-  "time": "22:47 ET",
-  "spy_timestamp": "2026-06-18 12:00 ET",
-  "market_date": "2026-07-13",
+  "time": "11:30 ET",
+  "spy_timestamp": "2026-08-14 12:00 ET",
+  "market_date": "2026-08-20",
   "market_regime": "",
   "status": "ok",
   "summary": "✅ 无变化，持仓正常",
@@ -22,7 +22,7 @@
       "ticker": "SPY",
       "qty": 10,
       "cost_basis": 741.5,
-      "current_price": 746.74,
+      "current_price": 776.34,
       "stop_loss": 725.0,
       "target": 780.0,
       "status": "EMA50回踩入场，93天强制退出"
@@ -31,5 +31,5 @@
   "now_signals": [],
   "watch_signals": [],
   "_pending_hash": "a03529692724",
-  "_last_push_hash": "cacf3e595be7"
+  "_last_push_hash": "6f7e64aa46d6"
 }

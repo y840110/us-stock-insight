@@ -115,8 +115,7 @@ def filter_buy_now(results, min_rr=1.5):
         if (r['stage'] == 'STAGE_4'
                 and r['action'] == 'NOW'
                 and r['l1_regime'] == 'BULL'
-                and not r.get('error')
-                :
+                and not r.get('error')):
             buys.append(r)
     buys.sort(key=lambda x: x['rr_ratio'] or 0, reverse=True)
     return buys
@@ -130,8 +129,7 @@ def filter_buy_watch(results, min_rr=1.0):
                 and r['action'] == 'WATCH'
                 and r['l1_regime'] == 'BULL'
                 and not r.get('error')
-                and r['pullback_tier'] >= 1
-                :
+                and r['pullback_tier'] >= 1):
             watches.append(r)
     watches.sort(key=lambda x: (x['pullback_tier'], x['rr_ratio'] or 0), reverse=True)
     return watches

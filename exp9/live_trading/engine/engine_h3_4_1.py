@@ -115,6 +115,21 @@ class Backtester1hV5:
         self._trade_seq  = 0
         # JSONL 文件路径（_debug 模式时有效）
         self._trade_jsonl_path = None
+        self.equity_curve = []  # 逐交易日权益快照（现金+持仓市值），用于权益口径回撤
+
+    def _record_equity(self, all_daily, spy_d, i):
+        """权益快照：现金 + 各持仓剩余股数×日线收盘价（含浮亏浮盈）"""
+        eq = self.cash
+        for ticker, shares in self._trade_positions.items():
+            if shares <= 0:
+                continue
+            daily = all_daily.get(ticker, [])
+            if daily and i < len(daily):
+                px = float(daily[i]['close'])
+            else:
+                px = float(self.positions.get(ticker, {}).get('entry_price', 0) or 0)
+            eq += shares * px
+        self.equity_curve.append({'date': spy_d[i]['date'], 'equity': round(eq, 2)})
 
     def _record_tx(self, date, action, ticker, shares, price, trade_id,
                    exit_rule=None, pnl_dollar=None, hold_days=None,
@@ -782,6 +797,9 @@ class Backtester1hV5:
                 self._on_day(ticker, daily_bars, spy_d, h1_bars,
                              i, tickers, new_pending)
 
+            # 权益快照（现金 + 持仓市值，含浮亏浮盈）
+            self._record_equity(all_daily, spy_d, i)
+
         # 期末处理
         for ticker in list(self.positions):
             h1_bars = all_h1.get(ticker, [])
@@ -929,9 +947,21 @@ class Backtester1hV5:
         print(f'\n========== h3-4 回测结果 ==========')
         final_cash = round(self.cash, 2)
         pnl_dollar = round(self.cash - self.initial, 2)
+        return_pct = round(pnl_dollar / self.initial * 100, 2)
+
+        # 权益口径回撤（含浮亏浮盈）：peak-to-trough on equity_curve
+        eq_max_dd = 0.0
+        eq_peak = self.initial
+        for _snap in self.equity_curve:
+            _eq = _snap['equity']
+            if _eq > eq_peak:
+                eq_peak = _eq
+            if eq_peak > 0:
+                eq_max_dd = max(eq_max_dd, (eq_peak - _eq) / eq_peak)
+
         print(f'总入场: {lot1_hit} 笔 | Lot1目标触达: {lot1_count} 笔 | 最终出场: {total} 笔')
         print(f'胜率: {wr:.1f}% | avg win: {avg_win:+.2f}% | avg loss: {avg_loss:+.2f}% | RR: {rr:.2f}')
-        print(f'初始资金: ${self.initial:,.0f} → 期末现金: ${final_cash:,.2f} | 净盈亏: ${pnl_dollar:+,.2f} ({pnl_dollar/self.initial*100:+.1f}%)')
+        print(f'初始资金: ${self.initial:,.0f} → 期末现金: ${final_cash:,.2f} | 净盈亏: ${pnl_dollar:+,.2f} ({return_pct:+.1f}%) | 最大回撤(权益口径): {eq_max_dd*100:.1f}%')
         print(f'\n按评级:')
         for g in sorted(grade_stats.keys()):
             s = grade_stats[g]
@@ -944,6 +974,8 @@ class Backtester1hV5:
             'initial_capital': self.initial,
             'final_cash': round(self.cash, 2),
             'total_pnl_dollar': round(self.cash - self.initial, 2),
+            'return_pct': return_pct,
+            'max_drawdown': round(eq_max_dd * 100, 2),
             'total': total, 'win_rate': round(wr, 2),
             'avg_win': round(avg_win, 2), 'avg_loss': round(avg_loss, 2),
             'win_loss_ratio': round(rr, 2),

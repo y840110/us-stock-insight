@@ -24,7 +24,7 @@ from pathlib import Path
 PROJ = Path(__file__).resolve().parent
 for _ in range(4):
     PROJ = PROJ.parent
-PROJ = PROJ / '缇庤偂鎶曡祫娲炲療鍒嗘瀽'
+PROJ = PROJ / '美股投资洞察分析'
 MODEL = PROJ / 'exp9' / 'model' / 'experts'
 sys.path.insert(0, str(MODEL))
 
@@ -346,7 +346,8 @@ def evaluate_exit(
                 }
             }
 
-        # 鏈�瑙﹀彂锛岃繑鍥炲綋鍓嶈拷韪�鐘舵�?        return {
+        # 未触发，返回当前追踪状态
+        return {
             'action': 'HOLD',
             'exit_price': None,
             'message': (
@@ -381,8 +382,8 @@ def evaluate_exit(
 
 # 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?# 杈呭姪鍑芥暟锛堢粰 alerts_scanner.py 浣跨敤锛?# 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺?
 def load_daily_bars(ticker: str, lookback: int = 300) -> list:
-    """鍔犺浇鏃ョ嚎 K 绾?""
-    klines_dir = PROJ / 'TradingAgents' / '涓�闂磋繃绋�' / 'klines'
+    """Load daily K-line."""
+    klines_dir = PROJ / 'TradingAgents' / '中间过程' / 'klines'
     path = klines_dir / f'{ticker}_1d.json'
     if not path.exists():
         return []
@@ -396,8 +397,8 @@ def load_daily_bars(ticker: str, lookback: int = 300) -> list:
 
 
 def load_h1_bars(ticker: str, lookback: int = 2000) -> list:
-    """鍔犺浇灏忔椂 K 绾匡紙缇庤偂 RTH 9:30-15:30 ET锛?""
-    klines_dir = PROJ / 'TradingAgents' / '涓�闂磋繃绋�' / 'klines'
+    """Load hourly K-line (US RTH 9:30-15:30 ET)"""
+    klines_dir = PROJ / 'TradingAgents' / '中间过程' / 'klines'
     path = klines_dir / f'{ticker}_1h.json'
     if not path.exists():
         return []
@@ -430,8 +431,8 @@ def load_spy_bars(lookback: int = 400) -> list:
 
 
 def find_h1_entry_idx(h1_bars: list, entry_date: str) -> int:
-    """
-    鍦?h1_bars 涓�鎵惧�?entry_date 瀵瑰簲鐨勭��涓�鏍?RTH bar 鐨勭储寮曘�?    濡傛灉鎵句笉鍒帮紝杩斿洖 len(h1_bars)-1锛堢敤鏈�鍚庝竴鏍癸級銆?    """
+    """Find first RTH bar index for entry_date."""
+
     if not h1_bars:
         return 0
     for i, b in enumerate(h1_bars):
@@ -443,9 +444,9 @@ def find_h1_entry_idx(h1_bars: list, entry_date: str) -> int:
 def entry_params_from_daily(daily_bars: list, entry_price: float,
                             atr_mult: float = 1.5,
                             target_mult: float = 3.0) -> dict:
-    """
-    鏍规嵁鏃ョ嚎浼扮畻鍏ュ満鍙傛暟锛堟�㈡�?/ ATR / 鐩�鏍囦环锛�
-    鐢ㄤ簬 build positions_live.json 妯℃澘銆?    """
+    """Estimate entry params (stop/ATR/target) from daily bars."""
+
+
     atr = _atr_from_daily(daily_bars)
     if atr == 0:
         h = float(daily_bars[-1]['high']); l = float(daily_bars[-1]['low'])

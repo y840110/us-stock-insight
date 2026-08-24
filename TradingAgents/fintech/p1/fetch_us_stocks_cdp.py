@@ -115,7 +115,24 @@ def fetch_yahoo(page, symbol: str, interval: str, use_range: str) -> list:
     ysym = {'DXY': 'DX-Y.NYB', '^VIX': '^VIX'}.get(symbol, symbol)
     url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{ysym}"
            f"?range={use_range}&interval={interval}")
+    return _fetch_url(page, symbol, url, interval)
 
+
+def fetch_yahoo_period(page, symbol: str, interval: str, period1_ts: int, period2_ts: int) -> list:
+    """
+    用 period1/period2 时间戳抓取，突破 Yahoo 730 天限制。
+    period1_ts / period2_ts: Unix timestamp（秒）
+    """
+    import re
+    ysym = {'DXY': 'DX-Y.NYB', '^VIX': '^VIX'}.get(symbol, symbol)
+    url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{ysym}"
+           f"?period1={period1_ts}&period2={period2_ts}&interval={interval}")
+    return _fetch_url(page, symbol, url, interval)
+
+
+def _fetch_url(page, symbol: str, url: str, interval: str) -> list:
+    """通用 URL 抓取逻辑，返回 bar 列表"""
+    import re
     dt_key = 'datetime' if interval == '1h' else 'date'
 
     try:
@@ -158,11 +175,9 @@ def fetch_yahoo(page, symbol: str, interval: str, use_range: str) -> list:
     lows   = q.get('low', [])
     vols   = q.get('volume', [])
 
-    # 业务层验证：数据量门槛
-    RANGE_MIN = {'1y': 20, '2y': 100, '5d': 2}
-    expected_min = RANGE_MIN.get(use_range, 20)
-    if len(timestamps) < expected_min:
-        raise BusinessError(f"数据量异常: {len(timestamps)} 根 < {expected_min}")
+    # 业务层验证：数据量门槛（通用最小值，range-based 请求由 caller 额外验证）
+    if len(timestamps) < 5:
+        raise BusinessError(f"数据量异常: {len(timestamps)} 根 < 5")
 
     # 获取 gmtoffset 用于 UTC → ET 转换（与 fetch_us_1h_cdp.py 一致）
     gmtoffset = r0.get('meta', {}).get('gmtoffset', -14400)  # 默认 EDT UTC-4
